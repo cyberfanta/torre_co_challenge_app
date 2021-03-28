@@ -1,0 +1,53 @@
+Progress Log
+
+Fecha: 26-03-2021
+Hora de inicio: 8:00pm
+
+8:00pm	Iniciamos creando la cuenta de payoneer.
+8:40pm	Se inicia el análisis de los endpoints.
+9:00pm	Evaluación con postman.
+9:05pm	--Decisión: Producir una app Android para el ejercicio incluyendo flutter como frontend framework.
+9:10pm	Repaso de cursos de flutter.
+11:30pm	Validar autocreación de clases de Java para los endpoints con Json.
+12:10am Finalizo el día.
+
+Pendiente:
+- Diagramación de Clases para validar los posibles datos a mostrar en la UI
+- Creación de Paleta de Colores en función de los colores de torre.co
+- Diagramación de la interfaz usando Figma
+- Creación del proyecto Flutter con Android Studio
+
+
+
+Fecha: 27-03-2021
+Hora de inicio: 12:00pm
+
+12:00pm Continuo el análisis de los Endpoints, conseguí un auto generador de clases de java a partir de un json.
+3:30pm	Inicio adecuaciones del proyecto, para validar las clases autogeneradas.
+5:00pm	Por alguna razón los portales web de autogenerado de clases dejaron de funcionar, así que empecé con la busqueda desde otro enfoque.
+7:00pm	Encontré un plugin de Android Studio que puede simplificar el desarrollo.
+7:40pm	Por lo que veo el plugin funciona mucho mejor que las webs. Mi duda es con los endpoint get, los cuales tienen variaciones en el tamaño de la respuesta, no envian el json entero vacio, sino solo lo que necesito ver, por lo tanto las clases generadas no tienen toda la información. Para resolver esto tomaré una muestra de 5 usuarios y 5 trabajos, y comparar sus diferencias, el resultado debe ser una clase que incorpore los elementos descubiertos con una baja probabilidad de que falle por la estructura.
+9:20pm	Después de probar varias opciones con el generador de clases, completo la creación de la estructura dentro del paquete com.cyberfanta.torre_co_challenge.models, estas estructuras las voy a mantener en código de java, y a continuación incluiré código kotlin en algunas funciones del proyecto.
+9:25pm	Inicio el diseño conceptual de mi app. Identifico que a partir del endpoint POST People y del POST Opportunities, puedo generar una app para mostrar a los usuarios y a los trabajos que están disponibles dentro de torre.co y con los GET Bio y GET Job puedo mostrar el detalle. Así que mi diseño va a desplegar la lista de usuarios y trabajos para que quien use la app pueda ver quienes somos y que ofrecemos, luego si quiere ver detalle pueda seleccionar algún item y verlo.
+11:25pm	Finalizo el diseño conceptual de mi interfaz. Inicio la paleta de colores en Figma por la hora.
+12:20am	Finalizo el día.
+
+Logros:
+- Diagramación de Clases para validar los posibles datos a mostrar en la UI (Hecho)
+- Creación de Paleta de Colores en función de los colores de torre.co (Hecho)
+
+Pendiente:
+- Escanear o fotografiar mi diseño conceptual.
+- Diagramación de la interfaz usando Figma
+- Creación del proyecto Flutter con Android Studio
+
+
+
+
+
+Fecha: 28-03-2021
+Hora de inicio: 10:00am
+
+10:00am	Inicio las actividades con una idea para estructurar la lectura de la api y la contrucción del código de manera que pueda ser más lejible. Sin embargo tengo problemas para cargar las dependencias de java en la estructura del cógido. Las estoy colocando donde siempre pero ahora como estoy en un proyecto flutter, el código del yaml trabaja de otra manera, estoy investigando como solucionar.
+1:26pm	Implementando el código, puedo ver que el proyecto Flutter, me está generando demasiados contratiempos. La gota que derramó el vaso fue que me diera excepciones a la hora de generar mis pruebas unitarias, y en la mañana me dio problemas al incorporar librerias. Y en vista del tiempo restante. ---Decido:-- Presindir del proyecto en Flutter y continuar con un proyecto Kotlin. Mi interes de hacerlo con Flutter era el ahorrar tiempo en el desarrollo de la interfaz, pero a estas alturas me está generando contratiempos. Si bien el riesgo de utilizar una tecnología que estoy recientemente conociendo, era algo que queria que evaluara la persona que me supervise, pienso que no me falta mucho para terminar de incorporarla, pero en este momento que estoy bajo la presión del tiempo, no debería ser momento para aprender sino para agilizar. Ya que después de levantar lo planificado, también tengo que agregar mi parte innovadora.
+1:40pm	Comenzando un nuevo proyecto Kotlin.
