@@ -1,5 +1,9 @@
 package com.cyberfanta.torre_co_challenge_app.models.bio;
 
+import org.jetbrains.annotations.NotNull;
+
+import java.util.List;
+
 public class OpportunitiesItem{
 	private String field;
 	private List<DataItem> data;
@@ -38,6 +42,7 @@ public class OpportunitiesItem{
 		return id;
 	}
 
+	@NotNull
 	@Override
  	public String toString(){
 		return 

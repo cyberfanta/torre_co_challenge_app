@@ -30,6 +30,10 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
 }
 
 dependencies {
@@ -43,7 +47,9 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
+    //Connection to API
     implementation 'com.squareup.okhttp3:okhttp:4.1.0'
+    //Create Object from JSON
     implementation 'com.google.code.gson:gson:2.8.6'
 
 }
