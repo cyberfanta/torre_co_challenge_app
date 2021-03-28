@@ -1,0 +1,2 @@
+include ':app'
+rootProject.name = "torre_co_challenge_app"
