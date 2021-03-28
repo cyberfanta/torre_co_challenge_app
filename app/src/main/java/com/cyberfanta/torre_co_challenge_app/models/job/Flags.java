@@ -1,23 +1,63 @@
 package com.cyberfanta.torre_co_challenge_app.models.job;
 
+import com.google.gson.annotations.SerializedName;
+
+import org.jetbrains.annotations.NotNull;
+
 public class Flags{
+
+	@SerializedName("membersBenefitsViewed")
 	private boolean membersBenefitsViewed;
+
+	@SerializedName("firstSignalSent")
 	private boolean firstSignalSent;
+
+	@SerializedName("matchAndRankDisclaimerViewed")
 	private boolean matchAndRankDisclaimerViewed;
+
+	@SerializedName("earlyAccess")
 	private boolean earlyAccess;
+
+	@SerializedName("experiencesVerificationsSurvey")
 	private boolean experiencesVerificationsSurvey;
+
+	@SerializedName("notificationsPhrasesSarcastic")
 	private boolean notificationsPhrasesSarcastic;
+
+	@SerializedName("opportunityCrawler")
 	private boolean opportunityCrawler;
+
+	@SerializedName("torreMatchAcknowledged")
 	private boolean torreMatchAcknowledged;
+
+	@SerializedName("veiled")
 	private boolean veiled;
+
+	@SerializedName("automatedMessagesFeatureDiscovery")
 	private boolean automatedMessagesFeatureDiscovery;
+
+	@SerializedName("opportunitiesBenefitsViewed")
 	private boolean opportunitiesBenefitsViewed;
+
+	@SerializedName("firstGetSignalBenefitsViewed")
 	private boolean firstGetSignalBenefitsViewed;
+
+	@SerializedName("opportunityOperator")
 	private boolean opportunityOperator;
+
+	@SerializedName("signedInToOpportunities")
 	private boolean signedInToOpportunities;
+
+	@SerializedName("firstSignalOnBoarded")
 	private boolean firstSignalOnBoarded;
+
+	@SerializedName("referredMatchUnderstood")
 	private boolean referredMatchUnderstood;
+
+	@SerializedName("enlauSource")
 	private boolean enlauSource;
+
+	@SerializedName("contactsImported")
 	private boolean contactsImported;
 
 	public void setMembersBenefitsViewed(boolean membersBenefitsViewed){
@@ -164,6 +204,7 @@ public class Flags{
 		return contactsImported;
 	}
 
+	@NotNull
 	@Override
  	public String toString(){
 		return 

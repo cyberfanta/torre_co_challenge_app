@@ -1,19 +1,55 @@
 package com.cyberfanta.torre_co_challenge_app.models.job;
 
 import java.util.List;
+import com.google.gson.annotations.SerializedName;
+
+import org.jetbrains.annotations.NotNull;
 
 public class SerpTags{
+
+	@SerializedName("identifier")
 	private Identifier identifier;
-	private String jobLocationType;
+
+	@SerializedName("validThrough")
 	private String validThrough;
-	private HiringOrganization hiringOrganization;
+
+	@SerializedName("employmentType")
 	private List<String> employmentType;
+
+	@SerializedName("@type")
 	private String type;
+
+	@SerializedName("baseSalary")
 	private BaseSalary baseSalary;
+
+	@SerializedName("description")
 	private String description;
+
+	@SerializedName("title")
 	private String title;
-	private String datePosted;
+
+	@SerializedName("@context")
 	private String context;
+
+	@SerializedName("jobLocationType")
+	private String jobLocationType;
+
+	@SerializedName("experienceInPlaceOfEducation")
+	private boolean experienceInPlaceOfEducation;
+
+	@SerializedName("hiringOrganization")
+	private HiringOrganization hiringOrganization;
+
+	@SerializedName("educationRequirements")
+	private EducationRequirements educationRequirements;
+
+	@SerializedName("datePosted")
+	private String datePosted;
+
+	@SerializedName("experienceRequirements")
+	private ExperienceRequirements experienceRequirements;
+
+	@SerializedName("applicantLocationRequirements")
 	private List<ApplicantLocationRequirementsItem> applicantLocationRequirements;
 
 	public void setIdentifier(Identifier identifier){
@@ -24,28 +60,12 @@ public class SerpTags{
 		return identifier;
 	}
 
-	public void setJobLocationType(String jobLocationType){
-		this.jobLocationType = jobLocationType;
-	}
-
-	public String getJobLocationType(){
-		return jobLocationType;
-	}
-
 	public void setValidThrough(String validThrough){
 		this.validThrough = validThrough;
 	}
 
 	public String getValidThrough(){
 		return validThrough;
-	}
-
-	public void setHiringOrganization(HiringOrganization hiringOrganization){
-		this.hiringOrganization = hiringOrganization;
-	}
-
-	public HiringOrganization getHiringOrganization(){
-		return hiringOrganization;
 	}
 
 	public void setEmploymentType(List<String> employmentType){
@@ -88,6 +108,46 @@ public class SerpTags{
 		return title;
 	}
 
+	public void setContext(String context){
+		this.context = context;
+	}
+
+	public String getContext(){
+		return context;
+	}
+
+	public void setJobLocationType(String jobLocationType){
+		this.jobLocationType = jobLocationType;
+	}
+
+	public String getJobLocationType(){
+		return jobLocationType;
+	}
+
+	public void setExperienceInPlaceOfEducation(boolean experienceInPlaceOfEducation){
+		this.experienceInPlaceOfEducation = experienceInPlaceOfEducation;
+	}
+
+	public boolean isExperienceInPlaceOfEducation(){
+		return experienceInPlaceOfEducation;
+	}
+
+	public void setHiringOrganization(HiringOrganization hiringOrganization){
+		this.hiringOrganization = hiringOrganization;
+	}
+
+	public HiringOrganization getHiringOrganization(){
+		return hiringOrganization;
+	}
+
+	public void setEducationRequirements(EducationRequirements educationRequirements){
+		this.educationRequirements = educationRequirements;
+	}
+
+	public EducationRequirements getEducationRequirements(){
+		return educationRequirements;
+	}
+
 	public void setDatePosted(String datePosted){
 		this.datePosted = datePosted;
 	}
@@ -96,12 +156,12 @@ public class SerpTags{
 		return datePosted;
 	}
 
-	public void setContext(String context){
-		this.context = context;
+	public void setExperienceRequirements(ExperienceRequirements experienceRequirements){
+		this.experienceRequirements = experienceRequirements;
 	}
 
-	public String getContext(){
-		return context;
+	public ExperienceRequirements getExperienceRequirements(){
+		return experienceRequirements;
 	}
 
 	public void setApplicantLocationRequirements(List<ApplicantLocationRequirementsItem> applicantLocationRequirements){
@@ -112,21 +172,25 @@ public class SerpTags{
 		return applicantLocationRequirements;
 	}
 
+	@NotNull
 	@Override
  	public String toString(){
 		return 
 			"SerpTags{" + 
 			"identifier = '" + identifier + '\'' + 
-			",jobLocationType = '" + jobLocationType + '\'' + 
 			",validThrough = '" + validThrough + '\'' + 
-			",hiringOrganization = '" + hiringOrganization + '\'' + 
 			",employmentType = '" + employmentType + '\'' + 
 			",@type = '" + type + '\'' + 
 			",baseSalary = '" + baseSalary + '\'' + 
 			",description = '" + description + '\'' + 
 			",title = '" + title + '\'' + 
-			",datePosted = '" + datePosted + '\'' + 
 			",@context = '" + context + '\'' + 
+			",jobLocationType = '" + jobLocationType + '\'' + 
+			",experienceInPlaceOfEducation = '" + experienceInPlaceOfEducation + '\'' + 
+			",hiringOrganization = '" + hiringOrganization + '\'' + 
+			",educationRequirements = '" + educationRequirements + '\'' + 
+			",datePosted = '" + datePosted + '\'' + 
+			",experienceRequirements = '" + experienceRequirements + '\'' + 
 			",applicantLocationRequirements = '" + applicantLocationRequirements + '\'' + 
 			"}";
 		}

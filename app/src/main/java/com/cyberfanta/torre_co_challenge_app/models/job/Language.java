@@ -1,7 +1,15 @@
 package com.cyberfanta.torre_co_challenge_app.models.job;
 
+import com.google.gson.annotations.SerializedName;
+
+import org.jetbrains.annotations.NotNull;
+
 public class Language{
+
+	@SerializedName("code")
 	private String code;
+
+	@SerializedName("name")
 	private String name;
 
 	public void setCode(String code){
@@ -20,6 +28,7 @@ public class Language{
 		return name;
 	}
 
+	@NotNull
 	@Override
  	public String toString(){
 		return 

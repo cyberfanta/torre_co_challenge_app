@@ -1,8 +1,18 @@
 package com.cyberfanta.torre_co_challenge_app.models.job;
 
+import com.google.gson.annotations.SerializedName;
+
+import org.jetbrains.annotations.NotNull;
+
 public class HiringOrganization{
+
+	@SerializedName("@type")
 	private String type;
+
+	@SerializedName("name")
 	private String name;
+
+	@SerializedName("logo")
 	private String logo;
 
 	public void setType(String type){
@@ -29,6 +39,7 @@ public class HiringOrganization{
 		return logo;
 	}
 
+	@NotNull
 	@Override
  	public String toString(){
 		return 

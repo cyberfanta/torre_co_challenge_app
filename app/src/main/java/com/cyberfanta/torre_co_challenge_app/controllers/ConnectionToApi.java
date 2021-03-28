@@ -7,13 +7,14 @@ import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.FormBody;
-import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 
 public class ConnectionToApi {
+    private final String TAG = "ConnectionToApi";
+
     /**
      * Objects to read data from server
      */
@@ -33,35 +34,35 @@ public class ConnectionToApi {
                     .build();
         } else if (request_type.toLowerCase().equals("post")) {
             RequestBody requestBody = new FormBody.Builder()
-//                    .add("size", "20")
+//                    .add("size", "20") todo: for future develop, include the request body as optional
                     .build();
             request = new Request.Builder()
                     .url(url)
                     .post(requestBody)
                     .build();
         } else {
-            throw new ConnectionException("NOT VALID KIND");
+            throw new ConnectionException("NOT VALID REQUEST TYPE");
         }
 
-        String responseJSON;
+        String answer;
         try {
             Response response = CLIENT.newCall(request).execute();
 
-            responseJSON = Objects.requireNonNull(response.body()).string();
+            answer = Objects.requireNonNull(response.body()).string();
             Objects.requireNonNull(response.body()).close();
 
-            if (responseJSON.contains("\"code\":\"020000\""))
+            if (answer.contains("\"code\":\"020000\""))
                 throw new ConnectionException("NAME_EMPTY");
 
-            if (responseJSON.contains("\"code\":\"011002\""))
+            if (answer.contains("\"code\":\"011002\""))
                 throw new ConnectionException("OBJECT_NOT_FOUND");
 
-            if (responseJSON.toLowerCase().contains("not found"))
+            if (answer.toLowerCase().contains("not found"))
                 throw new ConnectionException("NOT FOUND");
 
         } catch (IOException e) {
-            throw new ConnectionException("OBJECT_LOAD_FAIL");
+            throw new ConnectionException("CONNECTION_FAIL");
         }
-        return responseJSON;
+        return answer;
     }
 }

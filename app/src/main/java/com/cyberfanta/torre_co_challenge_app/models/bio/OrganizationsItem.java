@@ -1,8 +1,18 @@
 package com.cyberfanta.torre_co_challenge_app.models.bio;
 
+import com.google.gson.annotations.SerializedName;
+
+import org.jetbrains.annotations.NotNull;
+
 public class OrganizationsItem{
+
+	@SerializedName("name")
 	private String name;
+
+	@SerializedName("id")
 	private int id;
+
+	@SerializedName("picture")
 	private String picture;
 
 	public void setName(String name){
@@ -29,6 +39,7 @@ public class OrganizationsItem{
 		return picture;
 	}
 
+	@NotNull
 	@Override
  	public String toString(){
 		return 

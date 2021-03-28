@@ -1,24 +1,61 @@
 package com.cyberfanta.torre_co_challenge_app.models.bio;
 
 import java.util.List;
+import com.google.gson.annotations.SerializedName;
+
+import org.jetbrains.annotations.NotNull;
 
 public class JobsItem{
+
+	@SerializedName("toYear")
 	private String toYear;
+
+	@SerializedName("highlighted")
 	private boolean highlighted;
+
+	@SerializedName("toMonth")
 	private String toMonth;
+
+	@SerializedName("weight")
 	private int weight;
+
+	@SerializedName("media")
 	private List<Object> media;
+
+	@SerializedName("verifications")
 	private int verifications;
+
+	@SerializedName("recommendations")
 	private int recommendations;
+
+	@SerializedName("responsibilities")
 	private List<Object> responsibilities;
+
+	@SerializedName("fromYear")
 	private String fromYear;
+
+	@SerializedName("name")
 	private String name;
+
+	@SerializedName("organizations")
 	private List<OrganizationsItem> organizations;
+
+	@SerializedName("fromMonth")
 	private String fromMonth;
+
+	@SerializedName("rank")
 	private int rank;
+
+	@SerializedName("id")
 	private String id;
+
+	@SerializedName("category")
 	private String category;
+
+	@SerializedName("remote")
 	private boolean remote;
+
+	@SerializedName("additionalInfo")
 	private String additionalInfo;
 
 	public void setToYear(String toYear){
@@ -157,6 +194,7 @@ public class JobsItem{
 		return additionalInfo;
 	}
 
+	@NotNull
 	@Override
  	public String toString(){
 		return 

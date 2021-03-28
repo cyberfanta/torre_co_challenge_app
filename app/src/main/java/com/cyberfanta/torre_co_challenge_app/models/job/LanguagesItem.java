@@ -1,7 +1,15 @@
 package com.cyberfanta.torre_co_challenge_app.models.job;
 
+import com.google.gson.annotations.SerializedName;
+
+import org.jetbrains.annotations.NotNull;
+
 public class LanguagesItem{
+
+	@SerializedName("fluency")
 	private String fluency;
+
+	@SerializedName("language")
 	private Language language;
 
 	public void setFluency(String fluency){
@@ -20,12 +28,13 @@ public class LanguagesItem{
 		return language;
 	}
 
+	@NotNull
 	@Override
  	public String toString(){
 		return 
 			"LanguagesItem{" + 
 			"fluency = '" + fluency + '\'' + 
-			",language = '" + language + '\'' + 
+			",language = '" + language + '\'' +
 			"}";
 		}
 }

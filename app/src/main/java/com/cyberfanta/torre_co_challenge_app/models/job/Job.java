@@ -1,38 +1,103 @@
 package com.cyberfanta.torre_co_challenge_app.models.job;
 
 import java.util.List;
+import com.google.gson.annotations.SerializedName;
+
+import org.jetbrains.annotations.NotNull;
 
 public class Job{
+
+	@SerializedName("attachments")
 	private List<AttachmentsItem> attachments;
+
+	@SerializedName("boardVersion")
 	private int boardVersion;
+
+	@SerializedName("prefilledStatus")
 	private PrefilledStatus prefilledStatus;
+
+	@SerializedName("locale")
 	private String locale;
+
+	@SerializedName("objective")
 	private String objective;
+
+	@SerializedName("stats")
 	private Stats stats;
+
+	@SerializedName("review")
 	private String review;
+
+	@SerializedName("draft")
 	private Object draft;
+
+	@SerializedName("members")
 	private List<MembersItem> members;
+
+	@SerializedName("details")
 	private List<DetailsItem> details;
+
+	@SerializedName("id")
 	private String id;
+
+	@SerializedName("place")
 	private Place place;
+
+	@SerializedName("deadline")
 	private String deadline;
+
+	@SerializedName("slug")
 	private String slug;
+
+	@SerializedName("serpTags")
 	private SerpTags serpTags;
+
+	@SerializedName("owner")
 	private Owner owner;
+
+	@SerializedName("completion")
 	private double completion;
+
+	@SerializedName("agreement")
 	private Agreement agreement;
+
+	@SerializedName("languages")
 	private List<LanguagesItem> languages;
+
+	@SerializedName("created")
 	private String created;
+
+	@SerializedName("crawled")
 	private boolean crawled;
+
+	@SerializedName("opportunity")
 	private String opportunity;
+
+	@SerializedName("active")
 	private boolean active;
+
+	@SerializedName("commitment")
 	private Commitment commitment;
+
+	@SerializedName("stableOn")
 	private String stableOn;
+
+	@SerializedName("timezones")
 	private List<String> timezones;
+
+	@SerializedName("strengths")
 	private List<StrengthsItem> strengths;
+
+	@SerializedName("organizations")
 	private List<OrganizationsItem> organizations;
+
+	@SerializedName("compensation")
 	private Compensation compensation;
+
+	@SerializedName("openGraph")
 	private String openGraph;
+
+	@SerializedName("status")
 	private String status;
 
 	public void setAttachments(List<AttachmentsItem> attachments){
@@ -283,6 +348,7 @@ public class Job{
 		return status;
 	}
 
+	@NotNull
 	@Override
  	public String toString(){
 		return 

@@ -4,16 +4,13 @@ import com.google.gson.annotations.SerializedName;
 
 import org.jetbrains.annotations.NotNull;
 
-public class Identifier{
+public class EducationRequirements{
 
 	@SerializedName("@type")
 	private String type;
 
-	@SerializedName("name")
-	private String name;
-
-	@SerializedName("value")
-	private String value;
+	@SerializedName("credentialCategory")
+	private String credentialCategory;
 
 	public void setType(String type){
 		this.type = type;
@@ -23,30 +20,21 @@ public class Identifier{
 		return type;
 	}
 
-	public void setName(String name){
-		this.name = name;
+	public void setCredentialCategory(String credentialCategory){
+		this.credentialCategory = credentialCategory;
 	}
 
-	public String getName(){
-		return name;
-	}
-
-	public void setValue(String value){
-		this.value = value;
-	}
-
-	public String getValue(){
-		return value;
+	public String getCredentialCategory(){
+		return credentialCategory;
 	}
 
 	@NotNull
 	@Override
  	public String toString(){
 		return 
-			"Identifier{" + 
+			"EducationRequirements{" + 
 			"@type = '" + type + '\'' + 
-			",name = '" + name + '\'' + 
-			",value = '" + value + '\'' + 
+			",credentialCategory = '" + credentialCategory + '\'' + 
 			"}";
 		}
 }

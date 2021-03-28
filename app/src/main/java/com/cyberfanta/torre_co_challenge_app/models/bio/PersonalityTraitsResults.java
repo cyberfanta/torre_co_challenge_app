@@ -1,9 +1,16 @@
 package com.cyberfanta.torre_co_challenge_app.models.bio;
 
 import java.util.List;
+import com.google.gson.annotations.SerializedName;
+
+import org.jetbrains.annotations.NotNull;
 
 public class PersonalityTraitsResults{
+
+	@SerializedName("analyses")
 	private List<AnalysesItem> analyses;
+
+	@SerializedName("groups")
 	private List<GroupsItem> groups;
 
 	public void setAnalyses(List<AnalysesItem> analyses){
@@ -22,6 +29,7 @@ public class PersonalityTraitsResults{
 		return groups;
 	}
 
+	@NotNull
 	@Override
  	public String toString(){
 		return 

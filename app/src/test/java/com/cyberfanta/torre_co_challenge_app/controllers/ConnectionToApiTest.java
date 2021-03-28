@@ -1,7 +1,5 @@
 package com.cyberfanta.torre_co_challenge_app.controllers;
 
-import android.util.Log;
-
 import com.cyberfanta.torre_co_challenge_app.exceptions.ConnectionException;
 
 import junit.framework.TestCase;
@@ -12,7 +10,6 @@ public class ConnectionToApiTest extends TestCase {
     private final String TAG = "ConnectionToApiTest";
     private ConnectionToApi connectionToApi;
     private String[] url;
-//    private String answer;
 
     public void setUp() throws Exception {
         super.setUp();
@@ -35,7 +32,6 @@ public class ConnectionToApiTest extends TestCase {
         } catch (ConnectionException e) {
             Assert.fail();
         }
-
     }
 
     public void testGetJson_bio_not_ok() {
@@ -44,7 +40,6 @@ public class ConnectionToApiTest extends TestCase {
         } catch (ConnectionException e) {
             Assert.assertTrue(true);
         }
-
     }
 
     public void testGetJson_job_ok() {
@@ -53,7 +48,6 @@ public class ConnectionToApiTest extends TestCase {
         } catch (ConnectionException e) {
             Assert.fail();
         }
-
     }
 
     public void testGetJson_job_not_ok() {
@@ -62,7 +56,6 @@ public class ConnectionToApiTest extends TestCase {
         } catch (ConnectionException e) {
             Assert.assertTrue(true);
         }
-
     }
 
     public void testGetJson_peoples_ok() {
@@ -71,7 +64,6 @@ public class ConnectionToApiTest extends TestCase {
         } catch (ConnectionException e) {
             Assert.fail();
         }
-
     }
 
     public void testGetJson_opportunities_ok() {
@@ -80,6 +72,5 @@ public class ConnectionToApiTest extends TestCase {
         } catch (ConnectionException e) {
             Assert.fail();
         }
-
     }
 }

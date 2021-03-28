@@ -1,22 +1,55 @@
 package com.cyberfanta.torre_co_challenge_app.models.bio;
 
 import java.util.List;
+import com.google.gson.annotations.SerializedName;
+
+import org.jetbrains.annotations.NotNull;
 
 public class EducationItem{
+
+	@SerializedName("highlighted")
 	private boolean highlighted;
+
+	@SerializedName("weight")
 	private int weight;
+
+	@SerializedName("media")
 	private List<Object> media;
+
+	@SerializedName("remote")
 	private boolean remote;
+
+	@SerializedName("verifications")
 	private int verifications;
+
+	@SerializedName("recommendations")
 	private int recommendations;
+
+	@SerializedName("responsibilities")
 	private List<Object> responsibilities;
+
+	@SerializedName("fromYear")
 	private String fromYear;
+
+	@SerializedName("name")
 	private String name;
+
+	@SerializedName("organizations")
 	private List<OrganizationsItem> organizations;
+
+	@SerializedName("additionalInfo")
 	private String additionalInfo;
+
+	@SerializedName("fromMonth")
 	private String fromMonth;
+
+	@SerializedName("rank")
 	private int rank;
+
+	@SerializedName("id")
 	private String id;
+
+	@SerializedName("category")
 	private String category;
 
 	public void setHighlighted(boolean highlighted){
@@ -139,6 +172,7 @@ public class EducationItem{
 		return category;
 	}
 
+	@NotNull
 	@Override
  	public String toString(){
 		return 

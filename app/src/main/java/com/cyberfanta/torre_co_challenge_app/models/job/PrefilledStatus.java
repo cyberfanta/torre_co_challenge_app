@@ -1,6 +1,12 @@
 package com.cyberfanta.torre_co_challenge_app.models.job;
 
+import com.google.gson.annotations.SerializedName;
+
+import org.jetbrains.annotations.NotNull;
+
 public class PrefilledStatus{
+
+	@SerializedName("status")
 	private String status;
 
 	public void setStatus(String status){
@@ -11,6 +17,7 @@ public class PrefilledStatus{
 		return status;
 	}
 
+	@NotNull
 	@Override
  	public String toString(){
 		return 

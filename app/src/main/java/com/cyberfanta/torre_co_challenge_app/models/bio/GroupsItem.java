@@ -1,9 +1,21 @@
 package com.cyberfanta.torre_co_challenge_app.models.bio;
 
+import com.google.gson.annotations.SerializedName;
+
+import org.jetbrains.annotations.NotNull;
+
 public class GroupsItem{
+
+	@SerializedName("median")
 	private double median;
+
+	@SerializedName("id")
 	private String id;
+
+	@SerializedName("stddev")
 	private double stddev;
+
+	@SerializedName("order")
 	private int order;
 
 	public void setMedian(double median){
@@ -38,6 +50,7 @@ public class GroupsItem{
 		return order;
 	}
 
+	@NotNull
 	@Override
  	public String toString(){
 		return 

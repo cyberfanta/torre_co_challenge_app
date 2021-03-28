@@ -1,9 +1,21 @@
 package com.cyberfanta.torre_co_challenge_app.models.job;
 
+import com.google.gson.annotations.SerializedName;
+
+import org.jetbrains.annotations.NotNull;
+
 public class AttachmentsItem{
+
+	@SerializedName("path")
 	private String path;
+
+	@SerializedName("address")
 	private String address;
+
+	@SerializedName("resource")
 	private String resource;
+
+	@SerializedName("caption")
 	private String caption;
 
 	public void setPath(String path){
@@ -38,6 +50,7 @@ public class AttachmentsItem{
 		return caption;
 	}
 
+	@NotNull
 	@Override
  	public String toString(){
 		return 

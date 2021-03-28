@@ -1,8 +1,18 @@
 package com.cyberfanta.torre_co_challenge_app.models.job;
 
+import com.google.gson.annotations.SerializedName;
+
+import org.jetbrains.annotations.NotNull;
+
 public class BaseSalary{
+
+	@SerializedName("@type")
 	private String type;
+
+	@SerializedName("currency")
 	private String currency;
+
+	@SerializedName("value")
 	private Value value;
 
 	public void setType(String type){
@@ -29,6 +39,7 @@ public class BaseSalary{
 		return value;
 	}
 
+	@NotNull
 	@Override
  	public String toString(){
 		return 

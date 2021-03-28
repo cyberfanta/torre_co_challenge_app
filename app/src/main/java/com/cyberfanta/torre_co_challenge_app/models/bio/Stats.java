@@ -1,11 +1,27 @@
 package com.cyberfanta.torre_co_challenge_app.models.bio;
 
+import com.google.gson.annotations.SerializedName;
+
+import org.jetbrains.annotations.NotNull;
+
 public class Stats{
+
+	@SerializedName("education")
 	private int education;
+
+	@SerializedName("projects")
 	private int projects;
+
+	@SerializedName("strengths")
 	private int strengths;
+
+	@SerializedName("jobs")
 	private int jobs;
+
+	@SerializedName("interests")
 	private int interests;
+
+	@SerializedName("publications")
 	private int publications;
 
 	public void setEducation(int education){
@@ -56,6 +72,7 @@ public class Stats{
 		return publications;
 	}
 
+	@NotNull
 	@Override
  	public String toString(){
 		return 

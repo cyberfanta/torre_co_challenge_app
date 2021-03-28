@@ -1,22 +1,60 @@
 package com.cyberfanta.torre_co_challenge_app.models.bio;
 
+import com.google.gson.annotations.SerializedName;
+
+import org.jetbrains.annotations.NotNull;
+
 public class Flags{
+
+	@SerializedName("benefits")
 	private boolean benefits;
+
+	@SerializedName("canary")
 	private boolean canary;
+
+	@SerializedName("firstSignalSent")
 	private boolean firstSignalSent;
+
+	@SerializedName("signalsOnboardingCompleted")
 	private boolean signalsOnboardingCompleted;
+
+	@SerializedName("genomeCompletionAcknowledged")
 	private boolean genomeCompletionAcknowledged;
+
+	@SerializedName("importingLinkedin")
 	private boolean importingLinkedin;
+
+	@SerializedName("featureDiscovery")
 	private boolean featureDiscovery;
+
+	@SerializedName("getSignaledBenefitsViewed")
 	private boolean getSignaledBenefitsViewed;
+
+	@SerializedName("importingLinkedinRecommendations")
 	private boolean importingLinkedinRecommendations;
+
+	@SerializedName("signalsFeatureDiscovery")
 	private boolean signalsFeatureDiscovery;
+
+	@SerializedName("onBoarded")
 	private boolean onBoarded;
+
+	@SerializedName("remoter")
 	private boolean remoter;
+
+	@SerializedName("signedInToOpportunities")
 	private boolean signedInToOpportunities;
+
+	@SerializedName("enlauSource")
 	private boolean enlauSource;
+
+	@SerializedName("fake")
 	private boolean fake;
+
+	@SerializedName("appContactsImported")
 	private boolean appContactsImported;
+
+	@SerializedName("contactsImported")
 	private boolean contactsImported;
 
 	public void setBenefits(boolean benefits){
@@ -155,6 +193,7 @@ public class Flags{
 		return contactsImported;
 	}
 
+	@NotNull
 	@Override
  	public String toString(){
 		return 

@@ -1,17 +1,45 @@
 package com.cyberfanta.torre_co_challenge_app.models.job;
 
+import com.google.gson.annotations.SerializedName;
+
+import org.jetbrains.annotations.NotNull;
+
 public class Person{
+
+	@SerializedName("professionalHeadline")
 	private String professionalHeadline;
+
+	@SerializedName("hasEmail")
 	private boolean hasEmail;
+
+	@SerializedName("name")
 	private String name;
+
+	@SerializedName("verified")
 	private boolean verified;
+
+	@SerializedName("flags")
 	private Flags flags;
-	private int weight;
+
+	@SerializedName("weight")
+	private float weight;
+
+	@SerializedName("hasBio")
 	private boolean hasBio;
+
+	@SerializedName("id")
 	private String id;
+
+	@SerializedName("pictureThumbnail")
 	private String pictureThumbnail;
+
+	@SerializedName("picture")
 	private String picture;
+
+	@SerializedName("subjectId")
 	private int subjectId;
+
+	@SerializedName("username")
 	private String username;
 
 	public void setProfessionalHeadline(String professionalHeadline){
@@ -54,11 +82,11 @@ public class Person{
 		return flags;
 	}
 
-	public void setWeight(int weight){
+	public void setWeight(float weight){
 		this.weight = weight;
 	}
 
-	public int getWeight(){
+	public float getWeight(){
 		return weight;
 	}
 
@@ -110,6 +138,7 @@ public class Person{
 		return username;
 	}
 
+	@NotNull
 	@Override
  	public String toString(){
 		return 

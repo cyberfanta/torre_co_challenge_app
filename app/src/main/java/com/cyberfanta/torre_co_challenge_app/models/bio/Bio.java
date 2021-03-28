@@ -1,21 +1,52 @@
 package com.cyberfanta.torre_co_challenge_app.models.bio;
 
 import java.util.List;
+import com.google.gson.annotations.SerializedName;
+
+import org.jetbrains.annotations.NotNull;
 
 public class Bio{
+
+	@SerializedName("projects")
 	private List<ProjectsItem> projects;
+
+	@SerializedName("education")
 	private List<EducationItem> education;
+
+	@SerializedName("languages")
 	private List<LanguagesItem> languages;
+
+	@SerializedName("jobs")
 	private List<JobsItem> jobs;
+
+	@SerializedName("experiences")
 	private List<ExperiencesItem> experiences;
+
+	@SerializedName("opportunities")
 	private List<OpportunitiesItem> opportunities;
+
+	@SerializedName("stats")
 	private Stats stats;
+
+	@SerializedName("person")
 	private Person person;
+
+	@SerializedName("strengths")
 	private List<StrengthsItem> strengths;
+
+	@SerializedName("awards")
 	private List<Object> awards;
+
+	@SerializedName("professionalCultureGenomeResults")
 	private ProfessionalCultureGenomeResults professionalCultureGenomeResults;
+
+	@SerializedName("personalityTraitsResults")
 	private PersonalityTraitsResults personalityTraitsResults;
+
+	@SerializedName("interests")
 	private List<InterestsItem> interests;
+
+	@SerializedName("publications")
 	private List<PublicationsItem> publications;
 
 	public void setProjects(List<ProjectsItem> projects){
@@ -130,6 +161,7 @@ public class Bio{
 		return publications;
 	}
 
+	@NotNull
 	@Override
  	public String toString(){
 		return 

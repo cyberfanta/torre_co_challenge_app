@@ -4,16 +4,13 @@ import com.google.gson.annotations.SerializedName;
 
 import org.jetbrains.annotations.NotNull;
 
-public class Identifier{
+public class ExperienceRequirements{
 
 	@SerializedName("@type")
 	private String type;
 
-	@SerializedName("name")
-	private String name;
-
-	@SerializedName("value")
-	private String value;
+	@SerializedName("monthsOfExperience")
+	private int monthsOfExperience;
 
 	public void setType(String type){
 		this.type = type;
@@ -23,30 +20,21 @@ public class Identifier{
 		return type;
 	}
 
-	public void setName(String name){
-		this.name = name;
+	public void setMonthsOfExperience(int monthsOfExperience){
+		this.monthsOfExperience = monthsOfExperience;
 	}
 
-	public String getName(){
-		return name;
-	}
-
-	public void setValue(String value){
-		this.value = value;
-	}
-
-	public String getValue(){
-		return value;
+	public int getMonthsOfExperience(){
+		return monthsOfExperience;
 	}
 
 	@NotNull
 	@Override
  	public String toString(){
 		return 
-			"Identifier{" + 
+			"ExperienceRequirements{" + 
 			"@type = '" + type + '\'' + 
-			",name = '" + name + '\'' + 
-			",value = '" + value + '\'' + 
+			",monthsOfExperience = '" + monthsOfExperience + '\'' + 
 			"}";
 		}
 }

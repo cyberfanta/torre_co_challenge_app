@@ -1,6 +1,12 @@
 package com.cyberfanta.torre_co_challenge_app.models.job;
 
+import com.google.gson.annotations.SerializedName;
+
+import org.jetbrains.annotations.NotNull;
+
 public class Stats{
+
+	@SerializedName("finishedApplications")
 	private int finishedApplications;
 
 	public void setFinishedApplications(int finishedApplications){
@@ -11,6 +17,7 @@ public class Stats{
 		return finishedApplications;
 	}
 
+	@NotNull
 	@Override
  	public String toString(){
 		return 

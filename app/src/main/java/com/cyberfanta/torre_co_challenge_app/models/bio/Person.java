@@ -1,29 +1,76 @@
 package com.cyberfanta.torre_co_challenge_app.models.bio;
 
 import java.util.List;
+import com.google.gson.annotations.SerializedName;
+
+import org.jetbrains.annotations.NotNull;
 
 public class Person{
+
+	@SerializedName("professionalHeadline")
 	private String professionalHeadline;
+
+	@SerializedName("completion")
 	private int completion;
+
+	@SerializedName("showPhone")
 	private boolean showPhone;
+
+	@SerializedName("created")
 	private String created;
+
+	@SerializedName("verified")
 	private boolean verified;
+
+	@SerializedName("flags")
 	private Flags flags;
+
+	@SerializedName("weight")
 	private int weight;
+
+	@SerializedName("locale")
 	private String locale;
+
+	@SerializedName("subjectId")
 	private int subjectId;
+
+	@SerializedName("picture")
 	private String picture;
+
+	@SerializedName("hasEmail")
 	private boolean hasEmail;
+
+	@SerializedName("isTest")
 	private boolean isTest;
+
+	@SerializedName("name")
 	private String name;
+
+	@SerializedName("links")
 	private List<LinksItem> links;
+
+	@SerializedName("location")
 	private Location location;
+
+	@SerializedName("theme")
 	private String theme;
+
+	@SerializedName("id")
 	private String id;
+
+	@SerializedName("pictureThumbnail")
 	private String pictureThumbnail;
+
+	@SerializedName("claimant")
 	private boolean claimant;
+
+	@SerializedName("summaryOfBio")
 	private String summaryOfBio;
+
+	@SerializedName("weightGraph")
 	private String weightGraph;
+
+	@SerializedName("publicId")
 	private String publicId;
 
 	public void setProfessionalHeadline(String professionalHeadline){
@@ -202,6 +249,7 @@ public class Person{
 		return publicId;
 	}
 
+	@NotNull
 	@Override
  	public String toString(){
 		return 

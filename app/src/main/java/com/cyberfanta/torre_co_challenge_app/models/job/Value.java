@@ -1,9 +1,21 @@
 package com.cyberfanta.torre_co_challenge_app.models.job;
 
+import com.google.gson.annotations.SerializedName;
+
+import org.jetbrains.annotations.NotNull;
+
 public class Value{
+
+	@SerializedName("minValue")
 	private int minValue;
+
+	@SerializedName("@type")
 	private String type;
+
+	@SerializedName("maxValue")
 	private int maxValue;
+
+	@SerializedName("unitText")
 	private String unitText;
 
 	public void setMinValue(int minValue){
@@ -38,6 +50,7 @@ public class Value{
 		return unitText;
 	}
 
+	@NotNull
 	@Override
  	public String toString(){
 		return 

@@ -1,11 +1,27 @@
 package com.cyberfanta.torre_co_challenge_app.models.bio;
 
+import com.google.gson.annotations.SerializedName;
+
+import org.jetbrains.annotations.NotNull;
+
 public class Location{
+
+	@SerializedName("country")
 	private String country;
+
+	@SerializedName("timezoneOffSet")
 	private int timezoneOffSet;
+
+	@SerializedName("timezone")
 	private String timezone;
+
+	@SerializedName("latitude")
 	private double latitude;
+
+	@SerializedName("name")
 	private String name;
+
+	@SerializedName("longitude")
 	private double longitude;
 
 	public void setCountry(String country){
@@ -56,6 +72,7 @@ public class Location{
 		return longitude;
 	}
 
+	@NotNull
 	@Override
  	public String toString(){
 		return 

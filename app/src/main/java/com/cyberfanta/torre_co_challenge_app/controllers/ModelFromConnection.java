@@ -1,21 +1,22 @@
 package com.cyberfanta.torre_co_challenge_app.controllers;
 
-import android.util.Log;
-
 import com.cyberfanta.torre_co_challenge_app.exceptions.ConnectionException;
+import com.google.gson.Gson;
 
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Vector;
 
 public class ModelFromConnection {
+    private final String TAG = "ModelFromConnection";
+
+    private final ConnectionToApi connectionToApi = new ConnectionToApi();
+    private final Gson gson = new Gson();
+
+    public <T> T getObject(Class<T> type, String url, String request_type) throws ConnectionException {
+        String string = connectionToApi.getJson(url, request_type);
+        return gson.fromJson(string, type);
+    }
 
 
-
-
-
-
-//    public String getJson (String url) throws ConnectionException {
+//    {
 //
 //        //Json Root
 //        JsonFactory factory = new JsonFactory();

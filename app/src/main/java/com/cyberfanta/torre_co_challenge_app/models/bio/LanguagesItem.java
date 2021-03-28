@@ -1,8 +1,18 @@
 package com.cyberfanta.torre_co_challenge_app.models.bio;
 
+import com.google.gson.annotations.SerializedName;
+
+import org.jetbrains.annotations.NotNull;
+
 public class LanguagesItem{
+
+	@SerializedName("code")
 	private String code;
+
+	@SerializedName("fluency")
 	private String fluency;
+
+	@SerializedName("language")
 	private String language;
 
 	public void setCode(String code){
@@ -29,6 +39,7 @@ public class LanguagesItem{
 		return language;
 	}
 
+	@NotNull
 	@Override
  	public String toString(){
 		return 

@@ -1,12 +1,30 @@
 package com.cyberfanta.torre_co_challenge_app.models.job;
 
+import com.google.gson.annotations.SerializedName;
+
+import org.jetbrains.annotations.NotNull;
+
 public class MembersItem{
+
+	@SerializedName("visible")
 	private boolean visible;
+
+	@SerializedName("manager")
 	private boolean manager;
+
+	@SerializedName("person")
 	private Person person;
+
+	@SerializedName("member")
 	private boolean member;
+
+	@SerializedName("id")
 	private String id;
+
+	@SerializedName("poster")
 	private boolean poster;
+
+	@SerializedName("status")
 	private String status;
 
 	public void setVisible(boolean visible){
@@ -65,6 +83,7 @@ public class MembersItem{
 		return status;
 	}
 
+	@NotNull
 	@Override
  	public String toString(){
 		return 

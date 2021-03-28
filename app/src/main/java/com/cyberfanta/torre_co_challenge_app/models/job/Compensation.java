@@ -1,12 +1,30 @@
 package com.cyberfanta.torre_co_challenge_app.models.job;
 
+import com.google.gson.annotations.SerializedName;
+
+import org.jetbrains.annotations.NotNull;
+
 public class Compensation{
+
+	@SerializedName("minAmount")
 	private int minAmount;
+
+	@SerializedName("code")
 	private String code;
+
+	@SerializedName("visible")
 	private boolean visible;
+
+	@SerializedName("estimate")
 	private boolean estimate;
+
+	@SerializedName("periodicity")
 	private String periodicity;
+
+	@SerializedName("currency")
 	private String currency;
+
+	@SerializedName("maxAmount")
 	private int maxAmount;
 
 	public void setMinAmount(int minAmount){
@@ -65,6 +83,7 @@ public class Compensation{
 		return maxAmount;
 	}
 
+	@NotNull
 	@Override
  	public String toString(){
 		return 

@@ -1,9 +1,21 @@
 package com.cyberfanta.torre_co_challenge_app.models.job;
 
+import com.google.gson.annotations.SerializedName;
+
+import org.jetbrains.annotations.NotNull;
+
 public class OrganizationsItem{
+
+	@SerializedName("size")
 	private int size;
+
+	@SerializedName("name")
 	private String name;
+
+	@SerializedName("id")
 	private int id;
+
+	@SerializedName("picture")
 	private String picture;
 
 	public void setSize(int size){
@@ -38,6 +50,7 @@ public class OrganizationsItem{
 		return picture;
 	}
 
+	@NotNull
 	@Override
  	public String toString(){
 		return 

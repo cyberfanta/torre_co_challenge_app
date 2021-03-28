@@ -1,8 +1,18 @@
 package com.cyberfanta.torre_co_challenge_app.models.bio;
 
+import com.google.gson.annotations.SerializedName;
+
+import org.jetbrains.annotations.NotNull;
+
 public class LinksItem{
+
+	@SerializedName("address")
 	private String address;
+
+	@SerializedName("name")
 	private String name;
+
+	@SerializedName("id")
 	private String id;
 
 	public void setAddress(String address){
@@ -29,6 +39,7 @@ public class LinksItem{
 		return id;
 	}
 
+	@NotNull
 	@Override
  	public String toString(){
 		return 
