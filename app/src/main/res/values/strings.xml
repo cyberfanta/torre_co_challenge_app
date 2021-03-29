@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">torre_co_challenge_app</string>
+    <string name="app_name">Torre.co Challenge App</string>
+
+    <string name="default_content_description">default_content_description</string>
+
+    <string name="jobs">Jobs</string>
+    <string name="bios">Bios</string>
+
 </resources>

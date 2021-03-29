@@ -1,10 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+<!--    <color name="purple_200">#FFBB86FC</color>-->
+<!--    <color name="purple_500">#FF6200EE</color>-->
+<!--    <color name="purple_700">#FF3700B3</color>-->
+<!--    <color name="teal_200">#FF03DAC5</color>-->
+<!--    <color name="teal_700">#FF018786</color>-->
+<!--    <color name="black">#FF000000</color>-->
+<!--    <color name="white">#FFFFFFFF</color>-->
+
+    <color name="colorPrimary">#B6B6A4</color>
+    <color name="colorPrimaryVariant">#878777</color>
+    <color name="colorOnPrimary">#C4C4C4</color>
+
+    <color name="colorSecondary">#FBEA1D</color>
+    <color name="colorSecondaryVariant">#FBEF69</color>
+    <color name="colorOnSecondary">#CDDC39</color>
+
+    <color name="Green">#CDDC39</color>
+    <color name="White_Soft">#F3F3F3</color>
+    <color name="Black_Soft">#27292D</color>
+    <color name="Black">#000000</color>
+    <color name="Yellow">#FBEA1D</color>
+    <color name="Orange">#E9A013</color>
+    <color name="Red">#C91212</color>
+    <color name="Gray_Soft">#CFCFCF</color>
+    <color name="White_Strong">#F9F9F9</color>
+    <color name="Gray_Dark_Stroke">#5F5F5F</color>
+    <color name="Yellow_Light">#FBEF69</color>
+    <color name="Yellow_Dark_2">#7A710F</color>
+    <color name="Yellow_Dark_1">#7A7433</color>
+    <color name="Yellow_Dark">#C7B818</color>
+
+
 </resources>
