@@ -1,5 +1,7 @@
 package com.cyberfanta.torre_co_challenge_app.models.opportunities;
 
+import org.jetbrains.annotations.NotNull;
+
 public class Opportunity{
 	private double completion;
 
@@ -11,7 +13,8 @@ public class Opportunity{
 		return completion;
 	}
 
-	@Override
+	@NotNull
+    @Override
  	public String toString(){
 		return 
 			"Opportunity{" + 

@@ -1,5 +1,7 @@
 package com.cyberfanta.torre_co_challenge_app.models.peoples;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.List;
 
 public class Ranker{
@@ -40,7 +42,8 @@ public class Ranker{
 		return rank;
 	}
 
-	@Override
+	@NotNull
+    @Override
  	public String toString(){
 		return 
 			"Ranker{" + 

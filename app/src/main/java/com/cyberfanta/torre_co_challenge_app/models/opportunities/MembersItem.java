@@ -1,5 +1,7 @@
 package com.cyberfanta.torre_co_challenge_app.models.opportunities;
 
+import org.jetbrains.annotations.NotNull;
+
 public class MembersItem{
 	private String professionalHeadline;
 	private boolean manager;
@@ -83,7 +85,8 @@ public class MembersItem{
 		return username;
 	}
 
-	@Override
+	@NotNull
+    @Override
  	public String toString(){
 		return 
 			"MembersItem{" + 

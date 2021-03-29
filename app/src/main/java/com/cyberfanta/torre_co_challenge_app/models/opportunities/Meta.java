@@ -1,5 +1,7 @@
 package com.cyberfanta.torre_co_challenge_app.models.opportunities;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.List;
 
 public class Meta{
@@ -40,7 +42,8 @@ public class Meta{
 		return rank;
 	}
 
-	@Override
+	@NotNull
+    @Override
  	public String toString(){
 		return 
 			"Meta{" + 

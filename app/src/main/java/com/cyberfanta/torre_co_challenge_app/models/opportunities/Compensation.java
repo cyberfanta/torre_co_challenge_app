@@ -1,5 +1,7 @@
 package com.cyberfanta.torre_co_challenge_app.models.opportunities;
 
+import org.jetbrains.annotations.NotNull;
+
 public class Compensation{
 	private boolean visible;
 	private Data data;
@@ -20,7 +22,8 @@ public class Compensation{
 		return data;
 	}
 
-	@Override
+	@NotNull
+    @Override
  	public String toString(){
 		return 
 			"Compensation{" + 

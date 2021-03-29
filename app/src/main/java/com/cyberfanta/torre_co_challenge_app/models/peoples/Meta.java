@@ -1,5 +1,7 @@
 package com.cyberfanta.torre_co_challenge_app.models.peoples;
 
+import org.jetbrains.annotations.NotNull;
+
 public class Meta{
 	private Object filter;
 	private Ranker ranker;
@@ -20,7 +22,8 @@ public class Meta{
 		return ranker;
 	}
 
-	@Override
+	@NotNull
+    @Override
  	public String toString(){
 		return 
 			"Meta{" + 

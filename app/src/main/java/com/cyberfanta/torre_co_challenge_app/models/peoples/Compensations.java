@@ -1,5 +1,7 @@
 package com.cyberfanta.torre_co_challenge_app.models.peoples;
 
+import org.jetbrains.annotations.NotNull;
+
 public class Compensations{
 	private Intern intern;
 	private Employee employee;
@@ -29,7 +31,8 @@ public class Compensations{
 		return freelancer;
 	}
 
-	@Override
+	@NotNull
+    @Override
  	public String toString(){
 		return 
 			"Compensations{" + 

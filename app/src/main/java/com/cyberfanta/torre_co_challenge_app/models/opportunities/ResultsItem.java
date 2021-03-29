@@ -1,5 +1,7 @@
 package com.cyberfanta.torre_co_challenge_app.models.opportunities;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.List;
 
 public class ResultsItem{
@@ -148,7 +150,8 @@ public class ResultsItem{
 		return status;
 	}
 
-	@Override
+	@NotNull
+    @Override
  	public String toString(){
 		return 
 			"ResultsItem{" + 

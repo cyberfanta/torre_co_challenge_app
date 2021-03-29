@@ -1,5 +1,7 @@
 package com.cyberfanta.torre_co_challenge_app.models.peoples;
 
+import org.jetbrains.annotations.NotNull;
+
 public class Input{
 	private Object criteria;
 	private Person person;
@@ -20,7 +22,8 @@ public class Input{
 		return person;
 	}
 
-	@Override
+	@NotNull
+    @Override
  	public String toString(){
 		return 
 			"Input{" + 

@@ -1,5 +1,7 @@
 package com.cyberfanta.torre_co_challenge_app.models.opportunities;
 
+import org.jetbrains.annotations.NotNull;
+
 public class Input{
 	private Object criteria;
 	private Opportunity opportunity;
@@ -20,7 +22,8 @@ public class Input{
 		return opportunity;
 	}
 
-	@Override
+	@NotNull
+    @Override
  	public String toString(){
 		return 
 			"Input{" + 

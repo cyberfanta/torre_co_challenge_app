@@ -1,5 +1,7 @@
 package com.cyberfanta.torre_co_challenge_app.models.opportunities;
 
+import org.jetbrains.annotations.NotNull;
+
 public class SkillsItem{
 	private String name;
 	private String experience;
@@ -20,7 +22,8 @@ public class SkillsItem{
 		return experience;
 	}
 
-	@Override
+	@NotNull
+    @Override
  	public String toString(){
 		return 
 			"SkillsItem{" + 

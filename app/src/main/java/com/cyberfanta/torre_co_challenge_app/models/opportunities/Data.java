@@ -1,5 +1,7 @@
 package com.cyberfanta.torre_co_challenge_app.models.opportunities;
 
+import org.jetbrains.annotations.NotNull;
+
 public class Data{
 	private double minAmount;
 	private String code;
@@ -47,7 +49,8 @@ public class Data{
 		return maxAmount;
 	}
 
-	@Override
+	@NotNull
+    @Override
  	public String toString(){
 		return 
 			"Data{" + 

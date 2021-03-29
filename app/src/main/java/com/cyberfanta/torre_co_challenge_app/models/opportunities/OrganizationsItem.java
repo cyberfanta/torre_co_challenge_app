@@ -1,5 +1,7 @@
 package com.cyberfanta.torre_co_challenge_app.models.opportunities;
 
+import org.jetbrains.annotations.NotNull;
+
 public class OrganizationsItem{
 	private String name;
 	private int id;
@@ -29,7 +31,8 @@ public class OrganizationsItem{
 		return picture;
 	}
 
-	@Override
+	@NotNull
+    @Override
  	public String toString(){
 		return 
 			"OrganizationsItem{" + 

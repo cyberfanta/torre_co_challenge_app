@@ -1,5 +1,7 @@
 package com.cyberfanta.torre_co_challenge_app.models.peoples;
 
+import org.jetbrains.annotations.NotNull;
+
 public class Person{
 	private double grammar;
 	private double completion;
@@ -29,7 +31,8 @@ public class Person{
 		return weight;
 	}
 
-	@Override
+	@NotNull
+    @Override
  	public String toString(){
 		return 
 			"Person{" + 

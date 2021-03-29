@@ -1,5 +1,7 @@
 package com.cyberfanta.torre_co_challenge_app.models.opportunities;
 
+import org.jetbrains.annotations.NotNull;
+
 public class AndItem{
 	private Input input;
 	private double score;
@@ -38,7 +40,8 @@ public class AndItem{
 		return id;
 	}
 
-	@Override
+	@NotNull
+    @Override
  	public String toString(){
 		return 
 			"AndItem{" + 

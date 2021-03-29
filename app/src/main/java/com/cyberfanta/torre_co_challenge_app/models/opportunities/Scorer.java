@@ -1,5 +1,7 @@
 package com.cyberfanta.torre_co_challenge_app.models.opportunities;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.List;
 
 public class Scorer{
@@ -31,7 +33,8 @@ public class Scorer{
 		return and;
 	}
 
-	@Override
+	@NotNull
+    @Override
  	public String toString(){
 		return 
 			"Scorer{" + 

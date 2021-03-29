@@ -1,5 +1,7 @@
 package com.cyberfanta.torre_co_challenge_app.models.opportunities;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.List;
 
 public class Context{
@@ -13,7 +15,8 @@ public class Context{
 		return signaled;
 	}
 
-	@Override
+	@NotNull
+    @Override
  	public String toString(){
 		return 
 			"Context{" + 

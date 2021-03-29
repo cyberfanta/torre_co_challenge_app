@@ -1,5 +1,7 @@
 package com.cyberfanta.torre_co_challenge_app.models.peoples;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.List;
 
 public class ResultsItem{
@@ -130,7 +132,8 @@ public class ResultsItem{
 		return username;
 	}
 
-	@Override
+	@NotNull
+    @Override
  	public String toString(){
 		return 
 			"ResultsItem{" + 
