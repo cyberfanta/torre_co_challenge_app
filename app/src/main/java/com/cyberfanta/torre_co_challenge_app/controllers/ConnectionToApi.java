@@ -34,7 +34,7 @@ public class ConnectionToApi {
                     .build();
         } else if (request_type.toLowerCase().equals("post")) {
             RequestBody requestBody = new FormBody.Builder()
-//                    .add("size", "20") todo: for future develop, include the request body as optional
+                    .add("size", "20") //todo: for future develop, make this variable
                     .build();
             request = new Request.Builder()
                     .url(url)
