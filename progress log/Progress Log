@@ -43,8 +43,6 @@ Pendiente:
 
 
 
-
-
 Fecha: 28-03-2021
 Hora de inicio: 10:00am
 
@@ -62,3 +60,18 @@ Hora de inicio: 10:00am
 9:40pm	Veo por primera vez el prototipo en Figma de mi interfáz.
 10:00pm	Evaluando las iteraciones con el prototipo, me doy cuenta que necesito un boton para regresar cuando entras al detalle del trabajo. --Decision: En vista del tiempo, voy a reutilizar este diseño para cuando toque desplegar a los usuarios. De esa manera ya puedo volver a trabajar con el Android Studio.
 10:20pm	Se ocorrieron otros cambios al prototipo para darle más consistencia al diseño visual. Ahora si al Android Studio.
+2:20am	Finalizo el día. La implementación de mi CardView está completa.
+
+Logros:
+- Diagramación de Clases para validar los posibles datos a mostrar en la UI (Hecho)
+- Creación de Paleta de Colores en función de los colores de torre.co (Hecho)
+- Escanear o fotografiar mi diseño conceptual (Hecho)
+- Diagramación de la interfaz usando Figma (Hecho)
+
+Pendiente:
+- Implementación del proyecto con Android Studio (En progreso)
+- Entrega del proyecto, subir y preparar los entregables
+
+
+
+
