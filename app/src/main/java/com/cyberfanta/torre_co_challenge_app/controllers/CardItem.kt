@@ -2,7 +2,7 @@ package com.cyberfanta.torre_co_challenge_app.controllers
 
 import android.graphics.Bitmap
 
-class CardBuilder(
+class CardItem(
         private var name: String,
         private var highligth: String,
         private var time: String,
