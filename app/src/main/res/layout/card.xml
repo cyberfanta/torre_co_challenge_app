@@ -22,13 +22,12 @@
 
         <TextView
             android:id="@+id/name"
+            style="@style/text_black_shadow_white_10"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginStart="2dp"
             android:gravity="center"
-            android:shadowColor="@color/Black"
-            android:shadowRadius="25"
-            android:text="Android Developer"
+            android:text="@string/Card_name"
             android:textColor="@color/White_Strong"
             android:textSize="16sp"
             android:textStyle="bold"
@@ -44,7 +43,7 @@
             android:gravity="center"
             android:shadowColor="@color/Black"
             android:shadowRadius="25"
-            android:text="1500$ - 3500$ Monthly"
+            android:text="@string/Card_highligth"
             android:textColor="@color/Yellow_Light"
             android:textSize="14sp"
             android:textStyle="bold"
@@ -62,7 +61,7 @@
             app:srcCompat="@drawable/ic_subtitle" />
 
         <ImageView
-            android:id="@+id/remote"
+            android:id="@+id/remote_background"
             android:layout_width="0dp"
             android:layout_height="27dp"
             android:contentDescription="@string/default_content_description"
@@ -84,7 +83,7 @@
             android:shadowDx="0"
             android:shadowDy="0"
             android:shadowRadius="5"
-            android:text="Partial Time"
+            android:text="@string/Card_time"
             android:textColor="@color/Black_Soft"
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="@+id/time_background"
@@ -93,7 +92,7 @@
             app:layout_constraintTop_toTopOf="@+id/time_background" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/remote"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginStart="2dp"
@@ -103,13 +102,13 @@
             android:gravity="center"
             android:shadowColor="@color/White_Soft"
             android:shadowRadius="5"
-            android:text="Remote"
+            android:text="@string/Card_remote"
             android:textColor="@color/Black_Soft"
             android:textSize="12sp"
-            app:layout_constraintBottom_toBottomOf="@+id/remote"
-            app:layout_constraintEnd_toEndOf="@+id/remote"
-            app:layout_constraintStart_toStartOf="@+id/remote"
-            app:layout_constraintTop_toTopOf="@+id/remote" />
+            app:layout_constraintBottom_toBottomOf="@+id/remote_background"
+            app:layout_constraintEnd_toEndOf="@+id/remote_background"
+            app:layout_constraintStart_toStartOf="@+id/remote_background"
+            app:layout_constraintTop_toTopOf="@+id/remote_background" />
 
         <TableLayout
             android:layout_width="0dp"
@@ -142,10 +141,13 @@
 
                 <TextView
                     android:id="@+id/skill1"
+                    style="@style/text_black_shadow_white_3"
                     android:layout_width="0dp"
-                    android:layout_height="32dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="3.5"
-                    android:text="@string/default_content_description" />
+                    android:maxHeight="32dp"
+                    android:text="@string/Card_skill"
+                    android:textSize="14sp" />
 
                 <View
                     android:id="@+id/view3"
@@ -155,10 +157,13 @@
 
                 <TextView
                     android:id="@+id/skill2"
+                    style="@style/text_black_shadow_white_3"
                     android:layout_width="0dp"
-                    android:layout_height="32dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="3.5"
-                    android:text="@string/default_content_description" />
+                    android:maxHeight="32dp"
+                    android:text="@string/Card_skill"
+                    android:textSize="14sp" />
 
             </TableRow>
 
@@ -185,10 +190,13 @@
 
                 <TextView
                     android:id="@+id/skill3"
+                    style="@style/text_black_shadow_white_3"
                     android:layout_width="0dp"
-                    android:layout_height="32dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="3.5"
-                    android:text="@string/default_content_description" />
+                    android:maxHeight="32dp"
+                    android:text="@string/Card_skill"
+                    android:textSize="14sp" />
 
                 <View
                     android:id="@+id/view7"
@@ -198,10 +206,13 @@
 
                 <TextView
                     android:id="@+id/skill4"
+                    style="@style/text_black_shadow_white_3"
                     android:layout_width="0dp"
-                    android:layout_height="32dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="3.5"
-                    android:text="@string/default_content_description" />
+                    android:maxHeight="32dp"
+                    android:text="@string/Card_skill"
+                    android:textSize="14sp" />
 
             </TableRow>
 
@@ -228,10 +239,13 @@
 
                 <TextView
                     android:id="@+id/skill5"
+                    style="@style/text_black_shadow_white_3"
                     android:layout_width="0dp"
-                    android:layout_height="32dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="3.5"
-                    android:text="@string/default_content_description" />
+                    android:maxHeight="32dp"
+                    android:text="@string/Card_skill"
+                    android:textSize="14sp" />
 
                 <View
                     android:id="@+id/view10"
@@ -241,10 +255,62 @@
 
                 <TextView
                     android:id="@+id/skill6"
+                    style="@style/text_black_shadow_white_3"
                     android:layout_width="0dp"
-                    android:layout_height="32dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="3.5"
-                    android:text="@string/default_content_description" />
+                    android:maxHeight="32dp"
+                    android:text="@string/Card_skill"
+                    android:textSize="14sp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <View
+                    android:id="@+id/view11"
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:weightSum="10">
+
+                <View
+                    android:id="@+id/view12"
+                    android:layout_width="0dp"
+                    android:layout_height="5dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/skill7"
+                    style="@style/text_black_shadow_white_3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3.5"
+                    android:maxHeight="32dp"
+                    android:text="@string/Card_skill"
+                    android:textSize="14sp" />
+
+                <View
+                    android:id="@+id/view13"
+                    android:layout_width="0dp"
+                    android:layout_height="5dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/skill8"
+                    style="@style/text_black_shadow_white_3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3.5"
+                    android:maxHeight="32dp"
+                    android:text="@string/Card_skill"
+                    android:textSize="14sp" />
 
             </TableRow>
 

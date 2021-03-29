@@ -7,4 +7,14 @@
     <string name="bios">Bios</string>
 
     <string name="searching_job">Searching Job</string>
+
+
+
+<!--    Card Example-->
+    <string name="Card_name">Android Developer</string>
+    <string name="Card_highligth">1500$ - 3500$ Monthly</string>
+    <string name="Card_time">Partial Time</string>
+    <string name="Card_remote">Remote</string>
+    <string name="Card_skill">Skill #?</string>
+
 </resources>

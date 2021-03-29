@@ -1,0 +1,105 @@
+package com.cyberfanta.torre_co_challenge_app.controllers
+
+import android.graphics.Bitmap
+import android.view.View
+import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
+import com.cyberfanta.torre_co_challenge_app.R
+
+class CardAdapter(): RecyclerView.Adapter<CardAdapter.CardViewHolder>(){
+
+    class CardViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
+        lateinit var image: ImageView
+        lateinit var name: TextView
+        lateinit var highligth: TextView
+        lateinit var time: TextView
+        lateinit var remote: TextView
+        lateinit var skill1: TextView
+        lateinit var skill2: TextView
+        lateinit var skill3: TextView
+        lateinit var skill4: TextView
+        lateinit var skill5: TextView
+        lateinit var skill6: TextView
+        lateinit var skill7: TextView
+        lateinit var skill8: TextView
+
+        fun CardViewHolder (itemView: View) {
+            image = itemView.findViewById<ImageView>(R.id.image)
+            name = itemView.findViewById<TextView>(R.id.name)
+            highligth = itemView.findViewById<TextView>(R.id.highligth)
+            time = itemView.findViewById<TextView>(R.id.time)
+            remote = itemView.findViewById<TextView>(R.id.remote)
+            skill1 = itemView.findViewById<TextView>(R.id.skill1)
+            skill2 = itemView.findViewById<TextView>(R.id.skill2)
+            skill3 = itemView.findViewById<TextView>(R.id.skill3)
+            skill4 = itemView.findViewById<TextView>(R.id.skill4)
+            skill5 = itemView.findViewById<TextView>(R.id.skill5)
+            skill6 = itemView.findViewById<TextView>(R.id.skill6)
+            skill7 = itemView.findViewById<TextView>(R.id.skill7)
+            skill8 = itemView.findViewById<TextView>(R.id.skill8)
+        }
+    }
+
+    /**
+     * Called when RecyclerView needs a new [CardViewHolder] of the given type to represent
+     * an item.
+     *
+     *
+     * This new ViewHolder should be constructed with a new View that can represent the items
+     * of the given type. You can either create a new View manually or inflate it from an XML
+     * layout file.
+     *
+     *
+     * The new ViewHolder will be used to display items of the adapter using
+     * [.onBindViewHolder]. Since it will be re-used to display
+     * different items in the data set, it is a good idea to cache references to sub views of
+     * the View to avoid unnecessary [View.findViewById] calls.
+     *
+     * @param parent The ViewGroup into which the new View will be added after it is bound to
+     * an adapter position.
+     * @param viewType The view type of the new View.
+     *
+     * @return A new ViewHolder that holds a View of the given view type.
+     * @see .getItemViewType
+     * @see .onBindViewHolder
+     */
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardViewHolder {
+        TODO("Not yet implemented")
+    }
+
+    /**
+     * Called by RecyclerView to display the data at the specified position. This method should
+     * update the contents of the [CardViewHolder.itemView] to reflect the item at the given
+     * position.
+     *
+     *
+     * Note that unlike [android.widget.ListView], RecyclerView will not call this method
+     * again if the position of the item changes in the data set unless the item itself is
+     * invalidated or the new position cannot be determined. For this reason, you should only
+     * use the `position` parameter while acquiring the related data item inside
+     * this method and should not keep a copy of it. If you need the position of an item later
+     * on (e.g. in a click listener), use [CardViewHolder.getAdapterPosition] which will
+     * have the updated adapter position.
+     *
+     * Override [.onBindViewHolder] instead if Adapter can
+     * handle efficient partial bind.
+     *
+     * @param holder The ViewHolder which should be updated to represent the contents of the
+     * item at the given position in the data set.
+     * @param position The position of the item within the adapter's data set.
+     */
+    override fun onBindViewHolder(holder: CardViewHolder, position: Int) {
+        TODO("Not yet implemented")
+    }
+
+    /**
+     * Returns the total number of items in the data set held by the adapter.
+     *
+     * @return The total number of items in this adapter.
+     */
+    override fun getItemCount(): Int {
+        TODO("Not yet implemented")
+    }
+}
