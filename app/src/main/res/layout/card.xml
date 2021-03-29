@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="170dp"
+    android:layout_height="240dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="5dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/ic_card"
+        android:padding="1dp">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:contentDescription="@string/default_content_description"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_card_image" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="2dp"
+            android:gravity="center"
+            android:shadowColor="@color/Black"
+            android:shadowRadius="25"
+            android:text="Android Developer"
+            android:textColor="@color/White_Strong"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/image"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/highligth"
+            android:layout_width="0dp"
+            android:layout_height="33dp"
+            android:gravity="center"
+            android:shadowColor="@color/Black"
+            android:shadowRadius="25"
+            android:text="1500$ - 3500$ Monthly"
+            android:textColor="@color/Yellow_Light"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/image" />
+
+        <ImageView
+            android:id="@+id/time_background"
+            android:layout_width="105dp"
+            android:layout_height="27dp"
+            android:contentDescription="@string/default_content_description"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/highligth"
+            app:srcCompat="@drawable/ic_subtitle" />
+
+        <ImageView
+            android:id="@+id/remote"
+            android:layout_width="0dp"
+            android:layout_height="27dp"
+            android:contentDescription="@string/default_content_description"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/time_background"
+            app:layout_constraintTop_toBottomOf="@+id/highligth"
+            app:srcCompat="@drawable/ic_subtitle" />
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginBottom="2dp"
+            android:gravity="center"
+            android:shadowColor="@color/White"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="5"
+            android:text="Partial Time"
+            android:textColor="@color/Black_Soft"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/time_background"
+            app:layout_constraintEnd_toEndOf="@+id/time_background"
+            app:layout_constraintStart_toStartOf="@+id/time_background"
+            app:layout_constraintTop_toTopOf="@+id/time_background" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginBottom="2dp"
+            android:gravity="center"
+            android:shadowColor="@color/White_Soft"
+            android:shadowRadius="5"
+            android:text="Remote"
+            android:textColor="@color/Black_Soft"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/remote"
+            app:layout_constraintEnd_toEndOf="@+id/remote"
+            app:layout_constraintStart_toStartOf="@+id/remote"
+            app:layout_constraintTop_toTopOf="@+id/remote" />
+
+        <TableLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/time_background">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <View
+                    android:id="@+id/view1"
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:weightSum="10">
+
+                <View
+                    android:id="@+id/view2"
+                    android:layout_width="0dp"
+                    android:layout_height="5dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/skill1"
+                    android:layout_width="0dp"
+                    android:layout_height="32dp"
+                    android:layout_weight="3.5"
+                    android:text="@string/default_content_description" />
+
+                <View
+                    android:id="@+id/view3"
+                    android:layout_width="0dp"
+                    android:layout_height="5dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/skill2"
+                    android:layout_width="0dp"
+                    android:layout_height="32dp"
+                    android:layout_weight="3.5"
+                    android:text="@string/default_content_description" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <View
+                    android:id="@+id/view4"
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:weightSum="10">
+
+                <View
+                    android:id="@+id/view5"
+                    android:layout_width="0dp"
+                    android:layout_height="5dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/skill3"
+                    android:layout_width="0dp"
+                    android:layout_height="32dp"
+                    android:layout_weight="3.5"
+                    android:text="@string/default_content_description" />
+
+                <View
+                    android:id="@+id/view7"
+                    android:layout_width="0dp"
+                    android:layout_height="5dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/skill4"
+                    android:layout_width="0dp"
+                    android:layout_height="32dp"
+                    android:layout_weight="3.5"
+                    android:text="@string/default_content_description" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <View
+                    android:id="@+id/view8"
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:weightSum="10">
+
+                <View
+                    android:id="@+id/view9"
+                    android:layout_width="0dp"
+                    android:layout_height="5dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/skill5"
+                    android:layout_width="0dp"
+                    android:layout_height="32dp"
+                    android:layout_weight="3.5"
+                    android:text="@string/default_content_description" />
+
+                <View
+                    android:id="@+id/view10"
+                    android:layout_width="0dp"
+                    android:layout_height="5dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/skill6"
+                    android:layout_width="0dp"
+                    android:layout_height="32dp"
+                    android:layout_weight="3.5"
+                    android:text="@string/default_content_description" />
+
+            </TableRow>
+
+        </TableLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
