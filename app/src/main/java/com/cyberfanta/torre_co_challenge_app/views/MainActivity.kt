@@ -25,6 +25,9 @@ internal class MainActivity : AppCompatActivity() {
 
     //    private var cardlist_Bios = ArrayList<CardItem>()
     private val currentTypeSearch = false //false = Jobs, true = Bios
+
+    private var objectRetrived: Any? = null
+
     private var modelFromConnection: ModelFromConnection? = null
     private lateinit var url: Array<String>
     private lateinit var adapter: RecyclerView.Adapter<CardViewHolder>
@@ -117,16 +120,16 @@ internal class MainActivity : AppCompatActivity() {
     private inner class readModelFromConnection : Runnable {
         override fun run() {
             val message = handler.obtainMessage()
-            var `object`: Any? = null
+//            var `object`: Any? = null
             if (currentTypeSearch) {
                 try {
 //                    object = modelFromConnection.getObject(Bio.class, url[0] + "julioleon2004", "get");
-                    `object` = modelFromConnection!!.getObject(Opportunities::class.java, url[3], "post")
+                    objectRetrived = modelFromConnection!!.getObject(Opportunities::class.java, url[3], "post") as Nothing?
                 } catch (e: ConnectionException) {
-                    message.obj = e
+                    message.obj = "Error"
                 }
             }
-            message.obj = `object`
+            message.obj = ""
             handler.sendMessageAtFrontOfQueue(message)
         }
     }
@@ -138,8 +141,8 @@ internal class MainActivity : AppCompatActivity() {
 //            if (message.obj.getClass().isInstance(Bio.class)){
 //
 //            } else
-            if (message.obj.javaClass.isInstance(Opportunities::class.java)) {
-                insertOpportunities(message.obj as Opportunities)
+            if (message.obj.equals("")) {
+                insertOpportunities(objectRetrived as Opportunities)
             } else {
                 Toast.makeText(this@MainActivity, "Error " + message.obj.toString(), Toast.LENGTH_SHORT).show()
             }
