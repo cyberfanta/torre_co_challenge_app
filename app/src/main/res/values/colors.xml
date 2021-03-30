@@ -33,5 +33,22 @@
     <color name="Yellow_Dark">#C7B818</color>
     <color name="Gray_Extra">#9E9E8E</color>
 
+    <color name="shadow_0_color_buttom">@color/colorShadowGrayScale4</color>
+    <color name="shadow_1_color_buttom">@color/colorShadowGrayScale3</color>
+    <color name="shadow_2_color_buttom">@color/colorShadowGrayScale2</color>
+    <color name="shadow_3_color_buttom">@color/colorShadowGrayScale1</color>
+
+    <color name="colorShadowGrayScale1">#40BEAC64</color>
+    <color name="colorShadowGrayScale2">#30C2B689</color>
+    <color name="colorShadowGrayScale3">#20C8C1A7</color>
+    <color name="colorShadowGrayScale4">#10D3D0C4</color>
+
+    <color name="soft_black_37">#cc464B56</color>
+    <color name="color_background_button">@color/colorSourceBase</color>
+    <color name="colorSourceBase">#E1CB74</color>
+    <color name="colorSource4Down">#E5DBB2</color>
+    <color name="color_strokes">@color/colorSource4Up</color>
+    <color name="colorSource4Up">#BFA53F</color>
+
 
 </resources>

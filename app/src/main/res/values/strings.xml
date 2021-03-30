@@ -10,11 +10,21 @@
 
 
 
-<!--    Card Example-->
+    <!--    Card Example-->
     <string name="Card_name">Android Developer</string>
     <string name="Card_highligth">1500$ - 3500$ Monthly</string>
     <string name="Card_time">Partial Time</string>
     <string name="Card_remote">Remote</string>
     <string name="Card_skill">Skill #?</string>
+
+    <!--    Menú-->
+    <string name="item_about">About</string>
+
+    <!--    Author-->
+    <string name="author_name_1" translatable="false">Julio César Alberto</string>
+    <string name="author_name_2" translatable="false">León Anhuamán</string>
+    <string name="author_profession" translatable="false">Android Developer - UI/UX Designer</string>
+    <string name="author_email" translatable="false">julioleon2004@gmail.com</string>
+    <string name="author_phone" translatable="false">+58 (424) 225.92.20</string>
 
 </resources>

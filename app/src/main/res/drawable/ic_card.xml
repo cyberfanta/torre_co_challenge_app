@@ -10,7 +10,7 @@
           android:color="@color/Black_Soft"
           />
       <corners
-          android:radius="5dp"
+          android:radius="10dp"
           />
     </shape>
   </item>

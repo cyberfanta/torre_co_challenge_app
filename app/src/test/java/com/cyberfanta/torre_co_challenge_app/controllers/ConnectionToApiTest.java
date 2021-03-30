@@ -26,7 +26,7 @@ public class ConnectionToApiTest extends TestCase {
 
     public void testGetJson_bio_ok() {
         try {
-            Assert.assertNotNull(connectionToApi.getJson(url[0].concat("julioleon2004"), "get"));
+            Assert.assertNotNull(connectionToApi.getJson(url[0].concat("julioleon2004")));
 //            answer = connectionToApi.getJson(url[0].concat("julioleon2004"), "get");
 //            Log.i(TAG, answer);
         } catch (ConnectionException e) {
@@ -36,7 +36,7 @@ public class ConnectionToApiTest extends TestCase {
 
     public void testGetJson_bio_not_ok() {
         try {
-            Assert.assertNull(connectionToApi.getJson(url[0].concat("bot123"), "get"));
+            Assert.assertNull(connectionToApi.getJson(url[0].concat("bot123")));
         } catch (ConnectionException e) {
             Assert.assertTrue(true);
         }
@@ -44,7 +44,7 @@ public class ConnectionToApiTest extends TestCase {
 
     public void testGetJson_job_ok() {
         try {
-            Assert.assertNotNull(connectionToApi.getJson(url[1].concat("jw0qXRdx"), "get"));
+            Assert.assertNotNull(connectionToApi.postJson(url[1].concat("jw0qXRdx"), 1));
         } catch (ConnectionException e) {
             Assert.fail();
         }
@@ -52,7 +52,7 @@ public class ConnectionToApiTest extends TestCase {
 
     public void testGetJson_job_not_ok() {
         try {
-            Assert.assertNull(connectionToApi.getJson(url[1].concat("jw0qXRdx1"), "get"));
+            Assert.assertNull(connectionToApi.postJson(url[1].concat("jw0qXRdx1"), 1));
         } catch (ConnectionException e) {
             Assert.assertTrue(true);
         }
@@ -60,7 +60,7 @@ public class ConnectionToApiTest extends TestCase {
 
     public void testGetJson_peoples_ok() {
         try {
-            Assert.assertNotNull(connectionToApi.getJson(url[2], "post"));
+            Assert.assertNotNull(connectionToApi.postJson(url[2], 1));
         } catch (ConnectionException e) {
             Assert.fail();
         }
@@ -68,7 +68,7 @@ public class ConnectionToApiTest extends TestCase {
 
     public void testGetJson_opportunities_ok() {
         try {
-            Assert.assertNotNull(connectionToApi.getJson(url[3], "post"));
+            Assert.assertNotNull(connectionToApi.postJson(url[3], 1));
         } catch (ConnectionException e) {
             Assert.fail();
         }

@@ -10,7 +10,7 @@ import com.cyberfanta.torre_co_challenge_app.R
 import com.cyberfanta.torre_co_challenge_app.controllers.CardAdapter.CardViewHolder
 import java.util.*
 
-class CardAdapter(private val cardList: ArrayList<CardItem>) : RecyclerView.Adapter<CardViewHolder>() {
+class CardAdapter(private val cardListOpportunities: ArrayList<CardItem>) : RecyclerView.Adapter<CardViewHolder>() {
     class CardViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var image: ImageView
         var name: TextView
@@ -93,20 +93,20 @@ class CardAdapter(private val cardList: ArrayList<CardItem>) : RecyclerView.Adap
      * @param position The position of the item within the adapter's data set.
      */
     override fun onBindViewHolder(holder: CardViewHolder, position: Int) {
-        val cardItem = cardList[position]
-        holder.image.setImageBitmap(cardItem.getImage())
-        holder.name.text = cardItem.getName()
-        holder.highligth.text = cardItem.getHighligth()
-        holder.time.text = cardItem.getTime()
-        holder.remote.text = cardItem.getRemote()
-        holder.skill1.text = cardItem.getSkill1()
-        holder.skill2.text = cardItem.getSkill2()
-        holder.skill3.text = cardItem.getSkill3()
-        holder.skill4.text = cardItem.getSkill4()
-        holder.skill5.text = cardItem.getSkill5()
-        holder.skill6.text = cardItem.getSkill6()
-        holder.skill7.text = cardItem.getSkill7()
-        holder.skill8.text = cardItem.getSkill8()
+        val cardItem = cardListOpportunities[position]
+        holder.image.setImageBitmap(cardItem.image)
+        holder.name.text = cardItem.name
+        holder.highligth.text = cardItem.highligth
+        holder.time.text = cardItem.time
+        holder.remote.text = cardItem.remote
+        holder.skill1.text = cardItem.skill1
+        holder.skill2.text = cardItem.skill2
+        holder.skill3.text = cardItem.skill3
+        holder.skill4.text = cardItem.skill4
+        holder.skill5.text = cardItem.skill5
+        holder.skill6.text = cardItem.skill6
+        holder.skill7.text = cardItem.skill7
+        holder.skill8.text = cardItem.skill8
     }
 
     /**
@@ -115,6 +115,6 @@ class CardAdapter(private val cardList: ArrayList<CardItem>) : RecyclerView.Adap
      * @return The total number of items in this adapter.
      */
     override fun getItemCount(): Int {
-        return cardList.size
+        return cardListOpportunities.size
     }
 }

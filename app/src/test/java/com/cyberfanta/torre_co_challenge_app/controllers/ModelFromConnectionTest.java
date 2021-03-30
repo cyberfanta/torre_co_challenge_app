@@ -31,7 +31,7 @@ public class ModelFromConnectionTest extends TestCase {
 
     public void testGetObject_bio() {
         try {
-            Assert.assertSame(modelFromConnection.getObject(Bio.class, url[0].concat("julioleon2004"), "get").getClass(), Bio.class);
+            Assert.assertSame(modelFromConnection.getObject(Bio.class, url[0].concat("julioleon2004")).getClass(), Bio.class);
         } catch (ConnectionException e) {
             Assert.fail();
         }
@@ -41,7 +41,7 @@ public class ModelFromConnectionTest extends TestCase {
         ConnectionToApi connectionToApi = new ConnectionToApi();
         String json="";
         try {
-            json = connectionToApi.getJson(url[0].concat("julioleon2004"), "get");
+            json = connectionToApi.getJson(url[0].concat("julioleon2004"));
         } catch (ConnectionException e) {
             e.printStackTrace();
         }
@@ -52,15 +52,15 @@ public class ModelFromConnectionTest extends TestCase {
 
     public void testGetObject_job() {
         try {
-            Assert.assertSame(modelFromConnection.getObject(Job.class, url[1].concat("jw0qXRdx"), "get").getClass(), Job.class);
+            Assert.assertSame(modelFromConnection.getObject(Job.class, url[1].concat("jw0qXRdx")).getClass(), Job.class);
         } catch (ConnectionException e) {
             Assert.fail();
         }
     }
 
-    public void testGetObject_people() {
+    public void testGetObject_peoples() {
         try {
-            Assert.assertSame(modelFromConnection.getObject(Peoples.class, url[2], "post").getClass(), Peoples.class);
+            Assert.assertSame(modelFromConnection.getObject(Peoples.class, url[2]).getClass(), Peoples.class);
         } catch (ConnectionException e) {
             Assert.fail();
         }
@@ -68,7 +68,7 @@ public class ModelFromConnectionTest extends TestCase {
 
     public void testGetObject_opportunities() {
         try {
-            Assert.assertSame(modelFromConnection.getObject(Opportunities.class, url[3], "post").getClass(), Opportunities.class);
+            Assert.assertSame(modelFromConnection.getObject(Opportunities.class, url[3]).getClass(), Opportunities.class);
         } catch (ConnectionException e) {
             Assert.fail();
         }

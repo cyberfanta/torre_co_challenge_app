@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="170dp"
-    android:layout_height="240dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardCornerRadius="5dp">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="10dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -11,36 +11,63 @@
         android:background="@drawable/ic_card"
         android:padding="1dp">
 
-        <ImageView
-            android:id="@+id/image"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:contentDescription="@string/default_content_description"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_card_image" />
-
-        <TextView
-            android:id="@+id/name"
-            style="@style/text_black_shadow_white_10"
-            android:layout_width="0dp"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginStart="2dp"
-            android:gravity="center"
-            android:padding="4dp"
-            android:text="@string/Card_name"
-            android:textColor="@color/White_Strong"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/image"
+            app:layout_constraintBottom_toTopOf="@+id/guideline3"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/image"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent=".35" />
+
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:contentDescription="@string/default_content_description"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/guideline4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_card_image" />
+
+            <TextView
+                android:id="@+id/name"
+                style="@style/text_black_shadow_white_10"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="2dp"
+                android:gravity="center"
+                android:padding="4dp"
+                android:text="@string/Card_name"
+                android:textColor="@color/White_Strong"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/guideline4"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".25" />
 
         <TextView
             android:id="@+id/highligth"
             android:layout_width="0dp"
-            android:layout_height="40dp"
+            android:layout_height="wrap_content"
             android:gravity="center"
             android:padding="4dp"
             android:shadowColor="@color/Black"
@@ -51,7 +78,7 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/image" />
+            app:layout_constraintTop_toBottomOf="@id/guideline3" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout"
@@ -66,7 +93,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:layout_constraintGuide_percent=".5"/>
+                app:layout_constraintGuide_percent=".5" />
 
             <ImageView
                 android:id="@+id/time_background"
@@ -84,6 +111,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
+                android:padding="4dp"
                 android:shadowColor="@color/White"
                 android:shadowDx="0"
                 android:shadowDy="0"
@@ -124,34 +152,29 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <TableLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
 
-            <TableRow
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/c1"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-                <View
-                    android:id="@+id/view1"
-                    android:layout_width="match_parent"
-                    android:layout_height="5dp" />
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:weightSum="10">
-
-                <View
-                    android:id="@+id/view2"
-                    android:layout_width="0dp"
-                    android:layout_height="5dp"
-                    android:layout_weight="1" />
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent=".5" />
 
                 <TextView
                     android:id="@+id/skill1"
@@ -159,15 +182,13 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="3.5"
-                    android:maxHeight="32dp"
+                    android:gravity="center"
                     android:text="@string/Card_skill"
-                    android:textSize="14sp" />
-
-                <View
-                    android:id="@+id/view3"
-                    android:layout_width="0dp"
-                    android:layout_height="5dp"
-                    android:layout_weight="1" />
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@id/guideline5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/skill2"
@@ -175,32 +196,31 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="3.5"
-                    android:maxHeight="32dp"
+                    android:gravity="center"
                     android:text="@string/Card_skill"
-                    android:textSize="14sp" />
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/guideline5"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            </TableRow>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <TableRow
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/c2"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/c1">
 
-                <View
-                    android:id="@+id/view4"
-                    android:layout_width="match_parent"
-                    android:layout_height="5dp" />
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:weightSum="10">
-
-                <View
-                    android:id="@+id/view5"
-                    android:layout_width="0dp"
-                    android:layout_height="5dp"
-                    android:layout_weight="1" />
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent=".5" />
 
                 <TextView
                     android:id="@+id/skill3"
@@ -208,15 +228,13 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="3.5"
-                    android:maxHeight="32dp"
+                    android:gravity="center"
                     android:text="@string/Card_skill"
-                    android:textSize="14sp" />
-
-                <View
-                    android:id="@+id/view7"
-                    android:layout_width="0dp"
-                    android:layout_height="5dp"
-                    android:layout_weight="1" />
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@id/guideline6"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/skill4"
@@ -224,32 +242,30 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="3.5"
-                    android:maxHeight="32dp"
+                    android:gravity="center"
                     android:text="@string/Card_skill"
-                    android:textSize="14sp" />
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/guideline6"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-            </TableRow>
-
-            <TableRow
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/c3"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/c2">
 
-                <View
-                    android:id="@+id/view8"
-                    android:layout_width="match_parent"
-                    android:layout_height="5dp" />
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:weightSum="10">
-
-                <View
-                    android:id="@+id/view9"
-                    android:layout_width="0dp"
-                    android:layout_height="5dp"
-                    android:layout_weight="1" />
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent=".5" />
 
                 <TextView
                     android:id="@+id/skill5"
@@ -257,15 +273,13 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="3.5"
-                    android:maxHeight="32dp"
+                    android:gravity="center"
                     android:text="@string/Card_skill"
-                    android:textSize="14sp" />
-
-                <View
-                    android:id="@+id/view10"
-                    android:layout_width="0dp"
-                    android:layout_height="5dp"
-                    android:layout_weight="1" />
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/guideline7"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/skill6"
@@ -273,32 +287,32 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="3.5"
-                    android:maxHeight="32dp"
+                    android:gravity="center"
                     android:text="@string/Card_skill"
-                    android:textSize="14sp" />
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/guideline7"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-            </TableRow>
-
-            <TableRow
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/c4"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/c3">
 
-                <View
-                    android:id="@+id/view11"
-                    android:layout_width="match_parent"
-                    android:layout_height="5dp" />
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:weightSum="10">
-
-                <View
-                    android:id="@+id/view12"
-                    android:layout_width="0dp"
-                    android:layout_height="5dp"
-                    android:layout_weight="1" />
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent=".5" />
 
                 <TextView
                     android:id="@+id/skill7"
@@ -306,15 +320,13 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="3.5"
-                    android:maxHeight="32dp"
+                    android:gravity="center"
                     android:text="@string/Card_skill"
-                    android:textSize="14sp" />
-
-                <View
-                    android:id="@+id/view13"
-                    android:layout_width="0dp"
-                    android:layout_height="5dp"
-                    android:layout_weight="1" />
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/guideline8"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/skill8"
@@ -322,13 +334,15 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="3.5"
-                    android:maxHeight="32dp"
+                    android:gravity="center"
                     android:text="@string/Card_skill"
-                    android:textSize="14sp" />
-
-            </TableRow>
-
-        </TableLayout>
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/guideline8"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
