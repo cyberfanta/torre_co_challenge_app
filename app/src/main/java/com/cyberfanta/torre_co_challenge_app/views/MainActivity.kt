@@ -13,10 +13,8 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.cyberfanta.torre_co_challenge_app.R
-import com.cyberfanta.torre_co_challenge_app.controllers.CardAdapter
-import com.cyberfanta.torre_co_challenge_app.controllers.CardAdapter.CardViewHolder
-import com.cyberfanta.torre_co_challenge_app.controllers.CardItem
-import com.cyberfanta.torre_co_challenge_app.controllers.ModelManager
+import com.cyberfanta.torre_co_challenge_app.controllers.*
+import com.cyberfanta.torre_co_challenge_app.controllers.CardAdapter_Opportunities.CardViewHolder
 import com.cyberfanta.torre_co_challenge_app.exceptions.ConnectionException
 import java.util.*
 
@@ -24,16 +22,16 @@ import java.util.*
 internal class MainActivity : AppCompatActivity() {
     private val TAG = "MainActivity"
 
-    private val currentTypeSearch: Int = 0 //0 = Opportunities , 1 = Peoples , 2 = Job , 3 = Bio
+    private var currentTypeSearch: Int = 0 //0 = Opportunities , 1 = Peoples , 2 = Job , 3 = Bio
 
     private val nameSearch: String = ""
 
     private lateinit var modelManager_Opportunities: ModelManager
 
     private lateinit var adapter_Opportunities: RecyclerView.Adapter<CardViewHolder>
-    private lateinit var adapter_Peoples: RecyclerView.Adapter<CardViewHolder> //todo
-    private var cardList_Opportunities: ArrayList<CardItem> = ArrayList<CardItem>(0)
-    private var cardList_Peoples: ArrayList<CardItem> = ArrayList<CardItem>(0) //todo:
+    private lateinit var adapter_Peoples: RecyclerView.Adapter<CardAdapter_Peoples.CardViewHolder>
+    private var cardList_Opportunities: ArrayList<CardItem_Opportunities> = ArrayList<CardItem_Opportunities>(0)
+    private var cardList_Peoples: ArrayList<CardItem_Peoples> = ArrayList<CardItem_Peoples>(0)
 
     private var QueryThread = Thread(readModelFromConnection())
 
@@ -43,28 +41,25 @@ internal class MainActivity : AppCompatActivity() {
 
         initializingRecyclersView()
         initializingConnectionController()
-        requestFirstJobs()
+        fillRecyclerView()
     }
 
     //Initialize the recyclerView
     private fun initializingRecyclersView() {
         var recycler: RecyclerView = findViewById(R.id.recycler_jobs)
         recycler.setHasFixedSize(true)
-        val layoutManager: RecyclerView.LayoutManager = GridLayoutManager(this, 2)
-        adapter_Opportunities = CardAdapter(cardList_Opportunities)
+        val layoutManager_Opportunities: RecyclerView.LayoutManager = GridLayoutManager(this, 2)
+        adapter_Opportunities = CardAdapter_Opportunities(cardList_Opportunities)
         //todo: keep scroll when update
 //        adapter.stateRestorationPolicy = StateRestorationPolicy.PREVENT_WHEN_EMPTY
-        recycler.layoutManager = layoutManager
+        recycler.layoutManager = layoutManager_Opportunities
         recycler.adapter = adapter_Opportunities
 
         recycler.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
                 super.onScrollStateChanged(recyclerView, newState)
                 if (!recyclerView.canScrollVertically(1)) {
-                    if (!QueryThread.isAlive) {
-                        QueryThread = Thread(readModelFromConnection())
-                        QueryThread.start()
-                    }
+                    fillRecyclerView()
                     Toast.makeText(this@MainActivity, "Loading", Toast.LENGTH_LONG).show()
                 }
             }
@@ -74,20 +69,18 @@ internal class MainActivity : AppCompatActivity() {
 
         recycler = findViewById(R.id.recycler_bios)
         recycler.setHasFixedSize(true)
-        adapter_Peoples = CardAdapter(cardList_Peoples)
+        val layoutManager_Peoples: RecyclerView.LayoutManager = GridLayoutManager(this, 2)
+        adapter_Peoples = CardAdapter_Peoples(cardList_Peoples)
         //todo: keep scroll when update
 //        adapter.stateRestorationPolicy = StateRestorationPolicy.PREVENT_WHEN_EMPTY
-        recycler.layoutManager = layoutManager
+        recycler.layoutManager = layoutManager_Peoples
         recycler.adapter = adapter_Peoples
 
         recycler.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
                 super.onScrollStateChanged(recyclerView, newState)
                 if (!recyclerView.canScrollVertically(1)) {
-                    if (!QueryThread.isAlive) {
-                        QueryThread = Thread(readModelFromConnection())
-                        QueryThread.start()
-                    }
+                    fillRecyclerView()
                     Toast.makeText(this@MainActivity, "Loading", Toast.LENGTH_LONG).show()
                 }
             }
@@ -100,7 +93,7 @@ internal class MainActivity : AppCompatActivity() {
     }
 
     //Initial load for recicler view
-    private fun requestFirstJobs() {
+    private fun fillRecyclerView() {
         if (!QueryThread.isAlive) {
             QueryThread = Thread(readModelFromConnection())
             QueryThread.start()
@@ -110,10 +103,33 @@ internal class MainActivity : AppCompatActivity() {
     //Initial load for recicler view when button pressed
     @Suppress("UNUSED_PARAMETER")
     fun requestCards(view: View) {
-        if (!QueryThread.isAlive) {
-            QueryThread = Thread(readModelFromConnection())
-            QueryThread.start()
-        }
+        fillRecyclerView()
+    }
+
+    //Changing Jobs to Bios
+    @Suppress("UNUSED_PARAMETER")
+    fun bioToJobs (view: View) {
+        currentTypeSearch = 0
+
+        var recycler: RecyclerView = findViewById(R.id.recycler_jobs)
+        recycler.visibility = View.VISIBLE
+        recycler= findViewById(R.id.recycler_bios)
+        recycler.visibility = View.GONE
+
+        fillRecyclerView()
+    }
+
+    //Changing Bios to Jobs
+    @Suppress("UNUSED_PARAMETER")
+    fun jobsToBios (view: View) {
+        currentTypeSearch = 1
+
+        var recycler: RecyclerView = findViewById(R.id.recycler_jobs)
+        recycler.visibility = View.GONE
+        recycler= findViewById(R.id.recycler_bios)
+        recycler.visibility = View.VISIBLE
+
+        fillRecyclerView()
     }
 
     //Load data from ModelFromConnection Class
@@ -147,8 +163,7 @@ internal class MainActivity : AppCompatActivity() {
                 if (currentTypeSearch == 0){
                     loadOpportunityCards()
                 } else if (currentTypeSearch == 1){
-                    //todo
-                    loadOpportunityCards()
+                    loadPeopleCards()
                 } else if (currentTypeSearch == 2){
                     //todo
                     loadOpportunityCards()
@@ -161,9 +176,16 @@ internal class MainActivity : AppCompatActivity() {
 
     fun loadOpportunityCards() {
         for (i in 0..19)
-            cardList_Opportunities.add(CardItem(modelManager_Opportunities.nextOpportunities()))
+            cardList_Opportunities.add(CardItem_Opportunities(modelManager_Opportunities.nextOpportunities()))
 
         adapter_Opportunities.notifyDataSetChanged()
+    }
+
+    fun loadPeopleCards() {
+        for (i in 0..19)
+            cardList_Peoples.add(CardItem_Peoples(modelManager_Opportunities.nextPeoples()))
+
+        adapter_Peoples.notifyDataSetChanged()
     }
 
 

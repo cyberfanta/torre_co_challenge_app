@@ -5,8 +5,8 @@ import android.util.Log
 import com.cyberfanta.torre_co_challenge_app.models.opportunities.ResultsItem
 import java.util.*
 
-class CardItem {
-    private val TAG = "CardItem"
+class CardItem_Opportunities {
+    private val TAG = "CardItem_Opportunities"
 
     var name: String? = null
     var image: Bitmap? = null
@@ -36,14 +36,15 @@ class CardItem {
         else
             highligth = " "
 
-//        var string: String = resultsItem.type.toLowerCase(Locale.ROOT)
         time =
                 if (resultsItem.type.toLowerCase(Locale.ROOT).contains("full")) "Full Time"
                 else
                     if (resultsItem.type.toLowerCase(Locale.ROOT).contains("free")) "Freelance"
                     else
-                        if (resultsItem.type.toLowerCase(Locale.ROOT).contains("partial")) "Partial Time"
-                        else ""
+                        if (resultsItem.type.toLowerCase(Locale.ROOT).contains("part")) "Part Time"
+                        else
+                            if (resultsItem.type.toLowerCase(Locale.ROOT).contains("advis")) "Advisor"
+                            else ""
 
         remote = if (resultsItem.isRemote) "Remote" else "No Remote"
         for (i in resultsItem.skills.indices) {

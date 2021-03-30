@@ -7,13 +7,13 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.cyberfanta.torre_co_challenge_app.R
-import com.cyberfanta.torre_co_challenge_app.controllers.CardAdapter.CardViewHolder
+import com.cyberfanta.torre_co_challenge_app.controllers.CardAdapter_Opportunities.CardViewHolder
 import java.util.*
 
-class CardAdapter(private val cardListOpportunities: ArrayList<CardItem>) : RecyclerView.Adapter<CardViewHolder>() {
+class CardAdapter_Opportunities(private val cardList_Opportunities: ArrayList<CardItem_Opportunities>) : RecyclerView.Adapter<CardViewHolder>() {
     class CardViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var image: ImageView
         var name: TextView
+        var image: ImageView
         var highligth: TextView
         var time: TextView
         var remote: TextView
@@ -27,8 +27,8 @@ class CardAdapter(private val cardListOpportunities: ArrayList<CardItem>) : Recy
         var skill8: TextView
 
         init {
-            image = itemView.findViewById(R.id.image)
             name = itemView.findViewById(R.id.name)
+            image = itemView.findViewById(R.id.image)
             highligth = itemView.findViewById(R.id.highligth)
             time = itemView.findViewById(R.id.time)
             remote = itemView.findViewById(R.id.remote)
@@ -66,7 +66,7 @@ class CardAdapter(private val cardListOpportunities: ArrayList<CardItem>) : Recy
      * @see .onBindViewHolder
      */
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.card, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.card_opportunities, parent, false)
         return CardViewHolder(view)
     }
 
@@ -93,9 +93,9 @@ class CardAdapter(private val cardListOpportunities: ArrayList<CardItem>) : Recy
      * @param position The position of the item within the adapter's data set.
      */
     override fun onBindViewHolder(holder: CardViewHolder, position: Int) {
-        val cardItem = cardListOpportunities[position]
-        holder.image.setImageBitmap(cardItem.image)
+        val cardItem = cardList_Opportunities[position]
         holder.name.text = cardItem.name
+        holder.image.setImageBitmap(cardItem.image)
         holder.highligth.text = cardItem.highligth
         holder.time.text = cardItem.time
         holder.remote.text = cardItem.remote
@@ -115,6 +115,6 @@ class CardAdapter(private val cardListOpportunities: ArrayList<CardItem>) : Recy
      * @return The total number of items in this adapter.
      */
     override fun getItemCount(): Int {
-        return cardListOpportunities.size
+        return cardList_Opportunities.size
     }
 }
