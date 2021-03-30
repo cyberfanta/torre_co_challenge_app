@@ -3,44 +3,48 @@ package com.cyberfanta.torre_co_challenge_app.controllers
 import android.graphics.Bitmap
 import android.util.Log
 import com.cyberfanta.torre_co_challenge_app.models.opportunities.ResultsItem
+import java.util.*
 
 class CardItem {
     private val TAG = "CardItem"
 
-    val name: String
+    var name: String? = null
     var image: Bitmap? = null
-    val image_url: String
-    val highligth: String
-    val time: String
-    val remote: String
+    var image_url: String? = null
+    var highligth: String? = null
+    var time: String? = null
+    var remote: String? = null
     var skill1: String? = null
-        private set
     var skill2: String? = null
-        private set
     var skill3: String? = null
-        private set
     var skill4: String? = null
-        private set
     var skill5: String? = null
-        private set
     var skill6: String? = null
-        private set
     var skill7: String? = null
-        private set
     var skill8: String? = null
-        private set
 
     constructor(resultsItem: ResultsItem) {
         Log.i(TAG, resultsItem.toString())
 
         name = resultsItem.objective
-        image_url = resultsItem.organizations[0].picture
+        if  (resultsItem.organizations.size > 0)
+            image_url = resultsItem.organizations[0].picture
+        else
+            image_url = null
         if  (resultsItem.compensation.data != null)
             highligth = resultsItem.compensation.data.minAmount.toString() + " " + resultsItem.compensation.data.maxAmount + " " + resultsItem.compensation.data.currency + " " + resultsItem.compensation.data.periodicity
         else
             highligth = " "
 
-        time = resultsItem.type
+//        var string: String = resultsItem.type.toLowerCase(Locale.ROOT)
+        time =
+                if (resultsItem.type.toLowerCase(Locale.ROOT).contains("full")) "Full Time"
+                else
+                    if (resultsItem.type.toLowerCase(Locale.ROOT).contains("free")) "Freelance"
+                    else
+                        if (resultsItem.type.toLowerCase(Locale.ROOT).contains("partial")) "Partial Time"
+                        else ""
+
         remote = if (resultsItem.isRemote) "Remote" else "No Remote"
         for (i in resultsItem.skills.indices) {
             if (i == 0) skill1 = resultsItem.skills[0].name

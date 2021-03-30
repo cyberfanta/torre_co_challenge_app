@@ -1,5 +1,7 @@
 package com.cyberfanta.torre_co_challenge_app.controllers;
 
+import android.util.Log;
+
 import com.cyberfanta.torre_co_challenge_app.exceptions.ConnectionException;
 
 import org.jetbrains.annotations.NotNull;
@@ -32,12 +34,13 @@ public class ConnectionToApi {
     }
 
     @SuppressWarnings("deprecation")
-    public String postJson (String url, int amount) throws ConnectionException {
+    public String postJson (String url, int size, int offset) throws ConnectionException {
+        Log.i(TAG, "pasó");
         MediaType JSON = MediaType.parse("application/json; charset=utf-8");
         RequestBody requestBody = RequestBody.create(JSON, "");
 
         return loadJson(new Request.Builder()
-                .url(url.concat("?size=").concat(String.valueOf(amount)))
+                .url(url.concat("?size=").concat(String.valueOf(size)).concat("&offset=").concat(String.valueOf(offset)))
                 .post(requestBody)
                 .build());
     }

@@ -17,8 +17,9 @@ public class ModelFromConnection {
         return gson.fromJson(string, type);
     }
 
-    public <T> T postObject(Class<T> type, String url, int amount) throws ConnectionException {
-        String string = connectionToApi.postJson(url, amount);
+    public <T> T postObject(Class<T> type, String url, int size, int offset) throws ConnectionException {
+        Log.i(TAG, "pasó");
+        String string = connectionToApi.postJson(url, size, offset);
         Log.i(TAG, string);
         return gson.fromJson(string, type);
     }

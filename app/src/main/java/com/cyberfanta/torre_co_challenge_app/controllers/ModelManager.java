@@ -80,8 +80,9 @@ public class ModelManager {
         return opportunitiesArrayList.get(index[2]++);
     }
 
-    public void loadOpportunities (int amount) throws ConnectionException {
-        Opportunities opportunities = modelFromConnection.postObject(Opportunities.class, url[2], amount);
+    public void loadOpportunities (int size, int offset) throws ConnectionException {
+        Log.i(TAG, "pasó");
+        Opportunities opportunities = modelFromConnection.postObject(Opportunities.class, url[2], size, offset);
         Log.i(TAG, opportunities.toString());
 
         opportunitiesArrayList.addAll(opportunities.getResults());
@@ -100,8 +101,8 @@ public class ModelManager {
         return peoplesArrayList.get(index[3]++);
     }
 
-    public void loadPeoples (int amount) throws ConnectionException {
-        Peoples peoples = modelFromConnection.postObject(Peoples.class, url[3], amount);
+    public void loadPeoples (int size, int offset) throws ConnectionException {
+        Peoples peoples = modelFromConnection.postObject(Peoples.class, url[3], size, offset);
         peoplesArrayList.addAll(peoples.getResults());
     }
 

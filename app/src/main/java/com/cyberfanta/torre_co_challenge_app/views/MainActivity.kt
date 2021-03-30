@@ -25,12 +25,15 @@ internal class MainActivity : AppCompatActivity() {
     private val TAG = "MainActivity"
 
     private val currentTypeSearch: Int = 0 //0 = Opportunities , 1 = Peoples , 2 = Job , 3 = Bio
+
     private val nameSearch: String = ""
 
-    private lateinit var modelManager: ModelManager
-    private lateinit var adapter: RecyclerView.Adapter<CardViewHolder>
+    private lateinit var modelManager_Opportunities: ModelManager
 
-    private var cardListOpportunities: ArrayList<CardItem> = ArrayList<CardItem>(0)
+    private lateinit var adapter_Opportunities: RecyclerView.Adapter<CardViewHolder>
+    private lateinit var adapter_Peoples: RecyclerView.Adapter<CardViewHolder> //todo
+    private var cardList_Opportunities: ArrayList<CardItem> = ArrayList<CardItem>(0)
+    private var cardList_Peoples: ArrayList<CardItem> = ArrayList<CardItem>(0) //todo:
 
     private var QueryThread = Thread(readModelFromConnection())
 
@@ -38,27 +41,54 @@ internal class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        initializingRecyclerView()
+        initializingRecyclersView()
         initializingConnectionController()
         requestFirstJobs()
     }
 
     //Initialize the recyclerView
-    private fun initializingRecyclerView() {
-        val recycler: RecyclerView = findViewById(R.id.recycler_jobs)
+    private fun initializingRecyclersView() {
+        var recycler: RecyclerView = findViewById(R.id.recycler_jobs)
         recycler.setHasFixedSize(true)
         val layoutManager: RecyclerView.LayoutManager = GridLayoutManager(this, 2)
-        adapter = CardAdapter(cardListOpportunities)
+        adapter_Opportunities = CardAdapter(cardList_Opportunities)
         //todo: keep scroll when update
 //        adapter.stateRestorationPolicy = StateRestorationPolicy.PREVENT_WHEN_EMPTY
         recycler.layoutManager = layoutManager
-        recycler.adapter = adapter
+        recycler.adapter = adapter_Opportunities
 
         recycler.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
                 super.onScrollStateChanged(recyclerView, newState)
                 if (!recyclerView.canScrollVertically(1)) {
-                    Toast.makeText(this@MainActivity, "Last", Toast.LENGTH_LONG).show()
+                    if (!QueryThread.isAlive) {
+                        QueryThread = Thread(readModelFromConnection())
+                        QueryThread.start()
+                    }
+                    Toast.makeText(this@MainActivity, "Loading", Toast.LENGTH_LONG).show()
+                }
+            }
+        })
+
+
+
+        recycler = findViewById(R.id.recycler_bios)
+        recycler.setHasFixedSize(true)
+        adapter_Peoples = CardAdapter(cardList_Peoples)
+        //todo: keep scroll when update
+//        adapter.stateRestorationPolicy = StateRestorationPolicy.PREVENT_WHEN_EMPTY
+        recycler.layoutManager = layoutManager
+        recycler.adapter = adapter_Peoples
+
+        recycler.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
+                super.onScrollStateChanged(recyclerView, newState)
+                if (!recyclerView.canScrollVertically(1)) {
+                    if (!QueryThread.isAlive) {
+                        QueryThread = Thread(readModelFromConnection())
+                        QueryThread.start()
+                    }
+                    Toast.makeText(this@MainActivity, "Loading", Toast.LENGTH_LONG).show()
                 }
             }
         })
@@ -66,7 +96,7 @@ internal class MainActivity : AppCompatActivity() {
 
     //    //Initialize the recyclerView
     private fun initializingConnectionController() {
-        modelManager = ModelManager()
+        modelManager_Opportunities = ModelManager()
     }
 
     //Initial load for recicler view
@@ -93,13 +123,13 @@ internal class MainActivity : AppCompatActivity() {
 
             try {
                 if (currentTypeSearch == 0){
-                    modelManager.loadOpportunities(20)
+                    modelManager_Opportunities.loadOpportunities(20, cardList_Opportunities.size)
                 } else if (currentTypeSearch == 1){
-                    modelManager.loadPeoples(20)
+                    modelManager_Opportunities.loadPeoples(20, cardList_Peoples.size)
                 } else if (currentTypeSearch == 2){
-                    modelManager.loadJob(nameSearch)
+                    modelManager_Opportunities.loadJob(nameSearch)
                 } else {
-                    modelManager.loadBio(nameSearch)
+                    modelManager_Opportunities.loadBio(nameSearch)
                 }
             } catch (e: ConnectionException) {
                 message.obj = "Error"
@@ -131,9 +161,9 @@ internal class MainActivity : AppCompatActivity() {
 
     fun loadOpportunityCards() {
         for (i in 0..19)
-            cardListOpportunities.add(CardItem(modelManager.nextOpportunities()))
+            cardList_Opportunities.add(CardItem(modelManager_Opportunities.nextOpportunities()))
 
-        adapter.notifyDataSetChanged()
+        adapter_Opportunities.notifyDataSetChanged()
     }
 
 
