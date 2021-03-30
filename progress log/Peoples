@@ -1,0 +1,289 @@
+Peoples
+POST
+https://search.torre.co/people/_search/?[offset=$offset&size=$size&aggregate=$aggregate]
+https://search.torre.co/people/_search/?aggregators=nataliagkioka&size=1
+
+{
+    "aggregators": {},
+    "offset": 0,
+    "results": [
+        {
+            "context": {
+                "signaled": null
+            },
+            "_meta": {
+                "ranker": {
+                    "@type": "and",
+                    "rank": 1.0,
+                    "score": null,
+                    "and": [
+                        {
+                            "@type": "scorer",
+                            "rank": 394.0,
+                            "scorer": "weight",
+                            "score": null,
+                            "input": {
+                                "criteria": null,
+                                "person": {
+                                    "weight": 1768.6471
+                                }
+                            }
+                        },
+                        {
+                            "@type": "scorer",
+                            "rank": 1.0,
+                            "scorer": "completion",
+                            "score": null,
+                            "input": {
+                                "criteria": null,
+                                "person": {
+                                    "completion": 1.0
+                                }
+                            }
+                        },
+                        {
+                            "@type": "scorer",
+                            "rank": 1.0,
+                            "scorer": "grammar",
+                            "score": null,
+                            "input": {
+                                "criteria": null,
+                                "person": {
+                                    "grammar": 1.0
+                                }
+                            }
+                        }
+                    ]
+                },
+                "filter": null
+            },
+            "compensations": {
+                "freelancer": {
+                    "amount": 30.0,
+                    "currency": "USD$",
+                    "periodicity": "hourly"
+                },
+                "employee": {
+                    "amount": 40000.0,
+                    "currency": "USD$",
+                    "periodicity": "yearly"
+                }
+            },
+            "locationName": "Attica, Greece",
+            "name": "Natalia Gkioka",
+            "openTo": [
+                "advising",
+                "freelance-gigs",
+                "full-time-employment",
+                "part-time-employment"
+            ],
+            "picture": "https://starrgate.s3.amazonaws.com:443/users/7f80cbac256de1055013c6f81d7ed716a1826873/profile_3KFmtHe.jpg",
+            "professionalHeadline": "Senior Marketing & Business Development Leader",
+            "remoter": true,
+            "skills": [
+                {
+                    "name": "Revenue Management",
+                    "weight": 0.0
+                },
+                {
+                    "name": "Team Leadership",
+                    "weight": 0.0
+                },
+                {
+                    "name": "Team management",
+                    "weight": 0.0
+                },
+                {
+                    "name": "Community management",
+                    "weight": 0.0
+                },
+                {
+                    "name": "Analytics",
+                    "weight": 0.0
+                },
+                {
+                    "name": "Web Analytics",
+                    "weight": 0.0
+                },
+                {
+                    "name": "SEM",
+                    "weight": 0.0
+                },
+                {
+                    "name": "SEO",
+                    "weight": 0.0
+                },
+                {
+                    "name": "e-mail marketing",
+                    "weight": 0.0
+                },
+                {
+                    "name": "communication",
+                    "weight": 0.0
+                },
+                {
+                    "name": "team management",
+                    "weight": 0.0
+                },
+                {
+                    "name": "account management",
+                    "weight": 0.0
+                },
+                {
+                    "name": "Customer Relationship Management",
+                    "weight": 0.0
+                },
+                {
+                    "name": "Time Management",
+                    "weight": 0.0
+                },
+                {
+                    "name": "Customer Support",
+                    "weight": 0.0
+                },
+                {
+                    "name": "Interpersonal Skills",
+                    "weight": 0.0
+                },
+                {
+                    "name": "Customer Focus",
+                    "weight": 0.0
+                },
+                {
+                    "name": "Communication skills",
+                    "weight": 0.0
+                },
+                {
+                    "name": "Customer care",
+                    "weight": 0.0
+                },
+                {
+                    "name": "Customer Success",
+                    "weight": 0.0
+                },
+                {
+                    "name": "Market Research",
+                    "weight": 0.0
+                },
+                {
+                    "name": "Sales & Marketing",
+                    "weight": 0.0
+                },
+                {
+                    "name": "Digital Marketing",
+                    "weight": 0.0
+                },
+                {
+                    "name": "Social Media",
+                    "weight": 0.0
+                },
+                {
+                    "name": "Social Media Strategy",
+                    "weight": 0.0
+                },
+                {
+                    "name": "Remote work",
+                    "weight": 0.0
+                },
+                {
+                    "name": "Digital Media",
+                    "weight": 0.0
+                },
+                {
+                    "name": "Growth",
+                    "weight": 0.0
+                },
+                {
+                    "name": "Writing skills",
+                    "weight": 0.0
+                },
+                {
+                    "name": "Media Buying",
+                    "weight": 0.0
+                },
+                {
+                    "name": "Sales",
+                    "weight": 42.5
+                },
+                {
+                    "name": "Account Management",
+                    "weight": 41.7003
+                },
+                {
+                    "name": "ProActive",
+                    "weight": 0.0
+                },
+                {
+                    "name": "Media",
+                    "weight": 0.0
+                },
+                {
+                    "name": "Strategy",
+                    "weight": 0.0
+                },
+                {
+                    "name": "Innovation",
+                    "weight": 0.0
+                },
+                {
+                    "name": "Entrepreneurship",
+                    "weight": 0.0
+                },
+                {
+                    "name": "Efficiency",
+                    "weight": 0.0
+                },
+                {
+                    "name": "Adaptability",
+                    "weight": 0.0
+                },
+                {
+                    "name": "Early adopter",
+                    "weight": 0.0
+                },
+                {
+                    "name": "Communications",
+                    "weight": 0.0
+                },
+                {
+                    "name": "Project Management",
+                    "weight": 0.0
+                },
+                {
+                    "name": "Management",
+                    "weight": 226.2608
+                },
+                {
+                    "name": "Strategic Thinking",
+                    "weight": 42.5
+                },
+                {
+                    "name": "Customer Service",
+                    "weight": 0.0
+                },
+                {
+                    "name": "Creativity",
+                    "weight": 547.049
+                },
+                {
+                    "name": "Leadership",
+                    "weight": 226.2608
+                },
+                {
+                    "name": "Communication",
+                    "weight": 505.3488
+                },
+                {
+                    "name": "Marketing",
+                    "weight": 589.549
+                }
+            ],
+            "subjectId": "3838",
+            "username": "nataliagkioka",
+            "verified": true,
+            "weight": 1768.6471
+        }
+    ],
+    "size": 1,
+    "total": 936365
+}

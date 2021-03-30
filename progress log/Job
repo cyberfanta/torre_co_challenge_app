@@ -1,0 +1,516 @@
+Job
+GET
+https://torre.co/api/opportunities/$id
+https://torre.co/api/opportunities/jw0qXRdx
+
+{
+    "attachments": [
+        {
+            "resource": "cover",
+            "address": "https://res.cloudinary.com/torre-technologies-co/image/upload/v1616173760/origin/opportunities/151994819_138757931434766_1187342502249345307_o_qimmqm.jpg",
+            "path": "v1616173760/origin/opportunities/151994819_138757931434766_1187342502249345307_o_qimmqm.jpg",
+            "caption": ""
+        }
+    ],
+    "boardVersion": 29,
+    "prefilledStatus": {
+        "status": "ignored"
+    },
+    "locale": "es",
+    "objective": "Full Stack Developer",
+    "stats": {
+        "finishedApplications": 0
+    },
+    "review": "approved",
+    "draft": null,
+    "members": [
+        {
+            "id": "EW7xaN6w",
+            "person": {
+                "id": "Jdm0z6gw",
+                "username": "seleccionpersonal",
+                "name": "Logic Studio",
+                "hasEmail": false,
+                "professionalHeadline": "Selección de Personal",
+                "picture": "https://starrgate.s3.amazonaws.com:443/users/2079891801c26edbb94354ac635f6f6397efbc6b/profile_FB6GC8g.jpg",
+                "pictureThumbnail": "https://starrgate.s3.amazonaws.com:443/CACHE/images/users/2079891801c26edbb94354ac635f6f6397efbc6b/profile_FB6GC8g/ee1146541bd8f04a00158d7003e53a6a.jpg",
+                "hasBio": true,
+                "weight": 0,
+                "verified": false,
+                "flags": {
+                    "automatedMessagesFeatureDiscovery": true,
+                    "experiencesVerificationsSurvey": false,
+                    "firstGetSignalBenefitsViewed": false,
+                    "firstSignalOnBoarded": false,
+                    "firstSignalSent": true,
+                    "matchAndRankDisclaimerViewed": true,
+                    "membersBenefitsViewed": false,
+                    "notificationsPhrasesSarcastic": false,
+                    "opportunitiesBenefitsViewed": false,
+                    "referredMatchUnderstood": true,
+                    "torreMatchAcknowledged": false,
+                    "signedInToOpportunities": false,
+                    "earlyAccess": true,
+                    "enlauSource": false,
+                    "opportunityCrawler": false,
+                    "opportunityOperator": false,
+                    "contactsImported": false,
+                    "veiled": false
+                },
+                "subjectId": 677258
+            },
+            "manager": true,
+            "poster": true,
+            "member": true,
+            "status": "accepted",
+            "visible": true
+        },
+        {
+            "id": "8wDpknOw",
+            "person": {
+                "id": "JWOoB06W",
+                "username": "valentinasantosss",
+                "name": "Valentina Santos Dueñas",
+                "hasEmail": false,
+                "professionalHeadline": "Senior Recruiting Advisor",
+                "picture": "https://starrgate.s3.amazonaws.com:443/users/eb520300c0e10d59fee65f9c29b45106908b41e1/profile_Z2zgliC.jpg",
+                "pictureThumbnail": "https://starrgate.s3.amazonaws.com:443/CACHE/images/users/eb520300c0e10d59fee65f9c29b45106908b41e1/profile_Z2zgliC/8d4aae7fabd3fa7ddda69cc737e63b88.jpg",
+                "hasBio": true,
+                "weight": 1309.3236,
+                "verified": true,
+                "flags": {
+                    "automatedMessagesFeatureDiscovery": true,
+                    "experiencesVerificationsSurvey": false,
+                    "firstGetSignalBenefitsViewed": false,
+                    "firstSignalOnBoarded": false,
+                    "firstSignalSent": true,
+                    "matchAndRankDisclaimerViewed": true,
+                    "membersBenefitsViewed": true,
+                    "notificationsPhrasesSarcastic": false,
+                    "opportunitiesBenefitsViewed": false,
+                    "referredMatchUnderstood": false,
+                    "torreMatchAcknowledged": true,
+                    "signedInToOpportunities": true,
+                    "earlyAccess": true,
+                    "enlauSource": false,
+                    "opportunityCrawler": false,
+                    "opportunityOperator": true,
+                    "contactsImported": false,
+                    "veiled": false
+                },
+                "subjectId": 1056198
+            },
+            "manager": true,
+            "poster": false,
+            "member": false,
+            "status": "accepted",
+            "visible": false
+        },
+        {
+            "id": "lr4KaLpd",
+            "person": {
+                "id": "2W19BDnW",
+                "username": "caruchigv92",
+                "name": "Carolina Maria Gomez-Villafane",
+                "hasEmail": false,
+                "professionalHeadline": "Senior Recruiting Advisor",
+                "picture": "https://starrgate.s3.amazonaws.com:443/users/d021dddf7800146823cb18f78a8c9e099f609bce/profile_et6Xk7R.jpg",
+                "pictureThumbnail": "https://starrgate.s3.amazonaws.com:443/CACHE/images/users/d021dddf7800146823cb18f78a8c9e099f609bce/profile_et6Xk7R/d08c47d1b55aeb88d1eae7f4e6474b33.jpg",
+                "hasBio": true,
+                "weight": 208.4212,
+                "verified": true,
+                "flags": {
+                    "automatedMessagesFeatureDiscovery": true,
+                    "experiencesVerificationsSurvey": false,
+                    "firstGetSignalBenefitsViewed": false,
+                    "firstSignalOnBoarded": false,
+                    "firstSignalSent": true,
+                    "matchAndRankDisclaimerViewed": true,
+                    "membersBenefitsViewed": true,
+                    "notificationsPhrasesSarcastic": false,
+                    "opportunitiesBenefitsViewed": false,
+                    "referredMatchUnderstood": false,
+                    "torreMatchAcknowledged": true,
+                    "signedInToOpportunities": true,
+                    "earlyAccess": false,
+                    "enlauSource": false,
+                    "opportunityCrawler": false,
+                    "opportunityOperator": true,
+                    "contactsImported": true,
+                    "veiled": false
+                },
+                "subjectId": 738807
+            },
+            "manager": true,
+            "poster": false,
+            "member": false,
+            "status": "accepted",
+            "visible": false
+        }
+    ],
+    "details": [
+        {
+            "code": "benefits",
+            "content": "Plan de capacitación y certificaciones"
+        },
+        {
+            "code": "reason",
+            "content": "Nos expandimos a Estados Unidos y queremos que seas parte de este proyecto internacional!"
+        },
+        {
+            "code": "responsibilities",
+            "content": "• Desarrollo de Software.\n• Implementar y definir las posibles soluciones tecnológicas a los requerimientos funcionales proporcionados por el cliente con diferentes tecnologías y herramientas de software.\n•  Proponer soluciones tecnológicas a necesidades del negocio "
+        },
+        {
+            "code": "requirements",
+            "content": "• Manejo avanzado del Front End (HTML, CSS, JavaScript, Angular), Back End (Asp. Net, .Net Core)\n• Manejo de base de datos SQL Server\n• Manejo de metodologías ágiles (Scrum)\n"
+        },
+        {
+            "code": "challenges",
+            "content": "• Proyectos retadores con empresas reconocidas como Microsoft"
+        },
+        {
+            "code": "career-path",
+            "content": "• Oportunidad para participar en varios proyectos internacionales\n• Planes de capacitación y certificación en desarrollo de software"
+        },
+        {
+            "code": "organizations",
+            "content": "Somos expertos en desarrollo móvil, web software a la medida, outsourcing de IT y pruebas de software, con más de 10 años de experiencia asistiendo a corporaciones, bancos y sector público en el aprovechamiento de tecnologías Web y Móvil para crear nuevos servicios y hemos logrado más de un centenar de proyectos exitosos en Estados Unidos. Somos Gold Partner de Microsoft"
+        },
+        {
+            "code": "team-culture",
+            "content": "Buen ambiente laboral con cultura de innovación."
+        }
+    ],
+    "id": "jw0qXRdx",
+    "place": {
+        "remote": true,
+        "anywhere": true,
+        "timezone": true,
+        "location": []
+    },
+    "deadline": "2021-04-23T04:30:00Z",
+    "slug": "logic-studio-full-stack-developer",
+    "serpTags": {
+        "@context": "https://schema.org/",
+        "@type": "JobPosting",
+        "title": "Full Stack Developer",
+        "description": "<p>Nos expandimos a Estados Unidos y queremos que seas parte de este proyecto internacional!</p><p> Desarrollo de Software.<br/> Implementar y definir las posibles soluciones tecnol&oacute;gicas a los requerimientos funcionales proporcionados por el cliente con diferentes tecnolog&iacute;as y herramientas de software.<br/>  Proponer soluciones tecnol&oacute;gicas a necesidades del negocio</p><p><b>Ubicación:</b> Remoto - Cualquier parte</p><p><b>Habilidades requeridas para este trabajo:</b><br/></p><p><ul><li>Javascript</li><li>CSS</li><li>HTML</li><li>ASP.NET</li></ul></p>",
+        "identifier": {
+            "@type": "PropertyValue",
+            "name": "Logic Studio",
+            "value": "jw0qXRdx"
+        },
+        "datePosted": "2021-03-17T21:14:55Z",
+        "employmentType": [
+            "FULL_TIME"
+        ],
+        "validThrough": "2021-04-23T04:30:00Z",
+        "hiringOrganization": {
+            "@type": "Organization",
+            "name": "Logic Studio",
+            "logo": "https://res.cloudinary.com/torre-technologies-co/image/upload/v1602695209/origin/bio/organizations/yjw8tzsxnswjyhhwashl.png"
+        },
+        "jobLocationType": "TELECOMMUTE",
+        "applicantLocationRequirements": [
+            {
+                "@type": "Country",
+                "name": "United States"
+            },
+            {
+                "@type": "Country",
+                "name": "United Kingdom"
+            },
+            {
+                "@type": "Country",
+                "name": "Argentina"
+            },
+            {
+                "@type": "Country",
+                "name": "Armenia"
+            },
+            {
+                "@type": "Country",
+                "name": "Australia"
+            },
+            {
+                "@type": "Country",
+                "name": "Austria"
+            },
+            {
+                "@type": "Country",
+                "name": "Belgium"
+            },
+            {
+                "@type": "Country",
+                "name": "Bermuda"
+            },
+            {
+                "@type": "Country",
+                "name": "Bolivia"
+            },
+            {
+                "@type": "Country",
+                "name": "Brazil"
+            },
+            {
+                "@type": "Country",
+                "name": "Bulgaria"
+            },
+            {
+                "@type": "Country",
+                "name": "Canada"
+            },
+            {
+                "@type": "Country",
+                "name": "Chile"
+            },
+            {
+                "@type": "Country",
+                "name": "Colombia"
+            },
+            {
+                "@type": "Country",
+                "name": "Costa Rica"
+            },
+            {
+                "@type": "Country",
+                "name": "Croatia"
+            },
+            {
+                "@type": "Country",
+                "name": "Denmark"
+            },
+            {
+                "@type": "Country",
+                "name": "Dominican Republic"
+            },
+            {
+                "@type": "Country",
+                "name": "Ecuador"
+            },
+            {
+                "@type": "Country",
+                "name": "Egypt"
+            },
+            {
+                "@type": "Country",
+                "name": "El Salvador"
+            },
+            {
+                "@type": "Country",
+                "name": "Estonia"
+            },
+            {
+                "@type": "Country",
+                "name": "Finland"
+            },
+            {
+                "@type": "Country",
+                "name": "France"
+            },
+            {
+                "@type": "Country",
+                "name": "Georgia"
+            },
+            {
+                "@type": "Country",
+                "name": "Germany"
+            },
+            {
+                "@type": "Country",
+                "name": "Greece"
+            },
+            {
+                "@type": "Country",
+                "name": "Guatemala"
+            },
+            {
+                "@type": "Country",
+                "name": "Honduras"
+            },
+            {
+                "@type": "Country",
+                "name": "Iceland"
+            },
+            {
+                "@type": "Country",
+                "name": "India"
+            },
+            {
+                "@type": "Country",
+                "name": "Ireland"
+            },
+            {
+                "@type": "Country",
+                "name": "Israel"
+            },
+            {
+                "@type": "Country",
+                "name": "Italy"
+            },
+            {
+                "@type": "Country",
+                "name": "Luxembourg"
+            },
+            {
+                "@type": "Country",
+                "name": "Mexico"
+            },
+            {
+                "@type": "Country",
+                "name": "Netherlands"
+            },
+            {
+                "@type": "Country",
+                "name": "New Zealand"
+            },
+            {
+                "@type": "Country",
+                "name": "Nicaragua"
+            },
+            {
+                "@type": "Country",
+                "name": "Panama"
+            },
+            {
+                "@type": "Country",
+                "name": "Paraguay"
+            },
+            {
+                "@type": "Country",
+                "name": "Peru"
+            },
+            {
+                "@type": "Country",
+                "name": "Puerto Rico"
+            },
+            {
+                "@type": "Country",
+                "name": "Serbia"
+            },
+            {
+                "@type": "Country",
+                "name": "South Africa"
+            },
+            {
+                "@type": "Country",
+                "name": "Spain"
+            },
+            {
+                "@type": "Country",
+                "name": "Switzerland"
+            },
+            {
+                "@type": "Country",
+                "name": "Uruguay"
+            },
+            {
+                "@type": "Country",
+                "name": "Venezuela"
+            }
+        ],
+        "baseSalary": {
+            "@type": "MonetaryAmount",
+            "currency": "USD",
+            "value": {
+                "@type": "QuantitativeValue",
+                "minValue": 1300,
+                "maxValue": 1500,
+                "unitText": "MONTH"
+            }
+        }
+    },
+    "owner": {
+        "id": "Jdm0z6gw",
+        "username": "seleccionpersonal",
+        "name": "Logic Studio",
+        "hasEmail": false,
+        "professionalHeadline": "Selección de Personal",
+        "picture": "https://starrgate.s3.amazonaws.com:443/users/2079891801c26edbb94354ac635f6f6397efbc6b/profile_FB6GC8g.jpg",
+        "pictureThumbnail": "https://starrgate.s3.amazonaws.com:443/CACHE/images/users/2079891801c26edbb94354ac635f6f6397efbc6b/profile_FB6GC8g/ee1146541bd8f04a00158d7003e53a6a.jpg",
+        "hasBio": true,
+        "weight": 0,
+        "verified": false,
+        "subjectId": 677258
+    },
+    "completion": 0.8125,
+    "agreement": {
+        "type": "non-employment-contract",
+        "currencyTaxes": "company"
+    },
+    "languages": [
+        {
+            "language": {
+                "code": "en",
+                "name": "Inglés"
+            },
+            "fluency": "conversational"
+        },
+        {
+            "language": {
+                "code": "es",
+                "name": "Español"
+            },
+            "fluency": "conversational"
+        }
+    ],
+    "created": "2021-03-17T21:14:55Z",
+    "crawled": false,
+    "opportunity": "employee",
+    "active": true,
+    "commitment": {
+        "code": "full-time",
+        "hours": 0
+    },
+    "stableOn": "2021-03-18T22:31:17Z",
+    "timezones": [
+        "GMT-12:00",
+        "GMT+14:00"
+    ],
+    "strengths": [
+        {
+            "id": "EW7JeeVr",
+            "code": 18319,
+            "name": "Javascript",
+            "experience": "5-plus-years"
+        },
+        {
+            "id": "awKDMMAd",
+            "code": 23009,
+            "name": "CSS",
+            "experience": "5-plus-years"
+        },
+        {
+            "id": "2wzqyyGW",
+            "code": 23802,
+            "name": "HTML",
+            "experience": "3-plus-years"
+        },
+        {
+            "id": "Qwenggzd",
+            "code": 341630,
+            "name": "ASP.NET",
+            "experience": "3-plus-years"
+        }
+    ],
+    "organizations": [
+        {
+            "id": 725720,
+            "name": "Logic Studio",
+            "size": 100,
+            "picture": "https://res.cloudinary.com/torre-technologies-co/image/upload/v1602695209/origin/bio/organizations/yjw8tzsxnswjyhhwashl.png"
+        }
+    ],
+    "compensation": {
+        "code": "range",
+        "currency": "USD$",
+        "estimate": false,
+        "minAmount": 1300,
+        "maxAmount": 1500,
+        "periodicity": "monthly",
+        "visible": true
+    },
+    "openGraph": "https://hcti.io/v1/image/ed6d5c03-17bc-4a80-93f4-44b40928fef7",
+    "status": "open"
+}

@@ -11,7 +11,17 @@ import com.cyberfanta.torre_co_challenge_app.controllers.CardAdapter_Opportuniti
 import java.util.*
 
 class CardAdapter_Opportunities(private val cardList_Opportunities: ArrayList<CardItem_Opportunities>) : RecyclerView.Adapter<CardViewHolder>() {
-    class CardViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    private var listener: OnItemClickListener? = null
+
+    interface OnItemClickListener {
+        fun onItemClick(position: Int)
+    }
+
+    fun setOnItemClickListener(listener: OnItemClickListener) {
+        this.listener = listener
+    }
+
+    class CardViewHolder(itemView: View, listener: OnItemClickListener?) : RecyclerView.ViewHolder(itemView) {
         var name: TextView
         var image: ImageView
         var highligth: TextView
@@ -40,58 +50,23 @@ class CardAdapter_Opportunities(private val cardList_Opportunities: ArrayList<Ca
             skill6 = itemView.findViewById(R.id.skill6)
             skill7 = itemView.findViewById(R.id.skill7)
             skill8 = itemView.findViewById(R.id.skill8)
+
+            itemView.setOnClickListener {
+                val position = adapterPosition
+                if (position != RecyclerView.NO_POSITION) {
+                    if (listener != null) {
+                        listener.onItemClick(position)
+                    }
+                }
+            }
         }
     }
 
-    /**
-     * Called when RecyclerView needs a new [CardViewHolder] of the given type to represent
-     * an item.
-     *
-     *
-     * This new ViewHolder should be constructed with a new View that can represent the items
-     * of the given type. You can either create a new View manually or inflate it from an XML
-     * layout file.
-     *
-     *
-     * The new ViewHolder will be used to display items of the adapter using
-     * [.onBindViewHolder]. Since it will be re-used to display
-     * different items in the data set, it is a good idea to cache references to sub views of
-     * the View to avoid unnecessary [View.findViewById] calls.
-     *
-     * @param parent   The ViewGroup into which the new View will be added after it is bound to
-     * an adapter position.
-     * @param viewType The view type of the new View.
-     * @return A new ViewHolder that holds a View of the given view type.
-     * @see .getItemViewType
-     * @see .onBindViewHolder
-     */
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.card_opportunities, parent, false)
-        return CardViewHolder(view)
+        return CardViewHolder(view, listener)
     }
 
-    /**
-     * Called by RecyclerView to display the data at the specified position. This method should
-     * update the contents of the [CardViewHolder.itemView] to reflect the item at the given
-     * position.
-     *
-     *
-     * Note that unlike , RecyclerView will not call this method
-     * again if the position of the item changes in the data set unless the item itself is
-     * invalidated or the new position cannot be determined. For this reason, you should only
-     * use the `position` parameter while acquiring the related data item inside
-     * this method and should not keep a copy of it. If you need the position of an item later
-     * on (e.g. in a click listener), use [CardViewHolder.getAdapterPosition] which will
-     * have the updated adapter position.
-     *
-     *
-     * Override [.onBindViewHolder] instead if Adapter can
-     * handle efficient partial bind.
-     *
-     * @param holder   The ViewHolder which should be updated to represent the contents of the
-     * item at the given position in the data set.
-     * @param position The position of the item within the adapter's data set.
-     */
     override fun onBindViewHolder(holder: CardViewHolder, position: Int) {
         val cardItem = cardList_Opportunities[position]
         holder.name.text = cardItem.name
@@ -109,11 +84,6 @@ class CardAdapter_Opportunities(private val cardList_Opportunities: ArrayList<Ca
         holder.skill8.text = cardItem.skill8
     }
 
-    /**
-     * Returns the total number of items in the data set held by the adapter.
-     *
-     * @return The total number of items in this adapter.
-     */
     override fun getItemCount(): Int {
         return cardList_Opportunities.size
     }

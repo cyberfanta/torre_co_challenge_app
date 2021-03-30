@@ -29,7 +29,7 @@ class CardItem_Peoples {
         Log.i(TAG, resultsItem.toString())
 
         name = resultsItem.name
-        if  (!resultsItem.picture.isEmpty())
+        if  (resultsItem.picture != null)
             image_url = resultsItem.picture
         else
             image_url = null

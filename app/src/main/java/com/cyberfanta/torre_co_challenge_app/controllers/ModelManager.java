@@ -77,7 +77,10 @@ public class ModelManager {
     }
 
     public com.cyberfanta.torre_co_challenge_app.models.opportunities.ResultsItem nextOpportunities (){
-        return opportunitiesArrayList.get(index[2]++);
+        if (index[2] < opportunitiesArrayList.size())
+            return opportunitiesArrayList.get(index[2]++);
+        else
+            return null;
     }
 
     public void loadOpportunities (int size, int offset) throws ConnectionException {
@@ -98,7 +101,10 @@ public class ModelManager {
     }
 
     public com.cyberfanta.torre_co_challenge_app.models.peoples.ResultsItem nextPeoples (){
-        return peoplesArrayList.get(index[3]++);
+        if (index[3] < peoplesArrayList.size())
+            return peoplesArrayList.get(index[3]++);
+        else
+            return null;
     }
 
     public void loadPeoples (int size, int offset) throws ConnectionException {

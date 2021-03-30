@@ -1,0 +1,3645 @@
+Bio
+GET
+https://torre.bio/api/bios/$username
+https://torre.bio/api/bios/julioleon2004
+
+{
+    "person": {
+        "professionalHeadline": "Licenciado en Computación | Desarrollador Java Android",
+        "completion": 1,
+        "showPhone": false,
+        "created": "2020-10-28T23:16:41Z",
+        "verified": true,
+        "flags": {
+            "benefits": true,
+            "canary": false,
+            "enlauSource": false,
+            "fake": false,
+            "featureDiscovery": true,
+            "getSignaledBenefitsViewed": true,
+            "firstSignalSent": true,
+            "signalsOnboardingCompleted": true,
+            "importingLinkedin": false,
+            "onBoarded": true,
+            "remoter": true,
+            "signalsFeatureDiscovery": true,
+            "signedInToOpportunities": true,
+            "importingLinkedinRecommendations": true,
+            "contactsImported": true,
+            "appContactsImported": false,
+            "genomeCompletionAcknowledged": true
+        },
+        "weight": 0,
+        "locale": "en",
+        "subjectId": 791516,
+        "picture": "https://starrgate.s3.amazonaws.com:443/users/2d9b56696587182b0d536620c6b5a24bd9ef268e/profile_uRlv914.jpg",
+        "hasEmail": true,
+        "isTest": false,
+        "name": "Julio César Alberto León Anhuamán",
+        "links": [
+            {
+                "id": "OMv9eW3N",
+                "name": "github",
+                "address": "https://github.com/cyberfanta"
+            },
+            {
+                "id": "XMq0RJJN",
+                "name": "twitter",
+                "address": "https://twitter.com/cyberfanta"
+            },
+            {
+                "id": "pyJnEAWy",
+                "name": "linkedin",
+                "address": "https://www.linkedin.com/in/julio-c%C3%A9sar-alberto-le%C3%B3n-anhuam%C3%A1n-a803572b/"
+            }
+        ],
+        "location": {
+            "name": "Distrito Federal, Venezuela",
+            "country": "Venezuela",
+            "latitude": 10.5004352,
+            "longitude": -66.9511459,
+            "timezone": "America/Caracas",
+            "timezoneOffSet": -14400000
+        },
+        "theme": "amber300",
+        "id": "XMqkPYYy",
+        "pictureThumbnail": "https://starrgate.s3.amazonaws.com:443/CACHE/images/users/2d9b56696587182b0d536620c6b5a24bd9ef268e/profile_uRlv914/0480a6cc5ac90650190988856140cf80.jpg",
+        "claimant": false,
+        "summaryOfBio": "Soy un programador Android Java que vengo de liderar proyectos en la industria de telecomunicaciones. En este momento estoy en busca de oportunidades para desarrollarme profesionalmente en una compañía que se dedique al desarrollo de software. A futuro me quiero volver un artista en la creación de videojuegos.",
+        "weightGraph": "https://hcti.io/v1/image/898e3d8a-9ef5-4544-8851-e788c9d49a5d",
+        "publicId": "julioleon2004"
+    },
+    "stats": {
+        "strengths": 43,
+        "publications": 3,
+        "education": 3,
+        "interests": 3,
+        "jobs": 4,
+        "projects": 7
+    },
+    "strengths": [
+        {
+            "id": "GNKw1gXN",
+            "code": 29373,
+            "name": "Laravel",
+            "additionalInfo": "",
+            "weight": 0,
+            "recommendations": 0,
+            "media": [],
+            "created": "2021-01-23T18:15:27"
+        },
+        {
+            "id": "qy08vJqy",
+            "code": 6086155,
+            "name": "Unit testing",
+            "additionalInfo": "",
+            "weight": 0,
+            "recommendations": 0,
+            "media": [],
+            "created": "2021-01-23T18:03:19"
+        },
+        {
+            "id": "gyYnJ8gN",
+            "code": 47758,
+            "name": "Odoo",
+            "additionalInfo": "",
+            "weight": 0,
+            "recommendations": 0,
+            "media": [],
+            "created": "2021-01-23T18:01:15"
+        },
+        {
+            "id": "zNG65xoy",
+            "code": 43195,
+            "name": "Gantt",
+            "additionalInfo": "",
+            "weight": 0,
+            "recommendations": 0,
+            "media": [],
+            "created": "2021-01-23T18:00:55"
+        },
+        {
+            "id": "qNPLB02N",
+            "code": 90777,
+            "name": "Phyton",
+            "additionalInfo": "",
+            "weight": 0,
+            "recommendations": 0,
+            "media": [],
+            "created": "2021-01-23T18:00:10"
+        },
+        {
+            "id": "RyD52OvN",
+            "code": 34500,
+            "name": "Scrum",
+            "additionalInfo": "",
+            "weight": 0,
+            "recommendations": 0,
+            "media": [],
+            "created": "2021-01-23T17:59:46"
+        },
+        {
+            "id": "AjrnAx0j",
+            "code": 6460517,
+            "name": "PLpgSQL",
+            "additionalInfo": "",
+            "weight": 0,
+            "recommendations": 0,
+            "media": [],
+            "created": "2020-12-26T20:36:09"
+        },
+        {
+            "id": "ANanXVoM",
+            "code": 18313,
+            "name": "C++",
+            "additionalInfo": "",
+            "weight": 0,
+            "recommendations": 0,
+            "media": [],
+            "created": "2020-12-26T20:35:56"
+        },
+        {
+            "id": "pyoJ0gdj",
+            "code": 226551,
+            "name": "API REST",
+            "weight": 0,
+            "recommendations": 0,
+            "media": [],
+            "created": "2020-10-29T07:19:05"
+        },
+        {
+            "id": "gMRP6k5y",
+            "code": 24450,
+            "name": "Android",
+            "weight": 0,
+            "recommendations": 0,
+            "media": [],
+            "created": "2020-10-29T07:17:46"
+        },
+        {
+            "id": "ny12xPKN",
+            "code": 186715,
+            "name": "Backend / Desarrollador Java",
+            "weight": 0,
+            "recommendations": 0,
+            "media": [],
+            "created": "2020-10-29T07:16:04"
+        },
+        {
+            "id": "Ajr8ZO0N",
+            "code": 27453,
+            "name": "Android Studio",
+            "weight": 0,
+            "recommendations": 1,
+            "media": [],
+            "created": "2020-10-29T07:12:38"
+        },
+        {
+            "id": "ANazAxoM",
+            "code": 85009,
+            "name": "Android development",
+            "weight": 0,
+            "recommendations": 1,
+            "media": [],
+            "created": "2020-10-29T07:12:26"
+        },
+        {
+            "id": "vy52b3bN",
+            "code": 1520,
+            "name": "Illustrator",
+            "weight": 0,
+            "recommendations": 0,
+            "media": [],
+            "created": "2020-10-29T07:10:02"
+        },
+        {
+            "id": "BMLgL7bN",
+            "code": 1303,
+            "name": "Photography",
+            "weight": 0,
+            "recommendations": 0,
+            "media": [],
+            "created": "2020-10-29T07:09:56"
+        },
+        {
+            "id": "Oj62bmQj",
+            "code": 1522,
+            "name": "Photoshop",
+            "weight": 0,
+            "recommendations": 0,
+            "media": [],
+            "created": "2020-10-29T07:09:48"
+        },
+        {
+            "id": "7M22K82M",
+            "code": 4253723,
+            "name": "Figma",
+            "weight": 0,
+            "recommendations": 0,
+            "media": [],
+            "created": "2020-10-29T07:09:38"
+        },
+        {
+            "id": "JyQD67nj",
+            "code": 62571,
+            "name": "UI/UX Design",
+            "weight": 0,
+            "recommendations": 0,
+            "media": [],
+            "created": "2020-10-29T07:09:20"
+        },
+        {
+            "id": "9MEmbq1M",
+            "code": 55906,
+            "name": "Java",
+            "weight": 0,
+            "recommendations": 0,
+            "media": [],
+            "created": "2020-10-29T07:08:29"
+        },
+        {
+            "id": "GNKJ6Qoy",
+            "code": 521,
+            "name": "Engineering",
+            "weight": 0,
+            "recommendations": 0,
+            "media": [],
+            "created": "2020-10-29T07:06:24"
+        },
+        {
+            "id": "KNxYvOrM",
+            "code": 13768,
+            "name": "WiFi AP",
+            "weight": 0,
+            "recommendations": 0,
+            "media": [],
+            "created": "2020-10-29T07:05:19"
+        },
+        {
+            "id": "qy0Y0KKN",
+            "code": 55965,
+            "name": "Multimedia",
+            "weight": 0,
+            "recommendations": 0,
+            "media": [],
+            "created": "2020-10-29T07:01:15"
+        },
+        {
+            "id": "gyYA612y",
+            "code": 47023,
+            "name": "Multimedia Production",
+            "weight": 0,
+            "recommendations": 0,
+            "media": [],
+            "created": "2020-10-29T07:01:15"
+        },
+        {
+            "id": "AMWk6n0M",
+            "code": 13927,
+            "name": "VoIP",
+            "weight": 0,
+            "recommendations": 0,
+            "media": [],
+            "created": "2020-10-29T06:59:09"
+        },
+        {
+            "id": "0yz3JBnN",
+            "code": 15463,
+            "name": "Server Administration",
+            "weight": 0,
+            "recommendations": 0,
+            "media": [],
+            "created": "2020-10-29T06:58:53"
+        },
+        {
+            "id": "vN8kbAGy",
+            "code": 5515,
+            "name": "Engineering Science",
+            "weight": 0,
+            "recommendations": 0,
+            "media": [],
+            "created": "2020-10-29T06:56:16"
+        },
+        {
+            "id": "xyXenVZN",
+            "code": 5990851,
+            "name": "Leading Teams",
+            "weight": 0,
+            "recommendations": 1,
+            "media": [],
+            "created": "2020-10-29T06:55:18"
+        },
+        {
+            "id": "JMeGJoKy",
+            "code": 13656,
+            "name": "Logistics",
+            "weight": 0,
+            "recommendations": 0,
+            "media": [],
+            "created": "2020-10-29T06:51:12"
+        },
+        {
+            "id": "xM92ngWj",
+            "code": 3867162,
+            "name": "Formación de personal",
+            "weight": 0,
+            "recommendations": 0,
+            "media": [],
+            "created": "2020-10-29T04:47:05"
+        },
+        {
+            "id": "9MB2baaM",
+            "code": 5990150,
+            "name": "Coordinación de logísticas",
+            "weight": 0,
+            "recommendations": 0,
+            "media": [],
+            "created": "2020-10-29T04:46:14"
+        },
+        {
+            "id": "WNV3621M",
+            "code": 5990148,
+            "name": "Planificación de campamentos vacacionales",
+            "weight": 0,
+            "recommendations": 0,
+            "media": [],
+            "created": "2020-10-29T04:45:34"
+        },
+        {
+            "id": "7M22KXAM",
+            "code": 56923,
+            "name": "Business Strategy",
+            "weight": 0,
+            "recommendations": 0,
+            "media": [],
+            "created": "2020-10-29T04:35:50"
+        },
+        {
+            "id": "nM4adz6j",
+            "code": 5990112,
+            "name": "Computer Teacher",
+            "weight": 0,
+            "recommendations": 0,
+            "media": [],
+            "created": "2020-10-29T04:35:27"
+        },
+        {
+            "id": "9MEmbYRM",
+            "code": 5990111,
+            "name": "Structured Cabling Maintenance and installation",
+            "weight": 0,
+            "recommendations": 0,
+            "media": [],
+            "created": "2020-10-29T04:35:03"
+        },
+        {
+            "id": "VjwGpbmj",
+            "code": 5990110,
+            "name": "Network System Leader",
+            "weight": 0,
+            "recommendations": 0,
+            "media": [],
+            "created": "2020-10-29T04:34:48"
+        },
+        {
+            "id": "ANazAa8M",
+            "code": 28587,
+            "name": "Telecommunications",
+            "weight": 0,
+            "recommendations": 0,
+            "media": [],
+            "created": "2020-10-29T04:08:16"
+        },
+        {
+            "id": "KNxYv4gM",
+            "code": 159486,
+            "name": "Logística",
+            "weight": 0,
+            "recommendations": 0,
+            "media": [],
+            "created": "2020-10-29T04:04:42"
+        },
+        {
+            "id": "qy0Y0nYN",
+            "code": 14397,
+            "name": "Project Planning and Management",
+            "weight": 0,
+            "recommendations": 0,
+            "media": [],
+            "created": "2020-10-29T04:04:14"
+        },
+        {
+            "id": "RyD3bpWj",
+            "code": 55531,
+            "name": "Full Stack developer",
+            "weight": 0,
+            "recommendations": 0,
+            "media": [],
+            "created": "2020-10-29T04:03:59"
+        },
+        {
+            "id": "8yZp6eRM",
+            "code": 55925,
+            "name": "Liderazgo",
+            "additionalInfo": "",
+            "weight": 0,
+            "recommendations": 1,
+            "media": [],
+            "created": "2020-10-29T03:29:04"
+        },
+        {
+            "id": "EM3dDLKj",
+            "code": 187328,
+            "name": "Positivo",
+            "weight": 0,
+            "recommendations": 0,
+            "media": [],
+            "created": "2020-10-28T23:22:12"
+        },
+        {
+            "id": "WNV3Ll1M",
+            "code": 239683,
+            "name": "Creatividad",
+            "weight": 0,
+            "recommendations": 2,
+            "media": [],
+            "created": "2020-10-28T23:21:52"
+        },
+        {
+            "id": "ny12kLON",
+            "code": 234085,
+            "name": "Desarrollo de software",
+            "weight": 0,
+            "recommendations": 3,
+            "media": [],
+            "created": "2020-10-28T23:21:42"
+        }
+    ],
+    "interests": [
+        {
+            "id": "GNK8zXwM",
+            "code": 234085,
+            "name": "Desarrollo de software",
+            "media": [],
+            "created": "2020-10-28T23:22:33"
+        },
+        {
+            "id": "7M2nm48M",
+            "code": 85009,
+            "name": "Android development",
+            "additionalInfo": "",
+            "media": [],
+            "created": "2020-10-29T05:43:55"
+        },
+        {
+            "id": "zNGJ1VKy",
+            "code": 56450,
+            "name": "Game Development",
+            "media": [],
+            "created": "2020-11-12T16:11:46"
+        }
+    ],
+    "experiences": [
+        {
+            "id": "wM7DYqvj",
+            "category": "education",
+            "name": "UI/UX Developer",
+            "organizations": [
+                {
+                    "id": 448057,
+                    "name": "Platzi.com",
+                    "picture": "https://res.cloudinary.com/torre-technologies-co/image/upload/v1601951330/origin/bio/organizations/yu34modfwrydx7oungp0.webp"
+                }
+            ],
+            "responsibilities": [],
+            "fromMonth": "March",
+            "fromYear": "2020",
+            "remote": true,
+            "additionalInfo": "",
+            "highlighted": true,
+            "weight": 0,
+            "verifications": 0,
+            "recommendations": 0,
+            "media": [],
+            "rank": 1
+        },
+        {
+            "id": "0yzOBGqN",
+            "category": "jobs",
+            "name": "Programmer",
+            "organizations": [
+                {
+                    "id": 580335,
+                    "name": "Estelio"
+                },
+                {
+                    "id": 581016,
+                    "name": "Ciexpro",
+                    "picture": "https://res.cloudinary.com/torre-technologies-co/image/upload/v1608225786/origin/bio/organizations/vayxgthnt7cjxtwuivwa.png"
+                }
+            ],
+            "responsibilities": [],
+            "fromMonth": "December",
+            "fromYear": "2020",
+            "remote": false,
+            "additionalInfo": "",
+            "highlighted": true,
+            "weight": 0,
+            "verifications": 0,
+            "recommendations": 0,
+            "media": [],
+            "rank": 1
+        },
+        {
+            "id": "gyY03mdj",
+            "category": "projects",
+            "name": "Construction and configuration of data center for Telecommunication Company CANTV",
+            "contributions": "",
+            "organizations": [
+                {
+                    "id": 502957,
+                    "name": "Netex de Venezuela C.A.",
+                    "picture": "https://res.cloudinary.com/torre-technologies-co/image/upload/v1604341081/origin/bio/organizations/u1n7hapgppi5bbj7xr53.png"
+                }
+            ],
+            "responsibilities": [
+                "Manager and administrator of environmental monitoring server",
+                "Support engineer for air conditioner, ups and battery bank systems",
+                "Support engineer for telecommunication equipments"
+            ],
+            "fromMonth": "September",
+            "fromYear": "2018",
+            "toMonth": "February",
+            "toYear": "2019",
+            "remote": false,
+            "additionalInfo": "",
+            "highlighted": true,
+            "weight": 0,
+            "verifications": 0,
+            "recommendations": 0,
+            "media": [],
+            "rank": 1
+        },
+        {
+            "id": "Oj6v4K6j",
+            "category": "publications",
+            "name": "App: Cats : https://play.google.com/store/apps/details?id=com.cyberfanta.cats",
+            "contributions": "",
+            "organizations": [
+                {
+                    "id": 448057,
+                    "name": "Platzi.com",
+                    "picture": "https://res.cloudinary.com/torre-technologies-co/image/upload/v1601951330/origin/bio/organizations/yu34modfwrydx7oungp0.webp"
+                }
+            ],
+            "responsibilities": [],
+            "fromMonth": "August",
+            "fromYear": "2020",
+            "remote": false,
+            "additionalInfo": "",
+            "highlighted": true,
+            "weight": 0,
+            "verifications": 0,
+            "recommendations": 0,
+            "media": [
+                {
+                    "group": "848f0260-3d98-41cd-b976-6e25c0f568ea",
+                    "mediaType": "link",
+                    "description": "",
+                    "mediaItems": [
+                        {
+                            "id": "8jpnO8NX",
+                            "address": "https://play.google.com/store/apps/details?id=com.cyberfanta.cats"
+                        }
+                    ]
+                }
+            ],
+            "rank": 1
+        },
+        {
+            "id": "OMvb991M",
+            "category": "jobs",
+            "name": "Ingeniero",
+            "organizations": [
+                {
+                    "id": 502957,
+                    "name": "Netex de Venezuela C.A.",
+                    "picture": "https://res.cloudinary.com/torre-technologies-co/image/upload/v1604341081/origin/bio/organizations/u1n7hapgppi5bbj7xr53.png"
+                },
+                {
+                    "id": 383585,
+                    "name": "ZTE Corporation",
+                    "picture": "https://res.cloudinary.com/torre-technologies-co/image/upload/v1600926180/origin/bio/organizations/ZTE_Corporation_uadeqm.png"
+                }
+            ],
+            "responsibilities": [
+                "Líder de Equipos de Trabajo en Instalación de Centros de Datos",
+                "Back-End Developer en Java, CSS, PHP, Laravel, Python, Html",
+                "Configuración de Servidores Linux, Windows Server y Promox",
+                "Configuración de Sistemas MsSql, MySql, Postgre Sql, Nginx y Apache",
+                "Configuración de Maquinas Virtuales"
+            ],
+            "fromMonth": "January",
+            "fromYear": "2013",
+            "toMonth": "March",
+            "toYear": "2019",
+            "highlighted": true,
+            "weight": 0,
+            "verifications": 1,
+            "recommendations": 0,
+            "media": [],
+            "rank": 2
+        },
+        {
+            "id": "GNKWnzeN",
+            "category": "education",
+            "name": "BackEnd Developer in Java SE",
+            "organizations": [
+                {
+                    "id": 448057,
+                    "name": "Platzi.com",
+                    "picture": "https://res.cloudinary.com/torre-technologies-co/image/upload/v1601951330/origin/bio/organizations/yu34modfwrydx7oungp0.webp"
+                }
+            ],
+            "responsibilities": [],
+            "fromMonth": "March",
+            "fromYear": "2020",
+            "remote": true,
+            "additionalInfo": "",
+            "highlighted": true,
+            "weight": 0,
+            "verifications": 0,
+            "recommendations": 0,
+            "media": [],
+            "rank": 2
+        },
+        {
+            "id": "7M2X6G6y",
+            "category": "publications",
+            "name": "App: Strings XML filter tool : https://play.google.com/store/apps/details?id=com.cyberfanta.stringxmlfiltertool",
+            "contributions": "Designer & Developer",
+            "organizations": [
+                {
+                    "id": 448057,
+                    "name": "Platzi.com",
+                    "picture": "https://res.cloudinary.com/torre-technologies-co/image/upload/v1601951330/origin/bio/organizations/yu34modfwrydx7oungp0.webp"
+                }
+            ],
+            "responsibilities": [],
+            "fromMonth": "October",
+            "fromYear": "2020",
+            "toMonth": "October",
+            "toYear": "2020",
+            "remote": false,
+            "additionalInfo": "",
+            "highlighted": true,
+            "weight": 0,
+            "verifications": 0,
+            "recommendations": 0,
+            "media": [
+                {
+                    "group": "95f81f55-8e84-45dd-83c3-ea35cb780446",
+                    "mediaType": "link",
+                    "description": "",
+                    "mediaItems": [
+                        {
+                            "id": "bjAweDNX",
+                            "address": "https://play.google.com/store/apps/details?id=com.cyberfanta.stringxmlfiltertool"
+                        }
+                    ]
+                }
+            ],
+            "rank": 2
+        },
+        {
+            "id": "RyDgamlj",
+            "category": "projects",
+            "name": "Construction of robotic facilities to handle medicines to hospitals for Venezuelan Ministry of Health",
+            "contributions": "",
+            "organizations": [
+                {
+                    "id": 502957,
+                    "name": "Netex de Venezuela C.A.",
+                    "picture": "https://res.cloudinary.com/torre-technologies-co/image/upload/v1604341081/origin/bio/organizations/u1n7hapgppi5bbj7xr53.png"
+                }
+            ],
+            "responsibilities": [
+                "Developer of management system for medicine distribution",
+                "Data Center support Engineer",
+                "Teacher for management system"
+            ],
+            "fromMonth": "January",
+            "fromYear": "2013",
+            "toMonth": "February",
+            "toYear": "2019",
+            "remote": false,
+            "additionalInfo": "",
+            "highlighted": true,
+            "weight": 0,
+            "verifications": 1,
+            "recommendations": 0,
+            "media": [],
+            "rank": 2
+        },
+        {
+            "id": "VjwbrrKM",
+            "category": "jobs",
+            "name": "Vicepresidente",
+            "organizations": [
+                {
+                    "id": 495627,
+                    "name": "J.P.B. Servicios Digitales C.A."
+                }
+            ],
+            "responsibilities": [
+                "Gestión y planificación de empresas",
+                "Líder en diseño de cableado estructurado",
+                "Preparación Logística"
+            ],
+            "fromMonth": "April",
+            "fromYear": "2007",
+            "toMonth": "August",
+            "toYear": "2016",
+            "highlighted": true,
+            "weight": 0,
+            "verifications": 0,
+            "recommendations": 0,
+            "media": [],
+            "rank": 3
+        },
+        {
+            "id": "9MEYv2gM",
+            "category": "publications",
+            "name": "App: Rithmomachia - UCV : https://play.google.com/store/apps/details?id=com.ejemplo.rithmomachia",
+            "contributions": "Designer & Developer",
+            "organizations": [
+                {
+                    "id": 378667,
+                    "name": "Universidad Central de Venezuela  (UCV)—Venezuela",
+                    "picture": "https://res.cloudinary.com/torre-technologies-co/image/upload/v1600925280/origin/bio/organizations/Universidad_Central_de_Venezuela_rdn0qw.gif"
+                }
+            ],
+            "responsibilities": [],
+            "fromMonth": "February",
+            "fromYear": "2020",
+            "toMonth": "June",
+            "toYear": "2020",
+            "remote": false,
+            "additionalInfo": "",
+            "highlighted": true,
+            "weight": 0,
+            "verifications": 0,
+            "recommendations": 0,
+            "media": [
+                {
+                    "group": "04f345bd-ad22-43cd-a6fe-60ad27bd8616",
+                    "mediaType": "link",
+                    "description": "",
+                    "mediaItems": [
+                        {
+                            "id": "JMenxQj0",
+                            "address": "https://play.google.com/store/apps/details?id=com.ejemplo.rithmomachia"
+                        }
+                    ]
+                }
+            ],
+            "rank": 3
+        },
+        {
+            "id": "BMLDnpBM",
+            "category": "education",
+            "name": "Licenciado en Computación",
+            "organizations": [
+                {
+                    "id": 378667,
+                    "name": "Universidad Central de Venezuela  (UCV)—Venezuela",
+                    "picture": "https://res.cloudinary.com/torre-technologies-co/image/upload/v1600925280/origin/bio/organizations/Universidad_Central_de_Venezuela_rdn0qw.gif"
+                }
+            ],
+            "responsibilities": [],
+            "fromMonth": "October",
+            "fromYear": "2002",
+            "remote": false,
+            "additionalInfo": "",
+            "highlighted": true,
+            "weight": 0,
+            "verifications": 2,
+            "recommendations": 2,
+            "media": [],
+            "rank": 3
+        },
+        {
+            "id": "qNPgnmXy",
+            "category": "projects",
+            "name": "Facilitie construction for 2nd phase to duplicate the production of factory Vtelca for Venezuelan Ministry of Industries",
+            "contributions": "",
+            "organizations": [
+                {
+                    "id": 502957,
+                    "name": "Netex de Venezuela C.A.",
+                    "picture": "https://res.cloudinary.com/torre-technologies-co/image/upload/v1604341081/origin/bio/organizations/u1n7hapgppi5bbj7xr53.png"
+                },
+                {
+                    "id": 506827,
+                    "name": "Vtelca C.A",
+                    "picture": "https://res.cloudinary.com/torre-technologies-co/image/upload/v1604420810/origin/bio/organizations/zwv9f44yoaj4yiqfgtur.jpg"
+                }
+            ],
+            "responsibilities": [
+                "Developer of software to control the watchmen patrols",
+                "Survey of customer requirements for ERP MES software",
+                "Prepare documentation for project description",
+                "Project manager and engineer"
+            ],
+            "fromMonth": "March",
+            "fromYear": "2013",
+            "toMonth": "March",
+            "toYear": "2018",
+            "remote": false,
+            "additionalInfo": "",
+            "highlighted": true,
+            "weight": 0,
+            "verifications": 0,
+            "recommendations": 0,
+            "media": [],
+            "rank": 3
+        },
+        {
+            "id": "AjrzEY1j",
+            "category": "projects",
+            "name": "Configuration of data center for Haier factory of Venezuelan Ministry of Industries",
+            "contributions": "",
+            "organizations": [
+                {
+                    "id": 502957,
+                    "name": "Netex de Venezuela C.A.",
+                    "picture": "https://res.cloudinary.com/torre-technologies-co/image/upload/v1604341081/origin/bio/organizations/u1n7hapgppi5bbj7xr53.png"
+                },
+                {
+                    "id": 502840,
+                    "name": "Haier de Venezuela",
+                    "picture": "https://res.cloudinary.com/torre-technologies-co/image/upload/v1604339287/origin/bio/organizations/dmwtbpz9ipouabh2rxmv.jpg"
+                }
+            ],
+            "responsibilities": [
+                "Prepare documentation for project description",
+                "Project manager and engineer",
+                "Installation and configuration of VOIP server and HA servers"
+            ],
+            "fromMonth": "August",
+            "fromYear": "2017",
+            "toMonth": "March",
+            "toYear": "2018",
+            "additionalInfo": "",
+            "highlighted": true,
+            "weight": 0,
+            "verifications": 0,
+            "recommendations": 0,
+            "media": [],
+            "rank": 4
+        },
+        {
+            "id": "7M2X6m6y",
+            "category": "jobs",
+            "name": "Coordinador de Programas",
+            "organizations": [
+                {
+                    "id": 502716,
+                    "name": "Campamento Ecológico Recreativo Tocorón C.A.",
+                    "picture": "https://res.cloudinary.com/torre-technologies-co/image/upload/v1604337172/origin/bio/organizations/um8rmoiv1cwqegonvab4.jpg"
+                }
+            ],
+            "responsibilities": [
+                "Planning Camping Days Centered in the Entertainment of Childs and Adolescents",
+                "Ensure the Logistic for Camping Days",
+                "Ensure the Health and Well Preforming of the Activities",
+                "Teacher in the Workshop: Formation of Leaders and Advisers for several years"
+            ],
+            "fromMonth": "July",
+            "fromYear": "1996",
+            "toMonth": "September",
+            "toYear": "2017",
+            "highlighted": true,
+            "weight": 0,
+            "verifications": 1,
+            "recommendations": 1,
+            "media": [],
+            "rank": 4
+        },
+        {
+            "id": "gMRxb7Qy",
+            "category": "projects",
+            "name": "Intallation and configuration of intelligent classrooms for national schools for Venezuelan Ministry of Education",
+            "contributions": "",
+            "organizations": [
+                {
+                    "id": 502957,
+                    "name": "Netex de Venezuela C.A.",
+                    "picture": "https://res.cloudinary.com/torre-technologies-co/image/upload/v1604341081/origin/bio/organizations/u1n7hapgppi5bbj7xr53.png"
+                }
+            ],
+            "responsibilities": [
+                "Installation and configuration of VOIP server, Access Controller and Wi-Fi hotspots"
+            ],
+            "fromMonth": "March",
+            "fromYear": "2016",
+            "toMonth": "June",
+            "toYear": "2016",
+            "remote": false,
+            "additionalInfo": "",
+            "highlighted": true,
+            "weight": 0,
+            "verifications": 0,
+            "recommendations": 0,
+            "media": [],
+            "rank": 5
+        },
+        {
+            "id": "KNx96bZM",
+            "category": "projects",
+            "name": "Development of National E-Learning platform Edunube for Venezuelan Ministry of Education",
+            "contributions": "",
+            "organizations": [
+                {
+                    "id": 502957,
+                    "name": "Netex de Venezuela C.A.",
+                    "picture": "https://res.cloudinary.com/torre-technologies-co/image/upload/v1604341081/origin/bio/organizations/u1n7hapgppi5bbj7xr53.png"
+                }
+            ],
+            "responsibilities": [
+                "Support in the installation of web platform for demonstration",
+                "Developer of educative material"
+            ],
+            "fromMonth": "April",
+            "fromYear": "2013",
+            "toMonth": "August",
+            "toYear": "2015",
+            "remote": false,
+            "additionalInfo": "",
+            "highlighted": true,
+            "weight": 0,
+            "verifications": 0,
+            "recommendations": 0,
+            "media": [],
+            "rank": 6
+        },
+        {
+            "id": "qy0VlZmM",
+            "category": "projects",
+            "name": "Installation of VOIP server and Surveillance system for Venezuelan Ministry of Defense",
+            "contributions": "",
+            "organizations": [
+                {
+                    "id": 502957,
+                    "name": "Netex de Venezuela C.A.",
+                    "picture": "https://res.cloudinary.com/torre-technologies-co/image/upload/v1604341081/origin/bio/organizations/u1n7hapgppi5bbj7xr53.png"
+                }
+            ],
+            "responsibilities": [
+                "Installation and configuration of VOIP server",
+                "Installation and configuration of VPN tunnels"
+            ],
+            "fromMonth": "May",
+            "fromYear": "2018",
+            "toMonth": "June",
+            "toYear": "2018",
+            "remote": false,
+            "additionalInfo": "",
+            "highlighted": true,
+            "weight": 0,
+            "verifications": 0,
+            "recommendations": 0,
+            "media": [],
+            "rank": 7
+        }
+    ],
+    "awards": [],
+    "jobs": [
+        {
+            "id": "0yzOBGqN",
+            "category": "jobs",
+            "name": "Programmer",
+            "organizations": [
+                {
+                    "id": 580335,
+                    "name": "Estelio"
+                },
+                {
+                    "id": 581016,
+                    "name": "Ciexpro",
+                    "picture": "https://res.cloudinary.com/torre-technologies-co/image/upload/v1608225786/origin/bio/organizations/vayxgthnt7cjxtwuivwa.png"
+                }
+            ],
+            "responsibilities": [],
+            "fromMonth": "December",
+            "fromYear": "2020",
+            "remote": false,
+            "additionalInfo": "",
+            "highlighted": true,
+            "weight": 0,
+            "verifications": 0,
+            "recommendations": 0,
+            "media": [],
+            "rank": 1
+        },
+        {
+            "id": "OMvb991M",
+            "category": "jobs",
+            "name": "Ingeniero",
+            "organizations": [
+                {
+                    "id": 502957,
+                    "name": "Netex de Venezuela C.A.",
+                    "picture": "https://res.cloudinary.com/torre-technologies-co/image/upload/v1604341081/origin/bio/organizations/u1n7hapgppi5bbj7xr53.png"
+                },
+                {
+                    "id": 383585,
+                    "name": "ZTE Corporation",
+                    "picture": "https://res.cloudinary.com/torre-technologies-co/image/upload/v1600926180/origin/bio/organizations/ZTE_Corporation_uadeqm.png"
+                }
+            ],
+            "responsibilities": [
+                "Líder de Equipos de Trabajo en Instalación de Centros de Datos",
+                "Back-End Developer en Java, CSS, PHP, Laravel, Python, Html",
+                "Configuración de Servidores Linux, Windows Server y Promox",
+                "Configuración de Sistemas MsSql, MySql, Postgre Sql, Nginx y Apache",
+                "Configuración de Maquinas Virtuales"
+            ],
+            "fromMonth": "January",
+            "fromYear": "2013",
+            "toMonth": "March",
+            "toYear": "2019",
+            "highlighted": true,
+            "weight": 0,
+            "verifications": 1,
+            "recommendations": 0,
+            "media": [],
+            "rank": 2
+        },
+        {
+            "id": "VjwbrrKM",
+            "category": "jobs",
+            "name": "Vicepresidente",
+            "organizations": [
+                {
+                    "id": 495627,
+                    "name": "J.P.B. Servicios Digitales C.A."
+                }
+            ],
+            "responsibilities": [
+                "Gestión y planificación de empresas",
+                "Líder en diseño de cableado estructurado",
+                "Preparación Logística"
+            ],
+            "fromMonth": "April",
+            "fromYear": "2007",
+            "toMonth": "August",
+            "toYear": "2016",
+            "highlighted": true,
+            "weight": 0,
+            "verifications": 0,
+            "recommendations": 0,
+            "media": [],
+            "rank": 3
+        },
+        {
+            "id": "7M2X6m6y",
+            "category": "jobs",
+            "name": "Coordinador de Programas",
+            "organizations": [
+                {
+                    "id": 502716,
+                    "name": "Campamento Ecológico Recreativo Tocorón C.A.",
+                    "picture": "https://res.cloudinary.com/torre-technologies-co/image/upload/v1604337172/origin/bio/organizations/um8rmoiv1cwqegonvab4.jpg"
+                }
+            ],
+            "responsibilities": [
+                "Planning Camping Days Centered in the Entertainment of Childs and Adolescents",
+                "Ensure the Logistic for Camping Days",
+                "Ensure the Health and Well Preforming of the Activities",
+                "Teacher in the Workshop: Formation of Leaders and Advisers for several years"
+            ],
+            "fromMonth": "July",
+            "fromYear": "1996",
+            "toMonth": "September",
+            "toYear": "2017",
+            "highlighted": true,
+            "weight": 0,
+            "verifications": 1,
+            "recommendations": 1,
+            "media": [],
+            "rank": 4
+        }
+    ],
+    "projects": [
+        {
+            "id": "gyY03mdj",
+            "category": "projects",
+            "name": "Construction and configuration of data center for Telecommunication Company CANTV",
+            "contributions": "",
+            "organizations": [
+                {
+                    "id": 502957,
+                    "name": "Netex de Venezuela C.A.",
+                    "picture": "https://res.cloudinary.com/torre-technologies-co/image/upload/v1604341081/origin/bio/organizations/u1n7hapgppi5bbj7xr53.png"
+                }
+            ],
+            "responsibilities": [
+                "Manager and administrator of environmental monitoring server",
+                "Support engineer for air conditioner, ups and battery bank systems",
+                "Support engineer for telecommunication equipments"
+            ],
+            "fromMonth": "September",
+            "fromYear": "2018",
+            "toMonth": "February",
+            "toYear": "2019",
+            "remote": false,
+            "additionalInfo": "",
+            "highlighted": true,
+            "weight": 0,
+            "verifications": 0,
+            "recommendations": 0,
+            "media": [],
+            "rank": 1
+        },
+        {
+            "id": "RyDgamlj",
+            "category": "projects",
+            "name": "Construction of robotic facilities to handle medicines to hospitals for Venezuelan Ministry of Health",
+            "contributions": "",
+            "organizations": [
+                {
+                    "id": 502957,
+                    "name": "Netex de Venezuela C.A.",
+                    "picture": "https://res.cloudinary.com/torre-technologies-co/image/upload/v1604341081/origin/bio/organizations/u1n7hapgppi5bbj7xr53.png"
+                }
+            ],
+            "responsibilities": [
+                "Developer of management system for medicine distribution",
+                "Data Center support Engineer",
+                "Teacher for management system"
+            ],
+            "fromMonth": "January",
+            "fromYear": "2013",
+            "toMonth": "February",
+            "toYear": "2019",
+            "remote": false,
+            "additionalInfo": "",
+            "highlighted": true,
+            "weight": 0,
+            "verifications": 1,
+            "recommendations": 0,
+            "media": [],
+            "rank": 2
+        },
+        {
+            "id": "qNPgnmXy",
+            "category": "projects",
+            "name": "Facilitie construction for 2nd phase to duplicate the production of factory Vtelca for Venezuelan Ministry of Industries",
+            "contributions": "",
+            "organizations": [
+                {
+                    "id": 502957,
+                    "name": "Netex de Venezuela C.A.",
+                    "picture": "https://res.cloudinary.com/torre-technologies-co/image/upload/v1604341081/origin/bio/organizations/u1n7hapgppi5bbj7xr53.png"
+                },
+                {
+                    "id": 506827,
+                    "name": "Vtelca C.A",
+                    "picture": "https://res.cloudinary.com/torre-technologies-co/image/upload/v1604420810/origin/bio/organizations/zwv9f44yoaj4yiqfgtur.jpg"
+                }
+            ],
+            "responsibilities": [
+                "Developer of software to control the watchmen patrols",
+                "Survey of customer requirements for ERP MES software",
+                "Prepare documentation for project description",
+                "Project manager and engineer"
+            ],
+            "fromMonth": "March",
+            "fromYear": "2013",
+            "toMonth": "March",
+            "toYear": "2018",
+            "remote": false,
+            "additionalInfo": "",
+            "highlighted": true,
+            "weight": 0,
+            "verifications": 0,
+            "recommendations": 0,
+            "media": [],
+            "rank": 3
+        },
+        {
+            "id": "AjrzEY1j",
+            "category": "projects",
+            "name": "Configuration of data center for Haier factory of Venezuelan Ministry of Industries",
+            "contributions": "",
+            "organizations": [
+                {
+                    "id": 502957,
+                    "name": "Netex de Venezuela C.A.",
+                    "picture": "https://res.cloudinary.com/torre-technologies-co/image/upload/v1604341081/origin/bio/organizations/u1n7hapgppi5bbj7xr53.png"
+                },
+                {
+                    "id": 502840,
+                    "name": "Haier de Venezuela",
+                    "picture": "https://res.cloudinary.com/torre-technologies-co/image/upload/v1604339287/origin/bio/organizations/dmwtbpz9ipouabh2rxmv.jpg"
+                }
+            ],
+            "responsibilities": [
+                "Prepare documentation for project description",
+                "Project manager and engineer",
+                "Installation and configuration of VOIP server and HA servers"
+            ],
+            "fromMonth": "August",
+            "fromYear": "2017",
+            "toMonth": "March",
+            "toYear": "2018",
+            "additionalInfo": "",
+            "highlighted": true,
+            "weight": 0,
+            "verifications": 0,
+            "recommendations": 0,
+            "media": [],
+            "rank": 4
+        },
+        {
+            "id": "gMRxb7Qy",
+            "category": "projects",
+            "name": "Intallation and configuration of intelligent classrooms for national schools for Venezuelan Ministry of Education",
+            "contributions": "",
+            "organizations": [
+                {
+                    "id": 502957,
+                    "name": "Netex de Venezuela C.A.",
+                    "picture": "https://res.cloudinary.com/torre-technologies-co/image/upload/v1604341081/origin/bio/organizations/u1n7hapgppi5bbj7xr53.png"
+                }
+            ],
+            "responsibilities": [
+                "Installation and configuration of VOIP server, Access Controller and Wi-Fi hotspots"
+            ],
+            "fromMonth": "March",
+            "fromYear": "2016",
+            "toMonth": "June",
+            "toYear": "2016",
+            "remote": false,
+            "additionalInfo": "",
+            "highlighted": true,
+            "weight": 0,
+            "verifications": 0,
+            "recommendations": 0,
+            "media": [],
+            "rank": 5
+        },
+        {
+            "id": "KNx96bZM",
+            "category": "projects",
+            "name": "Development of National E-Learning platform Edunube for Venezuelan Ministry of Education",
+            "contributions": "",
+            "organizations": [
+                {
+                    "id": 502957,
+                    "name": "Netex de Venezuela C.A.",
+                    "picture": "https://res.cloudinary.com/torre-technologies-co/image/upload/v1604341081/origin/bio/organizations/u1n7hapgppi5bbj7xr53.png"
+                }
+            ],
+            "responsibilities": [
+                "Support in the installation of web platform for demonstration",
+                "Developer of educative material"
+            ],
+            "fromMonth": "April",
+            "fromYear": "2013",
+            "toMonth": "August",
+            "toYear": "2015",
+            "remote": false,
+            "additionalInfo": "",
+            "highlighted": true,
+            "weight": 0,
+            "verifications": 0,
+            "recommendations": 0,
+            "media": [],
+            "rank": 6
+        },
+        {
+            "id": "qy0VlZmM",
+            "category": "projects",
+            "name": "Installation of VOIP server and Surveillance system for Venezuelan Ministry of Defense",
+            "contributions": "",
+            "organizations": [
+                {
+                    "id": 502957,
+                    "name": "Netex de Venezuela C.A.",
+                    "picture": "https://res.cloudinary.com/torre-technologies-co/image/upload/v1604341081/origin/bio/organizations/u1n7hapgppi5bbj7xr53.png"
+                }
+            ],
+            "responsibilities": [
+                "Installation and configuration of VOIP server",
+                "Installation and configuration of VPN tunnels"
+            ],
+            "fromMonth": "May",
+            "fromYear": "2018",
+            "toMonth": "June",
+            "toYear": "2018",
+            "remote": false,
+            "additionalInfo": "",
+            "highlighted": true,
+            "weight": 0,
+            "verifications": 0,
+            "recommendations": 0,
+            "media": [],
+            "rank": 7
+        }
+    ],
+    "publications": [
+        {
+            "id": "Oj6v4K6j",
+            "category": "publications",
+            "name": "App: Cats : https://play.google.com/store/apps/details?id=com.cyberfanta.cats",
+            "contributions": "",
+            "organizations": [
+                {
+                    "id": 448057,
+                    "name": "Platzi.com",
+                    "picture": "https://res.cloudinary.com/torre-technologies-co/image/upload/v1601951330/origin/bio/organizations/yu34modfwrydx7oungp0.webp"
+                }
+            ],
+            "responsibilities": [],
+            "fromMonth": "August",
+            "fromYear": "2020",
+            "remote": false,
+            "additionalInfo": "",
+            "highlighted": true,
+            "weight": 0,
+            "verifications": 0,
+            "recommendations": 0,
+            "media": [
+                {
+                    "group": "848f0260-3d98-41cd-b976-6e25c0f568ea",
+                    "mediaType": "link",
+                    "description": "",
+                    "mediaItems": [
+                        {
+                            "id": "8jpnO8NX",
+                            "address": "https://play.google.com/store/apps/details?id=com.cyberfanta.cats"
+                        }
+                    ]
+                }
+            ],
+            "rank": 1
+        },
+        {
+            "id": "7M2X6G6y",
+            "category": "publications",
+            "name": "App: Strings XML filter tool : https://play.google.com/store/apps/details?id=com.cyberfanta.stringxmlfiltertool",
+            "contributions": "Designer & Developer",
+            "organizations": [
+                {
+                    "id": 448057,
+                    "name": "Platzi.com",
+                    "picture": "https://res.cloudinary.com/torre-technologies-co/image/upload/v1601951330/origin/bio/organizations/yu34modfwrydx7oungp0.webp"
+                }
+            ],
+            "responsibilities": [],
+            "fromMonth": "October",
+            "fromYear": "2020",
+            "toMonth": "October",
+            "toYear": "2020",
+            "remote": false,
+            "additionalInfo": "",
+            "highlighted": true,
+            "weight": 0,
+            "verifications": 0,
+            "recommendations": 0,
+            "media": [
+                {
+                    "group": "95f81f55-8e84-45dd-83c3-ea35cb780446",
+                    "mediaType": "link",
+                    "description": "",
+                    "mediaItems": [
+                        {
+                            "id": "bjAweDNX",
+                            "address": "https://play.google.com/store/apps/details?id=com.cyberfanta.stringxmlfiltertool"
+                        }
+                    ]
+                }
+            ],
+            "rank": 2
+        },
+        {
+            "id": "9MEYv2gM",
+            "category": "publications",
+            "name": "App: Rithmomachia - UCV : https://play.google.com/store/apps/details?id=com.ejemplo.rithmomachia",
+            "contributions": "Designer & Developer",
+            "organizations": [
+                {
+                    "id": 378667,
+                    "name": "Universidad Central de Venezuela  (UCV)—Venezuela",
+                    "picture": "https://res.cloudinary.com/torre-technologies-co/image/upload/v1600925280/origin/bio/organizations/Universidad_Central_de_Venezuela_rdn0qw.gif"
+                }
+            ],
+            "responsibilities": [],
+            "fromMonth": "February",
+            "fromYear": "2020",
+            "toMonth": "June",
+            "toYear": "2020",
+            "remote": false,
+            "additionalInfo": "",
+            "highlighted": true,
+            "weight": 0,
+            "verifications": 0,
+            "recommendations": 0,
+            "media": [
+                {
+                    "group": "04f345bd-ad22-43cd-a6fe-60ad27bd8616",
+                    "mediaType": "link",
+                    "description": "",
+                    "mediaItems": [
+                        {
+                            "id": "JMenxQj0",
+                            "address": "https://play.google.com/store/apps/details?id=com.ejemplo.rithmomachia"
+                        }
+                    ]
+                }
+            ],
+            "rank": 3
+        }
+    ],
+    "education": [
+        {
+            "id": "wM7DYqvj",
+            "category": "education",
+            "name": "UI/UX Developer",
+            "organizations": [
+                {
+                    "id": 448057,
+                    "name": "Platzi.com",
+                    "picture": "https://res.cloudinary.com/torre-technologies-co/image/upload/v1601951330/origin/bio/organizations/yu34modfwrydx7oungp0.webp"
+                }
+            ],
+            "responsibilities": [],
+            "fromMonth": "March",
+            "fromYear": "2020",
+            "remote": true,
+            "additionalInfo": "",
+            "highlighted": true,
+            "weight": 0,
+            "verifications": 0,
+            "recommendations": 0,
+            "media": [],
+            "rank": 1
+        },
+        {
+            "id": "GNKWnzeN",
+            "category": "education",
+            "name": "BackEnd Developer in Java SE",
+            "organizations": [
+                {
+                    "id": 448057,
+                    "name": "Platzi.com",
+                    "picture": "https://res.cloudinary.com/torre-technologies-co/image/upload/v1601951330/origin/bio/organizations/yu34modfwrydx7oungp0.webp"
+                }
+            ],
+            "responsibilities": [],
+            "fromMonth": "March",
+            "fromYear": "2020",
+            "remote": true,
+            "additionalInfo": "",
+            "highlighted": true,
+            "weight": 0,
+            "verifications": 0,
+            "recommendations": 0,
+            "media": [],
+            "rank": 2
+        },
+        {
+            "id": "BMLDnpBM",
+            "category": "education",
+            "name": "Licenciado en Computación",
+            "organizations": [
+                {
+                    "id": 378667,
+                    "name": "Universidad Central de Venezuela  (UCV)—Venezuela",
+                    "picture": "https://res.cloudinary.com/torre-technologies-co/image/upload/v1600925280/origin/bio/organizations/Universidad_Central_de_Venezuela_rdn0qw.gif"
+                }
+            ],
+            "responsibilities": [],
+            "fromMonth": "October",
+            "fromYear": "2002",
+            "remote": false,
+            "additionalInfo": "",
+            "highlighted": true,
+            "weight": 0,
+            "verifications": 2,
+            "recommendations": 2,
+            "media": [],
+            "rank": 3
+        }
+    ],
+    "opportunities": [
+        {
+            "id": "y5EYY9Xy",
+            "interest": "industries",
+            "field": "types",
+            "data": [
+                {
+                    "code": 11154,
+                    "locale": "es",
+                    "name": "Software y Servicios Informáticos"
+                },
+                {
+                    "code": 11119,
+                    "locale": "es",
+                    "name": "Startups"
+                },
+                {
+                    "code": 11217,
+                    "locale": "es",
+                    "name": "Investigación"
+                },
+                {
+                    "code": 11133,
+                    "locale": "es",
+                    "name": "Desarrollo de Software"
+                },
+                {
+                    "locale": "es",
+                    "name": "Android"
+                },
+                {
+                    "code": 11167,
+                    "locale": "es",
+                    "name": "Telecomunicaciones Móviles"
+                },
+                {
+                    "code": 11111,
+                    "locale": "es",
+                    "name": "Tecnología"
+                },
+                {
+                    "code": 11116,
+                    "locale": "es",
+                    "name": "Diseño"
+                },
+                {
+                    "code": 11142,
+                    "locale": "es",
+                    "name": "Freelance"
+                },
+                {
+                    "code": 11124,
+                    "locale": "es",
+                    "name": "Talento Humano"
+                }
+            ]
+        },
+        {
+            "id": "M3Em9qby",
+            "interest": "mentoring",
+            "field": "active",
+            "data": true
+        },
+        {
+            "id": "NmBx3lbM",
+            "interest": "advising",
+            "field": "active",
+            "data": true
+        },
+        {
+            "id": "Mek8D3py",
+            "interest": "hiring",
+            "field": "active",
+            "data": true
+        }
+    ],
+    "languages": [
+        {
+            "code": "es",
+            "language": "Spanish",
+            "fluency": "fully-fluent"
+        },
+        {
+            "code": "en",
+            "language": "English",
+            "fluency": "fully-fluent"
+        }
+    ],
+    "personalityTraitsResults": {
+        "groups": [
+            {
+                "id": "extraversion",
+                "order": 0,
+                "median": 3.5,
+                "stddev": 0.57
+            },
+            {
+                "id": "openness-to-experience",
+                "order": 1,
+                "median": 3.41,
+                "stddev": 0.6
+            },
+            {
+                "id": "conscientiousness",
+                "order": 2,
+                "median": 3.44,
+                "stddev": 0.56
+            },
+            {
+                "id": "agreeableness",
+                "order": 3,
+                "median": 2.94,
+                "stddev": 0.58
+            },
+            {
+                "id": "honesty-humility",
+                "order": 4,
+                "median": 3.19,
+                "stddev": 0.62
+            },
+            {
+                "id": "emotionality",
+                "order": 5,
+                "median": 3.43,
+                "stddev": 0.62
+            }
+        ],
+        "analyses": [
+            {
+                "groupId": "openness-to-experience",
+                "analysis": 4.13
+            },
+            {
+                "groupId": "honesty-humility",
+                "analysis": 2.69
+            },
+            {
+                "groupId": "agreeableness",
+                "analysis": 3.25
+            },
+            {
+                "groupId": "altruism",
+                "analysis": 4
+            },
+            {
+                "groupId": "conscientiousness",
+                "analysis": 4
+            },
+            {
+                "groupId": "emotionality",
+                "analysis": 2.69
+            },
+            {
+                "groupId": "extraversion",
+                "analysis": 4.13
+            }
+        ]
+    },
+    "professionalCultureGenomeResults": {
+        "groups": [
+            {
+                "id": "1",
+                "text": "Achievement oriented",
+                "answer": "all-the-time",
+                "order": 0
+            },
+            {
+                "id": "3",
+                "text": "Adaptability",
+                "answer": "all-the-time",
+                "order": 1
+            },
+            {
+                "id": "17",
+                "text": "Being people oriented",
+                "answer": "all-the-time",
+                "order": 2
+            },
+            {
+                "id": "19",
+                "text": "Being quick to take advantage of opportunities",
+                "answer": "all-the-time",
+                "order": 3
+            },
+            {
+                "id": "21",
+                "text": "Being results oriented",
+                "answer": "all-the-time",
+                "order": 4
+            },
+            {
+                "id": "23",
+                "text": "Being supportive",
+                "answer": "all-the-time",
+                "order": 5
+            },
+            {
+                "id": "24",
+                "text": "Being team oriented",
+                "answer": "all-the-time",
+                "order": 6
+            },
+            {
+                "id": "26",
+                "text": "Being willing to experiment",
+                "answer": "all-the-time",
+                "order": 7
+            },
+            {
+                "id": "28",
+                "text": "Cooperative",
+                "answer": "all-the-time",
+                "order": 8
+            },
+            {
+                "id": "29",
+                "text": "Emphasis on professional growth",
+                "answer": "all-the-time",
+                "order": 9
+            },
+            {
+                "id": "31",
+                "text": "Fast moving",
+                "answer": "all-the-time",
+                "order": 10
+            },
+            {
+                "id": "38",
+                "text": "Learning from mistakes",
+                "answer": "all-the-time",
+                "order": 11
+            },
+            {
+                "id": "39",
+                "text": "Listening to customers",
+                "answer": "all-the-time",
+                "order": 12
+            },
+            {
+                "id": "40",
+                "text": "Making your numbers",
+                "answer": "all-the-time",
+                "order": 13
+            },
+            {
+                "id": "42",
+                "text": "Paying attention to detail",
+                "answer": "all-the-time",
+                "order": 14
+            },
+            {
+                "id": "43",
+                "text": "Predictability",
+                "answer": "all-the-time",
+                "order": 15
+            },
+            {
+                "id": "47",
+                "text": "Security of employment",
+                "answer": "all-the-time",
+                "order": 16
+            },
+            {
+                "id": "50",
+                "text": "Taking individual responsibility",
+                "answer": "all-the-time",
+                "order": 17
+            },
+            {
+                "id": "51",
+                "text": "Taking initiative",
+                "answer": "all-the-time",
+                "order": 18
+            },
+            {
+                "id": "54",
+                "text": "Working in collaboration with others",
+                "answer": "all-the-time",
+                "order": 19
+            },
+            {
+                "id": "2",
+                "text": "Action oriented",
+                "answer": "most-of-the-time",
+                "order": 20
+            },
+            {
+                "id": "4",
+                "text": "Avoiding conflict",
+                "answer": "most-of-the-time",
+                "order": 21
+            },
+            {
+                "id": "6",
+                "text": "Being analytical",
+                "answer": "most-of-the-time",
+                "order": 22
+            },
+            {
+                "id": "8",
+                "text": "Being careful",
+                "answer": "most-of-the-time",
+                "order": 23
+            },
+            {
+                "id": "9",
+                "text": "Being competitive",
+                "answer": "most-of-the-time",
+                "order": 24
+            },
+            {
+                "id": "10",
+                "text": "Being customer oriented",
+                "answer": "most-of-the-time",
+                "order": 25
+            },
+            {
+                "id": "11",
+                "text": "Being decisive",
+                "answer": "most-of-the-time",
+                "order": 26
+            },
+            {
+                "id": "13",
+                "text": "Being fair",
+                "answer": "most-of-the-time",
+                "order": 27
+            },
+            {
+                "id": "14",
+                "text": "Being honest",
+                "answer": "most-of-the-time",
+                "order": 28
+            },
+            {
+                "id": "15",
+                "text": "Being innovative",
+                "answer": "most-of-the-time",
+                "order": 29
+            },
+            {
+                "id": "16",
+                "text": "Being market driven",
+                "answer": "most-of-the-time",
+                "order": 30
+            },
+            {
+                "id": "18",
+                "text": "Being precise",
+                "answer": "most-of-the-time",
+                "order": 31
+            },
+            {
+                "id": "20",
+                "text": "Being reflective",
+                "answer": "most-of-the-time",
+                "order": 32
+            },
+            {
+                "id": "25",
+                "text": "Being tolerant",
+                "answer": "most-of-the-time",
+                "order": 33
+            },
+            {
+                "id": "27",
+                "text": "Confronting conflict directly",
+                "answer": "most-of-the-time",
+                "order": 34
+            },
+            {
+                "id": "30",
+                "text": "Emphasizing quality",
+                "answer": "most-of-the-time",
+                "order": 35
+            },
+            {
+                "id": "34",
+                "text": "Having high expectations for performance",
+                "answer": "most-of-the-time",
+                "order": 36
+            },
+            {
+                "id": "37",
+                "text": "Individual goals are transparent",
+                "answer": "most-of-the-time",
+                "order": 37
+            },
+            {
+                "id": "45",
+                "text": "Respecting individuals",
+                "answer": "most-of-the-time",
+                "order": 38
+            },
+            {
+                "id": "46",
+                "text": "Risk-taking",
+                "answer": "most-of-the-time",
+                "order": 39
+            },
+            {
+                "id": "48",
+                "text": "Sharing information freely",
+                "answer": "most-of-the-time",
+                "order": 40
+            },
+            {
+                "id": "49",
+                "text": "Stability",
+                "answer": "most-of-the-time",
+                "order": 41
+            },
+            {
+                "id": "52",
+                "text": "Urgency",
+                "answer": "most-of-the-time",
+                "order": 42
+            },
+            {
+                "id": "5",
+                "text": "Being aggressive",
+                "answer": "sometimes",
+                "order": 43
+            },
+            {
+                "id": "7",
+                "text": "Being calm",
+                "answer": "sometimes",
+                "order": 44
+            },
+            {
+                "id": "12",
+                "text": "Being easygoing",
+                "answer": "sometimes",
+                "order": 45
+            },
+            {
+                "id": "22",
+                "text": "Being rule oriented",
+                "answer": "sometimes",
+                "order": 46
+            },
+            {
+                "id": "32",
+                "text": "Hard-driving",
+                "answer": "sometimes",
+                "order": 47
+            },
+            {
+                "id": "33",
+                "text": "Having high ethical standards",
+                "answer": "sometimes",
+                "order": 48
+            },
+            {
+                "id": "35",
+                "text": "Having integrity",
+                "answer": "sometimes",
+                "order": 49
+            },
+            {
+                "id": "41",
+                "text": "Not being constrained by many rules",
+                "answer": "sometimes",
+                "order": 50
+            },
+            {
+                "id": "44",
+                "text": "Putting organization's goals before unit's goals",
+                "answer": "sometimes",
+                "order": 51
+            },
+            {
+                "id": "53",
+                "text": "What you know matters more than who you know",
+                "answer": "sometimes",
+                "order": 52
+            },
+            {
+                "id": "36",
+                "text": "High levels of conflict",
+                "answer": "rarely",
+                "order": 53
+            }
+        ],
+        "analyses": [
+            {
+                "groupId": "1",
+                "section": "adaptability",
+                "analysis": -0.2
+            },
+            {
+                "groupId": "1",
+                "section": "integrity",
+                "analysis": -0.32
+            },
+            {
+                "groupId": "1",
+                "section": "collaborative",
+                "analysis": -0.44
+            },
+            {
+                "groupId": "1",
+                "section": "results-oriented",
+                "analysis": 2.12
+            },
+            {
+                "groupId": "1",
+                "section": "customer-oriented",
+                "analysis": -0.32
+            },
+            {
+                "groupId": "1",
+                "section": "detail-oriented",
+                "analysis": -0.36
+            },
+            {
+                "groupId": "10",
+                "section": "adaptability",
+                "analysis": 0.15
+            },
+            {
+                "groupId": "10",
+                "section": "integrity",
+                "analysis": 0.03
+            },
+            {
+                "groupId": "10",
+                "section": "collaborative",
+                "analysis": 0.21
+            },
+            {
+                "groupId": "10",
+                "section": "results-oriented",
+                "analysis": -0.12
+            },
+            {
+                "groupId": "10",
+                "section": "customer-oriented",
+                "analysis": 2.4
+            },
+            {
+                "groupId": "10",
+                "section": "detail-oriented",
+                "analysis": 0.15
+            },
+            {
+                "groupId": "11",
+                "section": "adaptability",
+                "analysis": -0.27
+            },
+            {
+                "groupId": "11",
+                "section": "integrity",
+                "analysis": -0.03
+            },
+            {
+                "groupId": "11",
+                "section": "collaborative",
+                "analysis": -0.81
+            },
+            {
+                "groupId": "11",
+                "section": "results-oriented",
+                "analysis": 0.27
+            },
+            {
+                "groupId": "11",
+                "section": "customer-oriented",
+                "analysis": 0.24
+            },
+            {
+                "groupId": "11",
+                "section": "detail-oriented",
+                "analysis": -0.36
+            },
+            {
+                "groupId": "12",
+                "section": "adaptability",
+                "analysis": 0.22
+            },
+            {
+                "groupId": "12",
+                "section": "integrity",
+                "analysis": -0.66
+            },
+            {
+                "groupId": "12",
+                "section": "collaborative",
+                "analysis": 0.78
+            },
+            {
+                "groupId": "12",
+                "section": "results-oriented",
+                "analysis": -0.72
+            },
+            {
+                "groupId": "12",
+                "section": "customer-oriented",
+                "analysis": 0.16
+            },
+            {
+                "groupId": "12",
+                "section": "detail-oriented",
+                "analysis": -0.2
+            },
+            {
+                "groupId": "13",
+                "section": "adaptability",
+                "analysis": -0.06
+            },
+            {
+                "groupId": "13",
+                "section": "integrity",
+                "analysis": 1.44
+            },
+            {
+                "groupId": "13",
+                "section": "collaborative",
+                "analysis": 0.21
+            },
+            {
+                "groupId": "13",
+                "section": "results-oriented",
+                "analysis": -0.93
+            },
+            {
+                "groupId": "13",
+                "section": "customer-oriented",
+                "analysis": 0.15
+            },
+            {
+                "groupId": "13",
+                "section": "detail-oriented",
+                "analysis": -0.3
+            },
+            {
+                "groupId": "14",
+                "section": "adaptability",
+                "analysis": 0.03
+            },
+            {
+                "groupId": "14",
+                "section": "integrity",
+                "analysis": 2.01
+            },
+            {
+                "groupId": "14",
+                "section": "collaborative",
+                "analysis": 0.09
+            },
+            {
+                "groupId": "14",
+                "section": "results-oriented",
+                "analysis": -0.12
+            },
+            {
+                "groupId": "14",
+                "section": "customer-oriented",
+                "analysis": -0.18
+            },
+            {
+                "groupId": "14",
+                "section": "detail-oriented",
+                "analysis": 0.12
+            },
+            {
+                "groupId": "15",
+                "section": "adaptability",
+                "analysis": 1.8
+            },
+            {
+                "groupId": "15",
+                "section": "integrity",
+                "analysis": 0.27
+            },
+            {
+                "groupId": "15",
+                "section": "collaborative",
+                "analysis": -0.03
+            },
+            {
+                "groupId": "15",
+                "section": "results-oriented",
+                "analysis": 0.18
+            },
+            {
+                "groupId": "15",
+                "section": "customer-oriented",
+                "analysis": 0.12
+            },
+            {
+                "groupId": "15",
+                "section": "detail-oriented",
+                "analysis": 0.27
+            },
+            {
+                "groupId": "16",
+                "section": "adaptability",
+                "analysis": -0.15
+            },
+            {
+                "groupId": "16",
+                "section": "integrity",
+                "analysis": -0.48
+            },
+            {
+                "groupId": "16",
+                "section": "collaborative",
+                "analysis": -0.21
+            },
+            {
+                "groupId": "16",
+                "section": "results-oriented",
+                "analysis": 0.27
+            },
+            {
+                "groupId": "16",
+                "section": "customer-oriented",
+                "analysis": 1.56
+            },
+            {
+                "groupId": "16",
+                "section": "detail-oriented",
+                "analysis": -0.69
+            },
+            {
+                "groupId": "17",
+                "section": "adaptability",
+                "analysis": 0.08
+            },
+            {
+                "groupId": "17",
+                "section": "integrity",
+                "analysis": 0.04
+            },
+            {
+                "groupId": "17",
+                "section": "collaborative",
+                "analysis": 0.36
+            },
+            {
+                "groupId": "17",
+                "section": "results-oriented",
+                "analysis": -0.04
+            },
+            {
+                "groupId": "17",
+                "section": "customer-oriented",
+                "analysis": 0.8
+            },
+            {
+                "groupId": "17",
+                "section": "detail-oriented",
+                "analysis": -1.8
+            },
+            {
+                "groupId": "18",
+                "section": "adaptability",
+                "analysis": -0.81
+            },
+            {
+                "groupId": "18",
+                "section": "integrity",
+                "analysis": -0.24
+            },
+            {
+                "groupId": "18",
+                "section": "collaborative",
+                "analysis": -0.42
+            },
+            {
+                "groupId": "18",
+                "section": "results-oriented",
+                "analysis": -0.24
+            },
+            {
+                "groupId": "18",
+                "section": "customer-oriented",
+                "analysis": -0.36
+            },
+            {
+                "groupId": "18",
+                "section": "detail-oriented",
+                "analysis": 1.86
+            },
+            {
+                "groupId": "19",
+                "section": "adaptability",
+                "analysis": 1.84
+            },
+            {
+                "groupId": "19",
+                "section": "integrity",
+                "analysis": -1.36
+            },
+            {
+                "groupId": "19",
+                "section": "collaborative",
+                "analysis": -0.76
+            },
+            {
+                "groupId": "19",
+                "section": "results-oriented",
+                "analysis": -0.04
+            },
+            {
+                "groupId": "19",
+                "section": "customer-oriented",
+                "analysis": 0.6
+            },
+            {
+                "groupId": "19",
+                "section": "detail-oriented",
+                "analysis": -0.32
+            },
+            {
+                "groupId": "2",
+                "section": "adaptability",
+                "analysis": -0.12
+            },
+            {
+                "groupId": "2",
+                "section": "integrity",
+                "analysis": -0.51
+            },
+            {
+                "groupId": "2",
+                "section": "collaborative",
+                "analysis": -0.21
+            },
+            {
+                "groupId": "2",
+                "section": "results-oriented",
+                "analysis": 0.36
+            },
+            {
+                "groupId": "2",
+                "section": "customer-oriented",
+                "analysis": -0.15
+            },
+            {
+                "groupId": "2",
+                "section": "detail-oriented",
+                "analysis": -0.72
+            },
+            {
+                "groupId": "20",
+                "section": "adaptability",
+                "analysis": -0.06
+            },
+            {
+                "groupId": "20",
+                "section": "integrity",
+                "analysis": -1.32
+            },
+            {
+                "groupId": "20",
+                "section": "collaborative",
+                "analysis": -1.17
+            },
+            {
+                "groupId": "20",
+                "section": "results-oriented",
+                "analysis": -0.03
+            },
+            {
+                "groupId": "20",
+                "section": "customer-oriented",
+                "analysis": -0.69
+            },
+            {
+                "groupId": "20",
+                "section": "detail-oriented",
+                "analysis": 0.03
+            },
+            {
+                "groupId": "21",
+                "section": "adaptability",
+                "analysis": -0.48
+            },
+            {
+                "groupId": "21",
+                "section": "integrity",
+                "analysis": -0.4
+            },
+            {
+                "groupId": "21",
+                "section": "collaborative",
+                "analysis": -0.48
+            },
+            {
+                "groupId": "21",
+                "section": "results-oriented",
+                "analysis": 2.4
+            },
+            {
+                "groupId": "21",
+                "section": "customer-oriented",
+                "analysis": 0.44
+            },
+            {
+                "groupId": "21",
+                "section": "detail-oriented",
+                "analysis": -0.48
+            },
+            {
+                "groupId": "22",
+                "section": "adaptability",
+                "analysis": -1.26
+            },
+            {
+                "groupId": "22",
+                "section": "integrity",
+                "analysis": -0.24
+            },
+            {
+                "groupId": "22",
+                "section": "collaborative",
+                "analysis": -0.22
+            },
+            {
+                "groupId": "22",
+                "section": "results-oriented",
+                "analysis": 0.1
+            },
+            {
+                "groupId": "22",
+                "section": "customer-oriented",
+                "analysis": -0.1
+            },
+            {
+                "groupId": "22",
+                "section": "detail-oriented",
+                "analysis": 0.22
+            },
+            {
+                "groupId": "23",
+                "section": "adaptability",
+                "analysis": -0.28
+            },
+            {
+                "groupId": "23",
+                "section": "integrity",
+                "analysis": 0.68
+            },
+            {
+                "groupId": "23",
+                "section": "collaborative",
+                "analysis": 1.76
+            },
+            {
+                "groupId": "23",
+                "section": "results-oriented",
+                "analysis": -1.44
+            },
+            {
+                "groupId": "23",
+                "section": "customer-oriented",
+                "analysis": -0.12
+            },
+            {
+                "groupId": "23",
+                "section": "detail-oriented",
+                "analysis": -0.04
+            },
+            {
+                "groupId": "24",
+                "section": "adaptability",
+                "analysis": 0.08
+            },
+            {
+                "groupId": "24",
+                "section": "integrity",
+                "analysis": 0.48
+            },
+            {
+                "groupId": "24",
+                "section": "collaborative",
+                "analysis": 2.6
+            },
+            {
+                "groupId": "24",
+                "section": "results-oriented",
+                "analysis": 0.4
+            },
+            {
+                "groupId": "24",
+                "section": "customer-oriented",
+                "analysis": -0.12
+            },
+            {
+                "groupId": "24",
+                "section": "detail-oriented",
+                "analysis": 0.08
+            },
+            {
+                "groupId": "25",
+                "section": "adaptability",
+                "analysis": 1.68
+            },
+            {
+                "groupId": "25",
+                "section": "integrity",
+                "analysis": 1.26
+            },
+            {
+                "groupId": "25",
+                "section": "collaborative",
+                "analysis": 0.06
+            },
+            {
+                "groupId": "25",
+                "section": "results-oriented",
+                "analysis": -0.81
+            },
+            {
+                "groupId": "25",
+                "section": "customer-oriented",
+                "analysis": 0.03
+            },
+            {
+                "groupId": "25",
+                "section": "detail-oriented",
+                "analysis": -1.02
+            },
+            {
+                "groupId": "26",
+                "section": "adaptability",
+                "analysis": 2.36
+            },
+            {
+                "groupId": "26",
+                "section": "integrity",
+                "analysis": -0.4
+            },
+            {
+                "groupId": "26",
+                "section": "collaborative",
+                "analysis": -0.2
+            },
+            {
+                "groupId": "26",
+                "section": "results-oriented",
+                "analysis": -0.48
+            },
+            {
+                "groupId": "26",
+                "section": "customer-oriented",
+                "analysis": -0.32
+            },
+            {
+                "groupId": "26",
+                "section": "detail-oriented",
+                "analysis": -0.36
+            },
+            {
+                "groupId": "27",
+                "section": "adaptability",
+                "analysis": 0.33
+            },
+            {
+                "groupId": "27",
+                "section": "integrity",
+                "analysis": 0.06
+            },
+            {
+                "groupId": "27",
+                "section": "collaborative",
+                "analysis": -1.41
+            },
+            {
+                "groupId": "27",
+                "section": "results-oriented",
+                "analysis": 0.33
+            },
+            {
+                "groupId": "27",
+                "section": "customer-oriented",
+                "analysis": -0.48
+            },
+            {
+                "groupId": "27",
+                "section": "detail-oriented",
+                "analysis": 0.36
+            },
+            {
+                "groupId": "28",
+                "section": "adaptability",
+                "analysis": -0.36
+            },
+            {
+                "groupId": "28",
+                "section": "integrity",
+                "analysis": 0.12
+            },
+            {
+                "groupId": "28",
+                "section": "collaborative",
+                "analysis": 2.4
+            },
+            {
+                "groupId": "28",
+                "section": "results-oriented",
+                "analysis": -0.64
+            },
+            {
+                "groupId": "28",
+                "section": "customer-oriented",
+                "analysis": -0.32
+            },
+            {
+                "groupId": "28",
+                "section": "detail-oriented",
+                "analysis": -0.08
+            },
+            {
+                "groupId": "29",
+                "section": "adaptability",
+                "analysis": -0.32
+            },
+            {
+                "groupId": "29",
+                "section": "integrity",
+                "analysis": -1.6
+            },
+            {
+                "groupId": "29",
+                "section": "collaborative",
+                "analysis": -0.04
+            },
+            {
+                "groupId": "29",
+                "section": "results-oriented",
+                "analysis": 0.32
+            },
+            {
+                "groupId": "29",
+                "section": "customer-oriented",
+                "analysis": -0.04
+            },
+            {
+                "groupId": "29",
+                "section": "detail-oriented",
+                "analysis": -0.96
+            },
+            {
+                "groupId": "3",
+                "section": "adaptability",
+                "analysis": 1.64
+            },
+            {
+                "groupId": "3",
+                "section": "integrity",
+                "analysis": -1.08
+            },
+            {
+                "groupId": "3",
+                "section": "collaborative",
+                "analysis": 0.08
+            },
+            {
+                "groupId": "3",
+                "section": "results-oriented",
+                "analysis": -0.28
+            },
+            {
+                "groupId": "3",
+                "section": "customer-oriented",
+                "analysis": 0.12
+            },
+            {
+                "groupId": "3",
+                "section": "detail-oriented",
+                "analysis": -0.48
+            },
+            {
+                "groupId": "30",
+                "section": "adaptability",
+                "analysis": -0.12
+            },
+            {
+                "groupId": "30",
+                "section": "integrity",
+                "analysis": 0.27
+            },
+            {
+                "groupId": "30",
+                "section": "collaborative",
+                "analysis": 0
+            },
+            {
+                "groupId": "30",
+                "section": "results-oriented",
+                "analysis": -0.33
+            },
+            {
+                "groupId": "30",
+                "section": "customer-oriented",
+                "analysis": 0.75
+            },
+            {
+                "groupId": "30",
+                "section": "detail-oriented",
+                "analysis": 1.86
+            },
+            {
+                "groupId": "31",
+                "section": "adaptability",
+                "analysis": 2.04
+            },
+            {
+                "groupId": "31",
+                "section": "integrity",
+                "analysis": -1.48
+            },
+            {
+                "groupId": "31",
+                "section": "collaborative",
+                "analysis": -0.84
+            },
+            {
+                "groupId": "31",
+                "section": "results-oriented",
+                "analysis": 0.4
+            },
+            {
+                "groupId": "31",
+                "section": "customer-oriented",
+                "analysis": -0.52
+            },
+            {
+                "groupId": "31",
+                "section": "detail-oriented",
+                "analysis": -0.4
+            },
+            {
+                "groupId": "32",
+                "section": "adaptability",
+                "analysis": 0.08
+            },
+            {
+                "groupId": "32",
+                "section": "integrity",
+                "analysis": -0.66
+            },
+            {
+                "groupId": "32",
+                "section": "collaborative",
+                "analysis": -0.88
+            },
+            {
+                "groupId": "32",
+                "section": "results-oriented",
+                "analysis": 0.56
+            },
+            {
+                "groupId": "32",
+                "section": "customer-oriented",
+                "analysis": -0.34
+            },
+            {
+                "groupId": "32",
+                "section": "detail-oriented",
+                "analysis": -0.14
+            },
+            {
+                "groupId": "33",
+                "section": "adaptability",
+                "analysis": -0.1
+            },
+            {
+                "groupId": "33",
+                "section": "integrity",
+                "analysis": 1.52
+            },
+            {
+                "groupId": "33",
+                "section": "collaborative",
+                "analysis": 0.14
+            },
+            {
+                "groupId": "33",
+                "section": "results-oriented",
+                "analysis": 0.02
+            },
+            {
+                "groupId": "33",
+                "section": "customer-oriented",
+                "analysis": 0.04
+            },
+            {
+                "groupId": "33",
+                "section": "detail-oriented",
+                "analysis": 0.08
+            },
+            {
+                "groupId": "34",
+                "section": "adaptability",
+                "analysis": 0.39
+            },
+            {
+                "groupId": "34",
+                "section": "integrity",
+                "analysis": -0.21
+            },
+            {
+                "groupId": "34",
+                "section": "collaborative",
+                "analysis": -0.24
+            },
+            {
+                "groupId": "34",
+                "section": "results-oriented",
+                "analysis": 1.74
+            },
+            {
+                "groupId": "34",
+                "section": "customer-oriented",
+                "analysis": -0.21
+            },
+            {
+                "groupId": "34",
+                "section": "detail-oriented",
+                "analysis": 0.06
+            },
+            {
+                "groupId": "35",
+                "section": "adaptability",
+                "analysis": -0.02
+            },
+            {
+                "groupId": "35",
+                "section": "integrity",
+                "analysis": 1.54
+            },
+            {
+                "groupId": "35",
+                "section": "collaborative",
+                "analysis": 0.16
+            },
+            {
+                "groupId": "35",
+                "section": "results-oriented",
+                "analysis": -0.04
+            },
+            {
+                "groupId": "35",
+                "section": "customer-oriented",
+                "analysis": -0.06
+            },
+            {
+                "groupId": "35",
+                "section": "detail-oriented",
+                "analysis": 0.04
+            },
+            {
+                "groupId": "36",
+                "section": "adaptability",
+                "analysis": -0.59
+            },
+            {
+                "groupId": "36",
+                "section": "integrity",
+                "analysis": -0.35
+            },
+            {
+                "groupId": "36",
+                "section": "collaborative",
+                "analysis": -0.43
+            },
+            {
+                "groupId": "36",
+                "section": "results-oriented",
+                "analysis": -0.02
+            },
+            {
+                "groupId": "36",
+                "section": "customer-oriented",
+                "analysis": 0.01
+            },
+            {
+                "groupId": "36",
+                "section": "detail-oriented",
+                "analysis": -0.11
+            },
+            {
+                "groupId": "37",
+                "section": "adaptability",
+                "analysis": -0.06
+            },
+            {
+                "groupId": "37",
+                "section": "integrity",
+                "analysis": 1.2
+            },
+            {
+                "groupId": "37",
+                "section": "collaborative",
+                "analysis": 0.33
+            },
+            {
+                "groupId": "37",
+                "section": "results-oriented",
+                "analysis": -0.48
+            },
+            {
+                "groupId": "37",
+                "section": "customer-oriented",
+                "analysis": 0.21
+            },
+            {
+                "groupId": "37",
+                "section": "detail-oriented",
+                "analysis": -0.9
+            },
+            {
+                "groupId": "38",
+                "section": "adaptability",
+                "analysis": 3.16
+            },
+            {
+                "groupId": "38",
+                "section": "integrity",
+                "analysis": -1.4
+            },
+            {
+                "groupId": "38",
+                "section": "collaborative",
+                "analysis": -1.08
+            },
+            {
+                "groupId": "38",
+                "section": "results-oriented",
+                "analysis": 0.08
+            },
+            {
+                "groupId": "38",
+                "section": "customer-oriented",
+                "analysis": -0.92
+            },
+            {
+                "groupId": "38",
+                "section": "detail-oriented",
+                "analysis": -0.72
+            },
+            {
+                "groupId": "39",
+                "section": "adaptability",
+                "analysis": 0
+            },
+            {
+                "groupId": "39",
+                "section": "integrity",
+                "analysis": 0.2
+            },
+            {
+                "groupId": "39",
+                "section": "collaborative",
+                "analysis": 0.24
+            },
+            {
+                "groupId": "39",
+                "section": "results-oriented",
+                "analysis": 0
+            },
+            {
+                "groupId": "39",
+                "section": "customer-oriented",
+                "analysis": 3.16
+            },
+            {
+                "groupId": "39",
+                "section": "detail-oriented",
+                "analysis": 0.32
+            },
+            {
+                "groupId": "4",
+                "section": "adaptability",
+                "analysis": -1.14
+            },
+            {
+                "groupId": "4",
+                "section": "integrity",
+                "analysis": -0.48
+            },
+            {
+                "groupId": "4",
+                "section": "collaborative",
+                "analysis": 1.29
+            },
+            {
+                "groupId": "4",
+                "section": "results-oriented",
+                "analysis": -0.87
+            },
+            {
+                "groupId": "4",
+                "section": "customer-oriented",
+                "analysis": -0.21
+            },
+            {
+                "groupId": "4",
+                "section": "detail-oriented",
+                "analysis": -0.27
+            },
+            {
+                "groupId": "40",
+                "section": "adaptability",
+                "analysis": -1.72
+            },
+            {
+                "groupId": "40",
+                "section": "integrity",
+                "analysis": -0.44
+            },
+            {
+                "groupId": "40",
+                "section": "collaborative",
+                "analysis": -0.68
+            },
+            {
+                "groupId": "40",
+                "section": "results-oriented",
+                "analysis": 1.56
+            },
+            {
+                "groupId": "40",
+                "section": "customer-oriented",
+                "analysis": 0.72
+            },
+            {
+                "groupId": "40",
+                "section": "detail-oriented",
+                "analysis": -1.2
+            },
+            {
+                "groupId": "41",
+                "section": "adaptability",
+                "analysis": 0.84
+            },
+            {
+                "groupId": "41",
+                "section": "integrity",
+                "analysis": -0.36
+            },
+            {
+                "groupId": "41",
+                "section": "collaborative",
+                "analysis": 0.02
+            },
+            {
+                "groupId": "41",
+                "section": "results-oriented",
+                "analysis": -0.54
+            },
+            {
+                "groupId": "41",
+                "section": "customer-oriented",
+                "analysis": -0.46
+            },
+            {
+                "groupId": "41",
+                "section": "detail-oriented",
+                "analysis": -0.48
+            },
+            {
+                "groupId": "42",
+                "section": "adaptability",
+                "analysis": -0.32
+            },
+            {
+                "groupId": "42",
+                "section": "integrity",
+                "analysis": -0.12
+            },
+            {
+                "groupId": "42",
+                "section": "collaborative",
+                "analysis": 0.08
+            },
+            {
+                "groupId": "42",
+                "section": "results-oriented",
+                "analysis": 0.36
+            },
+            {
+                "groupId": "42",
+                "section": "customer-oriented",
+                "analysis": -0.48
+            },
+            {
+                "groupId": "42",
+                "section": "detail-oriented",
+                "analysis": 2.96
+            },
+            {
+                "groupId": "43",
+                "section": "adaptability",
+                "analysis": -2.52
+            },
+            {
+                "groupId": "43",
+                "section": "integrity",
+                "analysis": -0.24
+            },
+            {
+                "groupId": "43",
+                "section": "collaborative",
+                "analysis": -0.04
+            },
+            {
+                "groupId": "43",
+                "section": "results-oriented",
+                "analysis": -0.72
+            },
+            {
+                "groupId": "43",
+                "section": "customer-oriented",
+                "analysis": 0.2
+            },
+            {
+                "groupId": "43",
+                "section": "detail-oriented",
+                "analysis": -0.36
+            },
+            {
+                "groupId": "44",
+                "section": "adaptability",
+                "analysis": -0.02
+            },
+            {
+                "groupId": "44",
+                "section": "integrity",
+                "analysis": -0.48
+            },
+            {
+                "groupId": "44",
+                "section": "collaborative",
+                "analysis": 0.36
+            },
+            {
+                "groupId": "44",
+                "section": "results-oriented",
+                "analysis": 0.08
+            },
+            {
+                "groupId": "44",
+                "section": "customer-oriented",
+                "analysis": -0.1
+            },
+            {
+                "groupId": "44",
+                "section": "detail-oriented",
+                "analysis": -0.26
+            },
+            {
+                "groupId": "45",
+                "section": "adaptability",
+                "analysis": 0
+            },
+            {
+                "groupId": "45",
+                "section": "integrity",
+                "analysis": 1.59
+            },
+            {
+                "groupId": "45",
+                "section": "collaborative",
+                "analysis": 1.05
+            },
+            {
+                "groupId": "45",
+                "section": "results-oriented",
+                "analysis": -0.6
+            },
+            {
+                "groupId": "45",
+                "section": "customer-oriented",
+                "analysis": -0.09
+            },
+            {
+                "groupId": "45",
+                "section": "detail-oriented",
+                "analysis": -0.33
+            },
+            {
+                "groupId": "46",
+                "section": "adaptability",
+                "analysis": 1.77
+            },
+            {
+                "groupId": "46",
+                "section": "integrity",
+                "analysis": -0.45
+            },
+            {
+                "groupId": "46",
+                "section": "collaborative",
+                "analysis": -0.81
+            },
+            {
+                "groupId": "46",
+                "section": "results-oriented",
+                "analysis": 0.03
+            },
+            {
+                "groupId": "46",
+                "section": "customer-oriented",
+                "analysis": -0.06
+            },
+            {
+                "groupId": "46",
+                "section": "detail-oriented",
+                "analysis": -0.39
+            },
+            {
+                "groupId": "47",
+                "section": "adaptability",
+                "analysis": -0.64
+            },
+            {
+                "groupId": "47",
+                "section": "integrity",
+                "analysis": -0.04
+            },
+            {
+                "groupId": "47",
+                "section": "collaborative",
+                "analysis": -0.28
+            },
+            {
+                "groupId": "47",
+                "section": "results-oriented",
+                "analysis": -2.28
+            },
+            {
+                "groupId": "47",
+                "section": "customer-oriented",
+                "analysis": -0.36
+            },
+            {
+                "groupId": "47",
+                "section": "detail-oriented",
+                "analysis": -0.44
+            },
+            {
+                "groupId": "48",
+                "section": "adaptability",
+                "analysis": -1.02
+            },
+            {
+                "groupId": "48",
+                "section": "integrity",
+                "analysis": -0.33
+            },
+            {
+                "groupId": "48",
+                "section": "collaborative",
+                "analysis": 0.9
+            },
+            {
+                "groupId": "48",
+                "section": "results-oriented",
+                "analysis": -0.72
+            },
+            {
+                "groupId": "48",
+                "section": "customer-oriented",
+                "analysis": 0.09
+            },
+            {
+                "groupId": "48",
+                "section": "detail-oriented",
+                "analysis": -0.27
+            },
+            {
+                "groupId": "49",
+                "section": "adaptability",
+                "analysis": 0.03
+            },
+            {
+                "groupId": "49",
+                "section": "integrity",
+                "analysis": -1.11
+            },
+            {
+                "groupId": "49",
+                "section": "collaborative",
+                "analysis": -0.36
+            },
+            {
+                "groupId": "49",
+                "section": "results-oriented",
+                "analysis": -0.24
+            },
+            {
+                "groupId": "49",
+                "section": "customer-oriented",
+                "analysis": -0.63
+            },
+            {
+                "groupId": "49",
+                "section": "detail-oriented",
+                "analysis": -1.95
+            },
+            {
+                "groupId": "5",
+                "section": "adaptability",
+                "analysis": 0.04
+            },
+            {
+                "groupId": "5",
+                "section": "integrity",
+                "analysis": -0.52
+            },
+            {
+                "groupId": "5",
+                "section": "collaborative",
+                "analysis": -1.02
+            },
+            {
+                "groupId": "5",
+                "section": "results-oriented",
+                "analysis": 0.52
+            },
+            {
+                "groupId": "5",
+                "section": "customer-oriented",
+                "analysis": -0.28
+            },
+            {
+                "groupId": "5",
+                "section": "detail-oriented",
+                "analysis": -0.2
+            },
+            {
+                "groupId": "50",
+                "section": "adaptability",
+                "analysis": -0.64
+            },
+            {
+                "groupId": "50",
+                "section": "integrity",
+                "analysis": -0.04
+            },
+            {
+                "groupId": "50",
+                "section": "collaborative",
+                "analysis": -1.52
+            },
+            {
+                "groupId": "50",
+                "section": "results-oriented",
+                "analysis": -0.44
+            },
+            {
+                "groupId": "50",
+                "section": "customer-oriented",
+                "analysis": 0.08
+            },
+            {
+                "groupId": "50",
+                "section": "detail-oriented",
+                "analysis": -1.28
+            },
+            {
+                "groupId": "51",
+                "section": "adaptability",
+                "analysis": -0.12
+            },
+            {
+                "groupId": "51",
+                "section": "integrity",
+                "analysis": -0.04
+            },
+            {
+                "groupId": "51",
+                "section": "collaborative",
+                "analysis": -0.04
+            },
+            {
+                "groupId": "51",
+                "section": "results-oriented",
+                "analysis": 0.44
+            },
+            {
+                "groupId": "51",
+                "section": "customer-oriented",
+                "analysis": 0.16
+            },
+            {
+                "groupId": "51",
+                "section": "detail-oriented",
+                "analysis": -2.8
+            },
+            {
+                "groupId": "52",
+                "section": "adaptability",
+                "analysis": -0.15
+            },
+            {
+                "groupId": "52",
+                "section": "integrity",
+                "analysis": -0.27
+            },
+            {
+                "groupId": "52",
+                "section": "collaborative",
+                "analysis": -1.68
+            },
+            {
+                "groupId": "52",
+                "section": "results-oriented",
+                "analysis": 0.39
+            },
+            {
+                "groupId": "52",
+                "section": "customer-oriented",
+                "analysis": -0.12
+            },
+            {
+                "groupId": "52",
+                "section": "detail-oriented",
+                "analysis": -0.45
+            },
+            {
+                "groupId": "53",
+                "section": "adaptability",
+                "analysis": -1.26
+            },
+            {
+                "groupId": "53",
+                "section": "integrity",
+                "analysis": -0.48
+            },
+            {
+                "groupId": "53",
+                "section": "collaborative",
+                "analysis": -1.52
+            },
+            {
+                "groupId": "53",
+                "section": "results-oriented",
+                "analysis": 0.48
+            },
+            {
+                "groupId": "53",
+                "section": "customer-oriented",
+                "analysis": -1.26
+            },
+            {
+                "groupId": "53",
+                "section": "detail-oriented",
+                "analysis": -0.12
+            },
+            {
+                "groupId": "54",
+                "section": "adaptability",
+                "analysis": 0.12
+            },
+            {
+                "groupId": "54",
+                "section": "integrity",
+                "analysis": 0.24
+            },
+            {
+                "groupId": "54",
+                "section": "collaborative",
+                "analysis": 2.84
+            },
+            {
+                "groupId": "54",
+                "section": "results-oriented",
+                "analysis": 0.44
+            },
+            {
+                "groupId": "54",
+                "section": "customer-oriented",
+                "analysis": -0.12
+            },
+            {
+                "groupId": "54",
+                "section": "detail-oriented",
+                "analysis": 0
+            },
+            {
+                "groupId": "6",
+                "section": "adaptability",
+                "analysis": -0.39
+            },
+            {
+                "groupId": "6",
+                "section": "integrity",
+                "analysis": -0.81
+            },
+            {
+                "groupId": "6",
+                "section": "collaborative",
+                "analysis": -0.45
+            },
+            {
+                "groupId": "6",
+                "section": "results-oriented",
+                "analysis": 0.12
+            },
+            {
+                "groupId": "6",
+                "section": "customer-oriented",
+                "analysis": -0.81
+            },
+            {
+                "groupId": "6",
+                "section": "detail-oriented",
+                "analysis": 0.27
+            },
+            {
+                "groupId": "7",
+                "section": "adaptability",
+                "analysis": 0.32
+            },
+            {
+                "groupId": "7",
+                "section": "integrity",
+                "analysis": -0.4
+            },
+            {
+                "groupId": "7",
+                "section": "collaborative",
+                "analysis": 0.26
+            },
+            {
+                "groupId": "7",
+                "section": "results-oriented",
+                "analysis": -0.2
+            },
+            {
+                "groupId": "7",
+                "section": "customer-oriented",
+                "analysis": 0.06
+            },
+            {
+                "groupId": "7",
+                "section": "detail-oriented",
+                "analysis": -0.32
+            },
+            {
+                "groupId": "8",
+                "section": "adaptability",
+                "analysis": -1.92
+            },
+            {
+                "groupId": "8",
+                "section": "integrity",
+                "analysis": -0.27
+            },
+            {
+                "groupId": "8",
+                "section": "collaborative",
+                "analysis": 0.15
+            },
+            {
+                "groupId": "8",
+                "section": "results-oriented",
+                "analysis": -0.75
+            },
+            {
+                "groupId": "8",
+                "section": "customer-oriented",
+                "analysis": -0.27
+            },
+            {
+                "groupId": "8",
+                "section": "detail-oriented",
+                "analysis": 0.45
+            },
+            {
+                "groupId": "9",
+                "section": "adaptability",
+                "analysis": -0.03
+            },
+            {
+                "groupId": "9",
+                "section": "integrity",
+                "analysis": -0.6
+            },
+            {
+                "groupId": "9",
+                "section": "collaborative",
+                "analysis": -1.35
+            },
+            {
+                "groupId": "9",
+                "section": "results-oriented",
+                "analysis": 0.03
+            },
+            {
+                "groupId": "9",
+                "section": "customer-oriented",
+                "analysis": -0.27
+            },
+            {
+                "groupId": "9",
+                "section": "detail-oriented",
+                "analysis": -0.9
+            }
+        ]
+    }
+}

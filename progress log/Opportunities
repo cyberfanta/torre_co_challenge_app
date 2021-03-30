@@ -1,0 +1,102 @@
+Opportunities
+POST
+https://search.torre.co/opportunities/_search/?[offset=$offset&size=$size&aggregate=$aggregate]
+https://search.torre.co/opportunities/_search/?size=1&offset=105
+
+{
+    "aggregators": {},
+    "offset": 105,
+    "results": [
+        {
+            "id": "jw0qXRdx",
+            "objective": "Full Stack Developer",
+            "type": "full-time-employment",
+            "organizations": [
+                {
+                    "id": 725720,
+                    "name": "Logic Studio",
+                    "picture": "https://res.cloudinary.com/torre-technologies-co/image/upload/v1602695209/origin/bio/organizations/yjw8tzsxnswjyhhwashl.png"
+                }
+            ],
+            "locations": [],
+            "remote": true,
+            "external": false,
+            "deadline": "2021-04-23T04:30:00.000Z",
+            "created": "2021-03-17T21:14:55.000Z",
+            "status": "open",
+            "compensation": {
+                "data": {
+                    "code": "range",
+                    "currency": "USD$",
+                    "minAmount": 1300.0,
+                    "maxAmount": 1500.0,
+                    "periodicity": "monthly"
+                },
+                "visible": true
+            },
+            "skills": [
+                {
+                    "name": "Javascript",
+                    "experience": "5-plus-years"
+                },
+                {
+                    "name": "CSS",
+                    "experience": "5-plus-years"
+                },
+                {
+                    "name": "HTML",
+                    "experience": "3-plus-years"
+                },
+                {
+                    "name": "ASP.NET",
+                    "experience": "3-plus-years"
+                }
+            ],
+            "members": [
+                {
+                    "subjectId": "677258",
+                    "name": "Logic Studio",
+                    "username": "seleccionpersonal",
+                    "professionalHeadline": "Selección de Personal",
+                    "picture": "https://starrgate.s3.amazonaws.com:443/users/2079891801c26edbb94354ac635f6f6397efbc6b/profile_FB6GC8g.jpg",
+                    "member": true,
+                    "manager": true,
+                    "poster": true,
+                    "weight": 0.0
+                }
+            ],
+            "questions": [],
+            "context": {
+                "signaled": []
+            },
+            "_meta": {
+                "rank": 97.0,
+                "scorer": {
+                    "@type": "and",
+                    "score": 0.8125,
+                    "and": [
+                        {
+                            "@type": "concrete",
+                            "id": "completion",
+                            "input": {
+                                "criteria": null,
+                                "opportunity": {
+                                    "completion": 0.8125
+                                }
+                            },
+                            "score": 0.8125
+                        }
+                    ]
+                },
+                "filter": null,
+                "boosters": [
+                    "status",
+                    "internal",
+                    "native"
+                ]
+            }
+        }
+    ],
+    "size": 1,
+    "total": 75220
+}

@@ -4,20 +4,15 @@ import android.util.Log;
 
 import com.cyberfanta.torre_co_challenge_app.exceptions.ConnectionException;
 
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-
 import java.io.IOException;
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
-import okhttp3.FormBody;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
-import okio.BufferedSink;
 
 public class ConnectionToApi {
     private final String TAG = "ConnectionToApi";

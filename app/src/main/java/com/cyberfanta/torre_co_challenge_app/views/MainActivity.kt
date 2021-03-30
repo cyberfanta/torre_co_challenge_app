@@ -14,7 +14,6 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.cyberfanta.torre_co_challenge_app.R
 import com.cyberfanta.torre_co_challenge_app.controllers.*
-import com.cyberfanta.torre_co_challenge_app.controllers.CardAdapter_Opportunities.CardViewHolder
 import com.cyberfanta.torre_co_challenge_app.exceptions.ConnectionException
 import java.util.*
 
@@ -28,8 +27,8 @@ internal class MainActivity : AppCompatActivity() {
 
     private lateinit var modelManager_Opportunities: ModelManager
 
-    private lateinit var adapter_Opportunities: RecyclerView.Adapter<CardViewHolder>
-    private lateinit var adapter_Peoples: RecyclerView.Adapter<CardAdapter_Peoples.CardViewHolder>
+    private lateinit var adapter_Opportunities: CardAdapter_Opportunities
+    private lateinit var adapter_Peoples: CardAdapter_Peoples
     private var cardList_Opportunities: ArrayList<CardItem_Opportunities> = ArrayList<CardItem_Opportunities>(0)
     private var cardList_Peoples: ArrayList<CardItem_Peoples> = ArrayList<CardItem_Peoples>(0)
 
@@ -65,6 +64,11 @@ internal class MainActivity : AppCompatActivity() {
             }
         })
 
+        adapter_Opportunities.setOnItemClickListener(object: CardAdapter_Opportunities.OnItemClickListener {
+            override fun onItemClick(position: Int) {
+                Toast.makeText(this@MainActivity, "Clicked item "+position+" TODO", Toast.LENGTH_SHORT).show()
+            }
+        })
 
 
         recycler = findViewById(R.id.recycler_bios)
@@ -175,17 +179,19 @@ internal class MainActivity : AppCompatActivity() {
     }
 
     fun loadOpportunityCards() {
+        val size: Int = cardList_Opportunities.size
         for (i in 0..19)
             cardList_Opportunities.add(CardItem_Opportunities(modelManager_Opportunities.nextOpportunities()))
 
-        adapter_Opportunities.notifyDataSetChanged()
+        adapter_Opportunities.notifyItemRangeInserted(size, 20)
     }
 
     fun loadPeopleCards() {
+        val size: Int = cardList_Peoples.size
         for (i in 0..19)
             cardList_Peoples.add(CardItem_Peoples(modelManager_Opportunities.nextPeoples()))
 
-        adapter_Peoples.notifyDataSetChanged()
+        adapter_Peoples.notifyItemRangeInserted(size, 20)
     }
 
 
