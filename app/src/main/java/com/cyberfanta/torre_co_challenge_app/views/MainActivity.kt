@@ -192,7 +192,7 @@ internal class MainActivity : AppCompatActivity() {
     fun loadOpportunityCards() {
         val size: Int = cardList_Opportunities.size
         for (i in 0..19)
-            cardList_Opportunities.add(CardItem_Opportunities(modelManager_Opportunities.nextOpportunities()))
+            cardList_Opportunities.add(CardItem_Opportunities(modelManager_Opportunities.nextOpportunity()))
 
         adapter_Opportunities.notifyItemRangeInserted(size, 20)
     }
@@ -200,7 +200,7 @@ internal class MainActivity : AppCompatActivity() {
     fun loadPeopleCards() {
         val size: Int = cardList_Peoples.size
         for (i in 0..19)
-            cardList_Peoples.add(CardItem_Peoples(modelManager_Opportunities.nextPeoples()))
+            cardList_Peoples.add(CardItem_Peoples(modelManager_Opportunities.nextPeople()))
 
         adapter_Peoples.notifyItemRangeInserted(size, 20)
     }
