@@ -15,12 +15,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.cyberfanta.torre_co_challenge_app.R
 import com.cyberfanta.torre_co_challenge_app.controllers.*
 import com.cyberfanta.torre_co_challenge_app.exceptions.ConnectionException
+import com.google.firebase.analytics.FirebaseAnalytics
 import java.util.*
 
 
 internal class MainActivity : AppCompatActivity() {
     private val TAG = "MainActivity"
-
+    private var mFirebaseAnalytics: FirebaseAnalytics? = null
     private var currentTypeSearch: Int = 0 //0 = Opportunities , 1 = Peoples , 2 = Job , 3 = Bio
 
     private val nameSearch: String = ""
@@ -29,7 +30,9 @@ internal class MainActivity : AppCompatActivity() {
 
     private lateinit var adapter_Opportunities: CardAdapter_Opportunities
     private lateinit var adapter_Peoples: CardAdapter_Peoples
-    private var cardList_Opportunities: ArrayList<CardItem_Opportunities> = ArrayList<CardItem_Opportunities>(0)
+    private var cardList_Opportunities: ArrayList<CardItem_Opportunities> = ArrayList<CardItem_Opportunities>(
+        0
+    )
     private var cardList_Peoples: ArrayList<CardItem_Peoples> = ArrayList<CardItem_Peoples>(0)
 
     private var QueryThread = Thread(readModelFromConnection())
@@ -37,6 +40,9 @@ internal class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        // Obtain the FirebaseAnalytics instance.
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this)
 
         initializingRecyclersView()
         initializingConnectionController()
@@ -64,9 +70,14 @@ internal class MainActivity : AppCompatActivity() {
             }
         })
 
-        adapter_Opportunities.setOnItemClickListener(object: CardAdapter_Opportunities.OnItemClickListener {
+        adapter_Opportunities.setOnItemClickListener(object :
+            CardAdapter_Opportunities.OnItemClickListener {
             override fun onItemClick(position: Int) {
-                Toast.makeText(this@MainActivity, "Clicked item "+position+" TODO", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    this@MainActivity,
+                    "Clicked item " + position + " TODO",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
         })
 
@@ -112,7 +123,7 @@ internal class MainActivity : AppCompatActivity() {
 
     //Changing Jobs to Bios
     @Suppress("UNUSED_PARAMETER")
-    fun bioToJobs (view: View) {
+    fun bioToJobs(view: View) {
         currentTypeSearch = 0
 
         var recycler: RecyclerView = findViewById(R.id.recycler_jobs)
@@ -125,7 +136,7 @@ internal class MainActivity : AppCompatActivity() {
 
     //Changing Bios to Jobs
     @Suppress("UNUSED_PARAMETER")
-    fun jobsToBios (view: View) {
+    fun jobsToBios(view: View) {
         currentTypeSearch = 1
 
         var recycler: RecyclerView = findViewById(R.id.recycler_jobs)

@@ -9,9 +9,14 @@ import com.cyberfanta.torre_co_challenge_app.models.opportunities.Opportunities;
 import com.cyberfanta.torre_co_challenge_app.models.peoples.Peoples;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
 
 public class ModelManager {
-    private final String TAG = "ModelManager";
+    @SuppressWarnings("FieldCanBeLocal")
+    private final String TAG;
 
     private final String[] url = new String[]{
             "https://torre.co/api/opportunities/",  //https://torre.co/api/opportunities/$id
@@ -21,32 +26,37 @@ public class ModelManager {
     };
     private final ModelFromConnection modelFromConnection = new ModelFromConnection();
 
-    private final Integer[] index = new Integer[]{0, 0, 0, 0};
+    private final Map<String, Job> jobArrayList = new HashMap<>(20);
+    private Iterator<Map.Entry<String, Job>> jobArrayListIterator;
 
-    private final ArrayList<Job> jobArrayList = new ArrayList<>(0);
-    private final ArrayList<Bio> bioArrayList = new ArrayList<>(0);
-    private final ArrayList<com.cyberfanta.torre_co_challenge_app.models.opportunities.ResultsItem> opportunitiesArrayList = new ArrayList<>(0);
-    private final ArrayList<com.cyberfanta.torre_co_challenge_app.models.peoples.ResultsItem> peoplesArrayList = new ArrayList<>(0);
+    private final Map<String, Bio> bioArrayList = new HashMap<>(20);
+    private Iterator<Map.Entry<String, Bio>> bioArrayListIterator;
+
+    private final ArrayList<com.cyberfanta.torre_co_challenge_app.models.opportunities.ResultsItem> opportunitiesArrayList = new ArrayList<>(20);
+    private final ArrayList<com.cyberfanta.torre_co_challenge_app.models.peoples.ResultsItem> peoplesArrayList = new ArrayList<>(20);
 
     public ModelManager(){
+        TAG = "ModelManager";
 
+        jobArrayListIterator = jobArrayList.entrySet().iterator();
+        bioArrayListIterator = bioArrayList.entrySet().iterator();
     }
 
     //Getters
     //-- Job
-    public ArrayList<Job> getJobArrayList() {
-        return jobArrayList;
-    }
+//    public ArrayList<Job> getJobArrayList() {
+//        return jobArrayList;
+//    }
 
-    public Job getJob (int i){
-        return jobArrayList.get(i);
-    }
+//    public Job getJob (int i){
+//        return jobArrayList.get(i);
+//    }
 
-    public Job nextJob (){
-        return jobArrayList.get(index[0]++);
-    }
+//    public Job nextJob (){
+//        return jobArrayList.get(index[0]++);
+//    }
 
-    public void loadJob (String name) throws ConnectionException {
+    public Job loadJob (String name) throws ConnectionException {
         jobArrayList.add(modelFromConnection.getObject(Job.class, url[0].concat(name)));
     }
 
@@ -84,10 +94,7 @@ public class ModelManager {
     }
 
     public void loadOpportunities (int size, int offset) throws ConnectionException {
-        Log.i(TAG, "pasó");
         Opportunities opportunities = modelFromConnection.postObject(Opportunities.class, url[2], size, offset);
-        Log.i(TAG, opportunities.toString());
-
         opportunitiesArrayList.addAll(opportunities.getResults());
     }
 

@@ -39,7 +39,7 @@ public class ModelFromConnectionTest extends TestCase {
 
     public void testGetObject_step_by_step() {
         ConnectionToApi connectionToApi = new ConnectionToApi();
-        String json="";
+        String json = "";
         try {
             json = connectionToApi.getJson(url[0].concat("julioleon2004"));
         } catch (ConnectionException e) {
@@ -60,7 +60,7 @@ public class ModelFromConnectionTest extends TestCase {
 
     public void testGetObject_peoples() {
         try {
-            Assert.assertSame(modelFromConnection.getObject(Peoples.class, url[2]).getClass(), Peoples.class);
+            Assert.assertSame(modelFromConnection.postObject(Peoples.class, url[2], 1, 0).getClass(), Peoples.class);
         } catch (ConnectionException e) {
             Assert.fail();
         }
@@ -68,43 +68,9 @@ public class ModelFromConnectionTest extends TestCase {
 
     public void testGetObject_opportunities() {
         try {
-            Assert.assertSame(modelFromConnection.getObject(Opportunities.class, url[3]).getClass(), Opportunities.class);
+            Assert.assertSame(modelFromConnection.postObject(Opportunities.class, url[3], 1, 0).getClass(), Opportunities.class);
         } catch (ConnectionException e) {
             Assert.fail();
         }
     }
-
-
-//    public void testdebeDevolverJSONEnUnObjeto() {
-//        final String json = "{\"id\":46,\"nombre\":\"Miguel\",\"empresa\":\"Autentia\"}";
-//        final Gson gson = new Gson();
-//        final Empleado empleado = gson.fromJson(json, Empleado.class);
-//        assertEquals(46, empleado.getId());
-//        assertEquals("Miguel", empleado.getNombre());
-//        assertEquals("Autentia", empleado.getEmpresa());
-//    }
 }
-
-//class Empleado {
-//    private final int id;
-//    private final String nombre;
-//    private final String empresa;
-//
-//    public Empleado(int id, String nombre, String empresa) {
-//        this.id = id;
-//        this.nombre = nombre;
-//        this.empresa = empresa;
-//    }
-//
-//    public int getId() {
-//        return id;
-//    }
-//
-//    public String getNombre() {
-//        return nombre;
-//    }
-//
-//    public String getEmpresa() {
-//        return empresa;
-//    }
-//}

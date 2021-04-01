@@ -44,7 +44,7 @@ public class ConnectionToApiTest extends TestCase {
 
     public void testGetJson_job_ok() {
         try {
-            Assert.assertNotNull(connectionToApi.postJson(url[1].concat("jw0qXRdx"), 1));
+            Assert.assertNotNull(connectionToApi.getJson(url[1].concat("jw0qXRdx")));
         } catch (ConnectionException e) {
             Assert.fail();
         }
@@ -52,7 +52,7 @@ public class ConnectionToApiTest extends TestCase {
 
     public void testGetJson_job_not_ok() {
         try {
-            Assert.assertNull(connectionToApi.postJson(url[1].concat("jw0qXRdx1"), 1));
+            Assert.assertNull(connectionToApi.getJson(url[1].concat("jw0qXRdx1")));
         } catch (ConnectionException e) {
             Assert.assertTrue(true);
         }
@@ -60,7 +60,7 @@ public class ConnectionToApiTest extends TestCase {
 
     public void testGetJson_peoples_ok() {
         try {
-            Assert.assertNotNull(connectionToApi.postJson(url[2], 1));
+            Assert.assertNotNull(connectionToApi.postJson(url[2], 1, 20));
         } catch (ConnectionException e) {
             Assert.fail();
         }
@@ -68,7 +68,7 @@ public class ConnectionToApiTest extends TestCase {
 
     public void testGetJson_opportunities_ok() {
         try {
-            Assert.assertNotNull(connectionToApi.postJson(url[3], 1));
+            Assert.assertNotNull(connectionToApi.postJson(url[3], 1, 20));
         } catch (ConnectionException e) {
             Assert.fail();
         }

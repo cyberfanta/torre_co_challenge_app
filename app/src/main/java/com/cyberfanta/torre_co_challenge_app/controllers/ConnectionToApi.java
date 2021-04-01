@@ -15,7 +15,7 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 
 public class ConnectionToApi {
-    private final String TAG = "ConnectionToApi";
+    private final String TAG;
 
     // Objects to read data from server
     private static final OkHttpClient CLIENT = new OkHttpClient.Builder()
@@ -23,6 +23,10 @@ public class ConnectionToApi {
             .readTimeout(15, TimeUnit.SECONDS)
             .writeTimeout(15, TimeUnit.SECONDS)
             .build();
+
+    public ConnectionToApi() {
+        TAG = "ConnectionToApi";
+    }
 
     public String getJson (String url) throws ConnectionException {
         return loadJson(new Request.Builder().url(url).get().build());

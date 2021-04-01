@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "620375097234",
+    "project_id": "torre-co-challenge-app-8e6ab",
+    "storage_bucket": "torre-co-challenge-app-8e6ab.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:620375097234:android:d2cf0c082501a0f37bcb4b",
+        "android_client_info": {
+          "package_name": "com.cyberfanta.torre_co_challenge_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "620375097234-jgriio48pgb6o6dq8p9umuilktp1m104.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtCzve0p7yonhBxVt-X0zMV1QN9k3JwPE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "620375097234-jgriio48pgb6o6dq8p9umuilktp1m104.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

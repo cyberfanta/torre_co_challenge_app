@@ -86,3 +86,17 @@ Hora de inicio: 12:20pm
 
 
 
+
+Fuera del periodo de entrega designado por torre.
+
+
+Fecha: 31-03-2021
+Hora de inicio: 2:00pm
+
+2:00pm	Después de recuperarme del trasnocho y atender los asuntos de mi oficina, he decido continuar con el proyecto, quedan pendientes los siguientes items:
+-Activar las vistas a detalle de cada tarjeta. Endpoints Job y Bio.
+-Activar la carga de las imágenes de las tarjetas.
+-Arreglar un problema estético con los botones "Bios" y "Jobs", que no permanecen completamente abajo de la vista.
+-Agregar un thread de carga de los Bios para evitar que el usuario tenga un delay cuando presione el boton "Bios".
+-Agregar una separación en las tarjetas para evitar el amontonamiento y mejorar la estética.
+-Activar la lupa, para hacer que despliegue las tarjetas con un filtro de búsqueda.

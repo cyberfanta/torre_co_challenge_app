@@ -7,10 +7,14 @@ import com.google.gson.Gson;
 
 
 public class ModelFromConnection {
-    private final String TAG = "ModelFromConnection";
+    private final String TAG;
 
     private final ConnectionToApi connectionToApi = new ConnectionToApi();
     private final Gson gson = new Gson();
+
+    public ModelFromConnection() {
+        TAG = "ModelFromConnection";
+    }
 
     public <T> T getObject(Class<T> type, String url) throws ConnectionException {
         String string = connectionToApi.getJson(url);
