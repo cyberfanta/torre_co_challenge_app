@@ -31,10 +31,10 @@ public class ModelManager {
     private final Iterator<Map.Entry<String, Bio>> bioMapIterator;
 
     private final Map<String, com.cyberfanta.torre_co_challenge_app.models.opportunities.ResultsItem> opportunitiesMap = new HashMap<>(20);
-    private Iterator<Map.Entry<String, com.cyberfanta.torre_co_challenge_app.models.opportunities.ResultsItem>> opportunitiesMapIterator;
+    private final Iterator<Map.Entry<String, com.cyberfanta.torre_co_challenge_app.models.opportunities.ResultsItem>> opportunitiesMapIterator;
 
     private final Map<String, com.cyberfanta.torre_co_challenge_app.models.peoples.ResultsItem> peoplesMap = new HashMap<>(20);
-    private Iterator<Map.Entry<String, com.cyberfanta.torre_co_challenge_app.models.peoples.ResultsItem>> peoplesMapIterator;
+    private final Iterator<Map.Entry<String, com.cyberfanta.torre_co_challenge_app.models.peoples.ResultsItem>> peoplesMapIterator;
 
     public ModelManager(){
         TAG = "ModelManager";

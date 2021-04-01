@@ -11,7 +11,7 @@ android {
 
     defaultConfig {
         applicationId "com.cyberfanta.torre_co_challenge_app"
-        minSdkVersion 19
+        minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -69,6 +69,7 @@ apply plugin: 'com.google.gms.google-services'
 
 dependencies {
 
+    //todo: Plugin version (1.4.32) is not the same as library version (1.4.21)
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.3.2'
     implementation 'androidx.appcompat:appcompat:1.2.0'
@@ -86,4 +87,6 @@ dependencies {
     //Create Object from JSON
     implementation 'com.google.code.gson:gson:2.8.6'
 
+    //ReciclerView Animations
+    implementation 'jp.wasabeef:recyclerview-animators:4.0.2'
 }

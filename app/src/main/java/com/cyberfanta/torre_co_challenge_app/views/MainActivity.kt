@@ -1,5 +1,9 @@
 package com.cyberfanta.torre_co_challenge_app.views
 
+import android.animation.Animator
+import android.animation.AnimatorListenerAdapter
+import android.animation.AnimatorSet
+import android.animation.ObjectAnimator
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.os.Handler
@@ -7,6 +11,7 @@ import android.os.Message
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -17,7 +22,6 @@ import com.cyberfanta.torre_co_challenge_app.controllers.*
 import com.cyberfanta.torre_co_challenge_app.exceptions.ConnectionException
 import com.google.firebase.analytics.FirebaseAnalytics
 import java.util.*
-
 
 internal class MainActivity : AppCompatActivity() {
     private val TAG = "MainActivity"
@@ -30,12 +34,12 @@ internal class MainActivity : AppCompatActivity() {
 
     private lateinit var adapter_Opportunities: CardAdapter_Opportunities
     private lateinit var adapter_Peoples: CardAdapter_Peoples
-    private var cardList_Opportunities: ArrayList<CardItem_Opportunities> = ArrayList<CardItem_Opportunities>(
-        0
-    )
-    private var cardList_Peoples: ArrayList<CardItem_Peoples> = ArrayList<CardItem_Peoples>(0)
+    private var cardList_Opportunities: ArrayList<CardItem_Opportunities> = ArrayList<CardItem_Opportunities>(20)
+    private var cardList_Peoples: ArrayList<CardItem_Peoples> = ArrayList<CardItem_Peoples>(20)
 
-    private var QueryThread = Thread(readModelFromConnection())
+    private var QueryThread = Thread(ReadModelFromConnection())
+
+    //    ---
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,7 +51,10 @@ internal class MainActivity : AppCompatActivity() {
         initializingRecyclersView()
         initializingConnectionController()
         fillRecyclerView()
+        loadLoadingAnimation()
     }
+
+    //    ---
 
     //Initialize the recyclerView
     private fun initializingRecyclersView() {
@@ -55,8 +62,6 @@ internal class MainActivity : AppCompatActivity() {
         recycler.setHasFixedSize(true)
         val layoutManager_Opportunities: RecyclerView.LayoutManager = GridLayoutManager(this, 2)
         adapter_Opportunities = CardAdapter_Opportunities(cardList_Opportunities)
-        //todo: keep scroll when update
-//        adapter.stateRestorationPolicy = StateRestorationPolicy.PREVENT_WHEN_EMPTY
         recycler.layoutManager = layoutManager_Opportunities
         recycler.adapter = adapter_Opportunities
 
@@ -75,7 +80,7 @@ internal class MainActivity : AppCompatActivity() {
             override fun onItemClick(position: Int) {
                 Toast.makeText(
                     this@MainActivity,
-                    "Clicked item " + position + " TODO",
+                    "Clicked item $position - TODO", //todo
                     Toast.LENGTH_SHORT
                 ).show()
             }
@@ -86,8 +91,6 @@ internal class MainActivity : AppCompatActivity() {
         recycler.setHasFixedSize(true)
         val layoutManager_Peoples: RecyclerView.LayoutManager = GridLayoutManager(this, 2)
         adapter_Peoples = CardAdapter_Peoples(cardList_Peoples)
-        //todo: keep scroll when update
-//        adapter.stateRestorationPolicy = StateRestorationPolicy.PREVENT_WHEN_EMPTY
         recycler.layoutManager = layoutManager_Peoples
         recycler.adapter = adapter_Peoples
 
@@ -102,23 +105,62 @@ internal class MainActivity : AppCompatActivity() {
         })
     }
 
-    //    //Initialize the recyclerView
+    //Initialize the Connection Controller
     private fun initializingConnectionController() {
         modelManager_Opportunities = ModelManager()
     }
 
-    //Initial load for recicler view
+    //Initial load for recycler view
     private fun fillRecyclerView() {
         if (!QueryThread.isAlive) {
-            QueryThread = Thread(readModelFromConnection())
+            QueryThread = Thread(ReadModelFromConnection())
             QueryThread.start()
         }
     }
 
-    //Initial load for recicler view when button pressed
+    //Initialize loading animation
+    private fun loadLoadingAnimation() {
+        val imageView = findViewById<ImageView>(R.id.loading)
+
+        val loading_animator = ObjectAnimator.ofFloat(imageView, "rotation", 0f, -360f)
+        val loading_animatorSet = AnimatorSet()
+        loading_animatorSet.play(loading_animator)
+        loading_animatorSet.setDuration(1000)
+        loading_animatorSet.addListener(
+            object : AnimatorListenerAdapter() {
+                override fun onAnimationEnd(animation: Animator) {
+                    super.onAnimationEnd(animation)
+                    loading_animatorSet.start()
+                }
+            }
+        )
+        loading_animatorSet.start()
+
+        imageView.visibility = View.GONE
+    }
+
+    //    ---
+
+    //Open Search Tools
     @Suppress("UNUSED_PARAMETER")
-    fun requestCards(view: View) {
-        fillRecyclerView()
+    fun openSearchTools(view: View) {
+        val constraintLayout: ConstraintLayout = findViewById(R.id.Search_Menu)
+        constraintLayout.visibility = View.VISIBLE
+        var imageView: ImageView = findViewById(R.id.Loupe_Background)
+        imageView.visibility = View.GONE
+        imageView = findViewById(R.id.Loupe)
+        imageView.visibility = View.GONE
+    }
+
+    //Close Search Tools
+    @Suppress("UNUSED_PARAMETER")
+    fun closeSearchTools(view: View) {
+        val constraintLayout: ConstraintLayout = findViewById(R.id.Search_Menu)
+        constraintLayout.visibility = View.GONE
+        var imageView: ImageView = findViewById(R.id.Loupe_Background)
+        imageView.visibility = View.VISIBLE
+        imageView = findViewById(R.id.Loupe)
+        imageView.visibility = View.VISIBLE
     }
 
     //Changing Jobs to Bios
@@ -130,6 +172,9 @@ internal class MainActivity : AppCompatActivity() {
         recycler.visibility = View.VISIBLE
         recycler= findViewById(R.id.recycler_bios)
         recycler.visibility = View.GONE
+
+        val imageView = findViewById<ImageView>(R.id.loading)
+        imageView.visibility = View.VISIBLE
 
         fillRecyclerView()
     }
@@ -144,26 +189,35 @@ internal class MainActivity : AppCompatActivity() {
         recycler= findViewById(R.id.recycler_bios)
         recycler.visibility = View.VISIBLE
 
+        val imageView = findViewById<ImageView>(R.id.loading)
+        imageView.visibility = View.VISIBLE
+
         fillRecyclerView()
     }
 
+    //    ---
+
     //Load data from ModelFromConnection Class
-    private inner class readModelFromConnection : Runnable {
+    private inner class ReadModelFromConnection : Runnable {
         override fun run() {
             val message = handler.obtainMessage()
 
             try {
                 if (currentTypeSearch == 0){
                     modelManager_Opportunities.loadOpportunities(20, cardList_Opportunities.size)
+                    message.obj = ThreadReadType.Opportunities_Loaded
                 } else if (currentTypeSearch == 1){
                     modelManager_Opportunities.loadPeoples(20, cardList_Peoples.size)
+                    message.obj = ThreadReadType.Peoples_Loaded
                 } else if (currentTypeSearch == 2){
                     modelManager_Opportunities.loadJob(nameSearch)
+                    message.obj = ThreadReadType.Job_Loaded
                 } else {
                     modelManager_Opportunities.loadBio(nameSearch)
+                    message.obj = ThreadReadType.Bio_Loaded
                 }
             } catch (e: ConnectionException) {
-                message.obj = "Error"
+                message.obj = ThreadReadType.Load_Failed
             }
             handler.sendMessageAtFrontOfQueue(message)
         }
@@ -174,20 +228,22 @@ internal class MainActivity : AppCompatActivity() {
     @SuppressLint("HandlerLeak")
     private val handler: Handler = object : Handler() {
         override fun handleMessage(message: Message) {
-//            if (message.obj.equals("")) {
-                if (currentTypeSearch == 0){
-                    loadOpportunityCards()
-                } else if (currentTypeSearch == 1){
-                    loadPeopleCards()
-                } else if (currentTypeSearch == 2){
-                    //todo
-                    loadOpportunityCards()
-                } else {
-                    //todo
-                    loadOpportunityCards()
-                }
+            if (message.obj.equals(ThreadReadType.Opportunities_Loaded)){
+                loadOpportunityCards()
+            } else if (message.obj.equals(ThreadReadType.Peoples_Loaded)){
+                loadPeopleCards()
+            } else if (message.obj.equals(ThreadReadType.Job_Loaded)){
+                loadJobData()
+            } else if (message.obj.equals(ThreadReadType.Bio_Loaded)) {
+                loadBioData()
+            }
+
+            val imageView = findViewById<ImageView>(R.id.loading)
+            imageView.visibility = View.GONE
         }
     }
+
+    //    ---
 
     fun loadOpportunityCards() {
         val size: Int = cardList_Opportunities.size
@@ -205,15 +261,21 @@ internal class MainActivity : AppCompatActivity() {
         adapter_Peoples.notifyItemRangeInserted(size, 20)
     }
 
+    fun loadJobData() {
+        //todo
+    }
+
+    fun loadBioData() {
+        //todo
+    }
+
 
     //    ---
 
 
 
-
-
-
     //    ---
+
     /**
      * Create the setting menu of the application
      */
@@ -237,14 +299,13 @@ internal class MainActivity : AppCompatActivity() {
     }
 
     //    ---
+
     /**
      * Show the developer info
      */
     @Suppress("UNUSED_PARAMETER")
-    fun author_selected(view: View?) {
+    fun authorSelected(view: View?) {
         val constraintLayout = findViewById<ConstraintLayout>(R.id.author)
         constraintLayout.visibility = View.GONE
     }
-
-
 }

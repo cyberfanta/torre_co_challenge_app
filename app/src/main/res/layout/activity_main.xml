@@ -81,6 +81,7 @@
             android:clickable="true"
             android:contentDescription="@string/default_content_description"
             android:focusable="true"
+            android:onClick="closeSearchTools"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -176,7 +177,7 @@
             android:clickable="true"
             android:contentDescription="@string/default_content_description"
             android:focusable="true"
-            android:onClick="requestCards"
+            android:onClick="openSearchTools"
             app:layout_constraintBottom_toTopOf="@id/Bios_Background"
             app:layout_constraintEnd_toEndOf="@id/guideline"
             app:layout_constraintStart_toStartOf="@id/guideline"
@@ -207,7 +208,7 @@
         android:background="@color/soft_black_37"
         android:clickable="true"
         android:focusable="true"
-        android:onClick="author_selected"
+        android:onClick="authorSelected"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -305,6 +306,16 @@
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/loading"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:contentDescription="@string/default_content_description"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/Button_Menu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_loading" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
