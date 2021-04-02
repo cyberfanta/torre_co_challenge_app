@@ -28,6 +28,7 @@ public class ModelManagerTest extends TestCase {
 
     public void testNextJob() {
         try {
+            modelManager.loadJob("jw0qXRdx");
             Assert.assertSame(modelManager.nextJob().getClass(), Job.class);
         } catch (ConnectionException e) {
             Assert.fail();
@@ -52,6 +53,7 @@ public class ModelManagerTest extends TestCase {
 
     public void testNextBio() {
         try {
+            modelManager.loadBio("julioleon2004");
             Assert.assertSame(modelManager.nextBio().getClass(), Bio.class);
         } catch (ConnectionException e) {
             Assert.fail();

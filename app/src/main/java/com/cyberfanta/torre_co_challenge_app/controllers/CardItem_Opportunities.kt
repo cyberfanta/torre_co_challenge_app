@@ -29,7 +29,7 @@ class CardItem_Opportunities {
         else
             image_url = null
         if  (resultsItem.compensation.data != null)
-            highligth = resultsItem.compensation.data.minAmount.toString() + " " + resultsItem.compensation.data.maxAmount + " " + resultsItem.compensation.data.currency + " " + resultsItem.compensation.data.periodicity
+            highligth = resultsItem.compensation.data.minAmount.toString() + " - " + resultsItem.compensation.data.maxAmount + " " + resultsItem.compensation.data.currency + " " + resultsItem.compensation.data.periodicity
         else
             highligth = " "
 
