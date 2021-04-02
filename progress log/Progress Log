@@ -128,3 +128,4 @@ Hora de inicio: 2:00pm
 5:00pm	Luego de crear el proyecto con iterators, la app ha dejado de funcionar, me doy cuenta que debo implementar Test a mi clase gestora de conexiones.
 8:00pm	La app vuelve a funcionar, me di cuenta que tengo un problema con la forma como uso los iterators.
 8:20pm	Veo que el problema se da cuando inserto nuevos elementos en los HashMaps, el set definido en los iterator cambia y el iterator no funciona como yo espero, así que decido primero cambiar de HashMaps a LinkedHashMaps para garantizar el orden. Segundo cambiarle el tipo a los iterators a simples enteros.
+9:30pm	Ya las nuevas estructuras están funcionando perfectamente. Ahora vamos con los nuevos cambios.

@@ -5,5 +5,6 @@ public enum ThreadReadType {
     Peoples_Loaded,
     Job_Loaded,
     Bio_Loaded,
-    Load_Failed
+    Load_Failed,
+    Image_Loaded
 }

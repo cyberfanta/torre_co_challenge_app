@@ -22,6 +22,8 @@ import com.cyberfanta.torre_co_challenge_app.controllers.*
 import com.cyberfanta.torre_co_challenge_app.enumerator.ThreadReadType
 import com.cyberfanta.torre_co_challenge_app.exceptions.ConnectionException
 import com.google.firebase.analytics.FirebaseAnalytics
+import okhttp3.internal.wait
+import java.io.IOException
 import java.util.*
 
 internal class MainActivity : AppCompatActivity() {
@@ -37,10 +39,14 @@ internal class MainActivity : AppCompatActivity() {
     private lateinit var adapter_Opportunities: CardAdapter_Opportunities
     private lateinit var adapter_Peoples: CardAdapter_Peoples
 
-    private var cardList_Opportunities: ArrayList<CardItem_Opportunities> = ArrayList<CardItem_Opportunities>(20)
-    private var cardList_Peoples: ArrayList<CardItem_Peoples> = ArrayList<CardItem_Peoples>(20)
+    private var cardList_Opportunities: ArrayList<CardItem_Opportunities>
+    = ArrayList<CardItem_Opportunities>(20)
+    private var cardList_Peoples: ArrayList<CardItem_Peoples>
+    = ArrayList<CardItem_Peoples>(20)
 
-    private var queryThread = Thread(ReadModelFromConnection())
+    private var queriesThread = Thread(ReadModelFromConnection())
+
+    private var bitmapInfo = Stack<Array<String>>()
 
     //    ---
 
@@ -81,7 +87,8 @@ internal class MainActivity : AppCompatActivity() {
             }
         })
 
-        adapter_Opportunities.setOnItemClickListener(object : CardAdapter_Opportunities.OnItemClickListener {
+        adapter_Opportunities.setOnItemClickListener(object :
+            CardAdapter_Opportunities.OnItemClickListener {
             override fun onItemClick(position: Int) {
                 Toast.makeText(
                     this@MainActivity,
@@ -120,9 +127,9 @@ internal class MainActivity : AppCompatActivity() {
 
     //Initial load for recycler view
     private fun fillRecyclerView() {
-        if (!queryThread.isAlive) {
-            queryThread = Thread(ReadModelFromConnection())
-            queryThread.start()
+        if (!queriesThread.isAlive) {
+            queriesThread = Thread(ReadModelFromConnection())
+            queriesThread.start()
         }
     }
 
@@ -242,8 +249,10 @@ internal class MainActivity : AppCompatActivity() {
                 loadPeopleCards()
             } else if (message.obj.equals(ThreadReadType.Job_Loaded)){
                 loadJobData()
-            } else if (message.obj.equals(ThreadReadType.Bio_Loaded)) {
+            } else if (message.obj.equals(ThreadReadType.Bio_Loaded)){
                 loadBioData()
+//            } else if (message.obj.equals(ThreadReadType.Image_Loaded)){
+//                cardList_Opportunities.
             }
 
             val imageView = findViewById<ImageView>(R.id.loading)
@@ -255,9 +264,21 @@ internal class MainActivity : AppCompatActivity() {
 
     fun loadOpportunityCards() {
         val size: Int = cardList_Opportunities.size
+        val threadlist = arrayOfNulls<Thread>(20)
 
-        for (i in 0..19)
-            cardList_Opportunities.add(CardItem_Opportunities(modelManager.nextOpportunity()))
+        for (i in 0..19) {
+            var resultItem : com.cyberfanta.torre_co_challenge_app.models.opportunities.ResultsItem
+            resultItem = modelManager.nextOpportunity()
+            cardList_Opportunities.add(CardItem_Opportunities(resultItem))
+
+            bitmapInfo.push(arrayOf(resultItem.id, resultItem.organizations[0].picture))
+
+            threadlist[i] = Thread(ReadBitmapFromConnection())
+            if (!threadlist[i]?.isAlive!!) {
+                threadlist[i]?.start()
+            }
+
+        }
 
         adapter_Opportunities.notifyItemRangeInserted(size, 20)
     }
@@ -279,10 +300,27 @@ internal class MainActivity : AppCompatActivity() {
         //todo
     }
 
-
     //    ---
 
+    //Asynchronous Load data from ModelFromConnection Class
+    private inner class ReadBitmapFromConnection : Runnable {
+        val bitmapFromConnection: BitmapFromConnection = BitmapFromConnection()
 
+        override fun run() {
+            val message = handler.obtainMessage()
+
+            do {
+                try {
+                    val prueba: Array<String> = bitmapInfo.pop()
+                    bitmapFromConnection.loadBitmap(prueba[0], prueba[1])
+                    message.obj = ThreadReadType.Image_Loaded
+                } catch (e: IOException) {
+                    message.obj = ThreadReadType.Load_Failed
+                }
+                handler.sendMessageAtFrontOfQueue(message)
+            } while (true)
+        }
+    }
 
     //    ---
 
