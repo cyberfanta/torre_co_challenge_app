@@ -1,4 +1,4 @@
-package com.cyberfanta.torre_co_challenge_app.controllers;
+package com.cyberfanta.torre_co_challenge_app.enumerator;
 
 public enum ThreadReadType {
     Opportunities_Loaded,

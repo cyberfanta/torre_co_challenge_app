@@ -19,12 +19,14 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.cyberfanta.torre_co_challenge_app.R
 import com.cyberfanta.torre_co_challenge_app.controllers.*
+import com.cyberfanta.torre_co_challenge_app.enumerator.ThreadReadType
 import com.cyberfanta.torre_co_challenge_app.exceptions.ConnectionException
 import com.google.firebase.analytics.FirebaseAnalytics
 import java.util.*
 
 internal class MainActivity : AppCompatActivity() {
     private val TAG = "MainActivity"
+
     private var mFirebaseAnalytics: FirebaseAnalytics? = null
     private var currentTypeSearch: Int = 0 //0 = Opportunities , 1 = Peoples , 2 = Job , 3 = Bio
 
@@ -34,6 +36,7 @@ internal class MainActivity : AppCompatActivity() {
 
     private lateinit var adapter_Opportunities: CardAdapter_Opportunities
     private lateinit var adapter_Peoples: CardAdapter_Peoples
+
     private var cardList_Opportunities: ArrayList<CardItem_Opportunities> = ArrayList<CardItem_Opportunities>(20)
     private var cardList_Peoples: ArrayList<CardItem_Peoples> = ArrayList<CardItem_Peoples>(20)
 
