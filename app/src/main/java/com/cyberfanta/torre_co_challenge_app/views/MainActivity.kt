@@ -30,14 +30,14 @@ internal class MainActivity : AppCompatActivity() {
 
     private val nameSearch: String = ""
 
-    private lateinit var modelManager_Opportunities: ModelManager
+    private lateinit var modelManager: ModelManager
 
     private lateinit var adapter_Opportunities: CardAdapter_Opportunities
     private lateinit var adapter_Peoples: CardAdapter_Peoples
     private var cardList_Opportunities: ArrayList<CardItem_Opportunities> = ArrayList<CardItem_Opportunities>(20)
     private var cardList_Peoples: ArrayList<CardItem_Peoples> = ArrayList<CardItem_Peoples>(20)
 
-    private var QueryThread = Thread(ReadModelFromConnection())
+    private var queryThread = Thread(ReadModelFromConnection())
 
     //    ---
 
@@ -69,14 +69,16 @@ internal class MainActivity : AppCompatActivity() {
             override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
                 super.onScrollStateChanged(recyclerView, newState)
                 if (!recyclerView.canScrollVertically(1)) {
+                    val imageView = findViewById<ImageView>(R.id.loading)
+                    imageView.visibility = View.VISIBLE
+
                     fillRecyclerView()
-                    Toast.makeText(this@MainActivity, "Loading", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this@MainActivity, "Loading", Toast.LENGTH_SHORT).show()
                 }
             }
         })
 
-        adapter_Opportunities.setOnItemClickListener(object :
-            CardAdapter_Opportunities.OnItemClickListener {
+        adapter_Opportunities.setOnItemClickListener(object : CardAdapter_Opportunities.OnItemClickListener {
             override fun onItemClick(position: Int) {
                 Toast.makeText(
                     this@MainActivity,
@@ -98,8 +100,11 @@ internal class MainActivity : AppCompatActivity() {
             override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
                 super.onScrollStateChanged(recyclerView, newState)
                 if (!recyclerView.canScrollVertically(1)) {
+                    val imageView = findViewById<ImageView>(R.id.loading)
+                    imageView.visibility = View.VISIBLE
+
                     fillRecyclerView()
-                    Toast.makeText(this@MainActivity, "Loading", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this@MainActivity, "Loading", Toast.LENGTH_SHORT).show()
                 }
             }
         })
@@ -107,14 +112,14 @@ internal class MainActivity : AppCompatActivity() {
 
     //Initialize the Connection Controller
     private fun initializingConnectionController() {
-        modelManager_Opportunities = ModelManager()
+        modelManager = ModelManager()
     }
 
     //Initial load for recycler view
     private fun fillRecyclerView() {
-        if (!QueryThread.isAlive) {
-            QueryThread = Thread(ReadModelFromConnection())
-            QueryThread.start()
+        if (!queryThread.isAlive) {
+            queryThread = Thread(ReadModelFromConnection())
+            queryThread.start()
         }
     }
 
@@ -122,7 +127,7 @@ internal class MainActivity : AppCompatActivity() {
     private fun loadLoadingAnimation() {
         val imageView = findViewById<ImageView>(R.id.loading)
 
-        val loading_animator = ObjectAnimator.ofFloat(imageView, "rotation", 0f, -360f)
+        val loading_animator = ObjectAnimator.ofFloat(imageView, "rotation", 0f, 360f)
         val loading_animatorSet = AnimatorSet()
         loading_animatorSet.play(loading_animator)
         loading_animatorSet.setDuration(1000)
@@ -197,23 +202,23 @@ internal class MainActivity : AppCompatActivity() {
 
     //    ---
 
-    //Load data from ModelFromConnection Class
+    //Asynchronous Load data from ModelFromConnection Class
     private inner class ReadModelFromConnection : Runnable {
         override fun run() {
             val message = handler.obtainMessage()
 
             try {
                 if (currentTypeSearch == 0){
-                    modelManager_Opportunities.loadOpportunities(20, cardList_Opportunities.size)
+                    modelManager.loadOpportunities(20, cardList_Opportunities.size)
                     message.obj = ThreadReadType.Opportunities_Loaded
                 } else if (currentTypeSearch == 1){
-                    modelManager_Opportunities.loadPeoples(20, cardList_Peoples.size)
+                    modelManager.loadPeoples(20, cardList_Peoples.size)
                     message.obj = ThreadReadType.Peoples_Loaded
                 } else if (currentTypeSearch == 2){
-                    modelManager_Opportunities.loadJob(nameSearch)
+                    modelManager.loadJob(nameSearch)
                     message.obj = ThreadReadType.Job_Loaded
                 } else {
-                    modelManager_Opportunities.loadBio(nameSearch)
+                    modelManager.loadBio(nameSearch)
                     message.obj = ThreadReadType.Bio_Loaded
                 }
             } catch (e: ConnectionException) {
@@ -247,16 +252,18 @@ internal class MainActivity : AppCompatActivity() {
 
     fun loadOpportunityCards() {
         val size: Int = cardList_Opportunities.size
+
         for (i in 0..19)
-            cardList_Opportunities.add(CardItem_Opportunities(modelManager_Opportunities.nextOpportunity()))
+            cardList_Opportunities.add(CardItem_Opportunities(modelManager.nextOpportunity()))
 
         adapter_Opportunities.notifyItemRangeInserted(size, 20)
     }
 
     fun loadPeopleCards() {
         val size: Int = cardList_Peoples.size
+
         for (i in 0..19)
-            cardList_Peoples.add(CardItem_Peoples(modelManager_Opportunities.nextPeople()))
+            cardList_Peoples.add(CardItem_Peoples(modelManager.nextPeople()))
 
         adapter_Peoples.notifyItemRangeInserted(size, 20)
     }

@@ -100,3 +100,31 @@ Hora de inicio: 2:00pm
 -Agregar un thread de carga de los Bios para evitar que el usuario tenga un delay cuando presione el boton "Bios".
 -Agregar una separación en las tarjetas para evitar el amontonamiento y mejorar la estética.
 -Activar la lupa, para hacer que despliegue las tarjetas con un filtro de búsqueda.
+
+8:00pm	Me doy cuenta de varios problemas menores y decido atenderlos con la idea de mejorar la eficiencia de la app.
+
+Logros:
+- Diagramación de Clases para validar los posibles datos a mostrar en la UI (Hecho)
+- Creación de Paleta de Colores en función de los colores de torre.co (Hecho)
+- Escanear o fotografiar mi diseño conceptual (Hecho)
+- Diagramación de la interfaz usando Figma (Hecho)
+- Entrega del proyecto, subir y preparar los entregables (Hecho)
+
+Pendiente:
+- Implementación del proyecto con Android Studio (En progreso)
+- Activar las vistas a detalle de cada tarjeta. Endpoints Job y Bio.
+- Activar la carga de las imágenes de las tarjetas.
+- Arreglar un problema estético con los botones "Bios" y "Jobs", que no permanecen completamente abajo de la vista.
+- Agregar un thread de carga de los Bios para evitar que el usuario tenga un delay cuando presione el boton "Bios".
+- Agregar una separación en las tarjetas para evitar el amontonamiento y mejorar la estética.
+- Activar la lupa, para hacer que despliegue las tarjetas con un filtro de búsqueda.
+
+
+
+Fecha: 31-03-2021
+Hora de inicio: 2:00pm
+
+11:00am	Inicio el día con la idea de terminar de cambiar las estructuras de datos de ArrayList por HashMaps, la idea es asociar el id de los elementos a los objectos descargados.
+5:00pm	Luego de crear el proyecto con iterators, la app ha dejado de funcionar, me doy cuenta que debo implementar Test a mi clase gestora de conexiones.
+8:00pm	La app vuelve a funcionar, me di cuenta que tengo un problema con la forma como uso los iterators.
+8:20pm	Veo que el problema se da cuando inserto nuevos elementos en los HashMaps, el set definido en los iterator cambia y el iterator no funciona como yo espero, así que decido primero cambiar de HashMaps a LinkedHashMaps para garantizar el orden. Segundo cambiarle el tipo a los iterators a simples enteros.

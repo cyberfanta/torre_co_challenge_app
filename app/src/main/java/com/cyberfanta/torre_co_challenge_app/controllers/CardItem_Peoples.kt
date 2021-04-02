@@ -6,7 +6,6 @@ import com.cyberfanta.torre_co_challenge_app.models.peoples.ResultsItem
 import java.util.*
 
 class CardItem_Peoples {
-    private val TAG = "CardItem_Peoples"
 
     var name: String? = null
     var image: Bitmap? = null
@@ -26,8 +25,6 @@ class CardItem_Peoples {
     var skill8: String? = null
 
     constructor(resultsItem: ResultsItem) {
-        Log.i(TAG, resultsItem.toString())
-
         name = resultsItem.name
         if  (resultsItem.picture != null)
             image_url = resultsItem.picture
@@ -95,11 +92,11 @@ class CardItem_Peoples {
         }
     }
 
-    constructor(name: String, image_url: String, highligth: String, time1: String, time2: String, time3: String, time4: String,
+    constructor(name: String, image_url: String, highlight: String, time1: String, time2: String, time3: String, time4: String,
                 skill1: String?, skill2: String?, skill3: String?, skill4: String?, skill5: String?, skill6: String?, skill7: String?, skill8: String?) {
         this.name = name
         this.image_url = image_url
-        this.highligth = highligth
+        this.highligth = highlight
         this.time1 = time1
         this.time2 = time2
         this.time3 = time3

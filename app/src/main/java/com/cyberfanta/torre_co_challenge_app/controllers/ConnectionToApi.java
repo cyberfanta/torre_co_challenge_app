@@ -61,8 +61,8 @@ public class ConnectionToApi {
             if (answer.toLowerCase().contains("not found"))
                 throw new ConnectionException("NOT FOUND");
 
-//            if (answer.toLowerCase().contains("\"status\":415"))
-//                throw new ConnectionException("UNSUPPORTED MEDIA TYPE");
+            if (answer.toLowerCase().contains("\"status\":415"))
+                throw new ConnectionException("UNSUPPORTED MEDIA TYPE");
 
             if (answer.toLowerCase().contains("\"status\":400"))
                 throw new ConnectionException("INTERNAL SERVER ERROR");
