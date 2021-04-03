@@ -4,12 +4,8 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 
 import com.cyberfanta.torre_co_challenge_app.exceptions.ConnectionException;
-import com.cyberfanta.torre_co_challenge_app.models.job.Job;
 
-import java.io.BufferedInputStream;
-import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.net.URL;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -33,9 +29,9 @@ public class BitmapFromConnection {
         return bitmapMap.get(name);
     }
 
-    public static Bitmap getBitmap (String name, String url_bitmap) throws IOException {
+    public static void getBitmap (String name, String url_bitmap) throws IOException {
         loadBitmap(name, url_bitmap);
-        return getBitmap(name);
+        getBitmap(name);
     }
 
     public Bitmap nextBitmap() throws ConnectionException {

@@ -249,8 +249,7 @@ internal class MainActivity : AppCompatActivity() {
             } catch (e: ConnectionException) {
                 message.obj = ThreadReadType.Load_Failed
             }
-            handler.sendMessage(message)
-//            handler.sendMessageAtFrontOfQueue(message)
+            handler.sendMessageAtFrontOfQueue(message)
         }
     }
 
@@ -262,12 +261,10 @@ internal class MainActivity : AppCompatActivity() {
                 modelManager.loadOpportunities(20, cardList_Opportunities.size)
                 val message1 = handler.obtainMessage()
                 message1.obj = ThreadReadType.Opportunities_Loaded
-//                handler.sendMessage(message1)
                 handler.sendMessageAtFrontOfQueue(message1)
                 modelManager.loadPeoples(20, cardList_Peoples.size)
                 val message2 = handler.obtainMessage()
                 message2.obj = ThreadReadType.Peoples_Loaded
-//                handler.sendMessage(message2)
                 handler.sendMessageAtFrontOfQueue(message2)
             } catch (e: ConnectionException) {
                 message.obj = ThreadReadType.Load_Failed
@@ -290,8 +287,6 @@ internal class MainActivity : AppCompatActivity() {
                     loadJobData()
                 } else if (message.obj.equals(ThreadReadType.Bio_Loaded)) {
                     loadBioData()
-//            } else if (message.obj.equals(ThreadReadType.Image_Loaded)){
-//                cardList_Opportunities.
                 }
 
                 val imageView = findViewById<ImageView>(R.id.loading)
@@ -304,21 +299,12 @@ internal class MainActivity : AppCompatActivity() {
 
     fun loadOpportunityCards() {
         val size: Int = cardList_Opportunities.size
-//        val threadlist = arrayOfNulls<Thread>(20)
 
         for (i in 0..19) {
             val resultItem = modelManager.nextOpportunity()
             val cardOpportunities = CardItem_Opportunities(resultItem)
             cardOpportunities.image = BitmapFromConnection.getBitmap(resultItem.id)
             cardList_Opportunities.add(cardOpportunities)
-
-//            bitmapInfo.push(arrayOf(resultItem.id, resultItem.organizations[0].picture))
-
-//            threadlist[i] = Thread(ReadBitmapFromConnection())
-//            if (!threadlist[i]?.isAlive!!) {
-//                threadlist[i]?.start()
-//            }
-
         }
 
         adapter_Opportunities.notifyItemRangeInserted(size, 20)
@@ -327,8 +313,12 @@ internal class MainActivity : AppCompatActivity() {
     fun loadPeopleCards() {
         val size: Int = cardList_Peoples.size
 
-        for (i in 0..19)
-            cardList_Peoples.add(CardItem_Peoples(modelManager.nextPeople()))
+        for (i in 0..19) {
+            val resultItem = modelManager.nextPeople()
+            val cardPeoples = CardItem_Peoples(resultItem)
+            cardPeoples.image = BitmapFromConnection.getBitmap(resultItem.username)
+            cardList_Peoples.add(cardPeoples)
+        }
 
         adapter_Peoples.notifyItemRangeInserted(size, 20)
     }

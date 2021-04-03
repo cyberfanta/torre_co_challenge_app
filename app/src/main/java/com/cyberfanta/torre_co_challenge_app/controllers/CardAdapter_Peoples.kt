@@ -86,8 +86,9 @@ class CardAdapter_Peoples(private val cardList_Peoples: ArrayList<CardItem_Peopl
 
     override fun onBindViewHolder(holder: CardViewHolder, position: Int) {
         val cardItem = cardList_Peoples[position]
-        holder.imagePeople.setImageBitmap(cardItem.image)
         holder.namePeople.text = cardItem.name
+        if (cardItem.image != null)
+            holder.imagePeople.setImageBitmap(cardItem.image)
         holder.highligthPeople.text = cardItem.highligth
         holder.time1.text = cardItem.time1
         holder.time2.text = cardItem.time2

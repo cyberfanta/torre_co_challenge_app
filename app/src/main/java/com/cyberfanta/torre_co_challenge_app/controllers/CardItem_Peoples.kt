@@ -26,6 +26,7 @@ class CardItem_Peoples {
 
     constructor(resultsItem: ResultsItem) {
         name = resultsItem.name
+
         if  (resultsItem.picture != null)
             image_url = resultsItem.picture
         else

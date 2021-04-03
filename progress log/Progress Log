@@ -129,3 +129,40 @@ Hora de inicio: 2:00pm
 8:00pm	La app vuelve a funcionar, me di cuenta que tengo un problema con la forma como uso los iterators.
 8:20pm	Veo que el problema se da cuando inserto nuevos elementos en los HashMaps, el set definido en los iterator cambia y el iterator no funciona como yo espero, así que decido primero cambiar de HashMaps a LinkedHashMaps para garantizar el orden. Segundo cambiarle el tipo a los iterators a simples enteros.
 9:30pm	Ya las nuevas estructuras están funcionando perfectamente. Ahora vamos con los nuevos cambios.
+
+
+
+Fecha: 01-04-2021
+Hora de inicio: 12:00pm
+
+12:00pm	Inicio la lectura de las imagenes para las tarjetas de los RecyclerViews.
+
+
+
+Fecha: 02-04-2021
+Hora de inicio: 12:00pm
+
+Cumpleaños de mi esposa, no se hizo nada.
+
+
+
+Fecha: 03-04-2021
+Hora de inicio: 12:30pm
+
+12:30pm	Recibo el feedback de parte de Torre.co, y valido los puntos para mejorar este código.
+1:10pm	Luego de conversar con valeria, decido continuar con el desarrollo. Tengo 5 items que mejorar: 1. Documentación, el readme.md no lo he hecho, me faltó agregarlo. 2. Arquitectura, al no haber hecho mi readme.md no pude explicar que la arquitectura que uso es un mvc. 3. Spanglish, este punto es muy decepcionante de mi parte, ya que dejé los Log.i que no tenian nada que ver con el proyecto, eran variables bandera para hacer debug a la aplicación, ya los eliminé. 4. Bad coding practice: Unnecessary Comments, Hardcoded Configuration y Bad Naming Strategy, este punto es por mi falta de experiencia formal en el mundo de la programación. 5. Bad Git Usage, igual que el punto anterior, es ideal para mi aprender las mejores practicas y ponerlo en practica para torre.co.
+6:40pm	El aplicativo ahora puede autocargar nuevos elementos con un threshold razonable para garantizar que el usuario no tendrá que esperar, las imágenes se cargan desde la internet y al iniciar se cargan los jobs y los bios en paralelo, una véz más para que el usuario no tenga tiempos de espera.
+
+
+
+Logros:
+- Activar la carga de las imágenes de las tarjetas. (Hecho)
+- Agregar un thread de carga de los Bios para evitar que el usuario tenga un delay cuando presione el boton "Bios". (Hecho)
+
+Pendiente:
+- Implementación del proyecto con Android Studio (En progreso)
+- Activar las vistas a detalle de cada tarjeta. Endpoints Job y Bio.
+- Arreglar un problema estético con los botones "Bios" y "Jobs", que no permanecen completamente abajo de la vista.
+- Agregar una separación en las tarjetas para evitar el amontonamiento y mejorar la estética.
+- Activar la lupa, para hacer que despliegue las tarjetas con un filtro de búsqueda.
+
