@@ -5,7 +5,6 @@ import android.animation.AnimatorListenerAdapter
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.annotation.SuppressLint
-import android.graphics.Bitmap
 import android.os.Bundle
 import android.os.Handler
 import android.os.Message
@@ -23,8 +22,6 @@ import com.cyberfanta.torre_co_challenge_app.controllers.*
 import com.cyberfanta.torre_co_challenge_app.enumerator.ThreadReadType
 import com.cyberfanta.torre_co_challenge_app.exceptions.ConnectionException
 import com.google.firebase.analytics.FirebaseAnalytics
-import okhttp3.internal.wait
-import java.io.IOException
 import java.util.*
 
 internal class MainActivity : AppCompatActivity() {
@@ -60,8 +57,13 @@ internal class MainActivity : AppCompatActivity() {
 
         initializingRecyclersView()
         initializingConnectionController()
-        fillRecyclerView()
         loadLoadingAnimation()
+    }
+
+    override fun onStart() {
+        super.onStart()
+
+        fillBothRecyclersView()
     }
 
     //    ---
@@ -75,30 +77,36 @@ internal class MainActivity : AppCompatActivity() {
         recycler.layoutManager = layoutManager_Opportunities
         recycler.adapter = adapter_Opportunities
 
-        recycler.addOnScrollListener(object : RecyclerView.OnScrollListener() {
-            override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
-                super.onScrollStateChanged(recyclerView, newState)
-                if (!recyclerView.canScrollVertically(1)) {
-                    val imageView = findViewById<ImageView>(R.id.loading)
-                    imageView.visibility = View.VISIBLE
-
-                    fillRecyclerView()
-                    Toast.makeText(this@MainActivity, "Loading", Toast.LENGTH_SHORT).show()
-                }
-            }
-        })
+//        recycler.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+//            override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
+//                super.onScrollStateChanged(recyclerView, newState)
+//                if (!recyclerView.canScrollVertically(1)) {
+//                    val imageView = findViewById<ImageView>(R.id.loading)
+//                    imageView.visibility = View.VISIBLE
+//
+//                    fillCurrentRecyclerView()
+//                    Toast.makeText(this@MainActivity, "Loading", Toast.LENGTH_SHORT).show()
+//                }
+//            }
+//        })
 
         adapter_Opportunities.setOnItemClickListener(object :
             CardAdapter_Opportunities.OnItemClickListener {
             override fun onItemClick(position: Int) {
-                Toast.makeText(
-                    this@MainActivity,
-                    "Clicked item $position - TODO", //todo
-                    Toast.LENGTH_SHORT
-                ).show()
             }
         })
 
+        adapter_Opportunities.setOnBottomReachedListener(object :
+            CardAdapter_Opportunities.OnBottomReachedListener {
+            override fun onBottomReached(position: Int) {
+                val imageView = findViewById<ImageView>(R.id.loading)
+                imageView.visibility = View.VISIBLE
+
+                fillCurrentRecyclerView()
+            }
+        })
+
+        //        ---
 
         recycler = findViewById(R.id.recycler_bios)
         recycler.setHasFixedSize(true)
@@ -107,16 +115,24 @@ internal class MainActivity : AppCompatActivity() {
         recycler.layoutManager = layoutManager_Peoples
         recycler.adapter = adapter_Peoples
 
-        recycler.addOnScrollListener(object : RecyclerView.OnScrollListener() {
-            override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
-                super.onScrollStateChanged(recyclerView, newState)
-                if (!recyclerView.canScrollVertically(1)) {
-                    val imageView = findViewById<ImageView>(R.id.loading)
-                    imageView.visibility = View.VISIBLE
+        adapter_Peoples.setOnItemClickListener(object :
+            CardAdapter_Peoples.OnItemClickListener {
+            override fun onItemClick(position: Int) {
+//                Toast.makeText(
+//                    this@MainActivity,
+//                    "Clicked item $position",
+//                    Toast.LENGTH_SHORT
+//                ).show()
+            }
+        })
 
-                    fillRecyclerView()
-                    Toast.makeText(this@MainActivity, "Loading", Toast.LENGTH_SHORT).show()
-                }
+        adapter_Peoples.setOnBottomReachedListener(object :
+            CardAdapter_Peoples.OnBottomReachedListener {
+            override fun onBottomReached(position: Int) {
+                val imageView = findViewById<ImageView>(R.id.loading)
+                imageView.visibility = View.VISIBLE
+
+                fillCurrentRecyclerView()
             }
         })
     }
@@ -124,14 +140,6 @@ internal class MainActivity : AppCompatActivity() {
     //Initialize the Connection Controller
     private fun initializingConnectionController() {
         modelManager = ModelManager()
-    }
-
-    //Initial load for recycler view
-    private fun fillRecyclerView() {
-        if (!queriesThread.isAlive) {
-            queriesThread = Thread(ReadModelFromConnection())
-            queriesThread.start()
-        }
     }
 
     //Initialize loading animation
@@ -151,8 +159,24 @@ internal class MainActivity : AppCompatActivity() {
             }
         )
         loading_animatorSet.start()
+    }
 
-        imageView.visibility = View.GONE
+    //    ---
+
+    //Initial load for both recyclers view
+    private fun fillBothRecyclersView() {
+        if (!queriesThread.isAlive) {
+            queriesThread = Thread(ReadBothModelFromConnection())
+            queriesThread.start()
+        }
+    }
+
+    //load current recycler view
+    private fun fillCurrentRecyclerView() {
+        if (!queriesThread.isAlive) {
+            queriesThread = Thread(ReadModelFromConnection())
+            queriesThread.start()
+        }
     }
 
     //    ---
@@ -188,11 +212,6 @@ internal class MainActivity : AppCompatActivity() {
         recycler.visibility = View.VISIBLE
         recycler= findViewById(R.id.recycler_bios)
         recycler.visibility = View.GONE
-
-        val imageView = findViewById<ImageView>(R.id.loading)
-        imageView.visibility = View.VISIBLE
-
-        fillRecyclerView()
     }
 
     //Changing Bios to Jobs
@@ -204,11 +223,6 @@ internal class MainActivity : AppCompatActivity() {
         recycler.visibility = View.GONE
         recycler= findViewById(R.id.recycler_bios)
         recycler.visibility = View.VISIBLE
-
-        val imageView = findViewById<ImageView>(R.id.loading)
-        imageView.visibility = View.VISIBLE
-
-        fillRecyclerView()
     }
 
     //    ---
@@ -235,7 +249,30 @@ internal class MainActivity : AppCompatActivity() {
             } catch (e: ConnectionException) {
                 message.obj = ThreadReadType.Load_Failed
             }
-            handler.sendMessageAtFrontOfQueue(message)
+            handler.sendMessage(message)
+//            handler.sendMessageAtFrontOfQueue(message)
+        }
+    }
+
+    //Asynchronous Load data from ModelFromConnection Class
+    private inner class ReadBothModelFromConnection : Runnable {
+        override fun run() {
+            val message = handler.obtainMessage()
+            try {
+                modelManager.loadOpportunities(20, cardList_Opportunities.size)
+                val message1 = handler.obtainMessage()
+                message1.obj = ThreadReadType.Opportunities_Loaded
+//                handler.sendMessage(message1)
+                handler.sendMessageAtFrontOfQueue(message1)
+                modelManager.loadPeoples(20, cardList_Peoples.size)
+                val message2 = handler.obtainMessage()
+                message2.obj = ThreadReadType.Peoples_Loaded
+//                handler.sendMessage(message2)
+                handler.sendMessageAtFrontOfQueue(message2)
+            } catch (e: ConnectionException) {
+                message.obj = ThreadReadType.Load_Failed
+                handler.sendMessageAtFrontOfQueue(message)
+            }
         }
     }
 
@@ -244,20 +281,22 @@ internal class MainActivity : AppCompatActivity() {
     @SuppressLint("HandlerLeak")
     private val handler: Handler = object : Handler() {
         override fun handleMessage(message: Message) {
-            if (message.obj.equals(ThreadReadType.Opportunities_Loaded)){
-                loadOpportunityCards()
-            } else if (message.obj.equals(ThreadReadType.Peoples_Loaded)){
-                loadPeopleCards()
-            } else if (message.obj.equals(ThreadReadType.Job_Loaded)){
-                loadJobData()
-            } else if (message.obj.equals(ThreadReadType.Bio_Loaded)){
-                loadBioData()
+            if (message.obj != null) {
+                if (message.obj.equals(ThreadReadType.Opportunities_Loaded)) {
+                    loadOpportunityCards()
+                } else if (message.obj.equals(ThreadReadType.Peoples_Loaded)) {
+                    loadPeopleCards()
+                } else if (message.obj.equals(ThreadReadType.Job_Loaded)) {
+                    loadJobData()
+                } else if (message.obj.equals(ThreadReadType.Bio_Loaded)) {
+                    loadBioData()
 //            } else if (message.obj.equals(ThreadReadType.Image_Loaded)){
 //                cardList_Opportunities.
-            }
+                }
 
-            val imageView = findViewById<ImageView>(R.id.loading)
-            imageView.visibility = View.GONE
+                val imageView = findViewById<ImageView>(R.id.loading)
+                imageView.visibility = View.GONE
+            }
         }
     }
 
@@ -303,26 +342,6 @@ internal class MainActivity : AppCompatActivity() {
     }
 
     //    ---
-
-    //Asynchronous Load data from ModelFromConnection Class
-//    private inner class ReadBitmapFromConnection : Runnable {
-//        val bitmapFromConnection: BitmapFromConnection = BitmapFromConnection()
-//
-//        override fun run() {
-//            val message = handler.obtainMessage()
-//
-//            do {
-//                try {
-//                    val prueba: Array<String> = bitmapInfo.pop()
-//                    bitmapFromConnection.loadBitmap(prueba[0], prueba[1])
-//                    message.obj = ThreadReadType.Image_Loaded
-//                } catch (e: IOException) {
-//                    message.obj = ThreadReadType.Load_Failed
-//                }
-//                handler.sendMessageAtFrontOfQueue(message)
-//            } while (true)
-//        }
-//    }
 
     //    ---
 

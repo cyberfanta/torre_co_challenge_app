@@ -24,10 +24,12 @@ class CardItem_Opportunities {
 
     constructor(resultsItem: ResultsItem) {
         name = resultsItem.objective
+
         if  (resultsItem.organizations.size > 0)
             image_url = resultsItem.organizations[0].picture
         else
             image_url = null
+
         if  (resultsItem.compensation.data != null)
             highligth = resultsItem.compensation.data.minAmount.toString() + " - " + resultsItem.compensation.data.maxAmount + " " + resultsItem.compensation.data.currency + " " + resultsItem.compensation.data.periodicity
         else

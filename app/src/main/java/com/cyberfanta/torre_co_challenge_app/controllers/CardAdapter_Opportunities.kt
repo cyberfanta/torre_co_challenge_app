@@ -11,17 +11,34 @@ import com.cyberfanta.torre_co_challenge_app.controllers.CardAdapter_Opportuniti
 import java.util.*
 
 class CardAdapter_Opportunities(private val cardList_Opportunities: ArrayList<CardItem_Opportunities>) : RecyclerView.Adapter<CardViewHolder>() {
-    private var listener: OnItemClickListener? = null
+    private var itemClickListener: OnItemClickListener? = null
+    private var bottomReachedListener: OnBottomReachedListener? = null
+
+    //    ---
 
     interface OnItemClickListener {
         fun onItemClick(position: Int)
     }
 
-    fun setOnItemClickListener(listener: OnItemClickListener) {
-        this.listener = listener
+    interface OnBottomReachedListener {
+        fun onBottomReached(position: Int)
     }
 
-    class CardViewHolder(itemView: View, listener: OnItemClickListener?) : RecyclerView.ViewHolder(itemView) {
+    //    ---
+
+    fun setOnItemClickListener(listener: OnItemClickListener) {
+        this.itemClickListener = listener
+    }
+
+    fun setOnBottomReachedListener(listener: OnBottomReachedListener) {
+        this.bottomReachedListener = listener
+    }
+
+    //    ---
+
+    class CardViewHolder(itemView: View, itemClickListener: OnItemClickListener?) : RecyclerView.ViewHolder(
+        itemView
+    ) {
         var name: TextView
         var image: ImageView
         var highligth: TextView
@@ -54,9 +71,7 @@ class CardAdapter_Opportunities(private val cardList_Opportunities: ArrayList<Ca
             itemView.setOnClickListener {
                 val position = adapterPosition
                 if (position != RecyclerView.NO_POSITION) {
-                    if (listener != null) {
-                        listener.onItemClick(position)
-                    }
+                    itemClickListener?.onItemClick(position)
                 }
             }
         }
@@ -64,13 +79,14 @@ class CardAdapter_Opportunities(private val cardList_Opportunities: ArrayList<Ca
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.card_opportunities, parent, false)
-        return CardViewHolder(view, listener)
+        return CardViewHolder(view, itemClickListener)
     }
 
     override fun onBindViewHolder(holder: CardViewHolder, position: Int) {
         val cardItem = cardList_Opportunities[position]
         holder.name.text = cardItem.name
-        holder.image.setImageBitmap(cardItem.image)
+        if (cardItem.image != null)
+            holder.image.setImageBitmap(cardItem.image)
         holder.highligth.text = cardItem.highligth
         holder.time.text = cardItem.time
         holder.remote.text = cardItem.remote
@@ -82,6 +98,9 @@ class CardAdapter_Opportunities(private val cardList_Opportunities: ArrayList<Ca
         holder.skill6.text = cardItem.skill6
         holder.skill7.text = cardItem.skill7
         holder.skill8.text = cardItem.skill8
+
+        if (position > itemCount - 12)
+            bottomReachedListener?.onBottomReached(position)
     }
 
     override fun getItemCount(): Int {

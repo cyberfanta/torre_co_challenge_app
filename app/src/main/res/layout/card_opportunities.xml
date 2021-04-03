@@ -37,7 +37,7 @@
                 app:layout_constraintEnd_toStartOf="@id/guideline4"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_card_image" />
+                app:srcCompat="@android:drawable/ic_menu_mapmode" />
 
             <TextView
                 android:id="@+id/name"
