@@ -5,6 +5,7 @@ import android.animation.AnimatorListenerAdapter
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.annotation.SuppressLint
+import android.graphics.Bitmap
 import android.os.Bundle
 import android.os.Handler
 import android.os.Message
@@ -264,19 +265,20 @@ internal class MainActivity : AppCompatActivity() {
 
     fun loadOpportunityCards() {
         val size: Int = cardList_Opportunities.size
-        val threadlist = arrayOfNulls<Thread>(20)
+//        val threadlist = arrayOfNulls<Thread>(20)
 
         for (i in 0..19) {
-            var resultItem : com.cyberfanta.torre_co_challenge_app.models.opportunities.ResultsItem
-            resultItem = modelManager.nextOpportunity()
-            cardList_Opportunities.add(CardItem_Opportunities(resultItem))
+            val resultItem = modelManager.nextOpportunity()
+            val cardOpportunities = CardItem_Opportunities(resultItem)
+            cardOpportunities.image = BitmapFromConnection.getBitmap(resultItem.id)
+            cardList_Opportunities.add(cardOpportunities)
 
-            bitmapInfo.push(arrayOf(resultItem.id, resultItem.organizations[0].picture))
+//            bitmapInfo.push(arrayOf(resultItem.id, resultItem.organizations[0].picture))
 
-            threadlist[i] = Thread(ReadBitmapFromConnection())
-            if (!threadlist[i]?.isAlive!!) {
-                threadlist[i]?.start()
-            }
+//            threadlist[i] = Thread(ReadBitmapFromConnection())
+//            if (!threadlist[i]?.isAlive!!) {
+//                threadlist[i]?.start()
+//            }
 
         }
 
@@ -303,24 +305,24 @@ internal class MainActivity : AppCompatActivity() {
     //    ---
 
     //Asynchronous Load data from ModelFromConnection Class
-    private inner class ReadBitmapFromConnection : Runnable {
-        val bitmapFromConnection: BitmapFromConnection = BitmapFromConnection()
-
-        override fun run() {
-            val message = handler.obtainMessage()
-
-            do {
-                try {
-                    val prueba: Array<String> = bitmapInfo.pop()
-                    bitmapFromConnection.loadBitmap(prueba[0], prueba[1])
-                    message.obj = ThreadReadType.Image_Loaded
-                } catch (e: IOException) {
-                    message.obj = ThreadReadType.Load_Failed
-                }
-                handler.sendMessageAtFrontOfQueue(message)
-            } while (true)
-        }
-    }
+//    private inner class ReadBitmapFromConnection : Runnable {
+//        val bitmapFromConnection: BitmapFromConnection = BitmapFromConnection()
+//
+//        override fun run() {
+//            val message = handler.obtainMessage()
+//
+//            do {
+//                try {
+//                    val prueba: Array<String> = bitmapInfo.pop()
+//                    bitmapFromConnection.loadBitmap(prueba[0], prueba[1])
+//                    message.obj = ThreadReadType.Image_Loaded
+//                } catch (e: IOException) {
+//                    message.obj = ThreadReadType.Load_Failed
+//                }
+//                handler.sendMessageAtFrontOfQueue(message)
+//            } while (true)
+//        }
+//    }
 
     //    ---
 

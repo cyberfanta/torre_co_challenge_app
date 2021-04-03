@@ -1,7 +1,5 @@
 package com.cyberfanta.torre_co_challenge_app.controllers;
 
-import android.util.Log;
-
 import com.cyberfanta.torre_co_challenge_app.exceptions.ConnectionException;
 
 import java.io.IOException;
@@ -15,7 +13,7 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 
 public class ConnectionToApi {
-    private final String TAG;
+//    private final String TAG = "ConnectionToApi";
 
     // Objects to read data from server
     private static final OkHttpClient CLIENT = new OkHttpClient.Builder()
@@ -24,17 +22,12 @@ public class ConnectionToApi {
             .writeTimeout(15, TimeUnit.SECONDS)
             .build();
 
-    public ConnectionToApi() {
-        TAG = "ConnectionToApi";
-    }
-
     public String getJson (String url) throws ConnectionException {
         return loadJson(new Request.Builder().url(url).get().build());
     }
 
     @SuppressWarnings("deprecation")
     public String postJson (String url, int size, int offset) throws ConnectionException {
-        Log.i(TAG, "pasó");
         MediaType JSON = MediaType.parse("application/json; charset=utf-8");
         RequestBody requestBody = RequestBody.create(JSON, "");
 

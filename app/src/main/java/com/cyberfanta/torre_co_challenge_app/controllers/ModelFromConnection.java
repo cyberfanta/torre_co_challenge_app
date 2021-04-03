@@ -7,14 +7,10 @@ import com.google.gson.Gson;
 
 
 public class ModelFromConnection {
-    private final String TAG;
+//    private final String TAG = "ModelFromConnection";
 
     private final ConnectionToApi connectionToApi = new ConnectionToApi();
     private final Gson gson = new Gson();
-
-    public ModelFromConnection() {
-        TAG = "ModelFromConnection";
-    }
 
     public <T> T getObject(Class<T> type, String url) throws ConnectionException {
         String string = connectionToApi.getJson(url);
@@ -22,9 +18,7 @@ public class ModelFromConnection {
     }
 
     public <T> T postObject(Class<T> type, String url, int size, int offset) throws ConnectionException {
-        Log.i(TAG, "pasó");
         String string = connectionToApi.postJson(url, size, offset);
-        Log.i(TAG, string);
         return gson.fromJson(string, type);
     }
 }

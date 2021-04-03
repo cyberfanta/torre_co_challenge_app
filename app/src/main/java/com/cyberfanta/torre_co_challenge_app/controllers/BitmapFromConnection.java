@@ -15,10 +15,10 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class BitmapFromConnection {
-    private final Map<String, Bitmap> bitmapMap = new LinkedHashMap<>(0);
+    private static final Map<String, Bitmap> bitmapMap = new LinkedHashMap<>(0);
     private int bitmapMapIterator = 0;
 
-    public synchronized void loadBitmap(String name, String url_bitmap) throws IOException {
+    public static synchronized void loadBitmap(String name, String url_bitmap) throws IOException {
         URL url = new URL(url_bitmap);
 
         if (bitmapMap.containsKey(name))
@@ -29,8 +29,13 @@ public class BitmapFromConnection {
             bitmapMap.put(name, bitmap);
     }
 
-    public Bitmap getBitmap (String name) {
+    public static Bitmap getBitmap (String name) {
         return bitmapMap.get(name);
+    }
+
+    public static Bitmap getBitmap (String name, String url_bitmap) throws IOException {
+        loadBitmap(name, url_bitmap);
+        return getBitmap(name);
     }
 
     public Bitmap nextBitmap() throws ConnectionException {

@@ -9,6 +9,7 @@ import com.cyberfanta.torre_co_challenge_app.models.opportunities.Opportunities;
 import com.cyberfanta.torre_co_challenge_app.models.opportunities.ResultsItem;
 import com.cyberfanta.torre_co_challenge_app.models.peoples.Peoples;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -17,8 +18,6 @@ import java.util.List;
 import java.util.Map;
 
 public class ModelManager {
-    @SuppressWarnings("FieldCanBeLocal")
-    private final String TAG;
 
     private final String[] url = new String[]{
             "https://torre.co/api/opportunities/",  //https://torre.co/api/opportunities/$id
@@ -39,10 +38,6 @@ public class ModelManager {
 
     private final Map<String, com.cyberfanta.torre_co_challenge_app.models.peoples.ResultsItem> peoplesMap = new LinkedHashMap<>(0);
     private int peoplesMapIterator = 0;
-
-    public ModelManager(){
-        TAG = "ModelManager";
-    }
 
     //Getters
     //-- Job
@@ -108,8 +103,15 @@ public class ModelManager {
         Opportunities opportunities = modelFromConnection.postObject(Opportunities.class, url[2], size, offset);
         List <com.cyberfanta.torre_co_challenge_app.models.opportunities.ResultsItem> resultsItems = opportunities.getResults();
 
-        for (com.cyberfanta.torre_co_challenge_app.models.opportunities.ResultsItem resultsItem: resultsItems)
+        for (com.cyberfanta.torre_co_challenge_app.models.opportunities.ResultsItem resultsItem: resultsItems) {
+            try {
+                if (resultsItem.getOrganizations().size() > 0)
+                    BitmapFromConnection.getBitmap(resultsItem.getId(), resultsItem.getOrganizations().get(0).getPicture());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
             opportunitiesMap.put(resultsItem.getId(), resultsItem);
+        }
     }
 
     //-- Peoples
@@ -130,6 +132,15 @@ public class ModelManager {
     public void loadPeoples(int size, int offset) throws ConnectionException {
         Peoples peoples = modelFromConnection.postObject(Peoples.class, url[3], size, offset);
         List <com.cyberfanta.torre_co_challenge_app.models.peoples.ResultsItem> resultsItems = peoples.getResults();
+
+        for (com.cyberfanta.torre_co_challenge_app.models.peoples.ResultsItem resultsItem: resultsItems) {
+            try {
+                BitmapFromConnection.getBitmap(resultsItem.getUsername(), resultsItem.getPicture());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            peoplesMap.put(resultsItem.getUsername(), resultsItem);
+        }
 
         for (com.cyberfanta.torre_co_challenge_app.models.peoples.ResultsItem resultsItem: resultsItems)
             peoplesMap.put(resultsItem.getUsername(), resultsItem);
