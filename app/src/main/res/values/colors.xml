@@ -50,5 +50,6 @@
     <color name="color_strokes">@color/colorSource4Up</color>
     <color name="colorSource4Up">#BFA53F</color>
 
+    <color name="Transparent">#00FFFFFF</color>
 
 </resources>

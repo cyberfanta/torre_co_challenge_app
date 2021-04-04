@@ -77,22 +77,10 @@ internal class MainActivity : AppCompatActivity() {
         recycler.layoutManager = layoutManager_Opportunities
         recycler.adapter = adapter_Opportunities
 
-//        recycler.addOnScrollListener(object : RecyclerView.OnScrollListener() {
-//            override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
-//                super.onScrollStateChanged(recyclerView, newState)
-//                if (!recyclerView.canScrollVertically(1)) {
-//                    val imageView = findViewById<ImageView>(R.id.loading)
-//                    imageView.visibility = View.VISIBLE
-//
-//                    fillCurrentRecyclerView()
-//                    Toast.makeText(this@MainActivity, "Loading", Toast.LENGTH_SHORT).show()
-//                }
-//            }
-//        })
-
         adapter_Opportunities.setOnItemClickListener(object :
             CardAdapter_Opportunities.OnItemClickListener {
             override fun onItemClick(position: Int) {
+//                todo
             }
         })
 
@@ -118,11 +106,7 @@ internal class MainActivity : AppCompatActivity() {
         adapter_Peoples.setOnItemClickListener(object :
             CardAdapter_Peoples.OnItemClickListener {
             override fun onItemClick(position: Int) {
-//                Toast.makeText(
-//                    this@MainActivity,
-//                    "Clicked item $position",
-//                    Toast.LENGTH_SHORT
-//                ).show()
+//                todo
             }
         })
 
