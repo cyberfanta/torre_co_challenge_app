@@ -164,5 +164,6 @@ Logros:
 Pendiente:
 - Implementación del proyecto con Android Studio (En progreso)
 - Activar las vistas a detalle de cada tarjeta. Endpoints Job y Bio.
+- Agregar soporte a multilenguaje.
 - Activar la lupa, para hacer que despliegue las tarjetas con un filtro de búsqueda.
 

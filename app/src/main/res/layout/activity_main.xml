@@ -57,7 +57,7 @@
             android:autofillHints=""
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="@string/searching_job"
+            android:text="@string/filter"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/Loupe_Background_Search"
@@ -358,6 +358,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:background="@drawable/button_normal"
+            android:gravity="center"
             android:orientation="horizontal"
             android:padding="15dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -376,14 +377,14 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="120dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/name1"
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
+                    android:layout_height="wrap_content"
                     android:gravity="center"
                     android:shadowColor="@color/Black"
                     android:shadowRadius="3"
@@ -395,7 +396,7 @@
                 <TextView
                     android:id="@+id/name2"
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
+                    android:layout_height="wrap_content"
                     android:gravity="center"
                     android:shadowColor="@color/Black"
                     android:shadowRadius="3"
@@ -407,7 +408,7 @@
                 <TextView
                     android:id="@+id/profession"
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
+                    android:layout_height="wrap_content"
                     android:gravity="center"
                     android:shadowColor="@color/Black"
                     android:shadowRadius="3"
@@ -419,7 +420,7 @@
                 <TextView
                     android:id="@+id/email"
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
+                    android:layout_height="wrap_content"
                     android:gravity="center"
                     android:shadowColor="@color/Black"
                     android:shadowRadius="3"
@@ -431,7 +432,7 @@
                 <TextView
                     android:id="@+id/phone"
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
+                    android:layout_height="wrap_content"
                     android:gravity="center"
                     android:shadowColor="@color/Black"
                     android:shadowRadius="3"

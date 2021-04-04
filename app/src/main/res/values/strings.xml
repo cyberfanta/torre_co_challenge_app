@@ -6,9 +6,8 @@
     <string name="jobs">Jobs</string>
     <string name="bios">Bios</string>
 
-    <string name="searching_job">Searching Job</string>
-
-
+    <string name="filter">Write your filter here</string>
+    <string name="return_text">Return</string>
 
     <!--    Card Example-->
     <string name="Card_name">Android Developer</string>

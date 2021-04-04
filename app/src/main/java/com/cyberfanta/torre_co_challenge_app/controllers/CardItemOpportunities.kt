@@ -5,8 +5,9 @@ import android.util.Log
 import com.cyberfanta.torre_co_challenge_app.models.opportunities.ResultsItem
 import java.util.*
 
-class CardItem_Opportunities {
+class CardItemOpportunities {
 
+    var id: String? = null
     var name: String? = null
     var image: Bitmap? = null
     var image_url: String? = null
@@ -23,6 +24,8 @@ class CardItem_Opportunities {
     var skill8: String? = null
 
     constructor(resultsItem: ResultsItem) {
+        id = resultsItem.id
+
         name = resultsItem.objective
 
         if  (resultsItem.organizations.size > 0)
@@ -61,7 +64,10 @@ class CardItem_Opportunities {
         }
     }
 
-    constructor(name: String, image_url: String, highlight: String, time: String, remote: String, skill1: String?, skill2: String?, skill3: String?, skill4: String?, skill5: String?, skill6: String?, skill7: String?, skill8: String?) {
+    constructor(id: String, name: String, image_url: String, highlight: String, time: String,
+                remote: String, skill1: String?, skill2: String?, skill3: String?, skill4: String?,
+                skill5: String?, skill6: String?, skill7: String?, skill8: String?) {
+        this.id = id
         this.name = name
         this.image_url = image_url
         this.highligth = highlight

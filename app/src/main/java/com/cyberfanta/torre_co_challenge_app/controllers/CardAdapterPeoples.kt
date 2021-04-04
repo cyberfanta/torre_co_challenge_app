@@ -7,10 +7,10 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.cyberfanta.torre_co_challenge_app.R
-import com.cyberfanta.torre_co_challenge_app.controllers.CardAdapter_Peoples.CardViewHolder
+import com.cyberfanta.torre_co_challenge_app.controllers.CardAdapterPeoples.CardViewHolder
 import java.util.*
 
-class CardAdapter_Peoples(private val cardList_Peoples: ArrayList<CardItem_Peoples>) : RecyclerView.Adapter<CardViewHolder>() {
+class CardAdapterPeoples(private val cardList_People: ArrayList<CardItemPeoples>) : RecyclerView.Adapter<CardViewHolder>() {
     private var itemClickListener: OnItemClickListener? = null
     private var bottomReachedListener: OnBottomReachedListener? = null
 
@@ -85,7 +85,7 @@ class CardAdapter_Peoples(private val cardList_Peoples: ArrayList<CardItem_Peopl
     }
 
     override fun onBindViewHolder(holder: CardViewHolder, position: Int) {
-        val cardItem = cardList_Peoples[position]
+        val cardItem = cardList_People[position]
         holder.namePeople.text = cardItem.name
         if (cardItem.image != null)
             holder.imagePeople.setImageBitmap(cardItem.image)
@@ -110,6 +110,6 @@ class CardAdapter_Peoples(private val cardList_Peoples: ArrayList<CardItem_Peopl
     }
 
     override fun getItemCount(): Int {
-        return cardList_Peoples.size
+        return cardList_People.size
     }
 }

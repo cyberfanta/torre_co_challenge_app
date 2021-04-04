@@ -5,14 +5,15 @@ import android.animation.AnimatorListenerAdapter
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.annotation.SuppressLint
+import android.content.Intent
+import android.graphics.Insets
+import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.os.Message
-import android.view.Menu
-import android.view.MenuItem
-import android.view.View
+import android.util.DisplayMetrics
+import android.view.*
 import android.widget.ImageView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.GridLayoutManager
@@ -21,30 +22,28 @@ import com.cyberfanta.torre_co_challenge_app.R
 import com.cyberfanta.torre_co_challenge_app.controllers.*
 import com.cyberfanta.torre_co_challenge_app.enumerator.ThreadReadType
 import com.cyberfanta.torre_co_challenge_app.exceptions.ConnectionException
-import com.google.firebase.analytics.FirebaseAnalytics
 import java.util.*
 
-internal class MainActivity : AppCompatActivity() {
-    private val TAG = "MainActivity"
 
-    private var mFirebaseAnalytics: FirebaseAnalytics? = null
+internal class MainActivity : AppCompatActivity() {
+    private var deviceWidth: Int = 0
+    private var deviceHeight:Int = 0
+
     private var currentTypeSearch: Int = 0 //0 = Opportunities , 1 = Peoples , 2 = Job , 3 = Bio
 
-    private val nameSearch: String = ""
+    private var currentIdSearch: String = ""
 
     private lateinit var modelManager: ModelManager
 
-    private lateinit var adapter_Opportunities: CardAdapter_Opportunities
-    private lateinit var adapter_Peoples: CardAdapter_Peoples
+    private lateinit var adapterOpportunities: CardAdapterOpportunities
+    private lateinit var adapterPeoples: CardAdapterPeoples
 
-    private var cardList_Opportunities: ArrayList<CardItem_Opportunities>
-    = ArrayList<CardItem_Opportunities>(20)
-    private var cardList_Peoples: ArrayList<CardItem_Peoples>
-    = ArrayList<CardItem_Peoples>(20)
+    private var cardListOpportunities: ArrayList<CardItemOpportunities>
+    = ArrayList<CardItemOpportunities>(20)
+    private var cardListPeople: ArrayList<CardItemPeoples>
+    = ArrayList<CardItemPeoples>(20)
 
     private var queriesThread = Thread(ReadModelFromConnection())
-
-    private var bitmapInfo = Stack<Array<String>>()
 
     //    ---
 
@@ -52,12 +51,11 @@ internal class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // Obtain the FirebaseAnalytics instance.
-        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this)
+        calculateDeviceDimensions()
 
         initializingRecyclersView()
         initializingConnectionController()
-        loadLoadingAnimation()
+        initializingLoadingArrowAnimation()
     }
 
     override fun onStart() {
@@ -66,31 +64,68 @@ internal class MainActivity : AppCompatActivity() {
         fillBothRecyclersView()
     }
 
+    override fun onBackPressed() {
+        val constraintLayout : ConstraintLayout = findViewById(R.id.author)
+        if (!constraintLayout.translationX.equals(deviceWidth.toFloat())) {
+            authorSelected(constraintLayout)
+            return
+        }
+
+        super.onBackPressed()
+    }
+
+    override fun onDestroy() {
+        if (queriesThread.isAlive)
+            queriesThread.interrupt()
+
+        super.onDestroy()
+    }
+
     //    ---
+
+    //Calculate the device dimension
+    private fun calculateDeviceDimensions(){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            val windowMetrics: WindowMetrics = getWindowManager().currentWindowMetrics
+            val insets: Insets = windowMetrics.windowInsets
+                    .getInsetsIgnoringVisibility(WindowInsets.Type.systemBars())
+            deviceWidth = windowMetrics.bounds.width() - insets.left - insets.right
+            deviceHeight = windowMetrics.bounds.height() - insets.top - insets.bottom
+        } else {
+            val displayMetrics = DisplayMetrics()
+            @Suppress("DEPRECATION")
+            getWindowManager().defaultDisplay.getMetrics(displayMetrics)
+            deviceWidth = displayMetrics.widthPixels
+            deviceHeight = displayMetrics.heightPixels
+        }
+    }
 
     //Initialize the recyclerView
     private fun initializingRecyclersView() {
         var recycler: RecyclerView = findViewById(R.id.recycler_jobs)
         recycler.setHasFixedSize(true)
         val layoutManager_Opportunities: RecyclerView.LayoutManager = GridLayoutManager(this, 2)
-        adapter_Opportunities = CardAdapter_Opportunities(cardList_Opportunities)
+        adapterOpportunities = CardAdapterOpportunities(cardListOpportunities)
         recycler.layoutManager = layoutManager_Opportunities
-        recycler.adapter = adapter_Opportunities
+        recycler.adapter = adapterOpportunities
 
-        adapter_Opportunities.setOnItemClickListener(object :
-            CardAdapter_Opportunities.OnItemClickListener {
+        adapterOpportunities.setOnItemClickListener(object :
+            CardAdapterOpportunities.OnItemClickListener {
             override fun onItemClick(position: Int) {
-//                todo
+                currentIdSearch = cardListOpportunities[position].id.toString()
+                currentTypeSearch = 2
+                queryFromApi()
             }
         })
 
-        adapter_Opportunities.setOnBottomReachedListener(object :
-            CardAdapter_Opportunities.OnBottomReachedListener {
+        adapterOpportunities.setOnBottomReachedListener(object :
+            CardAdapterOpportunities.OnBottomReachedListener {
             override fun onBottomReached(position: Int) {
                 val imageView = findViewById<ImageView>(R.id.loading)
                 imageView.visibility = View.VISIBLE
 
-                fillCurrentRecyclerView()
+                currentTypeSearch = 0
+                queryFromApi()
             }
         })
 
@@ -98,7 +133,8 @@ internal class MainActivity : AppCompatActivity() {
             override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
                 super.onScrollStateChanged(recyclerView, newState)
                 if (!recyclerView.canScrollVertically(1)) {
-                    fillCurrentRecyclerView()
+                    currentTypeSearch = 0
+                    queryFromApi()
                 }
             }
         })
@@ -108,24 +144,26 @@ internal class MainActivity : AppCompatActivity() {
         recycler = findViewById(R.id.recycler_bios)
         recycler.setHasFixedSize(true)
         val layoutManager_Peoples: RecyclerView.LayoutManager = GridLayoutManager(this, 2)
-        adapter_Peoples = CardAdapter_Peoples(cardList_Peoples)
+        adapterPeoples = CardAdapterPeoples(cardListPeople)
         recycler.layoutManager = layoutManager_Peoples
-        recycler.adapter = adapter_Peoples
+        recycler.adapter = adapterPeoples
 
-        adapter_Peoples.setOnItemClickListener(object :
-            CardAdapter_Peoples.OnItemClickListener {
+        adapterPeoples.setOnItemClickListener(object : CardAdapterPeoples.OnItemClickListener {
             override fun onItemClick(position: Int) {
-//                todo
+                currentIdSearch = cardListPeople[position].id.toString()
+                currentTypeSearch = 3
+                queryFromApi()
             }
         })
 
-        adapter_Peoples.setOnBottomReachedListener(object :
-            CardAdapter_Peoples.OnBottomReachedListener {
+        adapterPeoples.setOnBottomReachedListener(object :
+            CardAdapterPeoples.OnBottomReachedListener {
             override fun onBottomReached(position: Int) {
                 val imageView = findViewById<ImageView>(R.id.loading)
                 imageView.visibility = View.VISIBLE
 
-                fillCurrentRecyclerView()
+                currentTypeSearch = 1
+                queryFromApi()
             }
         })
 
@@ -133,7 +171,8 @@ internal class MainActivity : AppCompatActivity() {
             override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
                 super.onScrollStateChanged(recyclerView, newState)
                 if (!recyclerView.canScrollVertically(1)) {
-                    fillCurrentRecyclerView()
+                    currentTypeSearch = 1
+                    queryFromApi()
                 }
             }
         })
@@ -144,23 +183,29 @@ internal class MainActivity : AppCompatActivity() {
         modelManager = ModelManager()
     }
 
-    //Initialize loading animation
-    private fun loadLoadingAnimation() {
+    //Initialize loading arrow animation
+    private fun initializingLoadingArrowAnimation() {
         val imageView = findViewById<ImageView>(R.id.loading)
+        setAnimation(imageView, "rotation", 1000, true, 0f, 360f)
+    }
 
-        val loading_animator = ObjectAnimator.ofFloat(imageView, "rotation", 0f, 360f)
-        val loading_animatorSet = AnimatorSet()
-        loading_animatorSet.play(loading_animator)
-        loading_animatorSet.setDuration(1000)
-        loading_animatorSet.addListener(
-            object : AnimatorListenerAdapter() {
-                override fun onAnimationEnd(animation: Animator) {
-                    super.onAnimationEnd(animation)
-                    loading_animatorSet.start()
+    //Set animation on view
+    private fun setAnimation(view: View, propertyName: String, duration: Long, repeat: Boolean, value1: Float, value2: Float) {
+        val objectAnimator = ObjectAnimator.ofFloat(view, propertyName, value1, value2)
+        val animator = AnimatorSet()
+        animator.play(objectAnimator)
+        animator.duration = duration
+        if (repeat) {
+            animator.addListener(
+                object : AnimatorListenerAdapter() {
+                    override fun onAnimationEnd(animation: Animator) {
+                        super.onAnimationEnd(animation)
+                        animator.start()
+                    }
                 }
-            }
-        )
-        loading_animatorSet.start()
+            )
+        }
+        animator.start()
     }
 
     //    ---
@@ -174,7 +219,7 @@ internal class MainActivity : AppCompatActivity() {
     }
 
     //load current recycler view
-    private fun fillCurrentRecyclerView() {
+    private fun queryFromApi() {
         if (!queriesThread.isAlive) {
             queriesThread = Thread(ReadModelFromConnection())
             queriesThread.start()
@@ -246,16 +291,16 @@ internal class MainActivity : AppCompatActivity() {
 
             try {
                 if (currentTypeSearch == 0){
-                    modelManager.loadOpportunities(20, cardList_Opportunities.size)
+                    modelManager.loadOpportunities(20, cardListOpportunities.size)
                     message.obj = ThreadReadType.Opportunities_Loaded
                 } else if (currentTypeSearch == 1){
-                    modelManager.loadPeoples(20, cardList_Peoples.size)
+                    modelManager.loadPeoples(20, cardListPeople.size)
                     message.obj = ThreadReadType.Peoples_Loaded
                 } else if (currentTypeSearch == 2){
-                    modelManager.loadJob(nameSearch)
+                    modelManager.loadJob(currentIdSearch)
                     message.obj = ThreadReadType.Job_Loaded
                 } else {
-                    modelManager.loadBio(nameSearch)
+                    modelManager.loadBio(currentIdSearch)
                     message.obj = ThreadReadType.Bio_Loaded
                 }
             } catch (e: ConnectionException) {
@@ -270,11 +315,11 @@ internal class MainActivity : AppCompatActivity() {
         override fun run() {
             val message = handler.obtainMessage()
             try {
-                modelManager.loadOpportunities(20, cardList_Opportunities.size)
+                modelManager.loadOpportunities(20, cardListOpportunities.size)
                 val message1 = handler.obtainMessage()
                 message1.obj = ThreadReadType.Opportunities_Loaded
                 handler.sendMessageAtFrontOfQueue(message1)
-                modelManager.loadPeoples(20, cardList_Peoples.size)
+                modelManager.loadPeoples(20, cardListPeople.size)
                 val message2 = handler.obtainMessage()
                 message2.obj = ThreadReadType.Peoples_Loaded
                 handler.sendMessageAtFrontOfQueue(message2)
@@ -310,40 +355,44 @@ internal class MainActivity : AppCompatActivity() {
     //    ---
 
     fun loadOpportunityCards() {
-        val size: Int = cardList_Opportunities.size
+        val size: Int = cardListOpportunities.size
 
         for (i in 0..19) {
             val resultItem = modelManager.nextOpportunity()
-            val cardOpportunities = CardItem_Opportunities(resultItem)
+            val cardOpportunities = CardItemOpportunities(resultItem)
             cardOpportunities.image = BitmapFromConnection.getBitmap(resultItem.id)
-            cardList_Opportunities.add(cardOpportunities)
+            cardListOpportunities.add(cardOpportunities)
         }
 
-        adapter_Opportunities.notifyItemRangeInserted(size, 20)
+        adapterOpportunities.notifyItemRangeInserted(size, 20)
     }
 
     fun loadPeopleCards() {
-        val size: Int = cardList_Peoples.size
+        val size: Int = cardListPeople.size
 
         for (i in 0..19) {
             val resultItem = modelManager.nextPeople()
-            val cardPeoples = CardItem_Peoples(resultItem)
+            val cardPeoples = CardItemPeoples(resultItem)
             cardPeoples.image = BitmapFromConnection.getBitmap(resultItem.username)
-            cardList_Peoples.add(cardPeoples)
+            cardListPeople.add(cardPeoples)
         }
 
-        adapter_Peoples.notifyItemRangeInserted(size, 20)
+        adapterPeoples.notifyItemRangeInserted(size, 20)
     }
 
     fun loadJobData() {
-        //todo
+        val intent = Intent(this, OpportunityActivity::class.java)
+        val bundle = Bundle()
+        bundle.putString("deviceWidth", deviceWidth.toString())
+        bundle.putString("deviceHeight", deviceHeight.toString())
+        intent.putExtras(bundle)
+        startActivity(intent)
+
     }
 
     fun loadBioData() {
         //todo
     }
-
-    //    ---
 
     //    ---
 
@@ -364,6 +413,7 @@ internal class MainActivity : AppCompatActivity() {
         if (item.itemId == R.id.item_about) {
             val constraintLayout = findViewById<ConstraintLayout>(R.id.author)
             constraintLayout.visibility = View.VISIBLE
+            setAnimation(constraintLayout, "translationX", 300, false, deviceWidth.toFloat(), 0f)
             return true
         }
         return super.onOptionsItemSelected(item)
@@ -377,6 +427,7 @@ internal class MainActivity : AppCompatActivity() {
     @Suppress("UNUSED_PARAMETER")
     fun authorSelected(view: View?) {
         val constraintLayout = findViewById<ConstraintLayout>(R.id.author)
-        constraintLayout.visibility = View.GONE
+        setAnimation(constraintLayout, "translationX", 300, false, 0f, deviceWidth.toFloat())
+//        constraintLayout.visibility = View.GONE
     }
 }

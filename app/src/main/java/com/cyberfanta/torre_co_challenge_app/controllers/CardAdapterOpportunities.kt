@@ -7,10 +7,10 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.cyberfanta.torre_co_challenge_app.R
-import com.cyberfanta.torre_co_challenge_app.controllers.CardAdapter_Opportunities.CardViewHolder
+import com.cyberfanta.torre_co_challenge_app.controllers.CardAdapterOpportunities.CardViewHolder
 import java.util.*
 
-class CardAdapter_Opportunities(private val cardList_Opportunities: ArrayList<CardItem_Opportunities>) : RecyclerView.Adapter<CardViewHolder>() {
+class CardAdapterOpportunities(private val cardList_Opportunities: ArrayList<CardItemOpportunities>) : RecyclerView.Adapter<CardViewHolder>() {
     private var itemClickListener: OnItemClickListener? = null
     private var bottomReachedListener: OnBottomReachedListener? = null
 
