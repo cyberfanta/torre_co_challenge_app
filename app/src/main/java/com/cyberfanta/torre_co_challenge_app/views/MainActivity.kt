@@ -94,6 +94,15 @@ internal class MainActivity : AppCompatActivity() {
             }
         })
 
+        recycler.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
+                super.onScrollStateChanged(recyclerView, newState)
+                if (!recyclerView.canScrollVertically(1)) {
+                    fillCurrentRecyclerView()
+                }
+            }
+        })
+
         //        ---
 
         recycler = findViewById(R.id.recycler_bios)
@@ -117,6 +126,15 @@ internal class MainActivity : AppCompatActivity() {
                 imageView.visibility = View.VISIBLE
 
                 fillCurrentRecyclerView()
+            }
+        })
+
+        recycler.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
+                super.onScrollStateChanged(recyclerView, newState)
+                if (!recyclerView.canScrollVertically(1)) {
+                    fillCurrentRecyclerView()
+                }
             }
         })
     }
@@ -196,6 +214,11 @@ internal class MainActivity : AppCompatActivity() {
         recycler.visibility = View.VISIBLE
         recycler= findViewById(R.id.recycler_bios)
         recycler.visibility = View.GONE
+
+        var imageView : ImageView = findViewById(R.id.Jobs_Selector)
+        imageView.visibility = View.VISIBLE
+        imageView = findViewById(R.id.Bios_Selector)
+        imageView.visibility = View.GONE
     }
 
     //Changing Bios to Jobs
@@ -207,6 +230,11 @@ internal class MainActivity : AppCompatActivity() {
         recycler.visibility = View.GONE
         recycler= findViewById(R.id.recycler_bios)
         recycler.visibility = View.VISIBLE
+
+        var imageView : ImageView = findViewById(R.id.Jobs_Selector)
+        imageView.visibility = View.GONE
+        imageView = findViewById(R.id.Bios_Selector)
+        imageView.visibility = View.VISIBLE
     }
 
     //    ---

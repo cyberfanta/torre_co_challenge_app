@@ -41,13 +41,16 @@
                 android:contentDescription="@string/default_content_description"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/guideline10"
+                app:layout_constraintHeight_min="60dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                app:layout_constraintWidth_min="60dp"
                 app:srcCompat="@android:drawable/ic_menu_myplaces" />
 
             <TextView
                 android:id="@+id/name_people"
-                style="@style/text_black_shadow_white_10"
+                style="@style/text_white_shadow_black_10"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="2dp"
@@ -108,16 +111,12 @@
 
             <TextView
                 android:id="@+id/time1"
+                style="@style/text_black_shadow_white_3"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:padding="4dp"
-                android:shadowColor="@color/White"
-                android:shadowDx="0"
-                android:shadowDy="0"
-                android:shadowRadius="5"
                 android:text="@string/Card_time"
-                android:textColor="@color/Black_Soft"
                 android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/guideline11"
@@ -137,13 +136,12 @@
 
             <TextView
                 android:id="@+id/time2"
+                style="@style/text_black_shadow_white_3"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:shadowColor="@color/White_Soft"
-                android:shadowRadius="5"
+                android:padding="4dp"
                 android:text="@string/Card_remote"
-                android:textColor="@color/Black_Soft"
                 android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -180,16 +178,12 @@
 
             <TextView
                 android:id="@+id/time3"
+                style="@style/text_black_shadow_white_3"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:padding="4dp"
-                android:shadowColor="@color/White"
-                android:shadowDx="0"
-                android:shadowDy="0"
-                android:shadowRadius="5"
                 android:text="@string/Card_time"
-                android:textColor="@color/Black_Soft"
                 android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/guideline1"
@@ -209,13 +203,12 @@
 
             <TextView
                 android:id="@+id/time4"
+                style="@style/text_black_shadow_white_3"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:shadowColor="@color/White_Soft"
-                android:shadowRadius="5"
+                android:padding="4dp"
                 android:text="@string/Card_remote"
-                android:textColor="@color/Black_Soft"
                 android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -250,7 +243,7 @@
 
                 <TextView
                     android:id="@+id/skill1_people"
-                    style="@style/text_black_shadow_white_3"
+                    style="@style/text_white_shadow_black_3"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="3.5"
@@ -264,7 +257,7 @@
 
                 <TextView
                     android:id="@+id/skill2_people"
-                    style="@style/text_black_shadow_white_3"
+                    style="@style/text_white_shadow_black_3"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="3.5"
@@ -296,7 +289,7 @@
 
                 <TextView
                     android:id="@+id/skill3_people"
-                    style="@style/text_black_shadow_white_3"
+                    style="@style/text_white_shadow_black_3"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="3.5"
@@ -310,7 +303,7 @@
 
                 <TextView
                     android:id="@+id/skill4_people"
-                    style="@style/text_black_shadow_white_3"
+                    style="@style/text_white_shadow_black_3"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="3.5"
@@ -341,7 +334,7 @@
 
                 <TextView
                     android:id="@+id/skill5_people"
-                    style="@style/text_black_shadow_white_3"
+                    style="@style/text_white_shadow_black_3"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="3.5"
@@ -355,7 +348,7 @@
 
                 <TextView
                     android:id="@+id/skill6_people"
-                    style="@style/text_black_shadow_white_3"
+                    style="@style/text_white_shadow_black_3"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="3.5"
@@ -388,7 +381,7 @@
 
                 <TextView
                     android:id="@+id/skill7_people"
-                    style="@style/text_black_shadow_white_3"
+                    style="@style/text_white_shadow_black_3"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="3.5"
@@ -402,7 +395,7 @@
 
                 <TextView
                     android:id="@+id/skill8_people"
-                    style="@style/text_black_shadow_white_3"
+                    style="@style/text_white_shadow_black_3"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="3.5"

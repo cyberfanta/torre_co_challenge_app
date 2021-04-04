@@ -88,8 +88,10 @@ class CardAdapter_Opportunities(private val cardList_Opportunities: ArrayList<Ca
         if (cardItem.image != null)
             holder.image.setImageBitmap(cardItem.image)
         holder.highligth.text = cardItem.highligth
+
         holder.time.text = cardItem.time
         holder.remote.text = cardItem.remote
+
         holder.skill1.text = cardItem.skill1
         holder.skill2.text = cardItem.skill2
         holder.skill3.text = cardItem.skill3

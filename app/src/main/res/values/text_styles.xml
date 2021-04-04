@@ -1,18 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
-    <style name="text_black_shadow_white_3">
+    <style name="text_white_shadow_black_3">
         <item name="android:textColor">@color/White_Strong</item>
         <item name="android:shadowColor">@color/Black</item>
         <item name="android:shadowDx">0</item>
         <item name="android:shadowDy">0</item>
         <item name="android:shadowRadius">3</item>
     </style>
-    <style name="text_black_shadow_white_10">
+    <style name="text_white_shadow_black_10">
         <item name="android:textColor">@color/White_Strong</item>
         <item name="android:shadowColor">@color/Black</item>
         <item name="android:shadowDx">0</item>
         <item name="android:shadowDy">0</item>
         <item name="android:shadowRadius">10</item>
+    </style>
+    <style name="text_black_shadow_white_3">
+        <item name="android:textColor">@color/Black_Soft</item>
+        <item name="android:shadowColor">@color/White_Soft</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">0</item>
+        <item name="android:shadowRadius">5</item>
     </style>
 
 </resources>

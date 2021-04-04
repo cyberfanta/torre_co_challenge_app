@@ -159,10 +159,10 @@ Logros:
 - Activar la carga de las imágenes de las tarjetas. (Hecho)
 - Agregar un thread de carga de los Bios para evitar que el usuario tenga un delay cuando presione el boton "Bios". (Hecho)
 - Agregar una separación en las tarjetas para evitar el amontonamiento y mejorar la estética. (Hecho)
+- Arreglar un problema estético con los botones "Bios" y "Jobs", que no permanecen completamente abajo de la vista. (Hecho)
 
 Pendiente:
 - Implementación del proyecto con Android Studio (En progreso)
-- Arreglar un problema estético con los botones "Bios" y "Jobs", que no permanecen completamente abajo de la vista.
 - Activar las vistas a detalle de cada tarjeta. Endpoints Job y Bio.
 - Activar la lupa, para hacer que despliegue las tarjetas con un filtro de búsqueda.
 

@@ -90,10 +90,12 @@ class CardAdapter_Peoples(private val cardList_Peoples: ArrayList<CardItem_Peopl
         if (cardItem.image != null)
             holder.imagePeople.setImageBitmap(cardItem.image)
         holder.highligthPeople.text = cardItem.highligth
+
         holder.time1.text = cardItem.time1
         holder.time2.text = cardItem.time2
         holder.time3.text = cardItem.time3
         holder.time4.text = cardItem.time4
+
         holder.skillPeople1.text = cardItem.skill1
         holder.skillPeople2.text = cardItem.skill2
         holder.skillPeople3.text = cardItem.skill3

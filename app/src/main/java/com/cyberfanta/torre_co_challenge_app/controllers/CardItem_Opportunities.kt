@@ -30,9 +30,12 @@ class CardItem_Opportunities {
         else
             image_url = null
 
-        if  (resultsItem.compensation.data != null)
-            highligth = resultsItem.compensation.data.minAmount.toString() + " - " + resultsItem.compensation.data.maxAmount + " " + resultsItem.compensation.data.currency + " " + resultsItem.compensation.data.periodicity
-        else
+        if  (resultsItem.compensation.data != null) {
+            highligth = resultsItem.compensation.data.minAmount.toString()
+            if (!resultsItem.compensation.data.maxAmount.toString().equals("0.0"))
+                highligth = highligth + " - " + resultsItem.compensation.data.maxAmount.toString()
+            highligth = highligth + " " + resultsItem.compensation.data.currency + " " + resultsItem.compensation.data.periodicity
+        } else
             highligth = " "
 
         time =
