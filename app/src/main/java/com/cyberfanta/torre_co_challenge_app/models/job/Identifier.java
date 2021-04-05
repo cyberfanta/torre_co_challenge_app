@@ -39,8 +39,8 @@ public class Identifier{
 		return value;
 	}
 
-	@NotNull
 	@Override
+	@NotNull
  	public String toString(){
 		return 
 			"Identifier{" + 

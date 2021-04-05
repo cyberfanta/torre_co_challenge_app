@@ -18,7 +18,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Torre_co_challenge_app">
-        <activity android:name=".views.OpportunityActivity" />
+        <activity android:name=".views.JobActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait"
+            />
         <activity
             android:name=".views.MainActivity"
             android:configChanges="orientation|screenSize"

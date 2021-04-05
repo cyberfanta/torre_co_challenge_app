@@ -50,8 +50,8 @@ public class AttachmentsItem{
 		return caption;
 	}
 
-	@NotNull
 	@Override
+	@NotNull
  	public String toString(){
 		return 
 			"AttachmentsItem{" + 

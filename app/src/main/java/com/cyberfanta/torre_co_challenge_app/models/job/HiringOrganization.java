@@ -39,8 +39,8 @@ public class HiringOrganization{
 		return logo;
 	}
 
-	@NotNull
 	@Override
+	@NotNull
  	public String toString(){
 		return 
 			"HiringOrganization{" + 

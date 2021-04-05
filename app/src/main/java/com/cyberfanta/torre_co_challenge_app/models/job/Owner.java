@@ -19,7 +19,7 @@ public class Owner{
 	private boolean verified;
 
 	@SerializedName("weight")
-	private int weight;
+	private double weight;
 
 	@SerializedName("hasBio")
 	private boolean hasBio;
@@ -71,11 +71,11 @@ public class Owner{
 		return verified;
 	}
 
-	public void setWeight(int weight){
+	public void setWeight(double weight){
 		this.weight = weight;
 	}
 
-	public int getWeight(){
+	public double getWeight(){
 		return weight;
 	}
 
@@ -127,8 +127,8 @@ public class Owner{
 		return username;
 	}
 
-	@NotNull
 	@Override
+	@NotNull
  	public String toString(){
 		return 
 			"Owner{" + 

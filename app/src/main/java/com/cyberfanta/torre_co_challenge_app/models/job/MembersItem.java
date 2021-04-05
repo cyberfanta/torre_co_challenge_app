@@ -83,8 +83,8 @@ public class MembersItem{
 		return status;
 	}
 
-	@NotNull
 	@Override
+	@NotNull
  	public String toString(){
 		return 
 			"MembersItem{" + 

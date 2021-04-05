@@ -11,7 +11,7 @@ public class Place{
 	private boolean timezone;
 
 	@SerializedName("location")
-	private List<Object> location;
+	private List<LocationItem> location;
 
 	@SerializedName("remote")
 	private boolean remote;
@@ -27,11 +27,11 @@ public class Place{
 		return timezone;
 	}
 
-	public void setLocation(List<Object> location){
+	public void setLocation(List<LocationItem> location){
 		this.location = location;
 	}
 
-	public List<Object> getLocation(){
+	public List<LocationItem> getLocation(){
 		return location;
 	}
 
@@ -51,8 +51,8 @@ public class Place{
 		return anywhere;
 	}
 
-	@NotNull
 	@Override
+	@NotNull
  	public String toString(){
 		return 
 			"Place{" + 

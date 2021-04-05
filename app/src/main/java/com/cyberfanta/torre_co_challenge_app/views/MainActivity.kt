@@ -24,13 +24,11 @@ import com.cyberfanta.torre_co_challenge_app.enumerator.ThreadReadType
 import com.cyberfanta.torre_co_challenge_app.exceptions.ConnectionException
 import java.util.*
 
-
 internal class MainActivity : AppCompatActivity() {
     private var deviceWidth: Int = 0
     private var deviceHeight:Int = 0
 
     private var currentTypeSearch: Int = 0 //0 = Opportunities , 1 = Peoples , 2 = Job , 3 = Bio
-
     private var currentIdSearch: String = ""
 
     private lateinit var modelManager: ModelManager
@@ -44,6 +42,7 @@ internal class MainActivity : AppCompatActivity() {
     = ArrayList<CardItemPeoples>(20)
 
     private var queriesThread = Thread(ReadModelFromConnection())
+    private var queriesThread2 = Thread(ReadModelFromConnection())
 
     //    ---
 
@@ -66,7 +65,7 @@ internal class MainActivity : AppCompatActivity() {
 
     override fun onBackPressed() {
         val constraintLayout : ConstraintLayout = findViewById(R.id.author)
-        if (!constraintLayout.translationX.equals(deviceWidth.toFloat())) {
+        if (!(constraintLayout.translationX < deviceWidth.toFloat())) {
             authorSelected(constraintLayout)
             return
         }
@@ -109,16 +108,19 @@ internal class MainActivity : AppCompatActivity() {
         recycler.layoutManager = layoutManager_Opportunities
         recycler.adapter = adapterOpportunities
 
-        adapterOpportunities.setOnItemClickListener(object :
+        adapterOpportunities.setOnItemClickListener(object:
             CardAdapterOpportunities.OnItemClickListener {
             override fun onItemClick(position: Int) {
+                val imageView = findViewById<ImageView>(R.id.loading)
+                imageView.visibility = View.VISIBLE
+
                 currentIdSearch = cardListOpportunities[position].id.toString()
                 currentTypeSearch = 2
-                queryFromApi()
+                queryFromApi2()
             }
         })
 
-        adapterOpportunities.setOnBottomReachedListener(object :
+        adapterOpportunities.setOnBottomReachedListener(object:
             CardAdapterOpportunities.OnBottomReachedListener {
             override fun onBottomReached(position: Int) {
                 val imageView = findViewById<ImageView>(R.id.loading)
@@ -129,7 +131,8 @@ internal class MainActivity : AppCompatActivity() {
             }
         })
 
-        recycler.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+        recycler.addOnScrollListener(object:
+            RecyclerView.OnScrollListener() {
             override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
                 super.onScrollStateChanged(recyclerView, newState)
                 if (!recyclerView.canScrollVertically(1)) {
@@ -148,15 +151,19 @@ internal class MainActivity : AppCompatActivity() {
         recycler.layoutManager = layoutManager_Peoples
         recycler.adapter = adapterPeoples
 
-        adapterPeoples.setOnItemClickListener(object : CardAdapterPeoples.OnItemClickListener {
+        adapterPeoples.setOnItemClickListener(object:
+            CardAdapterPeoples.OnItemClickListener {
             override fun onItemClick(position: Int) {
+                val imageView = findViewById<ImageView>(R.id.loading)
+                imageView.visibility = View.VISIBLE
+
                 currentIdSearch = cardListPeople[position].id.toString()
                 currentTypeSearch = 3
-                queryFromApi()
+                queryFromApi2()
             }
         })
 
-        adapterPeoples.setOnBottomReachedListener(object :
+        adapterPeoples.setOnBottomReachedListener(object:
             CardAdapterPeoples.OnBottomReachedListener {
             override fun onBottomReached(position: Int) {
                 val imageView = findViewById<ImageView>(R.id.loading)
@@ -167,7 +174,8 @@ internal class MainActivity : AppCompatActivity() {
             }
         })
 
-        recycler.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+        recycler.addOnScrollListener(object:
+            RecyclerView.OnScrollListener() {
             override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
                 super.onScrollStateChanged(recyclerView, newState)
                 if (!recyclerView.canScrollVertically(1)) {
@@ -223,6 +231,14 @@ internal class MainActivity : AppCompatActivity() {
         if (!queriesThread.isAlive) {
             queriesThread = Thread(ReadModelFromConnection())
             queriesThread.start()
+        }
+    }
+
+    //load current recycler view
+    private fun queryFromApi2() {
+        if (!queriesThread2.isAlive) {
+            queriesThread2 = Thread(ReadModelFromConnection())
+            queriesThread2.start()
         }
     }
 
@@ -298,10 +314,14 @@ internal class MainActivity : AppCompatActivity() {
                     message.obj = ThreadReadType.Peoples_Loaded
                 } else if (currentTypeSearch == 2){
                     modelManager.loadJob(currentIdSearch)
-                    message.obj = ThreadReadType.Job_Loaded
+                    val message1 = handler.obtainMessage()
+                    message1.obj = ThreadReadType.Job_Loaded
+                    handler.sendMessageAtFrontOfQueue(message1)
                 } else {
                     modelManager.loadBio(currentIdSearch)
-                    message.obj = ThreadReadType.Bio_Loaded
+                    val message2 = handler.obtainMessage()
+                    message2.obj = ThreadReadType.Bio_Loaded
+                    handler.sendMessageAtFrontOfQueue(message2)
                 }
             } catch (e: ConnectionException) {
                 message.obj = ThreadReadType.Load_Failed
@@ -381,13 +401,11 @@ internal class MainActivity : AppCompatActivity() {
     }
 
     fun loadJobData() {
-        val intent = Intent(this, OpportunityActivity::class.java)
-        val bundle = Bundle()
-        bundle.putString("deviceWidth", deviceWidth.toString())
-        bundle.putString("deviceHeight", deviceHeight.toString())
-        intent.putExtras(bundle)
+        val intent = Intent(this, JobActivity::class.java)
+        intent.putExtra("deviceWidth", deviceWidth.toString())
+        intent.putExtra("deviceHeight", deviceHeight.toString())
+        intent.putExtra("currentIdSearch", currentIdSearch)
         startActivity(intent)
-
     }
 
     fun loadBioData() {
@@ -428,6 +446,5 @@ internal class MainActivity : AppCompatActivity() {
     fun authorSelected(view: View?) {
         val constraintLayout = findViewById<ConstraintLayout>(R.id.author)
         setAnimation(constraintLayout, "translationX", 300, false, 0f, deviceWidth.toFloat())
-//        constraintLayout.visibility = View.GONE
     }
 }

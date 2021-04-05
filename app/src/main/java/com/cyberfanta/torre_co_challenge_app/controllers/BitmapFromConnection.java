@@ -40,42 +40,4 @@ public class BitmapFromConnection {
 
         throw new ConnectionException("NEED_LOAD_MORE_BITMAPS");
     }
-
-
-//    public Bitmap getBitmap(String name, String url_bitmap) throws IOException {
-//        URL url = new URL(url_bitmap);
-//
-//        if (bitmapMap.containsKey(name))
-//            return bitmapMap.get(name);
-//
-//        Bitmap bitmap = BitmapFactory.decodeStream(url.openConnection().getInputStream());
-//        if (bitmap != null)
-//            bitmapMap.put(url.getPath(), bitmap);
-//        return bitmap;
-//    }
-//
-//    public Bitmap getBitmap2(String name, String url_bitmap) throws IOException {
-//        URL url = new URL(url_bitmap);
-//
-//        if (bitmapMap.containsKey(name))
-//            return bitmapMap.get(name);
-//
-//        InputStream in = url.openConnection().getInputStream();
-//        BufferedInputStream bis = new BufferedInputStream(in,1024*8);
-//        ByteArrayOutputStream out = new ByteArrayOutputStream();
-//
-//        int len=0;
-//        byte[] buffer = new byte[1024];
-//        while((len = bis.read(buffer)) != -1){
-//            out.write(buffer, 0, len);
-//        }
-//        out.close();
-//        bis.close();
-//
-//        byte[] data = out.toByteArray();
-//        Bitmap bitmap = BitmapFactory.decodeByteArray(data, 0, data.length);
-//        if (bitmap != null)
-//            bitmapMap.put(url.getPath(), bitmap);
-//        return bitmap;
-//    }
 }

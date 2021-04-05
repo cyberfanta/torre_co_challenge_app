@@ -28,8 +28,8 @@ public class DetailsItem{
 		return content;
 	}
 
-	@NotNull
 	@Override
+	@NotNull
  	public String toString(){
 		return 
 			"DetailsItem{" + 

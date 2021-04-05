@@ -17,8 +17,8 @@ public class Stats{
 		return finishedApplications;
 	}
 
-	@NotNull
 	@Override
+	@NotNull
  	public String toString(){
 		return 
 			"Stats{" + 

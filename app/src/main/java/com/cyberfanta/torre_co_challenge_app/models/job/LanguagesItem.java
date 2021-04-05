@@ -28,13 +28,13 @@ public class LanguagesItem{
 		return language;
 	}
 
-	@NotNull
 	@Override
+	@NotNull
  	public String toString(){
 		return 
 			"LanguagesItem{" + 
 			"fluency = '" + fluency + '\'' + 
-			",language = '" + language + '\'' +
+			",language = '" + language + '\'' + 
 			"}";
 		}
 }

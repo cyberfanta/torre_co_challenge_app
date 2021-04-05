@@ -39,8 +39,8 @@ public class BaseSalary{
 		return value;
 	}
 
-	@NotNull
 	@Override
+	@NotNull
  	public String toString(){
 		return 
 			"BaseSalary{" + 

@@ -22,7 +22,7 @@ public class Person{
 	private Flags flags;
 
 	@SerializedName("weight")
-	private float weight;
+	private double weight;
 
 	@SerializedName("hasBio")
 	private boolean hasBio;
@@ -82,11 +82,11 @@ public class Person{
 		return flags;
 	}
 
-	public void setWeight(float weight){
+	public void setWeight(double weight){
 		this.weight = weight;
 	}
 
-	public float getWeight(){
+	public double getWeight(){
 		return weight;
 	}
 
@@ -138,8 +138,8 @@ public class Person{
 		return username;
 	}
 
-	@NotNull
 	@Override
+	@NotNull
  	public String toString(){
 		return 
 			"Person{" + 

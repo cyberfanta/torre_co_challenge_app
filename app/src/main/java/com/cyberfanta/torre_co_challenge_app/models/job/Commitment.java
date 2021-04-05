@@ -28,8 +28,8 @@ public class Commitment{
 		return code;
 	}
 
-	@NotNull
 	@Override
+	@NotNull
  	public String toString(){
 		return 
 			"Commitment{" + 

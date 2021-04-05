@@ -50,8 +50,8 @@ public class StrengthsItem{
 		return experience;
 	}
 
-	@NotNull
 	@Override
+	@NotNull
  	public String toString(){
 		return 
 			"StrengthsItem{" + 

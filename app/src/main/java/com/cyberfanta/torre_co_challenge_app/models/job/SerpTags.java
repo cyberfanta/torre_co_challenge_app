@@ -31,26 +31,24 @@ public class SerpTags{
 	@SerializedName("@context")
 	private String context;
 
-	@SerializedName("jobLocationType")
-	private String jobLocationType;
-
 	@SerializedName("experienceInPlaceOfEducation")
 	private boolean experienceInPlaceOfEducation;
 
 	@SerializedName("hiringOrganization")
 	private HiringOrganization hiringOrganization;
 
+	@SerializedName("jobLocation")
+	private List<JobLocationItem> jobLocation;
+
 	@SerializedName("educationRequirements")
-	private EducationRequirements educationRequirements;
+	private Object educationRequirements;
+//	private EducationRequirements educationRequirements;
 
 	@SerializedName("datePosted")
 	private String datePosted;
 
 	@SerializedName("experienceRequirements")
 	private ExperienceRequirements experienceRequirements;
-
-	@SerializedName("applicantLocationRequirements")
-	private List<ApplicantLocationRequirementsItem> applicantLocationRequirements;
 
 	public void setIdentifier(Identifier identifier){
 		this.identifier = identifier;
@@ -116,14 +114,6 @@ public class SerpTags{
 		return context;
 	}
 
-	public void setJobLocationType(String jobLocationType){
-		this.jobLocationType = jobLocationType;
-	}
-
-	public String getJobLocationType(){
-		return jobLocationType;
-	}
-
 	public void setExperienceInPlaceOfEducation(boolean experienceInPlaceOfEducation){
 		this.experienceInPlaceOfEducation = experienceInPlaceOfEducation;
 	}
@@ -140,11 +130,27 @@ public class SerpTags{
 		return hiringOrganization;
 	}
 
-	public void setEducationRequirements(EducationRequirements educationRequirements){
+	public void setJobLocation(List<JobLocationItem> jobLocation){
+		this.jobLocation = jobLocation;
+	}
+
+	public List<JobLocationItem> getJobLocation(){
+		return jobLocation;
+	}
+
+	//	public void setEducationRequirements(EducationRequirements educationRequirements){
+//		this.educationRequirements = educationRequirements;
+//	}
+//
+//	public EducationRequirements getEducationRequirements(){
+//		return educationRequirements;
+//	}
+//
+	public void setEducationRequirements(Object educationRequirements){
 		this.educationRequirements = educationRequirements;
 	}
 
-	public EducationRequirements getEducationRequirements(){
+	public Object getEducationRequirements(){
 		return educationRequirements;
 	}
 
@@ -164,16 +170,8 @@ public class SerpTags{
 		return experienceRequirements;
 	}
 
-	public void setApplicantLocationRequirements(List<ApplicantLocationRequirementsItem> applicantLocationRequirements){
-		this.applicantLocationRequirements = applicantLocationRequirements;
-	}
-
-	public List<ApplicantLocationRequirementsItem> getApplicantLocationRequirements(){
-		return applicantLocationRequirements;
-	}
-
-	@NotNull
 	@Override
+	@NotNull
  	public String toString(){
 		return 
 			"SerpTags{" + 
@@ -185,13 +183,12 @@ public class SerpTags{
 			",description = '" + description + '\'' + 
 			",title = '" + title + '\'' + 
 			",@context = '" + context + '\'' + 
-			",jobLocationType = '" + jobLocationType + '\'' + 
 			",experienceInPlaceOfEducation = '" + experienceInPlaceOfEducation + '\'' + 
 			",hiringOrganization = '" + hiringOrganization + '\'' + 
+			",jobLocation = '" + jobLocation + '\'' + 
 			",educationRequirements = '" + educationRequirements + '\'' + 
 			",datePosted = '" + datePosted + '\'' + 
 			",experienceRequirements = '" + experienceRequirements + '\'' + 
-			",applicantLocationRequirements = '" + applicantLocationRequirements + '\'' + 
 			"}";
 		}
 }

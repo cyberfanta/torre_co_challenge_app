@@ -27,16 +27,16 @@ public class ModelManager {
     };
     private final ModelFromConnection modelFromConnection = new ModelFromConnection();
 
-    private final Map<String, Job> jobMap = new LinkedHashMap<>(0);
+    private final static Map<String, Job> jobMap = new LinkedHashMap<>(0);
     private int jobMapIterator = 0;
 
-    private final Map<String, Bio> bioMap = new LinkedHashMap<>(0);
+    private final static Map<String, Bio> bioMap = new LinkedHashMap<>(0);
     private int bioMapIterator = 0;
 
-    private final Map<String, com.cyberfanta.torre_co_challenge_app.models.opportunities.ResultsItem> opportunitiesMap = new LinkedHashMap<>(0);
+    private final static Map<String, com.cyberfanta.torre_co_challenge_app.models.opportunities.ResultsItem> opportunitiesMap = new LinkedHashMap<>(0);
     private int opportunitiesMapIterator = 0;
 
-    private final Map<String, com.cyberfanta.torre_co_challenge_app.models.peoples.ResultsItem> peoplesMap = new LinkedHashMap<>(0);
+    private final static Map<String, com.cyberfanta.torre_co_challenge_app.models.peoples.ResultsItem> peoplesMap = new LinkedHashMap<>(0);
     private int peoplesMapIterator = 0;
 
     //Getters
@@ -58,6 +58,11 @@ public class ModelManager {
     public void loadJob(String name) throws ConnectionException {
         if (!jobMap.containsKey(name)) {
             Job job = modelFromConnection.getObject(Job.class, url[0].concat(name));
+            try {
+                BitmapFromConnection.getBitmap(job.getId(), job.getOwner().getPicture());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
             jobMap.put(job.getId(), job);
         }
     }
@@ -80,6 +85,10 @@ public class ModelManager {
     public void loadBio(String name) throws ConnectionException{
         if (!bioMap.containsKey(name)) {
             Bio bio = modelFromConnection.getObject(Bio.class, url[1].concat(name));
+            try {
+                BitmapFromConnection.getBitmap(bio.getPerson().getPublicId(), bio.getPerson().getPicture());
+            } catch (IOException ignored) {
+            }
             bioMap.put(bio.getPerson().getPublicId(), bio);
         }
     }
@@ -107,8 +116,7 @@ public class ModelManager {
             try {
                 if (resultsItem.getOrganizations().size() > 0)
                     BitmapFromConnection.getBitmap(resultsItem.getId(), resultsItem.getOrganizations().get(0).getPicture());
-            } catch (IOException e) {
-                e.printStackTrace();
+            } catch (IOException ignored) {
             }
             opportunitiesMap.put(resultsItem.getId(), resultsItem);
         }
@@ -136,8 +144,7 @@ public class ModelManager {
         for (com.cyberfanta.torre_co_challenge_app.models.peoples.ResultsItem resultsItem: resultsItems) {
             try {
                 BitmapFromConnection.getBitmap(resultsItem.getUsername(), resultsItem.getPicture());
-            } catch (IOException e) {
-                e.printStackTrace();
+            } catch (IOException ignored) {
             }
             peoplesMap.put(resultsItem.getUsername(), resultsItem);
         }
@@ -145,6 +152,4 @@ public class ModelManager {
         for (com.cyberfanta.torre_co_challenge_app.models.peoples.ResultsItem resultsItem: resultsItems)
             peoplesMap.put(resultsItem.getUsername(), resultsItem);
     }
-
-    //---
 }

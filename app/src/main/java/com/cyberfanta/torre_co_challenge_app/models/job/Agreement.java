@@ -6,19 +6,8 @@ import org.jetbrains.annotations.NotNull;
 
 public class Agreement{
 
-	@SerializedName("currencyTaxes")
-	private String currencyTaxes;
-
 	@SerializedName("type")
 	private String type;
-
-	public void setCurrencyTaxes(String currencyTaxes){
-		this.currencyTaxes = currencyTaxes;
-	}
-
-	public String getCurrencyTaxes(){
-		return currencyTaxes;
-	}
 
 	public void setType(String type){
 		this.type = type;
@@ -28,13 +17,12 @@ public class Agreement{
 		return type;
 	}
 
-	@NotNull
 	@Override
+	@NotNull
  	public String toString(){
 		return 
 			"Agreement{" + 
-			"currencyTaxes = '" + currencyTaxes + '\'' + 
-			",type = '" + type + '\'' + 
+			"type = '" + type + '\'' + 
 			"}";
 		}
 }

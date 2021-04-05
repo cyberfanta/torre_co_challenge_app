@@ -204,8 +204,8 @@ public class Flags{
 		return contactsImported;
 	}
 
-	@NotNull
 	@Override
+	@NotNull
  	public String toString(){
 		return 
 			"Flags{" + 

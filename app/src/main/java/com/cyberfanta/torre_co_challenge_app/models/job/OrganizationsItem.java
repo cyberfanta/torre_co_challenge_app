@@ -50,8 +50,8 @@ public class OrganizationsItem{
 		return picture;
 	}
 
-	@NotNull
 	@Override
+	@NotNull
  	public String toString(){
 		return 
 			"OrganizationsItem{" + 

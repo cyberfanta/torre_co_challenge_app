@@ -28,8 +28,8 @@ public class EducationRequirements{
 		return credentialCategory;
 	}
 
-	@NotNull
 	@Override
+	@NotNull
  	public String toString(){
 		return 
 			"EducationRequirements{" + 

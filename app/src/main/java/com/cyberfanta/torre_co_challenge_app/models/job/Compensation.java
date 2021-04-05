@@ -83,9 +83,9 @@ public class Compensation{
 		return maxAmount;
 	}
 
-	@NotNull
 	@Override
- 	public String toString(){
+	@NotNull
+	public String toString(){
 		return 
 			"Compensation{" + 
 			"minAmount = '" + minAmount + '\'' + 

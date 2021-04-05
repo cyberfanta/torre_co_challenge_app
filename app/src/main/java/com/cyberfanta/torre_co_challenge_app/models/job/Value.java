@@ -50,8 +50,8 @@ public class Value{
 		return unitText;
 	}
 
-	@NotNull
 	@Override
+	@NotNull
  	public String toString(){
 		return 
 			"Value{" + 

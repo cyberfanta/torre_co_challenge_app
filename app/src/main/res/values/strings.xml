@@ -7,7 +7,6 @@
     <string name="bios">Bios</string>
 
     <string name="filter">Write your filter here</string>
-    <string name="return_text">Return</string>
 
     <!--    Card Example-->
     <string name="Card_name">Android Developer</string>
@@ -25,5 +24,15 @@
     <string name="author_profession" translatable="false">Android Developer - UI/UX Designer</string>
     <string name="author_email" translatable="false">julioleon2004@gmail.com</string>
     <string name="author_phone" translatable="false">+58 (424) 225.92.20</string>
+
+    <!--    Job View-->
+    <string name="job_subtitle_1">Skills Needed</string>
+    <string name="job_subtitle_2">Location</string>
+    <string name="job_subtitle_3">Description</string>
+    <string name="job_subtitle_4">Details</string>
+    <string name="job_subtitle_5">Languages</string>
+    <string name="job_subtitle_6">Hiring Organization</string>
+    <string name="loren_ipsum">Lorem ipsum dolor sit amet consectetur adipiscing elit venenatis facilisis, ultrices ad diam torquent scelerisque a lacinia suspendisse nec, auctor hendrerit posuere magna hac laoreet orci parturient. Tempor sociis euismod quisque montes iaculis vitae nisi eu arcu sagittis velit cursus, vivamus est tincidunt tortor in volutpat augue eget magnis primis</string>
+    <string name="return_text">Return</string>
 
 </resources>

@@ -82,9 +82,6 @@ public class Job{
 	@SerializedName("stableOn")
 	private String stableOn;
 
-	@SerializedName("timezones")
-	private List<String> timezones;
-
 	@SerializedName("strengths")
 	private List<StrengthsItem> strengths;
 
@@ -300,14 +297,6 @@ public class Job{
 		return stableOn;
 	}
 
-	public void setTimezones(List<String> timezones){
-		this.timezones = timezones;
-	}
-
-	public List<String> getTimezones(){
-		return timezones;
-	}
-
 	public void setStrengths(List<StrengthsItem> strengths){
 		this.strengths = strengths;
 	}
@@ -378,7 +367,6 @@ public class Job{
 			",active = '" + active + '\'' + 
 			",commitment = '" + commitment + '\'' + 
 			",stableOn = '" + stableOn + '\'' + 
-			",timezones = '" + timezones + '\'' + 
 			",strengths = '" + strengths + '\'' + 
 			",organizations = '" + organizations + '\'' + 
 			",compensation = '" + compensation + '\'' + 

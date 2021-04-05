@@ -17,8 +17,8 @@ public class PrefilledStatus{
 		return status;
 	}
 
-	@NotNull
 	@Override
+	@NotNull
  	public String toString(){
 		return 
 			"PrefilledStatus{" + 

@@ -28,8 +28,8 @@ public class ExperienceRequirements{
 		return monthsOfExperience;
 	}
 
-	@NotNull
 	@Override
+	@NotNull
  	public String toString(){
 		return 
 			"ExperienceRequirements{" + 
