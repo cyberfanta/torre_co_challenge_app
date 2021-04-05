@@ -167,3 +167,24 @@ Pendiente:
 - Agregar soporte a multilenguaje.
 - Activar la lupa, para hacer que despliegue las tarjetas con un filtro de búsqueda.
 
+
+
+Fecha: 04-04-2021
+Hora de inicio: 12:30pm
+
+12:30pm	La actividad de hoy es parametrizar la función de animaciones y activar las vistas a detalle de las tarjetas.
+3:00am	Finalizo el día con la vista a detalle para los jobs.
+
+
+
+Logros:
+- Activar las vistas a detalle de cada tarjeta. Endpoints Job. (Hecho)
+
+Pendiente:
+- Implementación del proyecto con Android Studio (En progreso)
+- Activar las vistas a detalle de cada tarjeta. Endpoints Bio.
+- Agregar soporte a multilenguaje.
+- Activar la lupa, para hacer que despliegue las tarjetas con un filtro de búsqueda.
+
+
+
