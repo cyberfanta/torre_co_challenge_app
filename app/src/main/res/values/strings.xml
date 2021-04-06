@@ -9,11 +9,11 @@
     <string name="filter">Write your filter here</string>
 
     <!--    Card Example-->
-    <string name="Card_name">Android Developer</string>
-    <string name="Card_highligth">1500$ - 3500$ Monthly</string>
+    <string name="Card_name">Android</string>
+    <string name="Card_highligth">2000000 – 6000000 COP$ Monthly</string>
     <string name="Card_time">Partial Time</string>
     <string name="Card_remote">Remote</string>
-    <string name="Card_skill">Skill #?</string>
+    <string name="Card_skill">Skill</string>
 
     <!--    Menú-->
     <string name="item_about">About</string>
@@ -34,5 +34,30 @@
     <string name="job_subtitle_6">Hiring Organization</string>
     <string name="loren_ipsum">Lorem ipsum dolor sit amet consectetur adipiscing elit venenatis facilisis, ultrices ad diam torquent scelerisque a lacinia suspendisse nec, auctor hendrerit posuere magna hac laoreet orci parturient. Tempor sociis euismod quisque montes iaculis vitae nisi eu arcu sagittis velit cursus, vivamus est tincidunt tortor in volutpat augue eget magnis primis</string>
     <string name="return_text">Return</string>
+
+    <string name="plus_year_1">More than</string>
+    <string name="plus_year_2">years</string>
+    <string name="potential_to_develop">Potential to develop</string>
+    <string name="remote">Remote</string>
+    <string name="anywhere">Anywhere</string>
+    <string name="in">In</string>
+    <string name="type">Type</string>
+    <string name="benefits">Benefits</string>
+    <string name="reason">Reason</string>
+    <string name="responsibilities">Responsibilities</string>
+    <string name="requirements">Requirements</string>
+    <string name="challenges">Challenges</string>
+    <string name="career_path">Career path</string>
+    <string name="organizations">Organizations</string>
+    <string name="team_culture">Team culture</string>
+    <string name="stock_compensations">Stock compensations</string>
+    <string name="desirable">Desirable</string>
+    <string name="team_structure">Team structure</string>
+    <string name="additional">Additional</string>
+    <string name="conversational">Conversational</string>
+    <string name="fully_fluent">Fully fluent</string>
+    <string name="reading">Reading</string>
+    <string name="english">English</string>
+    <string name="spanish">Spanish</string>
 
 </resources>

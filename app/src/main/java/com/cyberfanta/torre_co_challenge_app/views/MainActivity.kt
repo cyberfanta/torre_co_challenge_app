@@ -44,6 +44,8 @@ internal class MainActivity : AppCompatActivity() {
     private var queriesThread = Thread(ReadModelFromConnection())
     private var queriesThread2 = Thread(ReadModelFromConnection())
 
+    private var authorOpened: Boolean = false
+
     //    ---
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -65,8 +67,9 @@ internal class MainActivity : AppCompatActivity() {
 
     override fun onBackPressed() {
         val constraintLayout : ConstraintLayout = findViewById(R.id.author)
-        if (!(constraintLayout.translationX < deviceWidth.toFloat())) {
+        if (authorOpened) {
             authorSelected(constraintLayout)
+            authorOpened = false
             return
         }
 
@@ -85,7 +88,7 @@ internal class MainActivity : AppCompatActivity() {
     //Calculate the device dimension
     private fun calculateDeviceDimensions(){
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            val windowMetrics: WindowMetrics = getWindowManager().currentWindowMetrics
+            val windowMetrics: WindowMetrics = windowManager.currentWindowMetrics
             val insets: Insets = windowMetrics.windowInsets
                     .getInsetsIgnoringVisibility(WindowInsets.Type.systemBars())
             deviceWidth = windowMetrics.bounds.width() - insets.left - insets.right
@@ -93,7 +96,7 @@ internal class MainActivity : AppCompatActivity() {
         } else {
             val displayMetrics = DisplayMetrics()
             @Suppress("DEPRECATION")
-            getWindowManager().defaultDisplay.getMetrics(displayMetrics)
+            windowManager.defaultDisplay.getMetrics(displayMetrics)
             deviceWidth = displayMetrics.widthPixels
             deviceHeight = displayMetrics.heightPixels
         }
@@ -103,9 +106,9 @@ internal class MainActivity : AppCompatActivity() {
     private fun initializingRecyclersView() {
         var recycler: RecyclerView = findViewById(R.id.recycler_jobs)
         recycler.setHasFixedSize(true)
-        val layoutManager_Opportunities: RecyclerView.LayoutManager = GridLayoutManager(this, 2)
+        val layoutmanagerOpportunities: RecyclerView.LayoutManager = GridLayoutManager(this, 2)
         adapterOpportunities = CardAdapterOpportunities(cardListOpportunities)
-        recycler.layoutManager = layoutManager_Opportunities
+        recycler.layoutManager = layoutmanagerOpportunities
         recycler.adapter = adapterOpportunities
 
         adapterOpportunities.setOnItemClickListener(object:
@@ -146,9 +149,9 @@ internal class MainActivity : AppCompatActivity() {
 
         recycler = findViewById(R.id.recycler_bios)
         recycler.setHasFixedSize(true)
-        val layoutManager_Peoples: RecyclerView.LayoutManager = GridLayoutManager(this, 2)
+        val layoutmanagerPeoples: RecyclerView.LayoutManager = GridLayoutManager(this, 2)
         adapterPeoples = CardAdapterPeoples(cardListPeople)
-        recycler.layoutManager = layoutManager_Peoples
+        recycler.layoutManager = layoutmanagerPeoples
         recycler.adapter = adapterPeoples
 
         adapterPeoples.setOnItemClickListener(object:
@@ -306,22 +309,27 @@ internal class MainActivity : AppCompatActivity() {
             val message = handler.obtainMessage()
 
             try {
-                if (currentTypeSearch == 0){
-                    modelManager.loadOpportunities(20, cardListOpportunities.size)
-                    message.obj = ThreadReadType.Opportunities_Loaded
-                } else if (currentTypeSearch == 1){
-                    modelManager.loadPeoples(20, cardListPeople.size)
-                    message.obj = ThreadReadType.Peoples_Loaded
-                } else if (currentTypeSearch == 2){
-                    modelManager.loadJob(currentIdSearch)
-                    val message1 = handler.obtainMessage()
-                    message1.obj = ThreadReadType.Job_Loaded
-                    handler.sendMessageAtFrontOfQueue(message1)
-                } else {
-                    modelManager.loadBio(currentIdSearch)
-                    val message2 = handler.obtainMessage()
-                    message2.obj = ThreadReadType.Bio_Loaded
-                    handler.sendMessageAtFrontOfQueue(message2)
+                when (currentTypeSearch) {
+                    0 -> {
+                        modelManager.loadOpportunities(20, cardListOpportunities.size)
+                        message.obj = ThreadReadType.Opportunities_Loaded
+                    }
+                    1 -> {
+                        modelManager.loadPeoples(20, cardListPeople.size)
+                        message.obj = ThreadReadType.Peoples_Loaded
+                    }
+                    2 -> {
+                        modelManager.loadJob(currentIdSearch)
+                        val message1 = handler.obtainMessage()
+                        message1.obj = ThreadReadType.Job_Loaded
+                        handler.sendMessageAtFrontOfQueue(message1)
+                    }
+                    else -> {
+                        modelManager.loadBio(currentIdSearch)
+                        val message2 = handler.obtainMessage()
+                        message2.obj = ThreadReadType.Bio_Loaded
+                        handler.sendMessageAtFrontOfQueue(message2)
+                    }
                 }
             } catch (e: ConnectionException) {
                 message.obj = ThreadReadType.Load_Failed
@@ -356,14 +364,19 @@ internal class MainActivity : AppCompatActivity() {
     private val handler: Handler = object : Handler() {
         override fun handleMessage(message: Message) {
             if (message.obj != null) {
-                if (message.obj.equals(ThreadReadType.Opportunities_Loaded)) {
-                    loadOpportunityCards()
-                } else if (message.obj.equals(ThreadReadType.Peoples_Loaded)) {
-                    loadPeopleCards()
-                } else if (message.obj.equals(ThreadReadType.Job_Loaded)) {
-                    loadJobData()
-                } else if (message.obj.equals(ThreadReadType.Bio_Loaded)) {
-                    loadBioData()
+                when {
+                    message.obj.equals(ThreadReadType.Opportunities_Loaded) -> {
+                        loadOpportunityCards()
+                    }
+                    message.obj.equals(ThreadReadType.Peoples_Loaded) -> {
+                        loadPeopleCards()
+                    }
+                    message.obj.equals(ThreadReadType.Job_Loaded) -> {
+                        loadJobData()
+                    }
+                    message.obj.equals(ThreadReadType.Bio_Loaded) -> {
+                        loadBioData()
+                    }
                 }
 
                 val imageView = findViewById<ImageView>(R.id.loading)
@@ -379,9 +392,11 @@ internal class MainActivity : AppCompatActivity() {
 
         for (i in 0..19) {
             val resultItem = modelManager.nextOpportunity()
-            val cardOpportunities = CardItemOpportunities(resultItem)
-            cardOpportunities.image = BitmapFromConnection.getBitmap(resultItem.id)
-            cardListOpportunities.add(cardOpportunities)
+            if (resultItem != null) {
+                val cardOpportunities = CardItemOpportunities(resultItem)
+                cardOpportunities.image = BitmapFromConnection.getBitmap(resultItem.id)
+                cardListOpportunities.add(cardOpportunities)
+            }
         }
 
         adapterOpportunities.notifyItemRangeInserted(size, 20)
@@ -409,7 +424,11 @@ internal class MainActivity : AppCompatActivity() {
     }
 
     fun loadBioData() {
-        //todo
+        val intent = Intent(this, BioActivity::class.java)
+        intent.putExtra("deviceWidth", deviceWidth.toString())
+        intent.putExtra("deviceHeight", deviceHeight.toString())
+        intent.putExtra("currentIdSearch", currentIdSearch)
+        startActivity(intent)
     }
 
     //    ---
@@ -432,6 +451,7 @@ internal class MainActivity : AppCompatActivity() {
             val constraintLayout = findViewById<ConstraintLayout>(R.id.author)
             constraintLayout.visibility = View.VISIBLE
             setAnimation(constraintLayout, "translationX", 300, false, deviceWidth.toFloat(), 0f)
+            authorOpened = true
             return true
         }
         return super.onOptionsItemSelected(item)

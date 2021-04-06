@@ -18,14 +18,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Torre_co_challenge_app">
-        <activity android:name=".views.JobActivity"
+        <activity android:name=".views.BioActivity"
             android:configChanges="orientation|screenSize"
-            android:screenOrientation="portrait"
-            />
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.JobActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".views.MainActivity"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="portrait">
+
             <!-- Todo: Delete to add responsive -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -10,6 +10,7 @@ import com.cyberfanta.torre_co_challenge_app.models.opportunities.ResultsItem;
 import com.cyberfanta.torre_co_challenge_app.models.peoples.Peoples;
 
 import java.io.IOException;
+import java.io.InterruptedIOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -59,9 +60,8 @@ public class ModelManager {
         if (!jobMap.containsKey(name)) {
             Job job = modelFromConnection.getObject(Job.class, url[0].concat(name));
             try {
-                BitmapFromConnection.getBitmap(job.getId(), job.getOwner().getPicture());
-            } catch (IOException e) {
-                e.printStackTrace();
+                BitmapFromConnection.getBitmap(job.getId(), job.getSerpTags().getHiringOrganization().getLogo());
+            } catch (IOException ignored) {
             }
             jobMap.put(job.getId(), job);
         }
@@ -132,7 +132,7 @@ public class ModelManager {
 
     public com.cyberfanta.torre_co_challenge_app.models.peoples.ResultsItem nextPeople() throws ConnectionException {
         if (!(peoplesMapIterator < peoplesMap.size()))
-            loadOpportunities(20, peoplesMap.size());
+            loadPeoples(20, peoplesMap.size());
 
         return (com.cyberfanta.torre_co_challenge_app.models.peoples.ResultsItem) peoplesMap.values().toArray()[peoplesMapIterator++];
     }

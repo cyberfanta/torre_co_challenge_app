@@ -48,7 +48,7 @@ public class SerpTags{
 	private String datePosted;
 
 	@SerializedName("experienceRequirements")
-	private ExperienceRequirements experienceRequirements;
+	private Object experienceRequirements;
 
 	public void setIdentifier(Identifier identifier){
 		this.identifier = identifier;
@@ -162,11 +162,11 @@ public class SerpTags{
 		return datePosted;
 	}
 
-	public void setExperienceRequirements(ExperienceRequirements experienceRequirements){
+	public void setExperienceRequirements(Object experienceRequirements){
 		this.experienceRequirements = experienceRequirements;
 	}
 
-	public ExperienceRequirements getExperienceRequirements(){
+	public Object getExperienceRequirements(){
 		return experienceRequirements;
 	}
 

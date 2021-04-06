@@ -1,7 +1,6 @@
 package com.cyberfanta.torre_co_challenge_app.controllers
 
 import android.graphics.Bitmap
-import android.util.Log
 import com.cyberfanta.torre_co_challenge_app.models.peoples.ResultsItem
 import java.util.*
 
@@ -10,7 +9,7 @@ class CardItemPeoples {
     var id: String? = null
     var name: String? = null
     var image: Bitmap? = null
-    var image_url: String? = null
+    var imageUrl: String? = null
     var highligth: String? = null
     var time1: String? = null
     var time2: String? = null
@@ -31,9 +30,9 @@ class CardItemPeoples {
         name = resultsItem.name
 
         if  (resultsItem.picture != null)
-            image_url = resultsItem.picture
+            imageUrl = resultsItem.picture
         else
-            image_url = null
+            imageUrl = null
 
         if  (resultsItem.professionalHeadline != null)
             highligth = resultsItem.professionalHeadline
@@ -102,7 +101,7 @@ class CardItemPeoples {
                 skill8: String?) {
         this.id = id
         this.name = name
-        this.image_url = image_url
+        this.imageUrl = image_url
         this.highligth = highlight
         this.time1 = time1
         this.time2 = time2

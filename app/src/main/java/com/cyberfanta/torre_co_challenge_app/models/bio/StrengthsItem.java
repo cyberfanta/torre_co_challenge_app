@@ -17,7 +17,7 @@ public class StrengthsItem{
 	private String name;
 
 	@SerializedName("weight")
-	private int weight;
+	private float weight;
 
 	@SerializedName("id")
 	private String id;
@@ -55,11 +55,11 @@ public class StrengthsItem{
 		return name;
 	}
 
-	public void setWeight(int weight){
+	public void setWeight(float weight){
 		this.weight = weight;
 	}
 
-	public int getWeight(){
+	public float getWeight(){
 		return weight;
 	}
 

@@ -1,7 +1,6 @@
 package com.cyberfanta.torre_co_challenge_app.controllers
 
 import android.graphics.Bitmap
-import android.util.Log
 import com.cyberfanta.torre_co_challenge_app.models.opportunities.ResultsItem
 import java.util.*
 
@@ -10,7 +9,7 @@ class CardItemOpportunities {
     var id: String? = null
     var name: String? = null
     var image: Bitmap? = null
-    var image_url: String? = null
+    var imageUrl: String? = null
     var highligth: String? = null
     var time: String? = null
     var remote: String? = null
@@ -29,14 +28,14 @@ class CardItemOpportunities {
         name = resultsItem.objective
 
         if  (resultsItem.organizations.size > 0)
-            image_url = resultsItem.organizations[0].picture
+            imageUrl = resultsItem.organizations[0].picture
         else
-            image_url = null
+            imageUrl = null
 
         if  (resultsItem.compensation.data != null) {
-            highligth = resultsItem.compensation.data.minAmount.toString()
-            if (!resultsItem.compensation.data.maxAmount.toString().equals("0.0"))
-                highligth = highligth + " - " + resultsItem.compensation.data.maxAmount.toString()
+            highligth = resultsItem.compensation.data.minAmount.toInt().toString()
+            if (!resultsItem.compensation.data.maxAmount.toInt().toString().equals("0"))
+                highligth = highligth + " - " + resultsItem.compensation.data.maxAmount.toInt().toString()
             highligth = highligth + " " + resultsItem.compensation.data.currency + " " + resultsItem.compensation.data.periodicity
         } else
             highligth = " "
@@ -69,7 +68,7 @@ class CardItemOpportunities {
                 skill5: String?, skill6: String?, skill7: String?, skill8: String?) {
         this.id = id
         this.name = name
-        this.image_url = image_url
+        this.imageUrl = image_url
         this.highligth = highlight
         this.time = time
         this.remote = remote

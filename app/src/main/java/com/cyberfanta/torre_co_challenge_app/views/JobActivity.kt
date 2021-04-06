@@ -15,13 +15,17 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.cyberfanta.torre_co_challenge_app.R
 import com.cyberfanta.torre_co_challenge_app.controllers.BitmapFromConnection
+import com.cyberfanta.torre_co_challenge_app.views.ViewUtilities.filterWebAnnotations
 import com.cyberfanta.torre_co_challenge_app.controllers.ModelManager
+import com.cyberfanta.torre_co_challenge_app.views.ViewUtilities.translateStrings
 import java.util.*
 
 class JobActivity : AppCompatActivity() {
     private var deviceWidth: Int = 0
     private var deviceHeight:Int = 0
     private var currentIdSearch: String = ""
+
+    private var authorOpened: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,8 +37,9 @@ class JobActivity : AppCompatActivity() {
 
     override fun onBackPressed() {
         val constraintLayout : ConstraintLayout = findViewById(R.id.author)
-        if (!(constraintLayout.translationX < deviceWidth.toFloat())) {
+        if (authorOpened) {
             authorSelected(constraintLayout)
+            authorOpened = false
             return
         }
 
@@ -67,17 +72,27 @@ class JobActivity : AppCompatActivity() {
 
         textView = findViewById(R.id.highlight_job)
         var string: String = job.compensation.minAmount.toString()
-        if (!job.compensation.maxAmount.equals(0))
+        if (job.compensation.maxAmount != 0)
             string += " - " + job.compensation.maxAmount.toString()
-        string += " " + job.compensation.currency
+        string += " " + job.compensation.currency + " " + job.compensation.periodicity
         textView.text = string
 
         //        ---
 
         textView = findViewById(R.id.skill_1_job)
         string = ""
-        for (i in 0 until job.strengths.size)
-            string += job.strengths[i].name + ": " + job.strengths[i].experience + "\n"
+        for (i in 0 until job.strengths.size) {
+            if (job.strengths[i].experience.contains("plus-year"))
+                string += job.strengths[i].name + ": " +
+//                        translateAnnotations(this, "plus_year_1") + " " +
+                        job.strengths[i].experience.substring(0, 1) + "+ " +
+                        translateStrings(this, "plus_year_2") + "\n"
+            else if (job.strengths[i].experience.contains("potential-to-develop"))
+                string += job.strengths[i].name + ": " + translateStrings(this, "potential_to_develop") + "\n"
+            else
+                string += job.strengths[i].name + ": " + job.strengths[i].experience + "\n"
+        }
+
         if (job.strengths.size > 0)
             string = string.substring(0, string.length - 1)
         textView.text = string
@@ -87,19 +102,19 @@ class JobActivity : AppCompatActivity() {
         textView = findViewById(R.id.skill_2_job)
         string = ""
         if (job.place.isRemote)
-            string += "Remote\n"
+            string += translateStrings(this, "remote") + "\n"
 
         if (job.place.isAnywhere)
-            string += "Anywhere\n"
+            string += translateStrings(this, "anywhere") + "\n"
         else
             for (i in 0 until job.place.location.size)
-                string += "In: " + job.place.location[i].id + "\n"
+                string += translateStrings(this, "in") + ": " + job.place.location[i].id + "\n"
 
         if (job.place.isTimezone)
-            string += "Remote\n"
+            string += translateStrings(this, "remote") + "\n"
 
         for (i in 0 until job.serpTags.employmentType.size)
-            string += "Type: " + job.serpTags.employmentType[i] + "\n"
+            string += translateStrings(this, "type") + ": " + job.serpTags.employmentType[i] + "\n"
         if (job.serpTags.employmentType.size > 0)
             string = string.substring(0, string.length - 1)
         textView.text = string
@@ -108,20 +123,7 @@ class JobActivity : AppCompatActivity() {
 
         textView = findViewById(R.id.skill_3_job)
         string = job.serpTags.description
-        string = string.replace("<p>", "")
-        string = string.replace("</p>", "\n")
-        string = string.replace("&aacute;", "á")
-        string = string.replace("&eacute;", "é")
-        string = string.replace("&iacute;", "í")
-        string = string.replace("&oacute;", "ó")
-        string = string.replace("&uacute;", "ú")
-        string = string.replace("<b>", "")
-        string = string.replace("</b>", "")
-        string = string.replace("<br/>", "")
-        string = string.replace("<ul>", "")
-        string = string.replace("</ul>", "")
-        string = string.replace("<li>", "- ")
-        string = string.replace("</li>", "\n")
+        string = filterWebAnnotations(string)
         string = string.substring(0, string.length - 2)
         textView.text = string
 
@@ -130,7 +132,7 @@ class JobActivity : AppCompatActivity() {
         textView = findViewById(R.id.skill_4_job)
         string = ""
         for (i in 0 until job.details.size)
-            string += job.details[i].code.toUpperCase(Locale.ROOT) + ":\n" + job.details[i].content + "\n\n"
+            string += translateStrings(this, job.details[i].code.toLowerCase(Locale.ROOT)).toUpperCase(Locale.ROOT) + ":\n" + job.details[i].content + "\n\n"
         if (job.details.size > 0)
             string = string.substring(0, string.length - 2)
         textView.text = string
@@ -140,7 +142,7 @@ class JobActivity : AppCompatActivity() {
         textView = findViewById(R.id.skill_5_job)
         string = ""
         for (i in 0 until job.languages.size)
-            string += job.languages[i].language.name + ": " + job.languages[i].fluency + "\n"
+            string += translateStrings(this, job.languages[i].language.name) + ": " + translateStrings(this, job.languages[i].fluency) + "\n"
         if (job.languages.size > 0)
             string = string.substring(0, string.length - 1)
         textView.text = string
@@ -148,32 +150,27 @@ class JobActivity : AppCompatActivity() {
         //        ---
 
         textView = findViewById(R.id.skill_6_job)
-        textView.text = job.organizations[0].name
+        if (job.organizations.size > 0)
+            textView.text = job.serpTags.hiringOrganization.name
     }
 
     //    ---
 
     //Set animation on view
-    private fun setAnimation(
-        view: View,
-        propertyName: String,
-        duration: Long,
-        repeat: Boolean,
-        value1: Float,
-        value2: Float
-    ) {
+    @Suppress("SameParameterValue")
+    private fun setAnimation(view: View, propertyName: String, duration: Long, repeat: Boolean, value1: Float, value2: Float) {
         val objectAnimator = ObjectAnimator.ofFloat(view, propertyName, value1, value2)
         val animator = AnimatorSet()
         animator.play(objectAnimator)
         animator.duration = duration
         if (repeat) {
             animator.addListener(
-                object : AnimatorListenerAdapter() {
-                    override fun onAnimationEnd(animation: Animator) {
-                        super.onAnimationEnd(animation)
-                        animator.start()
+                    object : AnimatorListenerAdapter() {
+                        override fun onAnimationEnd(animation: Animator) {
+                            super.onAnimationEnd(animation)
+                            animator.start()
+                        }
                     }
-                }
             )
         }
         animator.start()
@@ -206,6 +203,7 @@ class JobActivity : AppCompatActivity() {
             val constraintLayout = findViewById<ConstraintLayout>(R.id.author)
             constraintLayout.visibility = View.VISIBLE
             setAnimation(constraintLayout, "translationX", 300, false, deviceWidth.toFloat(), 0f)
+            authorOpened = true
             return true
         }
         return super.onOptionsItemSelected(item)
