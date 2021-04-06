@@ -1,14 +1,10 @@
 package com.cyberfanta.torre_co_challenge_app.controllers;
 
-import android.util.Log;
-
 import com.cyberfanta.torre_co_challenge_app.exceptions.ConnectionException;
 import com.google.gson.Gson;
 
 
 public class ModelFromConnection {
-//    private final String TAG = "ModelFromConnection";
-
     private final ConnectionToApi connectionToApi = new ConnectionToApi();
     private final Gson gson = new Gson();
 

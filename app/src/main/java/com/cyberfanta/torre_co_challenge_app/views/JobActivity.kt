@@ -84,9 +84,8 @@ class JobActivity : AppCompatActivity() {
         for (i in 0 until job.strengths.size) {
             if (job.strengths[i].experience.contains("plus-year"))
                 string += job.strengths[i].name + ": " +
-//                        translateAnnotations(this, "plus_year_1") + " " +
                         job.strengths[i].experience.substring(0, 1) + "+ " +
-                        translateStrings(this, "plus_year_2") + "\n"
+                        translateStrings(this, "plus_year") + "\n"
             else if (job.strengths[i].experience.contains("potential-to-develop"))
                 string += job.strengths[i].name + ": " + translateStrings(this, "potential_to_develop") + "\n"
             else

@@ -25,10 +25,8 @@ public class ViewUtilities {
 
     public static String translateStrings(Context context, String string) {
         switch (string) {
-            case "plus_year_1":
-                return context.getString(R.string.plus_year_1);
-            case "plus_year_2":
-                return context.getString(R.string.plus_year_2);
+            case "plus_year":
+                return context.getString(R.string.plus_year);
             case "potential_to_develop":
                 return context.getString(R.string.potential_to_develop);
             case "remote":
@@ -78,6 +76,32 @@ public class ViewUtilities {
             case "espanol":
             case "español":
                 return context.getString(R.string.spanish);
+
+            case "category":
+                return context.getString(R.string.category);
+            case "jobs":
+                return context.getString(R.string.jobs);
+            case "education":
+                return context.getString(R.string.education);
+            case "projects":
+                return context.getString(R.string.projects);
+            case "publications":
+                return context.getString(R.string.publications);
+            case "awards":
+                return context.getString(R.string.awards);
+            case "organization":
+                return context.getString(R.string.organization);
+            case "name":
+                return context.getString(R.string.name);
+            case "from":
+                return context.getString(R.string.from);
+            case "to":
+                return context.getString(R.string.to);
+//            case "español":
+//                return context.getString(R.string.spanish);
+
+
+
             default:
                 return string;
         }

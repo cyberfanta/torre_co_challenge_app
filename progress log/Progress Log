@@ -195,6 +195,17 @@ Hora de inicio: 11:00am
 
 5:30pm	Después de atender asuntos de mi oficina y lidear con un problema en el Android Studio. --Decisión: Para mejorar la lectura en la vista de Jobs, cambié el color de fondo del contenido de mi vista a un gris más oscuro, con lo cual mejoró significativamente la calidad de la lectura y el contraste entre ambos.
 
+3:00am	Finalizo el día de trabajo, la meta está a la vuelta de la esquina, creo que voy a decicar medio día más y ya cerrar este proyecto.
+
+
+Logros:
+- Agregar soporte a multilenguaje. (Hecho)
+
+Pendiente:
+- Implementación del proyecto con Android Studio (En progreso)
+- Activar las vistas a detalle de cada tarjeta. Endpoints Bio. (En progreso)
+- Activar la lupa, para hacer que despliegue las tarjetas con un filtro de búsqueda.
+
 
 
 

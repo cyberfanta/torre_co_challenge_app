@@ -18,6 +18,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.cyberfanta.torre_co_challenge_app.views.BioActivity
 import com.cyberfanta.torre_co_challenge_app.R
 import com.cyberfanta.torre_co_challenge_app.controllers.*
 import com.cyberfanta.torre_co_challenge_app.enumerator.ThreadReadType
@@ -44,6 +45,7 @@ internal class MainActivity : AppCompatActivity() {
     private var queriesThread = Thread(ReadModelFromConnection())
     private var queriesThread2 = Thread(ReadModelFromConnection())
 
+    private var animationcounter : Int = 2
     private var authorOpened: Boolean = false
 
     //    ---
@@ -345,11 +347,11 @@ internal class MainActivity : AppCompatActivity() {
             try {
                 modelManager.loadOpportunities(20, cardListOpportunities.size)
                 val message1 = handler.obtainMessage()
-                message1.obj = ThreadReadType.Opportunities_Loaded
+                message1.obj = ThreadReadType.Both_Opportunities_Loaded
                 handler.sendMessageAtFrontOfQueue(message1)
                 modelManager.loadPeoples(20, cardListPeople.size)
                 val message2 = handler.obtainMessage()
-                message2.obj = ThreadReadType.Peoples_Loaded
+                message2.obj = ThreadReadType.Both_Peoples_Loaded
                 handler.sendMessageAtFrontOfQueue(message2)
             } catch (e: ConnectionException) {
                 message.obj = ThreadReadType.Load_Failed
@@ -365,22 +367,47 @@ internal class MainActivity : AppCompatActivity() {
         override fun handleMessage(message: Message) {
             if (message.obj != null) {
                 when {
+                    message.obj.equals(ThreadReadType.Both_Opportunities_Loaded) -> {
+                        loadOpportunityCards()
+                        animationcounter--
+                        if (animationcounter < 1) {
+                            val imageView = findViewById<ImageView>(R.id.loading)
+                            imageView.visibility = View.GONE
+                        }
+                    }
+                    message.obj.equals(ThreadReadType.Both_Peoples_Loaded) -> {
+                        loadPeopleCards()
+                        animationcounter--
+                        if (animationcounter < 1) {
+                            val imageView = findViewById<ImageView>(R.id.loading)
+                            imageView.visibility = View.GONE
+                        }
+                    }
                     message.obj.equals(ThreadReadType.Opportunities_Loaded) -> {
                         loadOpportunityCards()
+
+                        val imageView = findViewById<ImageView>(R.id.loading)
+                        imageView.visibility = View.GONE
                     }
                     message.obj.equals(ThreadReadType.Peoples_Loaded) -> {
                         loadPeopleCards()
+
+                        val imageView = findViewById<ImageView>(R.id.loading)
+                        imageView.visibility = View.GONE
                     }
                     message.obj.equals(ThreadReadType.Job_Loaded) -> {
                         loadJobData()
+
+                        val imageView = findViewById<ImageView>(R.id.loading)
+                        imageView.visibility = View.GONE
                     }
                     message.obj.equals(ThreadReadType.Bio_Loaded) -> {
                         loadBioData()
+
+                        val imageView = findViewById<ImageView>(R.id.loading)
+                        imageView.visibility = View.GONE
                     }
                 }
-
-                val imageView = findViewById<ImageView>(R.id.loading)
-                imageView.visibility = View.GONE
             }
         }
     }

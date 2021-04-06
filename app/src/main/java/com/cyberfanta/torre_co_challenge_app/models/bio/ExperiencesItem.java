@@ -17,7 +17,7 @@ public class ExperiencesItem{
 	private String toMonth;
 
 	@SerializedName("weight")
-	private int weight;
+	private float weight;
 
 	@SerializedName("media")
 	private List<Object> media;
@@ -85,11 +85,11 @@ public class ExperiencesItem{
 		return toMonth;
 	}
 
-	public void setWeight(int weight){
+	public void setWeight(float weight){
 		this.weight = weight;
 	}
 
-	public int getWeight(){
+	public float getWeight(){
 		return weight;
 	}
 

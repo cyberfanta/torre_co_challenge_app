@@ -11,7 +11,7 @@ public class Person{
 	private String professionalHeadline;
 
 	@SerializedName("completion")
-	private int completion;
+	private float completion;
 
 	@SerializedName("showPhone")
 	private boolean showPhone;
@@ -26,7 +26,7 @@ public class Person{
 	private Flags flags;
 
 	@SerializedName("weight")
-	private int weight;
+	private float weight;
 
 	@SerializedName("locale")
 	private String locale;
@@ -81,11 +81,11 @@ public class Person{
 		return professionalHeadline;
 	}
 
-	public void setCompletion(int completion){
+	public void setCompletion(float completion){
 		this.completion = completion;
 	}
 
-	public int getCompletion(){
+	public float getCompletion(){
 		return completion;
 	}
 
@@ -121,11 +121,11 @@ public class Person{
 		return flags;
 	}
 
-	public void setWeight(int weight){
+	public void setWeight(float weight){
 		this.weight = weight;
 	}
 
-	public int getWeight(){
+	public float getWeight(){
 		return weight;
 	}
 
