@@ -37,39 +37,23 @@ class CardAdapterPeoples(private val cardList_People: ArrayList<CardItemPeoples>
     //    ---
 
     class CardViewHolder(itemView: View, listener: OnItemClickListener?) : RecyclerView.ViewHolder(itemView) {
-        var namePeople: TextView
-        var imagePeople: ImageView
-        var highligthPeople: TextView
-        var time1: TextView
-        var time2: TextView
-        var time3: TextView
-        var time4: TextView
-        var skillPeople1: TextView
-        var skillPeople2: TextView
-        var skillPeople3: TextView
-        var skillPeople4: TextView
-        var skillPeople5: TextView
-        var skillPeople6: TextView
-        var skillPeople7: TextView
-        var skillPeople8: TextView
+        var namePeople: TextView = itemView.findViewById(R.id.name_people)
+        var imagePeople: ImageView = itemView.findViewById(R.id.image_people)
+        var highligthPeople: TextView = itemView.findViewById(R.id.highligth_people)
+        var time1: TextView = itemView.findViewById(R.id.time1)
+        var time2: TextView = itemView.findViewById(R.id.time2)
+        var time3: TextView = itemView.findViewById(R.id.time3)
+        var time4: TextView = itemView.findViewById(R.id.time4)
+        var skillPeople1: TextView = itemView.findViewById(R.id.skill1_people)
+        var skillPeople2: TextView = itemView.findViewById(R.id.skill2_people)
+        var skillPeople3: TextView = itemView.findViewById(R.id.skill3_people)
+        var skillPeople4: TextView = itemView.findViewById(R.id.skill4_people)
+        var skillPeople5: TextView = itemView.findViewById(R.id.skill5_people)
+        var skillPeople6: TextView = itemView.findViewById(R.id.skill6_people)
+        var skillPeople7: TextView = itemView.findViewById(R.id.skill7_people)
+        var skillPeople8: TextView = itemView.findViewById(R.id.skill8_people)
 
         init {
-            namePeople = itemView.findViewById(R.id.name_people)
-            imagePeople = itemView.findViewById(R.id.image_people)
-            highligthPeople = itemView.findViewById(R.id.highligth_people)
-            time1 = itemView.findViewById(R.id.time1)
-            time2 = itemView.findViewById(R.id.time2)
-            time3 = itemView.findViewById(R.id.time3)
-            time4 = itemView.findViewById(R.id.time4)
-            skillPeople1 = itemView.findViewById(R.id.skill1_people)
-            skillPeople2 = itemView.findViewById(R.id.skill2_people)
-            skillPeople3 = itemView.findViewById(R.id.skill3_people)
-            skillPeople4 = itemView.findViewById(R.id.skill4_people)
-            skillPeople5 = itemView.findViewById(R.id.skill5_people)
-            skillPeople6 = itemView.findViewById(R.id.skill6_people)
-            skillPeople7 = itemView.findViewById(R.id.skill7_people)
-            skillPeople8 = itemView.findViewById(R.id.skill8_people)
-
             itemView.setOnClickListener {
                 val position = adapterPosition
                 if (position != RecyclerView.NO_POSITION) {

@@ -3,7 +3,6 @@ package com.cyberfanta.torre_co_challenge_app.controllers;
 import com.cyberfanta.torre_co_challenge_app.exceptions.ConnectionException;
 import com.cyberfanta.torre_co_challenge_app.models.bio.Bio;
 import com.cyberfanta.torre_co_challenge_app.models.job.Job;
-import com.cyberfanta.torre_co_challenge_app.models.opportunities.Opportunities;
 
 import junit.framework.TestCase;
 

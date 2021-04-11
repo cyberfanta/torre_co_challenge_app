@@ -82,14 +82,13 @@ class JobActivity : AppCompatActivity() {
         textView = findViewById(R.id.skill_1_job)
         string = ""
         for (i in 0 until job.strengths.size) {
-            if (job.strengths[i].experience.contains("plus-year"))
-                string += job.strengths[i].name + ": " +
+            string += when {
+                job.strengths[i].experience.contains("plus-year") -> job.strengths[i].name + ": " +
                         job.strengths[i].experience.substring(0, 1) + "+ " +
                         translateStrings(this, "plus_year") + "\n"
-            else if (job.strengths[i].experience.contains("potential-to-develop"))
-                string += job.strengths[i].name + ": " + translateStrings(this, "potential_to_develop") + "\n"
-            else
-                string += job.strengths[i].name + ": " + job.strengths[i].experience + "\n"
+                job.strengths[i].experience.contains("potential-to-develop") -> job.strengths[i].name + ": " + translateStrings(this, "potential_to_develop") + "\n"
+                else -> job.strengths[i].name + ": " + job.strengths[i].experience + "\n"
+            }
         }
 
         if (job.strengths.size > 0)

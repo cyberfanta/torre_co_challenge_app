@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/White_Soft"
-    tools:context=".views.MainActivity">
+    tools:context=".views.MainActivity"
+    tools:ignore="Overdraw">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_jobs"
@@ -38,7 +39,6 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/Search_Background"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:contentDescription="@string/default_content_description"
@@ -49,7 +49,6 @@
             app:srcCompat="@drawable/ic_search" />
 
         <EditText
-            android:id="@+id/Search_Job"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginStart="10dp"
@@ -82,7 +81,6 @@
             app:srcCompat="@drawable/ic_loupe_background" />
 
         <ImageView
-            android:id="@+id/Loupe_Search"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginTop="2dp"
@@ -121,7 +119,6 @@
             app:srcCompat="@drawable/ic_left_triangle" />
 
         <ImageView
-            android:id="@+id/Left_Triangle_Gray"
             android:layout_width="56dp"
             android:layout_height="33dp"
             android:contentDescription="@string/default_content_description"
@@ -139,7 +136,6 @@
             app:srcCompat="@drawable/ic_right_triangle" />
 
         <ImageView
-            android:id="@+id/Right_Triangle_Gray"
             android:layout_width="56dp"
             android:layout_height="33dp"
             android:contentDescription="@string/default_content_description"
@@ -162,7 +158,6 @@
             android:focusable="true" />
 
         <ImageView
-            android:id="@+id/Left_Square_Gray"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginEnd="1dp"
@@ -189,7 +184,6 @@
             android:focusable="true" />
 
         <ImageView
-            android:id="@+id/Right_Square_Gray"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginStart="1dp"
@@ -213,7 +207,6 @@
             app:srcCompat="@color/Black_Soft" />
 
         <ImageView
-            android:id="@+id/Bios_Background_Gray"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginStart="1dp"
@@ -238,7 +231,6 @@
             app:srcCompat="@color/Black_Soft" />
 
         <ImageView
-            android:id="@+id/Jobs_Background_Gray"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginTop="2dp"
@@ -279,7 +271,6 @@
             app:srcCompat="@drawable/button_background_thin" />
 
         <TextView
-            android:id="@+id/Bios"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="3dp"
@@ -294,7 +285,6 @@
             app:layout_constraintStart_toStartOf="@id/Bios_Background" />
 
         <TextView
-            android:id="@+id/Jobs"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="3dp"
@@ -367,7 +357,6 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
-                android:id="@+id/imageView"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:layout_marginEnd="5dp"
@@ -382,7 +371,6 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/name1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
@@ -394,7 +382,6 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/name2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
@@ -406,7 +393,6 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/profession"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
@@ -418,7 +404,6 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
@@ -430,7 +415,6 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/phone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"

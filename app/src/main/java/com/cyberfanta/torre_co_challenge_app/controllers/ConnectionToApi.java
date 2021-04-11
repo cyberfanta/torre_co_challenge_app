@@ -60,6 +60,8 @@ public class ConnectionToApi {
             if (answer.toLowerCase().contains("\"status\":400"))
                 throw new ConnectionException("INTERNAL SERVER ERROR");
 
+            response.close();
+
         } catch (IOException e) {
             throw new ConnectionException("CONNECTION_FAIL");
         }

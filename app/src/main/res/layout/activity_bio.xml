@@ -15,7 +15,6 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/imageView4"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:contentDescription="@string/default_content_description"
@@ -26,7 +25,6 @@
             app:srcCompat="@color/Gray_Dark_Stroke" />
 
         <ImageView
-            android:id="@+id/imageView5"
             android:layout_width="100dp"
             android:layout_height="0dp"
             android:contentDescription="@string/default_content_description"
@@ -115,7 +113,6 @@
         app:layout_constraintTop_toTopOf="@id/return_background">
 
         <TextView
-            android:id="@+id/return_text"
             style="@style/text_white_shadow_black_3_size_24_bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -138,7 +135,6 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ScrollView
-        android:id="@+id/scrollView2"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@id/return_background"
@@ -291,7 +287,6 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/skill_4_bio"
                     style="@style/text_white_shadow_black_3_size_18_bold"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -331,7 +326,6 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/skill_5_bio"
                     style="@style/text_white_shadow_black_3_size_18_bold"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -371,7 +365,6 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/skill_6_bio"
                     style="@style/text_white_shadow_black_3_size_18_bold"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -410,7 +403,6 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/skill_7_bio"
                     style="@style/text_white_shadow_black_3_size_18_bold"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -449,7 +441,6 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/skill_8_bio"
                     style="@style/text_white_shadow_black_3_size_18_bold"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -488,7 +479,6 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/skill_9_bio"
                     style="@style/text_white_shadow_black_3_size_18_bold"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -527,7 +517,6 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/skill_10_bio"
                     style="@style/text_white_shadow_black_3_size_18_bold"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -566,7 +555,6 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/skill_11_bio"
                     style="@style/text_white_shadow_black_3_size_18_bold"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -605,7 +593,6 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/skill_12_bio"
                     style="@style/text_white_shadow_black_3_size_18_bold"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -644,7 +631,6 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/skill_13_bio"
                     style="@style/text_white_shadow_black_3_size_18_bold"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -661,7 +647,6 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/publications_bio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -683,7 +668,6 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/skill_14_bio"
                     style="@style/text_white_shadow_black_3_size_18_bold"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -730,7 +714,6 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
-                android:id="@+id/imageView"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:layout_marginEnd="5dp"
@@ -745,7 +728,6 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/name1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
@@ -757,7 +739,6 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/name2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
@@ -769,7 +750,6 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/profession"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
@@ -781,7 +761,6 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
@@ -793,7 +772,6 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/phone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"

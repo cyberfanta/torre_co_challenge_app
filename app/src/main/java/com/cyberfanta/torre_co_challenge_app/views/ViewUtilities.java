@@ -97,6 +97,33 @@ public class ViewUtilities {
                 return context.getString(R.string.from);
             case "to":
                 return context.getString(R.string.to);
+
+            case "january":
+                return context.getString(R.string.january);
+            case "february":
+                return context.getString(R.string.february);
+            case "march":
+                return context.getString(R.string.march);
+            case "april":
+                return context.getString(R.string.april);
+            case "may":
+                return context.getString(R.string.may);
+            case "june":
+                return context.getString(R.string.june);
+            case "july":
+                return context.getString(R.string.july);
+            case "august":
+                return context.getString(R.string.august);
+            case "september":
+                return context.getString(R.string.september);
+            case "october":
+                return context.getString(R.string.october);
+            case "november":
+                return context.getString(R.string.november);
+            case "december":
+                return context.getString(R.string.december);
+
+
 //            case "español":
 //                return context.getString(R.string.spanish);
 

@@ -39,35 +39,21 @@ class CardAdapterOpportunities(private val cardList_Opportunities: ArrayList<Car
     class CardViewHolder(itemView: View, itemClickListener: OnItemClickListener?) : RecyclerView.ViewHolder(
         itemView
     ) {
-        var name: TextView
-        var image: ImageView
-        var highligth: TextView
-        var time: TextView
-        var remote: TextView
-        var skill1: TextView
-        var skill2: TextView
-        var skill3: TextView
-        var skill4: TextView
-        var skill5: TextView
-        var skill6: TextView
-        var skill7: TextView
-        var skill8: TextView
+        var name: TextView = itemView.findViewById(R.id.name)
+        var image: ImageView = itemView.findViewById(R.id.image)
+        var highligth: TextView = itemView.findViewById(R.id.highligth)
+        var time: TextView = itemView.findViewById(R.id.time)
+        var remote: TextView = itemView.findViewById(R.id.remote)
+        var skill1: TextView = itemView.findViewById(R.id.skill1)
+        var skill2: TextView = itemView.findViewById(R.id.skill2)
+        var skill3: TextView = itemView.findViewById(R.id.skill3)
+        var skill4: TextView = itemView.findViewById(R.id.skill4)
+        var skill5: TextView = itemView.findViewById(R.id.skill5)
+        var skill6: TextView = itemView.findViewById(R.id.skill6)
+        var skill7: TextView = itemView.findViewById(R.id.skill7)
+        var skill8: TextView = itemView.findViewById(R.id.skill8)
 
         init {
-            name = itemView.findViewById(R.id.name)
-            image = itemView.findViewById(R.id.image)
-            highligth = itemView.findViewById(R.id.highligth)
-            time = itemView.findViewById(R.id.time)
-            remote = itemView.findViewById(R.id.remote)
-            skill1 = itemView.findViewById(R.id.skill1)
-            skill2 = itemView.findViewById(R.id.skill2)
-            skill3 = itemView.findViewById(R.id.skill3)
-            skill4 = itemView.findViewById(R.id.skill4)
-            skill5 = itemView.findViewById(R.id.skill5)
-            skill6 = itemView.findViewById(R.id.skill6)
-            skill7 = itemView.findViewById(R.id.skill7)
-            skill8 = itemView.findViewById(R.id.skill8)
-
             itemView.setOnClickListener {
                 val position = adapterPosition
                 if (position != RecyclerView.NO_POSITION) {

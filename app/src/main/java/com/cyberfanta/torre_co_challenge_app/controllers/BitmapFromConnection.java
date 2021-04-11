@@ -6,7 +6,6 @@ import android.graphics.BitmapFactory;
 import com.cyberfanta.torre_co_challenge_app.exceptions.ConnectionException;
 
 import java.io.IOException;
-import java.io.InterruptedIOException;
 import java.net.URL;
 import java.util.LinkedHashMap;
 import java.util.Map;

@@ -7,7 +7,6 @@ import junit.framework.TestCase;
 import org.junit.Assert;
 
 public class ConnectionToApiTest extends TestCase {
-    private final String TAG = "ConnectionToApiTest";
     private ConnectionToApi connectionToApi;
     private String[] url;
 
@@ -27,8 +26,6 @@ public class ConnectionToApiTest extends TestCase {
     public void testGetJson_bio_ok() {
         try {
             Assert.assertNotNull(connectionToApi.getJson(url[0].concat("julioleon2004")));
-//            answer = connectionToApi.getJson(url[0].concat("julioleon2004"), "get");
-//            Log.i(TAG, answer);
         } catch (ConnectionException e) {
             Assert.fail();
         }

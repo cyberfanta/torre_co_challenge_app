@@ -4,12 +4,12 @@ import android.graphics.Bitmap
 import com.cyberfanta.torre_co_challenge_app.models.opportunities.ResultsItem
 import java.util.*
 
-class CardItemOpportunities {
+class CardItemOpportunities(resultsItem: ResultsItem) {
 
     var id: String? = null
     var name: String? = null
     var image: Bitmap? = null
-    var imageUrl: String? = null
+    private var imageUrl: String? = null
     var highligth: String? = null
     var time: String? = null
     var remote: String? = null
@@ -22,34 +22,28 @@ class CardItemOpportunities {
     var skill7: String? = null
     var skill8: String? = null
 
-    constructor(resultsItem: ResultsItem) {
+    init {
         id = resultsItem.id
-
         name = resultsItem.objective
-
-        if  (resultsItem.organizations.size > 0)
-            imageUrl = resultsItem.organizations[0].picture
+        imageUrl = if  (resultsItem.organizations.size > 0)
+            resultsItem.organizations[0].picture
         else
-            imageUrl = null
-
+            null
         if  (resultsItem.compensation.data != null) {
             highligth = resultsItem.compensation.data.minAmount.toInt().toString()
-            if (!resultsItem.compensation.data.maxAmount.toInt().toString().equals("0"))
+            if (resultsItem.compensation.data.maxAmount.toInt().toString() != "0")
                 highligth = highligth + " - " + resultsItem.compensation.data.maxAmount.toInt().toString()
             highligth = highligth + " " + resultsItem.compensation.data.currency + " " + resultsItem.compensation.data.periodicity
         } else
             highligth = " "
-
         time =
-                if (resultsItem.type.toLowerCase(Locale.ROOT).contains("full")) "Full Time"
-                else
-                    if (resultsItem.type.toLowerCase(Locale.ROOT).contains("free")) "Freelance"
-                    else
-                        if (resultsItem.type.toLowerCase(Locale.ROOT).contains("part")) "Part Time"
-                        else
-                            if (resultsItem.type.toLowerCase(Locale.ROOT).contains("advis")) "Advisor"
-                            else ""
-
+                when {
+                    resultsItem.type.toLowerCase(Locale.ROOT).contains("full") -> "Full Time"
+                    resultsItem.type.toLowerCase(Locale.ROOT).contains("free") -> "Freelance"
+                    resultsItem.type.toLowerCase(Locale.ROOT).contains("part") -> "Part Time"
+                    resultsItem.type.toLowerCase(Locale.ROOT).contains("advis") -> "Advisor"
+                    else -> ""
+                }
         remote = if (resultsItem.isRemote) "Remote" else "No Remote"
         for (i in resultsItem.skills.indices) {
             if (i == 0) skill1 = resultsItem.skills[0].name
@@ -61,24 +55,5 @@ class CardItemOpportunities {
             if (i == 6) skill7 = resultsItem.skills[6].name
             if (i == 7) skill8 = resultsItem.skills[7].name
         }
-    }
-
-    constructor(id: String, name: String, image_url: String, highlight: String, time: String,
-                remote: String, skill1: String?, skill2: String?, skill3: String?, skill4: String?,
-                skill5: String?, skill6: String?, skill7: String?, skill8: String?) {
-        this.id = id
-        this.name = name
-        this.imageUrl = image_url
-        this.highligth = highlight
-        this.time = time
-        this.remote = remote
-        this.skill1 = skill1
-        this.skill2 = skill2
-        this.skill3 = skill3
-        this.skill4 = skill4
-        this.skill5 = skill5
-        this.skill6 = skill6
-        this.skill7 = skill7
-        this.skill8 = skill8
     }
 }

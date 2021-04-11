@@ -1,19 +1,12 @@
 package com.cyberfanta.torre_co_challenge_app.controllers;
 
-import android.util.Log;
-
 import com.cyberfanta.torre_co_challenge_app.exceptions.ConnectionException;
 import com.cyberfanta.torre_co_challenge_app.models.bio.Bio;
 import com.cyberfanta.torre_co_challenge_app.models.job.Job;
 import com.cyberfanta.torre_co_challenge_app.models.opportunities.Opportunities;
-import com.cyberfanta.torre_co_challenge_app.models.opportunities.ResultsItem;
 import com.cyberfanta.torre_co_challenge_app.models.peoples.Peoples;
 
 import java.io.IOException;
-import java.io.InterruptedIOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
