@@ -80,8 +80,11 @@ internal class MainActivity : AppCompatActivity() {
     override fun onDestroy() {
         if (queriesThread.isAlive)
             queriesThread.interrupt()
+        if (queriesThread2.isAlive)
+            queriesThread2.interrupt()
 
         super.onDestroy()
+        System.exit(0) //Need another alternative - cleanup skipped with this
     }
 
     //    ---
