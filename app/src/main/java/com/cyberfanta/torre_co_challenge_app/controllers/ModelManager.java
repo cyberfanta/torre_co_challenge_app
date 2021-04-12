@@ -80,6 +80,18 @@ public class ModelManager {
             Bio bio = modelFromConnection.getObject(Bio.class, url[1].concat(name));
             try {
                 BitmapFromConnection.getBitmap(bio.getPerson().getPublicId(), bio.getPerson().getPicture());
+                if (bio.getExperiences().size() > 1)
+                    for (int i = 0; i < bio.getExperiences().size(); i++) {
+                        for (int j = 0; j < bio.getExperiences().get(i).getOrganizations().size(); j++) {
+                            BitmapFromConnection.getBitmap(bio.getExperiences().get(i).getOrganizations().get(j).getName(), bio.getExperiences().get(i).getOrganizations().get(j).getPicture());
+                        }
+                    }
+                if (bio.getEducation().size() > 1)
+                    for (int i = 0; i < bio.getEducation().size(); i++) {
+                        for (int j = 0; j < bio.getEducation().get(i).getOrganizations().size(); j++) {
+                            BitmapFromConnection.getBitmap(bio.getEducation().get(i).getOrganizations().get(j).getName(), bio.getEducation().get(i).getOrganizations().get(j).getPicture());
+                        }
+                    }
             } catch (IOException ignored) {
             }
             bioMap.put(bio.getPerson().getPublicId(), bio);

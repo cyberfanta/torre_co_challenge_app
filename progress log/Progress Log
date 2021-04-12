@@ -208,5 +208,13 @@ Pendiente:
 
 
 
+Fecha: (11-12)-04-2021
+Hora de inicio: 11:00pm
+
+11:00pm	Ya que me dieron los resultados, procedí a postegar este proyecto para retomarlo en el espacio adecuado de tiempo. Decido entonces arreglar un problema que me estaba molestando hace rato, y es el hecho que mi app, permanece abierta apesar que se hace el llamado a la función finish. La solución no me convence mucho, ya que el debug me informa que la limpieza ha sido saltada, entonces no tengo la certeza que no deja hilos abiertos que puedan impactar en el performance de los dispositivos.
+
+2:00pm	Continuo con la vista de detalles de bio.
 
 
+
+1020613264

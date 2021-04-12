@@ -8,6 +8,9 @@
     <color name="colorSecondaryVariant">#FBEF69</color>
     <color name="colorOnSecondary">#CDDC39</color>
 
+    <color name="Blue">#2196F3</color>
+    <color name="Blue_Strong">#0000FF</color>
+    <color name="Green">#CDDC39</color>
     <color name="White_Soft">#F3F3F3</color>
     <color name="Black_Soft">#27292D</color>
     <color name="Black">#000000</color>

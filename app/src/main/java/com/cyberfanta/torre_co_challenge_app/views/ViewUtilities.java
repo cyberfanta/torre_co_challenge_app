@@ -24,6 +24,9 @@ public class ViewUtilities {
     }
 
     public static String translateStrings(Context context, String string) {
+        if (string == null)
+            return "";
+
         switch (string) {
             case "plus_year":
                 return context.getString(R.string.plus_year);
@@ -76,6 +79,24 @@ public class ViewUtilities {
             case "espanol":
             case "español":
                 return context.getString(R.string.spanish);
+            case "french":
+            case "frances":
+                return context.getString(R.string.french);
+            case "german":
+            case "aleman":
+            case "alemán":
+                return context.getString(R.string.german);
+            case "italian":
+            case "italiano":
+                return context.getString(R.string.italian);
+            case "chinese":
+            case "chino":
+                return context.getString(R.string.chinese);
+            case "japanese":
+            case "japan":
+            case "japones":
+            case "japonés":
+                return context.getString(R.string.japanese);
 
             case "category":
                 return context.getString(R.string.category);
@@ -123,11 +144,18 @@ public class ViewUtilities {
             case "december":
                 return context.getString(R.string.december);
 
-
-//            case "español":
-//                return context.getString(R.string.spanish);
-
-
+            case "city":
+                return context.getString(R.string.city);
+            case "country":
+                return context.getString(R.string.country);
+            case "latitude":
+                return context.getString(R.string.latitude);
+            case "longitude":
+                return context.getString(R.string.longitude);
+            case "timezone":
+                return context.getString(R.string.timezone);
+            case "timezone_offset":
+                return context.getString(R.string.timezone_offset);
 
             default:
                 return string;
