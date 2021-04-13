@@ -1,10 +1,18 @@
 package com.cyberfanta.torre_co_challenge_app.views;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 
 import com.cyberfanta.torre_co_challenge_app.R;
 
 public class ViewUtilities {
+    @SuppressLint("StaticFieldLeak")
+    private static Context context;
+
+    public static void setContext(Context context) {
+        ViewUtilities.context = context;
+    }
+
     public static String filterWebAnnotations(String string) {
         string = string.replaceAll("<p>", "");
         string = string.replaceAll("</p>", "\n");
@@ -21,6 +29,10 @@ public class ViewUtilities {
         string = string.replaceAll("<li>", "- ");
         string = string.replaceAll("</li>", "\n");
         return string;
+    }
+
+    public static String translateStrings(String string) {
+        return translateStrings(context, string);
     }
 
     public static String translateStrings(Context context, String string) {
@@ -156,6 +168,26 @@ public class ViewUtilities {
                 return context.getString(R.string.timezone);
             case "timezone_offset":
                 return context.getString(R.string.timezone_offset);
+
+            case "mentoring":
+                return context.getString(R.string.mentoring);
+            case "advising":
+                return context.getString(R.string.advising);
+            case "hiring":
+                return context.getString(R.string.hiring);
+            case "gigs":
+            case "freelance-gigs":
+                return context.getString(R.string.freelance_gigs);
+            case "full-time-employment":
+                return context.getString(R.string.full_time_employment);
+            case "part-time-employment":
+                return context.getString(R.string.part_time_employment);
+            case "industries":
+                return context.getString(R.string.industries);
+            case "internship":
+            case "internships":
+                return context.getString(R.string.internship);
+
 
             default:
                 return string;

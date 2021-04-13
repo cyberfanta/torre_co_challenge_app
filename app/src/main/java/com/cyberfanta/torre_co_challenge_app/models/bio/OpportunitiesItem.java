@@ -4,14 +4,16 @@ import com.google.gson.annotations.SerializedName;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.util.List;
+
 public class OpportunitiesItem{
 
 	@SerializedName("field")
 	private String field;
 
 	@SerializedName("data")
-//	private List<DataItem> data;
 	private Object data;
+	private List<DataItem> dataList = null;
 
 	@SerializedName("interest")
 	private String interest;
@@ -27,19 +29,28 @@ public class OpportunitiesItem{
 		return field;
 	}
 
-//	public void setData(Class<T> data){
-//		if (data.getDeclaringClass() = boolean.class) {
-//
-//		}
-//		this.data = data;
-//	}
-//	public void setData(List<DataItem> data){
-//		this.data = data;
+//	@SuppressWarnings("unchecked")
+//	private static <T extends List<DataItem>> T castToList(Object obj) {
+//		return (T) obj;
 //	}
 
-//	public List<DataItem> getData(){
-//		return data;
-//	}
+	public void setData(Object data) {
+		this.data = data;
+
+//		Bio bio;
+//		for (int j = 0; ((List<DataItem>)(bio.getOpportunities().get(i).data)).size(); j++)
+
+//		if (!(data instanceof Boolean))
+//			this.dataList = castToList(data);
+	}
+
+	public Object getData() {
+		return data;
+	}
+
+	public List<DataItem> getDataList() {
+		return dataList;
+	}
 
 	public void setInterest(String interest){
 		this.interest = interest;

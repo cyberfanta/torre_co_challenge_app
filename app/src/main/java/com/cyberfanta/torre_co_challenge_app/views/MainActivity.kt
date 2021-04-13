@@ -23,6 +23,7 @@ import com.cyberfanta.torre_co_challenge_app.controllers.*
 import com.cyberfanta.torre_co_challenge_app.enumerator.ThreadReadType
 import com.cyberfanta.torre_co_challenge_app.exceptions.ConnectionException
 import java.util.*
+import kotlin.system.exitProcess
 
 internal class MainActivity : AppCompatActivity() {
     private var deviceWidth: Int = 0
@@ -63,6 +64,8 @@ internal class MainActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
 
+        ViewUtilities.setContext(this)
+
         fillBothRecyclersView()
     }
 
@@ -84,7 +87,7 @@ internal class MainActivity : AppCompatActivity() {
             queriesThread2.interrupt()
 
         super.onDestroy()
-        System.exit(0) //Need another alternative - cleanup skipped with this
+        exitProcess(0) //Need another alternative - cleanup skipped with this
     }
 
     //    ---

@@ -117,6 +117,7 @@ public class ModelManager {
         Opportunities opportunities = modelFromConnection.postObject(Opportunities.class, url[2], size, offset);
         List <com.cyberfanta.torre_co_challenge_app.models.opportunities.ResultsItem> resultsItems = opportunities.getResults();
 
+        if (resultsItems == null) throw new ConnectionException("Unexpected Error");
         for (com.cyberfanta.torre_co_challenge_app.models.opportunities.ResultsItem resultsItem: resultsItems) {
             try {
                 if (resultsItem.getOrganizations().size() > 0)

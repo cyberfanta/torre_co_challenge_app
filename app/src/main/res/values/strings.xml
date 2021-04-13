@@ -113,4 +113,14 @@
     <string name="timezone">Timezone</string>
     <string name="timezone_offset">Timezone Offset</string>
 
+    <string name="mentoring">Mentor</string>
+    <string name="advising">Advisor</string>
+    <string name="hiring">Hiring</string>
+    <string name="freelance_gigs">Freelance</string>
+    <string name="full_time_employment">Full Time</string>
+    <string name="part_time_employment">Part Time</string>
+    <string name="industries">Industries</string>
+    <string name="internship">Internship</string>
+
+
 </resources>

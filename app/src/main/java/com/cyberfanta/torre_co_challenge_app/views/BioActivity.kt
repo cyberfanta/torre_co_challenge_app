@@ -19,6 +19,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import com.cyberfanta.torre_co_challenge_app.R
 import com.cyberfanta.torre_co_challenge_app.controllers.BitmapFromConnection
 import com.cyberfanta.torre_co_challenge_app.controllers.ModelManager
+import com.cyberfanta.torre_co_challenge_app.models.bio.DataItem
 
 class BioActivity : AppCompatActivity() {
     private var deviceWidth: Int = 0
@@ -245,7 +246,36 @@ class BioActivity : AppCompatActivity() {
 
 //personality_bio
 //culture_bio
-//opportunities_bio
+
+        //opportunities_bio
+        if (bio.opportunities.size < 1) {
+            constraintLayout = findViewById(R.id.opportunities_bio)
+            constraintLayout.visibility = View.GONE
+        } else {
+            val linearLayout : LinearLayout = findViewById(R.id.opportunities_bio_container)
+            for (i in 0 until bio.opportunities.size) {
+                if (bio.opportunities[i].data is List<*>) {
+                    textView = TextView(this, null, 0, R.style.text_white_shadow_black_3_size_18_bold)
+                    textView.layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)
+                    string = ViewUtilities.translateStrings(this, bio.opportunities[i].interest) + ": "
+                    @Suppress("UNCHECKED_CAST")
+                    for (j in 0 until (bio.opportunities[i].data as List<*>).size)
+                        string += ViewUtilities.translateStrings(this, ((bio.opportunities[i].data as List<*>) as List<DataItem>)[j].name) + ", "
+                    if (bio.opportunities[i].dataList.size > 0)
+                        string = string.substring(0, string.length - 2)
+                    textView.text = string
+                    linearLayout.addView(textView)
+                } else {
+                    textView = TextView(this, null, 0, R.style.text_white_shadow_black_3_size_18_bold)
+                    textView.layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)
+                    string = ViewUtilities.translateStrings(this, bio.opportunities[i].interest) +
+                            " - " + ViewUtilities.translateStrings(this, bio.opportunities[i].field) +
+                            " - " + ViewUtilities.translateStrings(this, bio.opportunities[i].data.toString())
+                    textView.text = string
+                    linearLayout.addView(textView)
+                }
+            }
+        }
 
         //links_bio
         if (bio.person.links.size < 1) {
@@ -258,7 +288,7 @@ class BioActivity : AppCompatActivity() {
                 linearLayout.orientation = LinearLayout.HORIZONTAL
                 val layoutParamsOrganization: LinearLayout.LayoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)
                 if (i != bio.person.links.size)
-                    layoutParamsOrganization.setMargins(0, 0, 0, 2)
+                    layoutParamsOrganization.setMargins(0, 0, 0, 30)
                 else
                     layoutParamsOrganization.setMargins(0, 0, 0, 40)
                 linearLayout.layoutParams = layoutParamsOrganization

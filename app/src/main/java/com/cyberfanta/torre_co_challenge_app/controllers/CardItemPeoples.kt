@@ -1,7 +1,10 @@
 package com.cyberfanta.torre_co_challenge_app.controllers
 
 import android.graphics.Bitmap
+import com.cyberfanta.torre_co_challenge_app.models.peoples.Context
 import com.cyberfanta.torre_co_challenge_app.models.peoples.ResultsItem
+import com.cyberfanta.torre_co_challenge_app.views.MainActivity
+import com.cyberfanta.torre_co_challenge_app.views.ViewUtilities
 import java.util.*
 
 class CardItemPeoples(resultsItem: ResultsItem) {
@@ -36,40 +39,44 @@ class CardItemPeoples(resultsItem: ResultsItem) {
         else
             " "
         if (resultsItem.openTo.size > 0) {
-            time1 = when {
-                resultsItem.openTo[0].toLowerCase(Locale.ROOT).contains("full") -> "Full Time"
-                resultsItem.openTo[0].toLowerCase(Locale.ROOT).contains("free") -> "Freelance"
-                resultsItem.openTo[0].toLowerCase(Locale.ROOT).contains("part") -> "Part Time"
-                resultsItem.openTo[0].toLowerCase(Locale.ROOT).contains("advis") -> "Advisor"
-                else -> ""
-            }
+            time1 = ViewUtilities.translateStrings(resultsItem.openTo[0])
+//            time1 = when {
+//                resultsItem.openTo[0].toLowerCase(Locale.ROOT).contains("full") -> "Full Time"
+//                resultsItem.openTo[0].toLowerCase(Locale.ROOT).contains("free") -> "Freelance"
+//                resultsItem.openTo[0].toLowerCase(Locale.ROOT).contains("part") -> "Part Time"
+//                resultsItem.openTo[0].toLowerCase(Locale.ROOT).contains("advis") -> "Advisor"
+//                else -> ""
+//            }
 
             if (resultsItem.openTo.size > 1) {
-                time2 = when {
-                    resultsItem.openTo[1].toLowerCase(Locale.ROOT).contains("full") -> "Full Time"
-                    resultsItem.openTo[1].toLowerCase(Locale.ROOT).contains("free") -> "Freelance"
-                    resultsItem.openTo[1].toLowerCase(Locale.ROOT).contains("part") -> "Part Time"
-                    resultsItem.openTo[1].toLowerCase(Locale.ROOT).contains("advis") -> "Advisor"
-                    else -> ""
-                }
+                time2 = ViewUtilities.translateStrings(resultsItem.openTo[1])
+//                time2 = when {
+//                    resultsItem.openTo[1].toLowerCase(Locale.ROOT).contains("full") -> "Full Time"
+//                    resultsItem.openTo[1].toLowerCase(Locale.ROOT).contains("free") -> "Freelance"
+//                    resultsItem.openTo[1].toLowerCase(Locale.ROOT).contains("part") -> "Part Time"
+//                    resultsItem.openTo[1].toLowerCase(Locale.ROOT).contains("advis") -> "Advisor"
+//                    else -> ""
+//                }
 
                 if (resultsItem.openTo.size > 2) {
-                    time3 = when {
-                        resultsItem.openTo[2].toLowerCase(Locale.ROOT).contains("full") -> "Full Time"
-                        resultsItem.openTo[2].toLowerCase(Locale.ROOT).contains("free") -> "Freelance"
-                        resultsItem.openTo[2].toLowerCase(Locale.ROOT).contains("part") -> "Part Time"
-                        resultsItem.openTo[2].toLowerCase(Locale.ROOT).contains("advis") -> "Advisor"
-                        else -> ""
-                    }
+                    time3 = ViewUtilities.translateStrings(resultsItem.openTo[2])
+//                    time3 = when {
+//                        resultsItem.openTo[2].toLowerCase(Locale.ROOT).contains("full") -> "Full Time"
+//                        resultsItem.openTo[2].toLowerCase(Locale.ROOT).contains("free") -> "Freelance"
+//                        resultsItem.openTo[2].toLowerCase(Locale.ROOT).contains("part") -> "Part Time"
+//                        resultsItem.openTo[2].toLowerCase(Locale.ROOT).contains("advis") -> "Advisor"
+//                        else -> ""
+//                    }
 
                     if (resultsItem.openTo.size > 3) {
-                        time4 = when {
-                            resultsItem.openTo[3].toLowerCase(Locale.ROOT).contains("full") -> "Full Time"
-                            resultsItem.openTo[3].toLowerCase(Locale.ROOT).contains("free") -> "Freelance"
-                            resultsItem.openTo[3].toLowerCase(Locale.ROOT).contains("part") -> "Part Time"
-                            resultsItem.openTo[3].toLowerCase(Locale.ROOT).contains("advis") -> "Advisor"
-                            else -> ""
-                        }
+                        time4 = ViewUtilities.translateStrings(resultsItem.openTo[3])
+//                        time4 = when {
+//                            resultsItem.openTo[3].toLowerCase(Locale.ROOT).contains("full") -> "Full Time"
+//                            resultsItem.openTo[3].toLowerCase(Locale.ROOT).contains("free") -> "Freelance"
+//                            resultsItem.openTo[3].toLowerCase(Locale.ROOT).contains("part") -> "Part Time"
+//                            resultsItem.openTo[3].toLowerCase(Locale.ROOT).contains("advis") -> "Advisor"
+//                            else -> ""
+//                        }
                     }
                 }
             }
