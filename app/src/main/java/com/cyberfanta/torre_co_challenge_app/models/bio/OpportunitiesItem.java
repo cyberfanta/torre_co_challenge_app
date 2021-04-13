@@ -29,19 +29,20 @@ public class OpportunitiesItem{
 		return field;
 	}
 
-//	@SuppressWarnings("unchecked")
-//	private static <T extends List<DataItem>> T castToList(Object obj) {
-//		return (T) obj;
-//	}
+	@SuppressWarnings("unchecked")
+	private static <T extends List<DataItem>> T castToList(Object obj) {
+		return (T) obj;
+	}
 
 	public void setData(Object data) {
+//		if (!(data instanceof Boolean)) {
+//			dataList.addAll(castToList(data));
+//		}
 		this.data = data;
+	}
 
-//		Bio bio;
-//		for (int j = 0; ((List<DataItem>)(bio.getOpportunities().get(i).data)).size(); j++)
-
-//		if (!(data instanceof Boolean))
-//			this.dataList = castToList(data);
+	public void setDataList() {
+		dataList.addAll(castToList(data));
 	}
 
 	public Object getData() {

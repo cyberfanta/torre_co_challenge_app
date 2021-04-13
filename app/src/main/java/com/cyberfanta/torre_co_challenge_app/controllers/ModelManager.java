@@ -2,6 +2,7 @@ package com.cyberfanta.torre_co_challenge_app.controllers;
 
 import com.cyberfanta.torre_co_challenge_app.exceptions.ConnectionException;
 import com.cyberfanta.torre_co_challenge_app.models.bio.Bio;
+import com.cyberfanta.torre_co_challenge_app.models.bio.DataItem;
 import com.cyberfanta.torre_co_challenge_app.models.job.Job;
 import com.cyberfanta.torre_co_challenge_app.models.opportunities.Opportunities;
 import com.cyberfanta.torre_co_challenge_app.models.peoples.Peoples;
@@ -78,6 +79,10 @@ public class ModelManager {
     public void loadBio(String name) throws ConnectionException{
         if (!bioMap.containsKey(name)) {
             Bio bio = modelFromConnection.getObject(Bio.class, url[1].concat(name));
+            for (int i = 0; i < bio.getOpportunities().size(); i++)
+                if (bio.getOpportunities().get(i).getData() instanceof List<DataItem>)
+                    bio.getOpportunities().get(i).setDataList();
+
             try {
                 BitmapFromConnection.getBitmap(bio.getPerson().getPublicId(), bio.getPerson().getPicture());
                 if (bio.getExperiences().size() > 1)

@@ -260,7 +260,7 @@ class BioActivity : AppCompatActivity() {
                     string = ViewUtilities.translateStrings(this, bio.opportunities[i].interest) + ": "
                     @Suppress("UNCHECKED_CAST")
                     for (j in 0 until (bio.opportunities[i].data as List<*>).size)
-                        string += ViewUtilities.translateStrings(this, ((bio.opportunities[i].data as List<*>) as List<DataItem>)[j].name) + ", "
+                        string += ViewUtilities.translateStrings(this, bio.opportunities[i].dataList[j].name) + ", "
                     if (bio.opportunities[i].dataList.size > 0)
                         string = string.substring(0, string.length - 2)
                     textView.text = string
