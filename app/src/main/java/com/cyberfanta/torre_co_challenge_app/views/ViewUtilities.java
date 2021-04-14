@@ -188,6 +188,17 @@ public class ViewUtilities {
             case "internships":
                 return context.getString(R.string.internship);
 
+            case "desirable-compensation-currency":
+                return context.getString(R.string.desirable_compensation_currency);
+            case "desirable-compensation-amount":
+                return context.getString(R.string.desirable_compensation_amount);
+            case "desirable-compensation-periodicity":
+                return context.getString(R.string.desirable_compensation_periodicity);
+
+            case "no_open_to":
+                return context.getString(R.string.no_open_to);
+            case "open_to":
+                return context.getString(R.string.open_to);
 
             default:
                 return string;

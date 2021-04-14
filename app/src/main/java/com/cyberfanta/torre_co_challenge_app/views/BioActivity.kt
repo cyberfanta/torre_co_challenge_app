@@ -20,6 +20,8 @@ import com.cyberfanta.torre_co_challenge_app.R
 import com.cyberfanta.torre_co_challenge_app.controllers.BitmapFromConnection
 import com.cyberfanta.torre_co_challenge_app.controllers.ModelManager
 import com.cyberfanta.torre_co_challenge_app.models.bio.DataItem
+import com.google.gson.internal.LinkedTreeMap
+import java.util.*
 
 class BioActivity : AppCompatActivity() {
     private var deviceWidth: Int = 0
@@ -258,19 +260,33 @@ class BioActivity : AppCompatActivity() {
                     textView = TextView(this, null, 0, R.style.text_white_shadow_black_3_size_18_bold)
                     textView.layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)
                     string = ViewUtilities.translateStrings(this, bio.opportunities[i].interest) + ": "
+
                     @Suppress("UNCHECKED_CAST")
-                    for (j in 0 until (bio.opportunities[i].data as List<*>).size)
-                        string += ViewUtilities.translateStrings(this, bio.opportunities[i].dataList[j].name) + ", "
-                    if (bio.opportunities[i].dataList.size > 0)
+                    val listDataItem = bio.opportunities[i].data as ArrayList<LinkedTreeMap<String, String>>
+
+                    for (j in 0 until listDataItem.size)
+                        string += ViewUtilities.translateStrings(this, listDataItem[j].getValue("name")) + ", "
+                    @Suppress("UNCHECKED_CAST")
+                    if ((bio.opportunities[i].data as List<DataItem>).size > 0)
                         string = string.substring(0, string.length - 2)
                     textView.text = string
                     linearLayout.addView(textView)
                 } else {
                     textView = TextView(this, null, 0, R.style.text_white_shadow_black_3_size_18_bold)
                     textView.layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)
-                    string = ViewUtilities.translateStrings(this, bio.opportunities[i].interest) +
-                            " - " + ViewUtilities.translateStrings(this, bio.opportunities[i].field) +
-                            " - " + ViewUtilities.translateStrings(this, bio.opportunities[i].data.toString())
+                    string = ""
+                    if (bio.opportunities[i].field.toLowerCase(Locale.ROOT).equals("active")){
+                        if (bio.opportunities[i].data == false)
+                            string += ViewUtilities.translateStrings(this, "no_open_to") + ": "
+                        else
+                            string += ViewUtilities.translateStrings(this, "open_to") + ": "
+                        string += ViewUtilities.translateStrings(this, bio.opportunities[i].interest)
+                    } else if (bio.opportunities[i].interest.toLowerCase(Locale.ROOT).equals("jobs") && !(bio.opportunities[i].data is Boolean)){
+                        string = ViewUtilities.translateStrings(this, bio.opportunities[i].field) +
+                                ": " + ViewUtilities.translateStrings(this, bio.opportunities[i].data.toString())
+                    } else
+                        continue
+
                     textView.text = string
                     linearLayout.addView(textView)
                 }
@@ -324,6 +340,39 @@ class BioActivity : AppCompatActivity() {
                 bio.person.location.timezone + "\n" +
                 ViewUtilities.translateStrings(this, "timezone_offset") + ": " +
                 bio.person.location.timezoneOffSet
+
+        //todo
+//        val offset = "+07:00"
+//        val date = "2019-11-05/23:00"
+//
+//        // create a LocalDateTime using the date time passed as parameter
+//
+//        // create a LocalDateTime using the date time passed as parameter
+//        val ldt: LocalDateTime = LocalDateTime.parse(date,
+//                DateTimeFormatter.ofPattern("yyyy-MM-dd/HH:mm"))
+//        // parse the offset
+//        // parse the offset
+//        val zoneOffset: ZoneOffset = ZoneOffset.of(offset)
+//        // create an OffsetDateTime using the parsed offset
+//        // create an OffsetDateTime using the parsed offset
+//        val odt: OffsetDateTime = OffsetDateTime.of(ldt, zoneOffset)
+//        // print the date time with the parsed offset
+//        // print the date time with the parsed offset
+//        println(zoneOffset.toString()
+//                .toString() + ":\t" + odt.format(DateTimeFormatter.ISO_OFFSET_DATE_TIME))
+//        // create a ZonedDateTime from the OffsetDateTime and use UTC as time zone
+//        // create a ZonedDateTime from the OffsetDateTime and use UTC as time zone
+//        val utcZdt: ZonedDateTime = odt.atZoneSameInstant(ZoneOffset.UTC)
+//        // print the date time in UTC using the ISO ZONED DATE TIME format
+//        // print the date time in UTC using the ISO ZONED DATE TIME format
+//        System.out.println("UTC:\t"
+//                + utcZdt.format(DateTimeFormatter.ISO_ZONED_DATE_TIME))
+//        // and then print it again using your desired format
+//        // and then print it again using your desired format
+//        System.out.println("UTC:\t"
+//                + utcZdt.format(DateTimeFormatter.ofPattern("yyyy-MM-dd-HH:mm")))
+
+
         textView.text = string
 
 //interests_bio

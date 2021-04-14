@@ -79,9 +79,8 @@ public class ModelManager {
     public void loadBio(String name) throws ConnectionException{
         if (!bioMap.containsKey(name)) {
             Bio bio = modelFromConnection.getObject(Bio.class, url[1].concat(name));
-            for (int i = 0; i < bio.getOpportunities().size(); i++)
-                if (bio.getOpportunities().get(i).getData() instanceof List<DataItem>)
-                    bio.getOpportunities().get(i).setDataList();
+//            for (int i = 0; i < bio.getOpportunities().size(); i++)
+//                bio.getOpportunities().get(i).setDataList();
 
             try {
                 BitmapFromConnection.getBitmap(bio.getPerson().getPublicId(), bio.getPerson().getPicture());

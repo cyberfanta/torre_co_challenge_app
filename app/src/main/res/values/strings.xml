@@ -122,5 +122,11 @@
     <string name="industries">Industries</string>
     <string name="internship">Internship</string>
 
+    <string name="desirable_compensation_currency">Desired payment currency</string>
+    <string name="desirable_compensation_amount">Desired payment amount</string>
+    <string name="desirable_compensation_periodicity">Desired payment periodicity</string>
+
+    <string name="no_open_to">Don\'t open to</string>
+    <string name="open_to">Open to</string>
 
 </resources>

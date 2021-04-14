@@ -4,16 +4,13 @@ import com.google.gson.annotations.SerializedName;
 
 import org.jetbrains.annotations.NotNull;
 
-import java.util.List;
-
-public class OpportunitiesItem{
+public class OpportunitiesItem<T> {
 
 	@SerializedName("field")
 	private String field;
 
 	@SerializedName("data")
-	private Object data;
-	private List<DataItem> dataList = null;
+	private T data;
 
 	@SerializedName("interest")
 	private String interest;
@@ -29,28 +26,12 @@ public class OpportunitiesItem{
 		return field;
 	}
 
-	@SuppressWarnings("unchecked")
-	private static <T extends List<DataItem>> T castToList(Object obj) {
-		return (T) obj;
-	}
-
-	public void setData(Object data) {
-//		if (!(data instanceof Boolean)) {
-//			dataList.addAll(castToList(data));
-//		}
+	public void setData(T data) {
 		this.data = data;
 	}
 
-	public void setDataList() {
-		dataList.addAll(castToList(data));
-	}
-
-	public Object getData() {
+	public T getData() {
 		return data;
-	}
-
-	public List<DataItem> getDataList() {
-		return dataList;
 	}
 
 	public void setInterest(String interest){
